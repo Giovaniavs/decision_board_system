@@ -15,7 +15,10 @@ dependencies:
   json_annotation: ^4.7.0
   sentry_flutter: ^6.18.1
   dio: ^4.0.6
-  stack_trace: ^1.11.0
+  stack_trace: ^1.10.0
+  google_fonts: ^3.0.1
+  bloc: ^8.1.0
+  flutter_secure_storage: ^7.0.1
 
 dev_dependencies:
   flutter_test:
