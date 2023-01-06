@@ -7,6 +7,8 @@ import 'package:openredu_mobile_flutter/src/auth/splash_screen/domain/splash_scr
 import 'package:openredu_mobile_flutter/src/shared/design_system/assets/ob_images.dart';
 import 'package:openredu_mobile_flutter/src/shared/design_system/tokens/color_tokens.dart';
 import 'package:openredu_mobile_flutter/src/shared/design_system/tokens/spacing_tokens.dart';
+import 'package:openredu_mobile_flutter/src/shared/widgets/blue_long_button.dart';
+import 'package:openredu_mobile_flutter/src/shared/widgets/white_long_button.dart';
 
 class SplashScreenLoginOrRegistermentScreen extends StatefulWidget {
   final SplashScreenUseCase _splashScrenUseCase;
@@ -78,8 +80,11 @@ class _SplashScreenLoginOrRegistermentScreenState
         return Container();
       },
       loginOrRegistermentScreen: (_) {
-        Widget openReduLogo = Image.asset(
-          OpenReduImages.logoOpenRedu,
+        Widget openReduLogo = ClipRRect(
+          borderRadius: BorderRadius.circular(12.0),
+          child: Image.asset(
+            OpenReduImages.logoOpenRedu,
+          ),
         );
         const Size biggest = Size.square(158);
         return Column(
@@ -91,53 +96,46 @@ class _SplashScreenLoginOrRegistermentScreenState
             ),
             Column(
               children: [
-                Semantics(
-                  child: ConstrainedBox(
-                    constraints:
-                        const BoxConstraints(maxHeight: 158, maxWidth: 158),
-                    child: Stack(
-                      children: <Widget>[
-                        PositionedTransition(
-                          rect: RelativeRectTween(
-                            begin: RelativeRect.fromSize(
-                                Rect.fromLTWH(
-                                    (biggest.width / 2) - bigLogo / 2,
-                                    (biggest.height / 2) - bigLogo / 2,
-                                    bigLogo,
-                                    bigLogo),
-                                biggest),
-                            end: RelativeRect.fromSize(
-                                Rect.fromLTWH(
-                                    (biggest.width / 2) - smallLogo / 2,
-                                    0,
-                                    smallLogo,
-                                    smallLogo),
-                                biggest),
-                          ).animate(CurvedAnimation(
-                            parent: _controller,
-                            curve: Curves.fastOutSlowIn,
-                          )),
-                          child: openReduLogo,
-                        ),
-                      ],
-                    ),
+                ConstrainedBox(
+                  constraints:
+                      const BoxConstraints(maxHeight: 158, maxWidth: 158),
+                  child: Stack(
+                    children: <Widget>[
+                      PositionedTransition(
+                        rect: RelativeRectTween(
+                          begin: RelativeRect.fromSize(
+                              Rect.fromLTWH(
+                                  (biggest.width / 2) - bigLogo / 2,
+                                  (biggest.height / 2) - bigLogo / 2,
+                                  bigLogo,
+                                  bigLogo),
+                              biggest),
+                          end: RelativeRect.fromSize(
+                              Rect.fromLTWH((biggest.width / 2) - smallLogo / 2,
+                                  0, smallLogo, smallLogo),
+                              biggest),
+                        ).animate(CurvedAnimation(
+                          parent: _controller,
+                          curve: Curves.fastOutSlowIn,
+                        )),
+                        child: openReduLogo,
+                      ),
+                    ],
                   ),
                 ),
-                Semantics(
-                  child: FadeTransition(
-                    opacity: _controller,
-                    child: SlideTransition(
-                      position: _animOffset!,
-                      child: SizedBox(
-                        width: 257.0,
-                        child: Text(
-                          "Aplicativo móvel OpenRedu",
-                          style: GoogleFonts.inter(
-                            color: ColorTokens.whiteBackground,
-                            fontSize: 16.0,
-                          ),
-                          textAlign: TextAlign.center,
+                FadeTransition(
+                  opacity: _controller,
+                  child: SlideTransition(
+                    position: _animOffset!,
+                    child: SizedBox(
+                      width: 257.0,
+                      child: Text(
+                        "Aplicativo OpenRedu",
+                        style: GoogleFonts.inter(
+                          color: ColorTokens.whiteBackground,
+                          fontSize: 16.0,
                         ),
+                        textAlign: TextAlign.center,
                       ),
                     ),
                   ),
@@ -145,70 +143,34 @@ class _SplashScreenLoginOrRegistermentScreenState
               ],
             ),
             SizedBox(
-              height: 150.0,
+              height: 200.0,
               child: BottomDrawer(
                 header: Container(),
-                body: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        top: SpacingTokens.kilo,
-                        left: SpacingTokens.hecto,
-                        right: SpacingTokens.hecto,
+                body: Padding(
+                  padding: const EdgeInsets.only(
+                    left: SpacingTokens.hecto,
+                    right: SpacingTokens.hecto,
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      BlueLongButton(
+                        buttonText: 'Faça o login',
+                        onPressed: () {
+                          widget._splashScrenUseCase.add(const SignUp());
+                        },
                       ),
-                      child: Semantics(
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: ColorTokens.whiteBackground,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            side: const BorderSide(
-                              width: 1.0,
-                              color: ColorTokens.borderGray,
-                            ),
-                            minimumSize: const Size(double.infinity, 48),
-                            elevation: 0.0,
-                            shadowColor: Colors.transparent,
-                          ),
-                          onPressed: () {
-                            widget._splashScrenUseCase.add(const SignUp());
-                          },
-                          child: const Text(
-                            'Faça o seu Cadastro',
-                          ),
-                        ),
+                      const SizedBox(
+                        height: SpacingTokens.deka,
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        top: SpacingTokens.deka,
-                        left: SpacingTokens.hecto,
-                        right: SpacingTokens.hecto,
-                      ),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: ColorTokens.whiteBackground,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          side: const BorderSide(
-                            width: 1.0,
-                            color: ColorTokens.borderGray,
-                          ),
-                          minimumSize: const Size(double.infinity, 48),
-                          elevation: 0.0,
-                          shadowColor: Colors.transparent,
-                        ),
+                      WhiteLongButton(
+                        buttonText: 'Faça o cadastro',
                         onPressed: () {
                           widget._splashScrenUseCase.add(const SignIn());
                         },
-                        child: const Text(
-                          'Faça o login',
-                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
                 drawerHeight: 168.0,
                 color: ColorTokens.whiteBackground,

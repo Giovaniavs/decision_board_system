@@ -8,6 +8,7 @@ part 'splash_screen_usecase.freezed.dart';
 class SplashScreenUseCase extends Bloc<SplashScreenEvent, SplashScreenState> {
   SplashScreenUseCase() : super(SplashScreenState.initial());
 
+  @override
   Stream<SplashScreenState> mapEventToState(SplashScreenEvent event) async* {
     yield* event.map(
       backToInitialScreen: _backToInitialScreen,
@@ -33,7 +34,6 @@ class SplashScreenUseCase extends Bloc<SplashScreenEvent, SplashScreenState> {
   Stream<SplashScreenState> _toLoginOrRegistermentScreen(
     ToLoginOrRegistermentScreen value,
   ) async* {
-    print('fui chamado');
     yield state.copyWith(
       flow: const LoginOrRegistermentScreen(),
     );

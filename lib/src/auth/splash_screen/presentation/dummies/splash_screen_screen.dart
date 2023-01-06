@@ -44,17 +44,10 @@ class _SplashScreenScreenState extends State<SplashScreenScreen>
         bloc: widget._splashScrenUseCase,
         builder: (context, state) {
           return Center(
-            child: InkWell(
-              onTap: () {
-                widget._splashScrenUseCase.add(
-                  const ToLoginOrRegistermentScreen(),
-                );
-              },
-              child: Image.asset(
-                OpenReduImages.logoOpenRedu,
-                height: 158.0,
-                width: 158.0,
-              ),
+            child: Image.asset(
+              OpenReduImages.logoOpenRedu,
+              height: 158.0,
+              width: 158.0,
             ),
           );
         },
