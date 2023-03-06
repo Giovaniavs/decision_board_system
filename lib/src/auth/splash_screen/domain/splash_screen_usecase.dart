@@ -15,6 +15,8 @@ class SplashScreenUseCase extends Bloc<SplashScreenEvent, SplashScreenState> {
       signIn: _signIn,
       signUp: _signUp,
       toLoginOrRegistermentScreen: _toLoginOrRegistermentScreen,
+      storeGraphData: _storeGraphData,
+      goToChartsScreen: _goToChartsScreen,
     );
   }
 
@@ -24,7 +26,9 @@ class SplashScreenUseCase extends Bloc<SplashScreenEvent, SplashScreenState> {
   }
 
   Stream<SplashScreenState> _signIn(SignIn value) async* {
-    yield state;
+    yield state.copyWith(
+      flow: const SignInScreen(),
+    );
   }
 
   Stream<SplashScreenState> _signUp(SignUp value) async* {
@@ -36,6 +40,43 @@ class SplashScreenUseCase extends Bloc<SplashScreenEvent, SplashScreenState> {
   ) async* {
     yield state.copyWith(
       flow: const LoginOrRegistermentScreen(),
+    );
+  }
+
+  Stream<SplashScreenState> _storeGraphData(StoreGraphData value) async* {
+    // List<String> auxListDates = state.listDates;
+    // auxListDates.add(value.date);
+    // List<String> auxListLocations = state.listLocations;
+    // auxListLocations.add(value.location);
+    // List<String> auxListStatus = state.listStatus;
+    // auxListStatus.add(value.status);
+    // print('ola');
+    // yield state.copyWith(
+    //   listDates: auxListDates,
+    //   listLocations: auxListLocations,
+    //   listStatus: auxListStatus,
+    // );
+  }
+
+  Stream<SplashScreenState> _goToChartsScreen(GoToChartsScreen value) async* {
+    List<List<dynamic>> auxRawList = [];
+    List<String> auxListDates = [];
+    List<String> auxListLocations = [];
+    List<String> auxListStatus = [];
+
+    auxRawList = value.data;
+
+    for (var eachLine in auxRawList) {
+      auxListDates.add(eachLine[3]);
+      auxListLocations.add(eachLine[4]);
+      auxListStatus.add(eachLine[5]);
+    }
+
+    yield state.copyWith(
+      flow: const ChartScreen(),
+      listDates: auxListDates,
+      listLocations: auxListLocations,
+      listStatus: auxListStatus,
     );
   }
 }

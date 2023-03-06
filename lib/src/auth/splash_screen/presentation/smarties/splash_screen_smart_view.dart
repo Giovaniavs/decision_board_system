@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:openredu_mobile_flutter/src/auth/splash_screen/domain/splash_screen_usecase.dart';
+import 'package:openredu_mobile_flutter/src/auth/splash_screen/presentation/dummies/charts_screen.dart';
+import 'package:openredu_mobile_flutter/src/auth/splash_screen/presentation/dummies/load_csv_screen.dart';
 import 'package:openredu_mobile_flutter/src/auth/splash_screen/presentation/dummies/splash_screen_login_or_registerment_screen.dart';
 import 'package:openredu_mobile_flutter/src/auth/splash_screen/presentation/dummies/splash_screen_screen.dart';
 
@@ -34,6 +36,16 @@ class _SplashScreenSmartViewState extends State<SplashScreenSmartView> {
           splashScreenUseCase: widget._splashScreenUseCase,
         ),
       ),
+      MaterialPage(
+        child: LoadCsvScreen(
+          splashScreenUseCase: widget._splashScreenUseCase,
+        ),
+      ),
+      MaterialPage(
+        child: ChartsScreen(
+          splashScreenUseCase: widget._splashScreenUseCase,
+        ),
+      ),
     ];
     super.initState();
   }
@@ -51,24 +63,24 @@ class _SplashScreenSmartViewState extends State<SplashScreenSmartView> {
   void _listener(BuildContext context, SplashScreenState state) {
     state.flow.maybeMap(
       orElse: () {},
-      toSignIn: (_) {
-        // Navigator.of(context).push(
-        //   MaterialPageRoute(
-        //     builder: (context) => SignInSmartView(
-        //       signInUseCase: di<SignInUseCase>(),
-        //     ),
-        //   ),
-        // );
-      },
-      toSignUp: (_) {
-        // Navigator.of(context).push(
-        //   MaterialPageRoute(
-        //     builder: (context) => SignUpSmartView(
-        //       signUpUseCase: di<SignUpUseCase>(),
-        //     ),
-        //   ),
-        // );
-      },
+      // toSignIn: (_) {
+      // Navigator.of(context).push(
+      //   MaterialPageRoute(
+      //     builder: (context) => SignInSmartView(
+      //       signInUseCase: di<SignInUseCase>(),
+      //     ),
+      //   ),
+      // );
+      // },
+      // signUpScreen: (_) {
+      // Navigator.of(context).push(
+      //   MaterialPageRoute(
+      //     builder: (context) => SignUpSmartView(
+      //       signUpUseCase: di<SignUpUseCase>(),
+      //     ),
+      //   ),
+      // );
+      // },
     );
   }
 
@@ -90,6 +102,23 @@ class _SplashScreenSmartViewState extends State<SplashScreenSmartView> {
         _currentPageStack = [
           modulePages[0],
           modulePages[1],
+        ];
+        return _currentPageStack;
+      },
+      signInScreen: (_) {
+        _currentPageStack = [
+          modulePages[0],
+          modulePages[1],
+          modulePages[2],
+        ];
+        return _currentPageStack;
+      },
+      chartScreen: (_) {
+        _currentPageStack = [
+          modulePages[0],
+          modulePages[1],
+          modulePages[2],
+          modulePages[3],
         ];
         return _currentPageStack;
       },

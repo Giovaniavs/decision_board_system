@@ -17,6 +17,9 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$SplashScreenState {
   SplashScreenFlow get flow => throw _privateConstructorUsedError;
+  List<String> get listLocations => throw _privateConstructorUsedError;
+  List<String> get listDates => throw _privateConstructorUsedError;
+  List<String> get listStatus => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SplashScreenStateCopyWith<SplashScreenState> get copyWith =>
@@ -29,7 +32,11 @@ abstract class $SplashScreenStateCopyWith<$Res> {
           SplashScreenState value, $Res Function(SplashScreenState) then) =
       _$SplashScreenStateCopyWithImpl<$Res, SplashScreenState>;
   @useResult
-  $Res call({SplashScreenFlow flow});
+  $Res call(
+      {SplashScreenFlow flow,
+      List<String> listLocations,
+      List<String> listDates,
+      List<String> listStatus});
 
   $SplashScreenFlowCopyWith<$Res> get flow;
 }
@@ -48,12 +55,27 @@ class _$SplashScreenStateCopyWithImpl<$Res, $Val extends SplashScreenState>
   @override
   $Res call({
     Object? flow = null,
+    Object? listLocations = null,
+    Object? listDates = null,
+    Object? listStatus = null,
   }) {
     return _then(_value.copyWith(
       flow: null == flow
           ? _value.flow
           : flow // ignore: cast_nullable_to_non_nullable
               as SplashScreenFlow,
+      listLocations: null == listLocations
+          ? _value.listLocations
+          : listLocations // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      listDates: null == listDates
+          ? _value.listDates
+          : listDates // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      listStatus: null == listStatus
+          ? _value.listStatus
+          : listStatus // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ) as $Val);
   }
 
@@ -74,7 +96,11 @@ abstract class _$$_SplashScreenStateCopyWith<$Res>
       __$$_SplashScreenStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({SplashScreenFlow flow});
+  $Res call(
+      {SplashScreenFlow flow,
+      List<String> listLocations,
+      List<String> listDates,
+      List<String> listStatus});
 
   @override
   $SplashScreenFlowCopyWith<$Res> get flow;
@@ -92,12 +118,27 @@ class __$$_SplashScreenStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? flow = null,
+    Object? listLocations = null,
+    Object? listDates = null,
+    Object? listStatus = null,
   }) {
     return _then(_$_SplashScreenState(
       flow: null == flow
           ? _value.flow
           : flow // ignore: cast_nullable_to_non_nullable
               as SplashScreenFlow,
+      listLocations: null == listLocations
+          ? _value._listLocations
+          : listLocations // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      listDates: null == listDates
+          ? _value._listDates
+          : listDates // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      listStatus: null == listStatus
+          ? _value._listStatus
+          : listStatus // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
@@ -105,14 +146,44 @@ class __$$_SplashScreenStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_SplashScreenState implements _SplashScreenState {
-  const _$_SplashScreenState({required this.flow});
+  const _$_SplashScreenState(
+      {required this.flow,
+      required final List<String> listLocations,
+      required final List<String> listDates,
+      required final List<String> listStatus})
+      : _listLocations = listLocations,
+        _listDates = listDates,
+        _listStatus = listStatus;
 
   @override
   final SplashScreenFlow flow;
+  final List<String> _listLocations;
+  @override
+  List<String> get listLocations {
+    if (_listLocations is EqualUnmodifiableListView) return _listLocations;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_listLocations);
+  }
+
+  final List<String> _listDates;
+  @override
+  List<String> get listDates {
+    if (_listDates is EqualUnmodifiableListView) return _listDates;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_listDates);
+  }
+
+  final List<String> _listStatus;
+  @override
+  List<String> get listStatus {
+    if (_listStatus is EqualUnmodifiableListView) return _listStatus;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_listStatus);
+  }
 
   @override
   String toString() {
-    return 'SplashScreenState(flow: $flow)';
+    return 'SplashScreenState(flow: $flow, listLocations: $listLocations, listDates: $listDates, listStatus: $listStatus)';
   }
 
   @override
@@ -120,11 +191,22 @@ class _$_SplashScreenState implements _SplashScreenState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SplashScreenState &&
-            (identical(other.flow, flow) || other.flow == flow));
+            (identical(other.flow, flow) || other.flow == flow) &&
+            const DeepCollectionEquality()
+                .equals(other._listLocations, _listLocations) &&
+            const DeepCollectionEquality()
+                .equals(other._listDates, _listDates) &&
+            const DeepCollectionEquality()
+                .equals(other._listStatus, _listStatus));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, flow);
+  int get hashCode => Object.hash(
+      runtimeType,
+      flow,
+      const DeepCollectionEquality().hash(_listLocations),
+      const DeepCollectionEquality().hash(_listDates),
+      const DeepCollectionEquality().hash(_listStatus));
 
   @JsonKey(ignore: true)
   @override
@@ -135,11 +217,20 @@ class _$_SplashScreenState implements _SplashScreenState {
 }
 
 abstract class _SplashScreenState implements SplashScreenState {
-  const factory _SplashScreenState({required final SplashScreenFlow flow}) =
-      _$_SplashScreenState;
+  const factory _SplashScreenState(
+      {required final SplashScreenFlow flow,
+      required final List<String> listLocations,
+      required final List<String> listDates,
+      required final List<String> listStatus}) = _$_SplashScreenState;
 
   @override
   SplashScreenFlow get flow;
+  @override
+  List<String> get listLocations;
+  @override
+  List<String> get listDates;
+  @override
+  List<String> get listStatus;
   @override
   @JsonKey(ignore: true)
   _$$_SplashScreenStateCopyWith<_$_SplashScreenState> get copyWith =>
@@ -152,24 +243,27 @@ mixin _$SplashScreenFlow {
   TResult when<TResult extends Object?>({
     required TResult Function() splash,
     required TResult Function() loginOrRegistermentScreen,
-    required TResult Function() toSignIn,
-    required TResult Function() toSignUp,
+    required TResult Function() signInScreen,
+    required TResult Function() signUpScreen,
+    required TResult Function() chartScreen,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? splash,
     TResult? Function()? loginOrRegistermentScreen,
-    TResult? Function()? toSignIn,
-    TResult? Function()? toSignUp,
+    TResult? Function()? signInScreen,
+    TResult? Function()? signUpScreen,
+    TResult? Function()? chartScreen,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? splash,
     TResult Function()? loginOrRegistermentScreen,
-    TResult Function()? toSignIn,
-    TResult Function()? toSignUp,
+    TResult Function()? signInScreen,
+    TResult Function()? signUpScreen,
+    TResult Function()? chartScreen,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -178,8 +272,9 @@ mixin _$SplashScreenFlow {
     required TResult Function(Splash value) splash,
     required TResult Function(LoginOrRegistermentScreen value)
         loginOrRegistermentScreen,
-    required TResult Function(ToSignIn value) toSignIn,
-    required TResult Function(ToSignUp value) toSignUp,
+    required TResult Function(SignInScreen value) signInScreen,
+    required TResult Function(SignUpScreen value) signUpScreen,
+    required TResult Function(ChartScreen value) chartScreen,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -187,8 +282,9 @@ mixin _$SplashScreenFlow {
     TResult? Function(Splash value)? splash,
     TResult? Function(LoginOrRegistermentScreen value)?
         loginOrRegistermentScreen,
-    TResult? Function(ToSignIn value)? toSignIn,
-    TResult? Function(ToSignUp value)? toSignUp,
+    TResult? Function(SignInScreen value)? signInScreen,
+    TResult? Function(SignUpScreen value)? signUpScreen,
+    TResult? Function(ChartScreen value)? chartScreen,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -196,8 +292,9 @@ mixin _$SplashScreenFlow {
     TResult Function(Splash value)? splash,
     TResult Function(LoginOrRegistermentScreen value)?
         loginOrRegistermentScreen,
-    TResult Function(ToSignIn value)? toSignIn,
-    TResult Function(ToSignUp value)? toSignUp,
+    TResult Function(SignInScreen value)? signInScreen,
+    TResult Function(SignUpScreen value)? signUpScreen,
+    TResult Function(ChartScreen value)? chartScreen,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -259,8 +356,9 @@ class _$Splash implements Splash {
   TResult when<TResult extends Object?>({
     required TResult Function() splash,
     required TResult Function() loginOrRegistermentScreen,
-    required TResult Function() toSignIn,
-    required TResult Function() toSignUp,
+    required TResult Function() signInScreen,
+    required TResult Function() signUpScreen,
+    required TResult Function() chartScreen,
   }) {
     return splash();
   }
@@ -270,8 +368,9 @@ class _$Splash implements Splash {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? splash,
     TResult? Function()? loginOrRegistermentScreen,
-    TResult? Function()? toSignIn,
-    TResult? Function()? toSignUp,
+    TResult? Function()? signInScreen,
+    TResult? Function()? signUpScreen,
+    TResult? Function()? chartScreen,
   }) {
     return splash?.call();
   }
@@ -281,8 +380,9 @@ class _$Splash implements Splash {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? splash,
     TResult Function()? loginOrRegistermentScreen,
-    TResult Function()? toSignIn,
-    TResult Function()? toSignUp,
+    TResult Function()? signInScreen,
+    TResult Function()? signUpScreen,
+    TResult Function()? chartScreen,
     required TResult orElse(),
   }) {
     if (splash != null) {
@@ -297,8 +397,9 @@ class _$Splash implements Splash {
     required TResult Function(Splash value) splash,
     required TResult Function(LoginOrRegistermentScreen value)
         loginOrRegistermentScreen,
-    required TResult Function(ToSignIn value) toSignIn,
-    required TResult Function(ToSignUp value) toSignUp,
+    required TResult Function(SignInScreen value) signInScreen,
+    required TResult Function(SignUpScreen value) signUpScreen,
+    required TResult Function(ChartScreen value) chartScreen,
   }) {
     return splash(this);
   }
@@ -309,8 +410,9 @@ class _$Splash implements Splash {
     TResult? Function(Splash value)? splash,
     TResult? Function(LoginOrRegistermentScreen value)?
         loginOrRegistermentScreen,
-    TResult? Function(ToSignIn value)? toSignIn,
-    TResult? Function(ToSignUp value)? toSignUp,
+    TResult? Function(SignInScreen value)? signInScreen,
+    TResult? Function(SignUpScreen value)? signUpScreen,
+    TResult? Function(ChartScreen value)? chartScreen,
   }) {
     return splash?.call(this);
   }
@@ -321,8 +423,9 @@ class _$Splash implements Splash {
     TResult Function(Splash value)? splash,
     TResult Function(LoginOrRegistermentScreen value)?
         loginOrRegistermentScreen,
-    TResult Function(ToSignIn value)? toSignIn,
-    TResult Function(ToSignUp value)? toSignUp,
+    TResult Function(SignInScreen value)? signInScreen,
+    TResult Function(SignUpScreen value)? signUpScreen,
+    TResult Function(ChartScreen value)? chartScreen,
     required TResult orElse(),
   }) {
     if (splash != null) {
@@ -378,8 +481,9 @@ class _$LoginOrRegistermentScreen implements LoginOrRegistermentScreen {
   TResult when<TResult extends Object?>({
     required TResult Function() splash,
     required TResult Function() loginOrRegistermentScreen,
-    required TResult Function() toSignIn,
-    required TResult Function() toSignUp,
+    required TResult Function() signInScreen,
+    required TResult Function() signUpScreen,
+    required TResult Function() chartScreen,
   }) {
     return loginOrRegistermentScreen();
   }
@@ -389,8 +493,9 @@ class _$LoginOrRegistermentScreen implements LoginOrRegistermentScreen {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? splash,
     TResult? Function()? loginOrRegistermentScreen,
-    TResult? Function()? toSignIn,
-    TResult? Function()? toSignUp,
+    TResult? Function()? signInScreen,
+    TResult? Function()? signUpScreen,
+    TResult? Function()? chartScreen,
   }) {
     return loginOrRegistermentScreen?.call();
   }
@@ -400,8 +505,9 @@ class _$LoginOrRegistermentScreen implements LoginOrRegistermentScreen {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? splash,
     TResult Function()? loginOrRegistermentScreen,
-    TResult Function()? toSignIn,
-    TResult Function()? toSignUp,
+    TResult Function()? signInScreen,
+    TResult Function()? signUpScreen,
+    TResult Function()? chartScreen,
     required TResult orElse(),
   }) {
     if (loginOrRegistermentScreen != null) {
@@ -416,8 +522,9 @@ class _$LoginOrRegistermentScreen implements LoginOrRegistermentScreen {
     required TResult Function(Splash value) splash,
     required TResult Function(LoginOrRegistermentScreen value)
         loginOrRegistermentScreen,
-    required TResult Function(ToSignIn value) toSignIn,
-    required TResult Function(ToSignUp value) toSignUp,
+    required TResult Function(SignInScreen value) signInScreen,
+    required TResult Function(SignUpScreen value) signUpScreen,
+    required TResult Function(ChartScreen value) chartScreen,
   }) {
     return loginOrRegistermentScreen(this);
   }
@@ -428,8 +535,9 @@ class _$LoginOrRegistermentScreen implements LoginOrRegistermentScreen {
     TResult? Function(Splash value)? splash,
     TResult? Function(LoginOrRegistermentScreen value)?
         loginOrRegistermentScreen,
-    TResult? Function(ToSignIn value)? toSignIn,
-    TResult? Function(ToSignUp value)? toSignUp,
+    TResult? Function(SignInScreen value)? signInScreen,
+    TResult? Function(SignUpScreen value)? signUpScreen,
+    TResult? Function(ChartScreen value)? chartScreen,
   }) {
     return loginOrRegistermentScreen?.call(this);
   }
@@ -440,8 +548,9 @@ class _$LoginOrRegistermentScreen implements LoginOrRegistermentScreen {
     TResult Function(Splash value)? splash,
     TResult Function(LoginOrRegistermentScreen value)?
         loginOrRegistermentScreen,
-    TResult Function(ToSignIn value)? toSignIn,
-    TResult Function(ToSignUp value)? toSignUp,
+    TResult Function(SignInScreen value)? signInScreen,
+    TResult Function(SignUpScreen value)? signUpScreen,
+    TResult Function(ChartScreen value)? chartScreen,
     required TResult orElse(),
   }) {
     if (loginOrRegistermentScreen != null) {
@@ -456,34 +565,35 @@ abstract class LoginOrRegistermentScreen implements SplashScreenFlow {
 }
 
 /// @nodoc
-abstract class _$$ToSignInCopyWith<$Res> {
-  factory _$$ToSignInCopyWith(
-          _$ToSignIn value, $Res Function(_$ToSignIn) then) =
-      __$$ToSignInCopyWithImpl<$Res>;
+abstract class _$$SignInScreenCopyWith<$Res> {
+  factory _$$SignInScreenCopyWith(
+          _$SignInScreen value, $Res Function(_$SignInScreen) then) =
+      __$$SignInScreenCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ToSignInCopyWithImpl<$Res>
-    extends _$SplashScreenFlowCopyWithImpl<$Res, _$ToSignIn>
-    implements _$$ToSignInCopyWith<$Res> {
-  __$$ToSignInCopyWithImpl(_$ToSignIn _value, $Res Function(_$ToSignIn) _then)
+class __$$SignInScreenCopyWithImpl<$Res>
+    extends _$SplashScreenFlowCopyWithImpl<$Res, _$SignInScreen>
+    implements _$$SignInScreenCopyWith<$Res> {
+  __$$SignInScreenCopyWithImpl(
+      _$SignInScreen _value, $Res Function(_$SignInScreen) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ToSignIn implements ToSignIn {
-  const _$ToSignIn();
+class _$SignInScreen implements SignInScreen {
+  const _$SignInScreen();
 
   @override
   String toString() {
-    return 'SplashScreenFlow.toSignIn()';
+    return 'SplashScreenFlow.signInScreen()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ToSignIn);
+        (other.runtimeType == runtimeType && other is _$SignInScreen);
   }
 
   @override
@@ -494,10 +604,11 @@ class _$ToSignIn implements ToSignIn {
   TResult when<TResult extends Object?>({
     required TResult Function() splash,
     required TResult Function() loginOrRegistermentScreen,
-    required TResult Function() toSignIn,
-    required TResult Function() toSignUp,
+    required TResult Function() signInScreen,
+    required TResult Function() signUpScreen,
+    required TResult Function() chartScreen,
   }) {
-    return toSignIn();
+    return signInScreen();
   }
 
   @override
@@ -505,10 +616,11 @@ class _$ToSignIn implements ToSignIn {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? splash,
     TResult? Function()? loginOrRegistermentScreen,
-    TResult? Function()? toSignIn,
-    TResult? Function()? toSignUp,
+    TResult? Function()? signInScreen,
+    TResult? Function()? signUpScreen,
+    TResult? Function()? chartScreen,
   }) {
-    return toSignIn?.call();
+    return signInScreen?.call();
   }
 
   @override
@@ -516,12 +628,13 @@ class _$ToSignIn implements ToSignIn {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? splash,
     TResult Function()? loginOrRegistermentScreen,
-    TResult Function()? toSignIn,
-    TResult Function()? toSignUp,
+    TResult Function()? signInScreen,
+    TResult Function()? signUpScreen,
+    TResult Function()? chartScreen,
     required TResult orElse(),
   }) {
-    if (toSignIn != null) {
-      return toSignIn();
+    if (signInScreen != null) {
+      return signInScreen();
     }
     return orElse();
   }
@@ -532,10 +645,11 @@ class _$ToSignIn implements ToSignIn {
     required TResult Function(Splash value) splash,
     required TResult Function(LoginOrRegistermentScreen value)
         loginOrRegistermentScreen,
-    required TResult Function(ToSignIn value) toSignIn,
-    required TResult Function(ToSignUp value) toSignUp,
+    required TResult Function(SignInScreen value) signInScreen,
+    required TResult Function(SignUpScreen value) signUpScreen,
+    required TResult Function(ChartScreen value) chartScreen,
   }) {
-    return toSignIn(this);
+    return signInScreen(this);
   }
 
   @override
@@ -544,10 +658,11 @@ class _$ToSignIn implements ToSignIn {
     TResult? Function(Splash value)? splash,
     TResult? Function(LoginOrRegistermentScreen value)?
         loginOrRegistermentScreen,
-    TResult? Function(ToSignIn value)? toSignIn,
-    TResult? Function(ToSignUp value)? toSignUp,
+    TResult? Function(SignInScreen value)? signInScreen,
+    TResult? Function(SignUpScreen value)? signUpScreen,
+    TResult? Function(ChartScreen value)? chartScreen,
   }) {
-    return toSignIn?.call(this);
+    return signInScreen?.call(this);
   }
 
   @override
@@ -556,50 +671,52 @@ class _$ToSignIn implements ToSignIn {
     TResult Function(Splash value)? splash,
     TResult Function(LoginOrRegistermentScreen value)?
         loginOrRegistermentScreen,
-    TResult Function(ToSignIn value)? toSignIn,
-    TResult Function(ToSignUp value)? toSignUp,
+    TResult Function(SignInScreen value)? signInScreen,
+    TResult Function(SignUpScreen value)? signUpScreen,
+    TResult Function(ChartScreen value)? chartScreen,
     required TResult orElse(),
   }) {
-    if (toSignIn != null) {
-      return toSignIn(this);
+    if (signInScreen != null) {
+      return signInScreen(this);
     }
     return orElse();
   }
 }
 
-abstract class ToSignIn implements SplashScreenFlow {
-  const factory ToSignIn() = _$ToSignIn;
+abstract class SignInScreen implements SplashScreenFlow {
+  const factory SignInScreen() = _$SignInScreen;
 }
 
 /// @nodoc
-abstract class _$$ToSignUpCopyWith<$Res> {
-  factory _$$ToSignUpCopyWith(
-          _$ToSignUp value, $Res Function(_$ToSignUp) then) =
-      __$$ToSignUpCopyWithImpl<$Res>;
+abstract class _$$SignUpScreenCopyWith<$Res> {
+  factory _$$SignUpScreenCopyWith(
+          _$SignUpScreen value, $Res Function(_$SignUpScreen) then) =
+      __$$SignUpScreenCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ToSignUpCopyWithImpl<$Res>
-    extends _$SplashScreenFlowCopyWithImpl<$Res, _$ToSignUp>
-    implements _$$ToSignUpCopyWith<$Res> {
-  __$$ToSignUpCopyWithImpl(_$ToSignUp _value, $Res Function(_$ToSignUp) _then)
+class __$$SignUpScreenCopyWithImpl<$Res>
+    extends _$SplashScreenFlowCopyWithImpl<$Res, _$SignUpScreen>
+    implements _$$SignUpScreenCopyWith<$Res> {
+  __$$SignUpScreenCopyWithImpl(
+      _$SignUpScreen _value, $Res Function(_$SignUpScreen) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ToSignUp implements ToSignUp {
-  const _$ToSignUp();
+class _$SignUpScreen implements SignUpScreen {
+  const _$SignUpScreen();
 
   @override
   String toString() {
-    return 'SplashScreenFlow.toSignUp()';
+    return 'SplashScreenFlow.signUpScreen()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ToSignUp);
+        (other.runtimeType == runtimeType && other is _$SignUpScreen);
   }
 
   @override
@@ -610,10 +727,11 @@ class _$ToSignUp implements ToSignUp {
   TResult when<TResult extends Object?>({
     required TResult Function() splash,
     required TResult Function() loginOrRegistermentScreen,
-    required TResult Function() toSignIn,
-    required TResult Function() toSignUp,
+    required TResult Function() signInScreen,
+    required TResult Function() signUpScreen,
+    required TResult Function() chartScreen,
   }) {
-    return toSignUp();
+    return signUpScreen();
   }
 
   @override
@@ -621,10 +739,11 @@ class _$ToSignUp implements ToSignUp {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? splash,
     TResult? Function()? loginOrRegistermentScreen,
-    TResult? Function()? toSignIn,
-    TResult? Function()? toSignUp,
+    TResult? Function()? signInScreen,
+    TResult? Function()? signUpScreen,
+    TResult? Function()? chartScreen,
   }) {
-    return toSignUp?.call();
+    return signUpScreen?.call();
   }
 
   @override
@@ -632,12 +751,13 @@ class _$ToSignUp implements ToSignUp {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? splash,
     TResult Function()? loginOrRegistermentScreen,
-    TResult Function()? toSignIn,
-    TResult Function()? toSignUp,
+    TResult Function()? signInScreen,
+    TResult Function()? signUpScreen,
+    TResult Function()? chartScreen,
     required TResult orElse(),
   }) {
-    if (toSignUp != null) {
-      return toSignUp();
+    if (signUpScreen != null) {
+      return signUpScreen();
     }
     return orElse();
   }
@@ -648,10 +768,11 @@ class _$ToSignUp implements ToSignUp {
     required TResult Function(Splash value) splash,
     required TResult Function(LoginOrRegistermentScreen value)
         loginOrRegistermentScreen,
-    required TResult Function(ToSignIn value) toSignIn,
-    required TResult Function(ToSignUp value) toSignUp,
+    required TResult Function(SignInScreen value) signInScreen,
+    required TResult Function(SignUpScreen value) signUpScreen,
+    required TResult Function(ChartScreen value) chartScreen,
   }) {
-    return toSignUp(this);
+    return signUpScreen(this);
   }
 
   @override
@@ -660,10 +781,11 @@ class _$ToSignUp implements ToSignUp {
     TResult? Function(Splash value)? splash,
     TResult? Function(LoginOrRegistermentScreen value)?
         loginOrRegistermentScreen,
-    TResult? Function(ToSignIn value)? toSignIn,
-    TResult? Function(ToSignUp value)? toSignUp,
+    TResult? Function(SignInScreen value)? signInScreen,
+    TResult? Function(SignUpScreen value)? signUpScreen,
+    TResult? Function(ChartScreen value)? chartScreen,
   }) {
-    return toSignUp?.call(this);
+    return signUpScreen?.call(this);
   }
 
   @override
@@ -672,19 +794,143 @@ class _$ToSignUp implements ToSignUp {
     TResult Function(Splash value)? splash,
     TResult Function(LoginOrRegistermentScreen value)?
         loginOrRegistermentScreen,
-    TResult Function(ToSignIn value)? toSignIn,
-    TResult Function(ToSignUp value)? toSignUp,
+    TResult Function(SignInScreen value)? signInScreen,
+    TResult Function(SignUpScreen value)? signUpScreen,
+    TResult Function(ChartScreen value)? chartScreen,
     required TResult orElse(),
   }) {
-    if (toSignUp != null) {
-      return toSignUp(this);
+    if (signUpScreen != null) {
+      return signUpScreen(this);
     }
     return orElse();
   }
 }
 
-abstract class ToSignUp implements SplashScreenFlow {
-  const factory ToSignUp() = _$ToSignUp;
+abstract class SignUpScreen implements SplashScreenFlow {
+  const factory SignUpScreen() = _$SignUpScreen;
+}
+
+/// @nodoc
+abstract class _$$ChartScreenCopyWith<$Res> {
+  factory _$$ChartScreenCopyWith(
+          _$ChartScreen value, $Res Function(_$ChartScreen) then) =
+      __$$ChartScreenCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ChartScreenCopyWithImpl<$Res>
+    extends _$SplashScreenFlowCopyWithImpl<$Res, _$ChartScreen>
+    implements _$$ChartScreenCopyWith<$Res> {
+  __$$ChartScreenCopyWithImpl(
+      _$ChartScreen _value, $Res Function(_$ChartScreen) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ChartScreen implements ChartScreen {
+  const _$ChartScreen();
+
+  @override
+  String toString() {
+    return 'SplashScreenFlow.chartScreen()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ChartScreen);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() splash,
+    required TResult Function() loginOrRegistermentScreen,
+    required TResult Function() signInScreen,
+    required TResult Function() signUpScreen,
+    required TResult Function() chartScreen,
+  }) {
+    return chartScreen();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? splash,
+    TResult? Function()? loginOrRegistermentScreen,
+    TResult? Function()? signInScreen,
+    TResult? Function()? signUpScreen,
+    TResult? Function()? chartScreen,
+  }) {
+    return chartScreen?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? splash,
+    TResult Function()? loginOrRegistermentScreen,
+    TResult Function()? signInScreen,
+    TResult Function()? signUpScreen,
+    TResult Function()? chartScreen,
+    required TResult orElse(),
+  }) {
+    if (chartScreen != null) {
+      return chartScreen();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Splash value) splash,
+    required TResult Function(LoginOrRegistermentScreen value)
+        loginOrRegistermentScreen,
+    required TResult Function(SignInScreen value) signInScreen,
+    required TResult Function(SignUpScreen value) signUpScreen,
+    required TResult Function(ChartScreen value) chartScreen,
+  }) {
+    return chartScreen(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Splash value)? splash,
+    TResult? Function(LoginOrRegistermentScreen value)?
+        loginOrRegistermentScreen,
+    TResult? Function(SignInScreen value)? signInScreen,
+    TResult? Function(SignUpScreen value)? signUpScreen,
+    TResult? Function(ChartScreen value)? chartScreen,
+  }) {
+    return chartScreen?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Splash value)? splash,
+    TResult Function(LoginOrRegistermentScreen value)?
+        loginOrRegistermentScreen,
+    TResult Function(SignInScreen value)? signInScreen,
+    TResult Function(SignUpScreen value)? signUpScreen,
+    TResult Function(ChartScreen value)? chartScreen,
+    required TResult orElse(),
+  }) {
+    if (chartScreen != null) {
+      return chartScreen(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChartScreen implements SplashScreenFlow {
+  const factory ChartScreen() = _$ChartScreen;
 }
 
 /// @nodoc
@@ -695,6 +941,8 @@ mixin _$SplashScreenEvent {
     required TResult Function() backToInitialScreen,
     required TResult Function() signIn,
     required TResult Function() signUp,
+    required TResult Function(List<String> data) storeGraphData,
+    required TResult Function(List<List<dynamic>> data) goToChartsScreen,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -703,6 +951,8 @@ mixin _$SplashScreenEvent {
     TResult? Function()? backToInitialScreen,
     TResult? Function()? signIn,
     TResult? Function()? signUp,
+    TResult? Function(List<String> data)? storeGraphData,
+    TResult? Function(List<List<dynamic>> data)? goToChartsScreen,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -711,6 +961,8 @@ mixin _$SplashScreenEvent {
     TResult Function()? backToInitialScreen,
     TResult Function()? signIn,
     TResult Function()? signUp,
+    TResult Function(List<String> data)? storeGraphData,
+    TResult Function(List<List<dynamic>> data)? goToChartsScreen,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -721,6 +973,8 @@ mixin _$SplashScreenEvent {
     required TResult Function(BackToInitialScreen value) backToInitialScreen,
     required TResult Function(SignIn value) signIn,
     required TResult Function(SignUp value) signUp,
+    required TResult Function(StoreGraphData value) storeGraphData,
+    required TResult Function(GoToChartsScreen value) goToChartsScreen,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -730,6 +984,8 @@ mixin _$SplashScreenEvent {
     TResult? Function(BackToInitialScreen value)? backToInitialScreen,
     TResult? Function(SignIn value)? signIn,
     TResult? Function(SignUp value)? signUp,
+    TResult? Function(StoreGraphData value)? storeGraphData,
+    TResult? Function(GoToChartsScreen value)? goToChartsScreen,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -739,6 +995,8 @@ mixin _$SplashScreenEvent {
     TResult Function(BackToInitialScreen value)? backToInitialScreen,
     TResult Function(SignIn value)? signIn,
     TResult Function(SignUp value)? signUp,
+    TResult Function(StoreGraphData value)? storeGraphData,
+    TResult Function(GoToChartsScreen value)? goToChartsScreen,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -807,6 +1065,8 @@ class _$ToLoginOrRegistermentScreen implements ToLoginOrRegistermentScreen {
     required TResult Function() backToInitialScreen,
     required TResult Function() signIn,
     required TResult Function() signUp,
+    required TResult Function(List<String> data) storeGraphData,
+    required TResult Function(List<List<dynamic>> data) goToChartsScreen,
   }) {
     return toLoginOrRegistermentScreen();
   }
@@ -818,6 +1078,8 @@ class _$ToLoginOrRegistermentScreen implements ToLoginOrRegistermentScreen {
     TResult? Function()? backToInitialScreen,
     TResult? Function()? signIn,
     TResult? Function()? signUp,
+    TResult? Function(List<String> data)? storeGraphData,
+    TResult? Function(List<List<dynamic>> data)? goToChartsScreen,
   }) {
     return toLoginOrRegistermentScreen?.call();
   }
@@ -829,6 +1091,8 @@ class _$ToLoginOrRegistermentScreen implements ToLoginOrRegistermentScreen {
     TResult Function()? backToInitialScreen,
     TResult Function()? signIn,
     TResult Function()? signUp,
+    TResult Function(List<String> data)? storeGraphData,
+    TResult Function(List<List<dynamic>> data)? goToChartsScreen,
     required TResult orElse(),
   }) {
     if (toLoginOrRegistermentScreen != null) {
@@ -845,6 +1109,8 @@ class _$ToLoginOrRegistermentScreen implements ToLoginOrRegistermentScreen {
     required TResult Function(BackToInitialScreen value) backToInitialScreen,
     required TResult Function(SignIn value) signIn,
     required TResult Function(SignUp value) signUp,
+    required TResult Function(StoreGraphData value) storeGraphData,
+    required TResult Function(GoToChartsScreen value) goToChartsScreen,
   }) {
     return toLoginOrRegistermentScreen(this);
   }
@@ -857,6 +1123,8 @@ class _$ToLoginOrRegistermentScreen implements ToLoginOrRegistermentScreen {
     TResult? Function(BackToInitialScreen value)? backToInitialScreen,
     TResult? Function(SignIn value)? signIn,
     TResult? Function(SignUp value)? signUp,
+    TResult? Function(StoreGraphData value)? storeGraphData,
+    TResult? Function(GoToChartsScreen value)? goToChartsScreen,
   }) {
     return toLoginOrRegistermentScreen?.call(this);
   }
@@ -869,6 +1137,8 @@ class _$ToLoginOrRegistermentScreen implements ToLoginOrRegistermentScreen {
     TResult Function(BackToInitialScreen value)? backToInitialScreen,
     TResult Function(SignIn value)? signIn,
     TResult Function(SignUp value)? signUp,
+    TResult Function(StoreGraphData value)? storeGraphData,
+    TResult Function(GoToChartsScreen value)? goToChartsScreen,
     required TResult orElse(),
   }) {
     if (toLoginOrRegistermentScreen != null) {
@@ -924,6 +1194,8 @@ class _$BackToInitialScreen implements BackToInitialScreen {
     required TResult Function() backToInitialScreen,
     required TResult Function() signIn,
     required TResult Function() signUp,
+    required TResult Function(List<String> data) storeGraphData,
+    required TResult Function(List<List<dynamic>> data) goToChartsScreen,
   }) {
     return backToInitialScreen();
   }
@@ -935,6 +1207,8 @@ class _$BackToInitialScreen implements BackToInitialScreen {
     TResult? Function()? backToInitialScreen,
     TResult? Function()? signIn,
     TResult? Function()? signUp,
+    TResult? Function(List<String> data)? storeGraphData,
+    TResult? Function(List<List<dynamic>> data)? goToChartsScreen,
   }) {
     return backToInitialScreen?.call();
   }
@@ -946,6 +1220,8 @@ class _$BackToInitialScreen implements BackToInitialScreen {
     TResult Function()? backToInitialScreen,
     TResult Function()? signIn,
     TResult Function()? signUp,
+    TResult Function(List<String> data)? storeGraphData,
+    TResult Function(List<List<dynamic>> data)? goToChartsScreen,
     required TResult orElse(),
   }) {
     if (backToInitialScreen != null) {
@@ -962,6 +1238,8 @@ class _$BackToInitialScreen implements BackToInitialScreen {
     required TResult Function(BackToInitialScreen value) backToInitialScreen,
     required TResult Function(SignIn value) signIn,
     required TResult Function(SignUp value) signUp,
+    required TResult Function(StoreGraphData value) storeGraphData,
+    required TResult Function(GoToChartsScreen value) goToChartsScreen,
   }) {
     return backToInitialScreen(this);
   }
@@ -974,6 +1252,8 @@ class _$BackToInitialScreen implements BackToInitialScreen {
     TResult? Function(BackToInitialScreen value)? backToInitialScreen,
     TResult? Function(SignIn value)? signIn,
     TResult? Function(SignUp value)? signUp,
+    TResult? Function(StoreGraphData value)? storeGraphData,
+    TResult? Function(GoToChartsScreen value)? goToChartsScreen,
   }) {
     return backToInitialScreen?.call(this);
   }
@@ -986,6 +1266,8 @@ class _$BackToInitialScreen implements BackToInitialScreen {
     TResult Function(BackToInitialScreen value)? backToInitialScreen,
     TResult Function(SignIn value)? signIn,
     TResult Function(SignUp value)? signUp,
+    TResult Function(StoreGraphData value)? storeGraphData,
+    TResult Function(GoToChartsScreen value)? goToChartsScreen,
     required TResult orElse(),
   }) {
     if (backToInitialScreen != null) {
@@ -1039,6 +1321,8 @@ class _$SignIn implements SignIn {
     required TResult Function() backToInitialScreen,
     required TResult Function() signIn,
     required TResult Function() signUp,
+    required TResult Function(List<String> data) storeGraphData,
+    required TResult Function(List<List<dynamic>> data) goToChartsScreen,
   }) {
     return signIn();
   }
@@ -1050,6 +1334,8 @@ class _$SignIn implements SignIn {
     TResult? Function()? backToInitialScreen,
     TResult? Function()? signIn,
     TResult? Function()? signUp,
+    TResult? Function(List<String> data)? storeGraphData,
+    TResult? Function(List<List<dynamic>> data)? goToChartsScreen,
   }) {
     return signIn?.call();
   }
@@ -1061,6 +1347,8 @@ class _$SignIn implements SignIn {
     TResult Function()? backToInitialScreen,
     TResult Function()? signIn,
     TResult Function()? signUp,
+    TResult Function(List<String> data)? storeGraphData,
+    TResult Function(List<List<dynamic>> data)? goToChartsScreen,
     required TResult orElse(),
   }) {
     if (signIn != null) {
@@ -1077,6 +1365,8 @@ class _$SignIn implements SignIn {
     required TResult Function(BackToInitialScreen value) backToInitialScreen,
     required TResult Function(SignIn value) signIn,
     required TResult Function(SignUp value) signUp,
+    required TResult Function(StoreGraphData value) storeGraphData,
+    required TResult Function(GoToChartsScreen value) goToChartsScreen,
   }) {
     return signIn(this);
   }
@@ -1089,6 +1379,8 @@ class _$SignIn implements SignIn {
     TResult? Function(BackToInitialScreen value)? backToInitialScreen,
     TResult? Function(SignIn value)? signIn,
     TResult? Function(SignUp value)? signUp,
+    TResult? Function(StoreGraphData value)? storeGraphData,
+    TResult? Function(GoToChartsScreen value)? goToChartsScreen,
   }) {
     return signIn?.call(this);
   }
@@ -1101,6 +1393,8 @@ class _$SignIn implements SignIn {
     TResult Function(BackToInitialScreen value)? backToInitialScreen,
     TResult Function(SignIn value)? signIn,
     TResult Function(SignUp value)? signUp,
+    TResult Function(StoreGraphData value)? storeGraphData,
+    TResult Function(GoToChartsScreen value)? goToChartsScreen,
     required TResult orElse(),
   }) {
     if (signIn != null) {
@@ -1154,6 +1448,8 @@ class _$SignUp implements SignUp {
     required TResult Function() backToInitialScreen,
     required TResult Function() signIn,
     required TResult Function() signUp,
+    required TResult Function(List<String> data) storeGraphData,
+    required TResult Function(List<List<dynamic>> data) goToChartsScreen,
   }) {
     return signUp();
   }
@@ -1165,6 +1461,8 @@ class _$SignUp implements SignUp {
     TResult? Function()? backToInitialScreen,
     TResult? Function()? signIn,
     TResult? Function()? signUp,
+    TResult? Function(List<String> data)? storeGraphData,
+    TResult? Function(List<List<dynamic>> data)? goToChartsScreen,
   }) {
     return signUp?.call();
   }
@@ -1176,6 +1474,8 @@ class _$SignUp implements SignUp {
     TResult Function()? backToInitialScreen,
     TResult Function()? signIn,
     TResult Function()? signUp,
+    TResult Function(List<String> data)? storeGraphData,
+    TResult Function(List<List<dynamic>> data)? goToChartsScreen,
     required TResult orElse(),
   }) {
     if (signUp != null) {
@@ -1192,6 +1492,8 @@ class _$SignUp implements SignUp {
     required TResult Function(BackToInitialScreen value) backToInitialScreen,
     required TResult Function(SignIn value) signIn,
     required TResult Function(SignUp value) signUp,
+    required TResult Function(StoreGraphData value) storeGraphData,
+    required TResult Function(GoToChartsScreen value) goToChartsScreen,
   }) {
     return signUp(this);
   }
@@ -1204,6 +1506,8 @@ class _$SignUp implements SignUp {
     TResult? Function(BackToInitialScreen value)? backToInitialScreen,
     TResult? Function(SignIn value)? signIn,
     TResult? Function(SignUp value)? signUp,
+    TResult? Function(StoreGraphData value)? storeGraphData,
+    TResult? Function(GoToChartsScreen value)? goToChartsScreen,
   }) {
     return signUp?.call(this);
   }
@@ -1216,6 +1520,8 @@ class _$SignUp implements SignUp {
     TResult Function(BackToInitialScreen value)? backToInitialScreen,
     TResult Function(SignIn value)? signIn,
     TResult Function(SignUp value)? signUp,
+    TResult Function(StoreGraphData value)? storeGraphData,
+    TResult Function(GoToChartsScreen value)? goToChartsScreen,
     required TResult orElse(),
   }) {
     if (signUp != null) {
@@ -1227,4 +1533,339 @@ class _$SignUp implements SignUp {
 
 abstract class SignUp implements SplashScreenEvent {
   const factory SignUp() = _$SignUp;
+}
+
+/// @nodoc
+abstract class _$$StoreGraphDataCopyWith<$Res> {
+  factory _$$StoreGraphDataCopyWith(
+          _$StoreGraphData value, $Res Function(_$StoreGraphData) then) =
+      __$$StoreGraphDataCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<String> data});
+}
+
+/// @nodoc
+class __$$StoreGraphDataCopyWithImpl<$Res>
+    extends _$SplashScreenEventCopyWithImpl<$Res, _$StoreGraphData>
+    implements _$$StoreGraphDataCopyWith<$Res> {
+  __$$StoreGraphDataCopyWithImpl(
+      _$StoreGraphData _value, $Res Function(_$StoreGraphData) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$StoreGraphData(
+      data: null == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$StoreGraphData implements StoreGraphData {
+  const _$StoreGraphData({required final List<String> data}) : _data = data;
+
+  final List<String> _data;
+  @override
+  List<String> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
+
+  @override
+  String toString() {
+    return 'SplashScreenEvent.storeGraphData(data: $data)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$StoreGraphData &&
+            const DeepCollectionEquality().equals(other._data, _data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$StoreGraphDataCopyWith<_$StoreGraphData> get copyWith =>
+      __$$StoreGraphDataCopyWithImpl<_$StoreGraphData>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() toLoginOrRegistermentScreen,
+    required TResult Function() backToInitialScreen,
+    required TResult Function() signIn,
+    required TResult Function() signUp,
+    required TResult Function(List<String> data) storeGraphData,
+    required TResult Function(List<List<dynamic>> data) goToChartsScreen,
+  }) {
+    return storeGraphData(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? toLoginOrRegistermentScreen,
+    TResult? Function()? backToInitialScreen,
+    TResult? Function()? signIn,
+    TResult? Function()? signUp,
+    TResult? Function(List<String> data)? storeGraphData,
+    TResult? Function(List<List<dynamic>> data)? goToChartsScreen,
+  }) {
+    return storeGraphData?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? toLoginOrRegistermentScreen,
+    TResult Function()? backToInitialScreen,
+    TResult Function()? signIn,
+    TResult Function()? signUp,
+    TResult Function(List<String> data)? storeGraphData,
+    TResult Function(List<List<dynamic>> data)? goToChartsScreen,
+    required TResult orElse(),
+  }) {
+    if (storeGraphData != null) {
+      return storeGraphData(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ToLoginOrRegistermentScreen value)
+        toLoginOrRegistermentScreen,
+    required TResult Function(BackToInitialScreen value) backToInitialScreen,
+    required TResult Function(SignIn value) signIn,
+    required TResult Function(SignUp value) signUp,
+    required TResult Function(StoreGraphData value) storeGraphData,
+    required TResult Function(GoToChartsScreen value) goToChartsScreen,
+  }) {
+    return storeGraphData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ToLoginOrRegistermentScreen value)?
+        toLoginOrRegistermentScreen,
+    TResult? Function(BackToInitialScreen value)? backToInitialScreen,
+    TResult? Function(SignIn value)? signIn,
+    TResult? Function(SignUp value)? signUp,
+    TResult? Function(StoreGraphData value)? storeGraphData,
+    TResult? Function(GoToChartsScreen value)? goToChartsScreen,
+  }) {
+    return storeGraphData?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ToLoginOrRegistermentScreen value)?
+        toLoginOrRegistermentScreen,
+    TResult Function(BackToInitialScreen value)? backToInitialScreen,
+    TResult Function(SignIn value)? signIn,
+    TResult Function(SignUp value)? signUp,
+    TResult Function(StoreGraphData value)? storeGraphData,
+    TResult Function(GoToChartsScreen value)? goToChartsScreen,
+    required TResult orElse(),
+  }) {
+    if (storeGraphData != null) {
+      return storeGraphData(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class StoreGraphData implements SplashScreenEvent {
+  const factory StoreGraphData({required final List<String> data}) =
+      _$StoreGraphData;
+
+  List<String> get data;
+  @JsonKey(ignore: true)
+  _$$StoreGraphDataCopyWith<_$StoreGraphData> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GoToChartsScreenCopyWith<$Res> {
+  factory _$$GoToChartsScreenCopyWith(
+          _$GoToChartsScreen value, $Res Function(_$GoToChartsScreen) then) =
+      __$$GoToChartsScreenCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<List<dynamic>> data});
+}
+
+/// @nodoc
+class __$$GoToChartsScreenCopyWithImpl<$Res>
+    extends _$SplashScreenEventCopyWithImpl<$Res, _$GoToChartsScreen>
+    implements _$$GoToChartsScreenCopyWith<$Res> {
+  __$$GoToChartsScreenCopyWithImpl(
+      _$GoToChartsScreen _value, $Res Function(_$GoToChartsScreen) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$GoToChartsScreen(
+      data: null == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<List<dynamic>>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GoToChartsScreen implements GoToChartsScreen {
+  const _$GoToChartsScreen({required final List<List<dynamic>> data})
+      : _data = data;
+
+  final List<List<dynamic>> _data;
+  @override
+  List<List<dynamic>> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
+
+  @override
+  String toString() {
+    return 'SplashScreenEvent.goToChartsScreen(data: $data)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GoToChartsScreen &&
+            const DeepCollectionEquality().equals(other._data, _data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GoToChartsScreenCopyWith<_$GoToChartsScreen> get copyWith =>
+      __$$GoToChartsScreenCopyWithImpl<_$GoToChartsScreen>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() toLoginOrRegistermentScreen,
+    required TResult Function() backToInitialScreen,
+    required TResult Function() signIn,
+    required TResult Function() signUp,
+    required TResult Function(List<String> data) storeGraphData,
+    required TResult Function(List<List<dynamic>> data) goToChartsScreen,
+  }) {
+    return goToChartsScreen(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? toLoginOrRegistermentScreen,
+    TResult? Function()? backToInitialScreen,
+    TResult? Function()? signIn,
+    TResult? Function()? signUp,
+    TResult? Function(List<String> data)? storeGraphData,
+    TResult? Function(List<List<dynamic>> data)? goToChartsScreen,
+  }) {
+    return goToChartsScreen?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? toLoginOrRegistermentScreen,
+    TResult Function()? backToInitialScreen,
+    TResult Function()? signIn,
+    TResult Function()? signUp,
+    TResult Function(List<String> data)? storeGraphData,
+    TResult Function(List<List<dynamic>> data)? goToChartsScreen,
+    required TResult orElse(),
+  }) {
+    if (goToChartsScreen != null) {
+      return goToChartsScreen(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ToLoginOrRegistermentScreen value)
+        toLoginOrRegistermentScreen,
+    required TResult Function(BackToInitialScreen value) backToInitialScreen,
+    required TResult Function(SignIn value) signIn,
+    required TResult Function(SignUp value) signUp,
+    required TResult Function(StoreGraphData value) storeGraphData,
+    required TResult Function(GoToChartsScreen value) goToChartsScreen,
+  }) {
+    return goToChartsScreen(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ToLoginOrRegistermentScreen value)?
+        toLoginOrRegistermentScreen,
+    TResult? Function(BackToInitialScreen value)? backToInitialScreen,
+    TResult? Function(SignIn value)? signIn,
+    TResult? Function(SignUp value)? signUp,
+    TResult? Function(StoreGraphData value)? storeGraphData,
+    TResult? Function(GoToChartsScreen value)? goToChartsScreen,
+  }) {
+    return goToChartsScreen?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ToLoginOrRegistermentScreen value)?
+        toLoginOrRegistermentScreen,
+    TResult Function(BackToInitialScreen value)? backToInitialScreen,
+    TResult Function(SignIn value)? signIn,
+    TResult Function(SignUp value)? signUp,
+    TResult Function(StoreGraphData value)? storeGraphData,
+    TResult Function(GoToChartsScreen value)? goToChartsScreen,
+    required TResult orElse(),
+  }) {
+    if (goToChartsScreen != null) {
+      return goToChartsScreen(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GoToChartsScreen implements SplashScreenEvent {
+  const factory GoToChartsScreen({required final List<List<dynamic>> data}) =
+      _$GoToChartsScreen;
+
+  List<List<dynamic>> get data;
+  @JsonKey(ignore: true)
+  _$$GoToChartsScreenCopyWith<_$GoToChartsScreen> get copyWith =>
+      throw _privateConstructorUsedError;
 }
