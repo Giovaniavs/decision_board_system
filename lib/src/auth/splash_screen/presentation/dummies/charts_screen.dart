@@ -486,53 +486,56 @@ class PieChart2State extends State {
                 ),
               ),
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const <Widget>[
-                Indicator(
-                  color: AppColors.contentColorBlue,
-                  text: 'Respondido: 230',
-                  isSquare: true,
-                ),
-                SizedBox(
-                  height: 4,
-                ),
-                Indicator(
-                  color: AppColors.contentColorYellow,
-                  text: 'Não respondido: 100',
-                  isSquare: true,
-                ),
-                SizedBox(
-                  height: 4,
-                ),
-                Indicator(
-                  color: AppColors.contentColorPurple,
-                  text: 'Em réplica: 120',
-                  isSquare: true,
-                ),
-                SizedBox(
-                  height: 4,
-                ),
-                Indicator(
-                  color: AppColors.contentColorGreen,
-                  text: 'Resolvido: 80',
-                  isSquare: true,
-                ),
-                SizedBox(
-                  height: 18,
-                ),
-                Indicator(
-                  color: Color.fromARGB(255, 0, 0, 0),
-                  text: 'Total: 530',
-                  isSquare: true,
-                ),
-              ],
-            ),
             const SizedBox(
               width: 28,
             ),
           ],
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 10),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const <Widget>[
+              Indicator(
+                color: AppColors.contentColorBlue,
+                text: 'Respondido: 230',
+                isSquare: true,
+              ),
+              SizedBox(
+                height: 4,
+              ),
+              Indicator(
+                color: AppColors.contentColorYellow,
+                text: 'Não respondido: 100',
+                isSquare: true,
+              ),
+              SizedBox(
+                height: 4,
+              ),
+              Indicator(
+                color: AppColors.contentColorPurple,
+                text: 'Em réplica: 120',
+                isSquare: true,
+              ),
+              SizedBox(
+                height: 4,
+              ),
+              Indicator(
+                color: AppColors.contentColorGreen,
+                text: 'Resolvido: 80',
+                isSquare: true,
+              ),
+              SizedBox(
+                height: 18,
+              ),
+              Indicator(
+                color: Color.fromARGB(255, 0, 0, 0),
+                text: 'Total: 530',
+                isSquare: true,
+              ),
+            ],
+          ),
         ),
       ],
     );
