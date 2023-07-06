@@ -4,10 +4,16 @@ part of 'splash_screen_usecase.dart';
 class SplashScreenState with _$SplashScreenState {
   const factory SplashScreenState({
     required SplashScreenFlow flow,
+    required List<String> listLocations,
+    required List<String> listDates,
+    required List<String> listStatus,
   }) = _SplashScreenState;
 
   factory SplashScreenState.initial() => const SplashScreenState(
         flow: Splash(),
+        listDates: [],
+        listLocations: [],
+        listStatus: [],
       );
 }
 
@@ -16,6 +22,7 @@ class SplashScreenFlow with _$SplashScreenFlow {
   const factory SplashScreenFlow.splash() = Splash;
   const factory SplashScreenFlow.loginOrRegistermentScreen() =
       LoginOrRegistermentScreen;
-  const factory SplashScreenFlow.toSignIn() = ToSignIn;
-  const factory SplashScreenFlow.toSignUp() = ToSignUp;
+  const factory SplashScreenFlow.signInScreen() = SignInScreen;
+  const factory SplashScreenFlow.signUpScreen() = SignUpScreen;
+  const factory SplashScreenFlow.chartScreen() = ChartScreen;
 }

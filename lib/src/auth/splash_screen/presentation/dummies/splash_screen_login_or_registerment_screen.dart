@@ -157,7 +157,7 @@ class _SplashScreenLoginOrRegistermentScreenState
                       BlueLongButton(
                         buttonText: 'Faça o login',
                         onPressed: () {
-                          widget._splashScrenUseCase.add(const SignUp());
+                          widget._splashScrenUseCase.add(const SignIn());
                         },
                       ),
                       const SizedBox(
@@ -166,7 +166,7 @@ class _SplashScreenLoginOrRegistermentScreenState
                       WhiteLongButton(
                         buttonText: 'Faça o cadastro',
                         onPressed: () {
-                          widget._splashScrenUseCase.add(const SignIn());
+                          widget._splashScrenUseCase.add(const SignUp());
                         },
                       ),
                     ],
