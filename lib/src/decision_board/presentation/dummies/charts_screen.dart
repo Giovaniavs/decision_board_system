@@ -1,14 +1,14 @@
+import 'package:decision_board_system/src/decision_board/domain/decision_board_usecase.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:openredu_mobile_flutter/src/shared/design_system/tokens/color_tokens.dart';
-import 'package:openredu_mobile_flutter/src/splash_screen/domain/splash_screen_usecase.dart';
+import 'package:decision_board_system/src/shared/design_system/tokens/color_tokens.dart';
 
 class ChartsScreen extends StatelessWidget {
-  final SplashScreenUseCase _splashScreenUseCase;
+  final DecisionBoardUseCase _decisionBoardUseCase;
 
   const ChartsScreen(
-      {super.key, required SplashScreenUseCase splashScreenUseCase})
-      : _splashScreenUseCase = splashScreenUseCase;
+      {super.key, required DecisionBoardUseCase decisionBoardUseCase})
+      : _decisionBoardUseCase = decisionBoardUseCase;
 
   @override
   Widget build(BuildContext context) {
@@ -24,21 +24,21 @@ class ChartsScreen extends StatelessWidget {
     int octoberIncidentsStatus = 0;
     int decemberIncidentsStatus = 0;
 
-    for (var element in _splashScreenUseCase.state.listDates) {
+    for (var element in _decisionBoardUseCase.state.listDates) {
       if (element.contains('2022-09')) {
         setemberIncidents.add(element);
 
-        int index = _splashScreenUseCase.state.listDates.indexOf(element);
+        int index = _decisionBoardUseCase.state.listDates.indexOf(element);
 
-        if (_splashScreenUseCase.state.listStatus[index] == "Respondida") {
+        if (_decisionBoardUseCase.state.listStatus[index] == "Respondida") {
           setemberIncidentsStatusAswered++;
-        } else if (_splashScreenUseCase.state.listStatus[index] ==
+        } else if (_decisionBoardUseCase.state.listStatus[index] ==
             "Não resolvido") {
           setemberIncidentsStatusNonAnswered++;
-        } else if (_splashScreenUseCase.state.listStatus[index] ==
+        } else if (_decisionBoardUseCase.state.listStatus[index] ==
             "Em réplica") {
           setemberIncidentsStatusInReply++;
-        } else if (_splashScreenUseCase.state.listStatus[index] ==
+        } else if (_decisionBoardUseCase.state.listStatus[index] ==
             "Resolvido") {
           setemberIncidentsStatusSolved++;
         }

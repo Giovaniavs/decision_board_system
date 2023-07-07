@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:openredu_mobile_flutter/src/shared/data/errors/app_error.dart';
-import 'package:openredu_mobile_flutter/src/shared/data/models/user_credentials_model.dart';
+import 'package:decision_board_system/src/shared/data/errors/app_error.dart';
+import 'package:decision_board_system/src/shared/data/models/user_credentials_model.dart';
 
 part 'user_credentials_entity.freezed.dart';
 part 'user_credentials_entity.g.dart';

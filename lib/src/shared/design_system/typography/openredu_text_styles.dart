@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:openredu_mobile_flutter/src/shared/design_system/tokens/typography_tokens.dart';
+import 'package:decision_board_system/src/shared/design_system/tokens/typography_tokens.dart';
 
 @immutable
 class OpenReduTextStyles {

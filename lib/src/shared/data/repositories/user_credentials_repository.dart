@@ -1,9 +1,9 @@
 // ignore_for_file: avoid_print
-import 'package:openredu_mobile_flutter/src/shared/data/errors/app_error.dart';
-import 'package:openredu_mobile_flutter/src/shared/data/models/user_credentials_model.dart';
-import 'package:openredu_mobile_flutter/src/shared/data/repositories/storage_repository.dart';
-import 'package:openredu_mobile_flutter/src/shared/data/types/maybe.dart';
-import 'package:openredu_mobile_flutter/src/shared/data/types/result.dart';
+import 'package:decision_board_system/src/shared/data/errors/app_error.dart';
+import 'package:decision_board_system/src/shared/data/models/user_credentials_model.dart';
+import 'package:decision_board_system/src/shared/data/repositories/storage_repository.dart';
+import 'package:decision_board_system/src/shared/data/types/maybe.dart';
+import 'package:decision_board_system/src/shared/data/types/result.dart';
 
 class UserCredentialsRepository {
   final StorageRepository _storage;

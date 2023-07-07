@@ -1,7 +1,7 @@
+import 'package:decision_board_system/src/decision_board/domain/decision_board_usecase.dart';
 import 'package:flutter/material.dart';
-import 'package:openredu_mobile_flutter/src/app.dart';
-import 'package:openredu_mobile_flutter/src/dependency_injection.dart';
-import 'package:openredu_mobile_flutter/src/splash_screen/domain/splash_screen_usecase.dart';
+import 'package:decision_board_system/src/app.dart';
+import 'package:decision_board_system/src/dependency_injection.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -9,7 +9,7 @@ Future<void> main() async {
 
   runApp(
     OpenReduMobile(
-      splashScreenUseCase: di<SplashScreenUseCase>(),
+      decisionBoardUseCase: di<DecisionBoardUseCase>(),
     ),
   );
 }

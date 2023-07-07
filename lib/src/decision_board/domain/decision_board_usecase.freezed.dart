@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'splash_screen_usecase.dart';
+part of 'decision_board_usecase.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,36 +15,36 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$SplashScreenState {
-  SplashScreenFlow get flow => throw _privateConstructorUsedError;
+mixin _$DecisionBoardState {
+  DecisionBoardFlow get flow => throw _privateConstructorUsedError;
   List<String> get listLocations => throw _privateConstructorUsedError;
   List<String> get listDates => throw _privateConstructorUsedError;
   List<String> get listStatus => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SplashScreenStateCopyWith<SplashScreenState> get copyWith =>
+  $DecisionBoardStateCopyWith<DecisionBoardState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SplashScreenStateCopyWith<$Res> {
-  factory $SplashScreenStateCopyWith(
-          SplashScreenState value, $Res Function(SplashScreenState) then) =
-      _$SplashScreenStateCopyWithImpl<$Res, SplashScreenState>;
+abstract class $DecisionBoardStateCopyWith<$Res> {
+  factory $DecisionBoardStateCopyWith(
+          DecisionBoardState value, $Res Function(DecisionBoardState) then) =
+      _$DecisionBoardStateCopyWithImpl<$Res, DecisionBoardState>;
   @useResult
   $Res call(
-      {SplashScreenFlow flow,
+      {DecisionBoardFlow flow,
       List<String> listLocations,
       List<String> listDates,
       List<String> listStatus});
 
-  $SplashScreenFlowCopyWith<$Res> get flow;
+  $DecisionBoardFlowCopyWith<$Res> get flow;
 }
 
 /// @nodoc
-class _$SplashScreenStateCopyWithImpl<$Res, $Val extends SplashScreenState>
-    implements $SplashScreenStateCopyWith<$Res> {
-  _$SplashScreenStateCopyWithImpl(this._value, this._then);
+class _$DecisionBoardStateCopyWithImpl<$Res, $Val extends DecisionBoardState>
+    implements $DecisionBoardStateCopyWith<$Res> {
+  _$DecisionBoardStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -63,7 +63,7 @@ class _$SplashScreenStateCopyWithImpl<$Res, $Val extends SplashScreenState>
       flow: null == flow
           ? _value.flow
           : flow // ignore: cast_nullable_to_non_nullable
-              as SplashScreenFlow,
+              as DecisionBoardFlow,
       listLocations: null == listLocations
           ? _value.listLocations
           : listLocations // ignore: cast_nullable_to_non_nullable
@@ -81,37 +81,37 @@ class _$SplashScreenStateCopyWithImpl<$Res, $Val extends SplashScreenState>
 
   @override
   @pragma('vm:prefer-inline')
-  $SplashScreenFlowCopyWith<$Res> get flow {
-    return $SplashScreenFlowCopyWith<$Res>(_value.flow, (value) {
+  $DecisionBoardFlowCopyWith<$Res> get flow {
+    return $DecisionBoardFlowCopyWith<$Res>(_value.flow, (value) {
       return _then(_value.copyWith(flow: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$_SplashScreenStateCopyWith<$Res>
-    implements $SplashScreenStateCopyWith<$Res> {
-  factory _$$_SplashScreenStateCopyWith(_$_SplashScreenState value,
-          $Res Function(_$_SplashScreenState) then) =
-      __$$_SplashScreenStateCopyWithImpl<$Res>;
+abstract class _$$_DecisionBoardStateCopyWith<$Res>
+    implements $DecisionBoardStateCopyWith<$Res> {
+  factory _$$_DecisionBoardStateCopyWith(_$_DecisionBoardState value,
+          $Res Function(_$_DecisionBoardState) then) =
+      __$$_DecisionBoardStateCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {SplashScreenFlow flow,
+      {DecisionBoardFlow flow,
       List<String> listLocations,
       List<String> listDates,
       List<String> listStatus});
 
   @override
-  $SplashScreenFlowCopyWith<$Res> get flow;
+  $DecisionBoardFlowCopyWith<$Res> get flow;
 }
 
 /// @nodoc
-class __$$_SplashScreenStateCopyWithImpl<$Res>
-    extends _$SplashScreenStateCopyWithImpl<$Res, _$_SplashScreenState>
-    implements _$$_SplashScreenStateCopyWith<$Res> {
-  __$$_SplashScreenStateCopyWithImpl(
-      _$_SplashScreenState _value, $Res Function(_$_SplashScreenState) _then)
+class __$$_DecisionBoardStateCopyWithImpl<$Res>
+    extends _$DecisionBoardStateCopyWithImpl<$Res, _$_DecisionBoardState>
+    implements _$$_DecisionBoardStateCopyWith<$Res> {
+  __$$_DecisionBoardStateCopyWithImpl(
+      _$_DecisionBoardState _value, $Res Function(_$_DecisionBoardState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -122,11 +122,11 @@ class __$$_SplashScreenStateCopyWithImpl<$Res>
     Object? listDates = null,
     Object? listStatus = null,
   }) {
-    return _then(_$_SplashScreenState(
+    return _then(_$_DecisionBoardState(
       flow: null == flow
           ? _value.flow
           : flow // ignore: cast_nullable_to_non_nullable
-              as SplashScreenFlow,
+              as DecisionBoardFlow,
       listLocations: null == listLocations
           ? _value._listLocations
           : listLocations // ignore: cast_nullable_to_non_nullable
@@ -145,8 +145,8 @@ class __$$_SplashScreenStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SplashScreenState implements _SplashScreenState {
-  const _$_SplashScreenState(
+class _$_DecisionBoardState implements _DecisionBoardState {
+  const _$_DecisionBoardState(
       {required this.flow,
       required final List<String> listLocations,
       required final List<String> listDates,
@@ -156,7 +156,7 @@ class _$_SplashScreenState implements _SplashScreenState {
         _listStatus = listStatus;
 
   @override
-  final SplashScreenFlow flow;
+  final DecisionBoardFlow flow;
   final List<String> _listLocations;
   @override
   List<String> get listLocations {
@@ -183,14 +183,14 @@ class _$_SplashScreenState implements _SplashScreenState {
 
   @override
   String toString() {
-    return 'SplashScreenState(flow: $flow, listLocations: $listLocations, listDates: $listDates, listStatus: $listStatus)';
+    return 'DecisionBoardState(flow: $flow, listLocations: $listLocations, listDates: $listDates, listStatus: $listStatus)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SplashScreenState &&
+            other is _$_DecisionBoardState &&
             (identical(other.flow, flow) || other.flow == flow) &&
             const DeepCollectionEquality()
                 .equals(other._listLocations, _listLocations) &&
@@ -211,20 +211,20 @@ class _$_SplashScreenState implements _SplashScreenState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SplashScreenStateCopyWith<_$_SplashScreenState> get copyWith =>
-      __$$_SplashScreenStateCopyWithImpl<_$_SplashScreenState>(
+  _$$_DecisionBoardStateCopyWith<_$_DecisionBoardState> get copyWith =>
+      __$$_DecisionBoardStateCopyWithImpl<_$_DecisionBoardState>(
           this, _$identity);
 }
 
-abstract class _SplashScreenState implements SplashScreenState {
-  const factory _SplashScreenState(
-      {required final SplashScreenFlow flow,
+abstract class _DecisionBoardState implements DecisionBoardState {
+  const factory _DecisionBoardState(
+      {required final DecisionBoardFlow flow,
       required final List<String> listLocations,
       required final List<String> listDates,
-      required final List<String> listStatus}) = _$_SplashScreenState;
+      required final List<String> listStatus}) = _$_DecisionBoardState;
 
   @override
-  SplashScreenFlow get flow;
+  DecisionBoardFlow get flow;
   @override
   List<String> get listLocations;
   @override
@@ -233,12 +233,12 @@ abstract class _SplashScreenState implements SplashScreenState {
   List<String> get listStatus;
   @override
   @JsonKey(ignore: true)
-  _$$_SplashScreenStateCopyWith<_$_SplashScreenState> get copyWith =>
+  _$$_DecisionBoardStateCopyWith<_$_DecisionBoardState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$SplashScreenFlow {
+mixin _$DecisionBoardFlow {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() splash,
@@ -301,16 +301,16 @@ mixin _$SplashScreenFlow {
 }
 
 /// @nodoc
-abstract class $SplashScreenFlowCopyWith<$Res> {
-  factory $SplashScreenFlowCopyWith(
-          SplashScreenFlow value, $Res Function(SplashScreenFlow) then) =
-      _$SplashScreenFlowCopyWithImpl<$Res, SplashScreenFlow>;
+abstract class $DecisionBoardFlowCopyWith<$Res> {
+  factory $DecisionBoardFlowCopyWith(
+          DecisionBoardFlow value, $Res Function(DecisionBoardFlow) then) =
+      _$DecisionBoardFlowCopyWithImpl<$Res, DecisionBoardFlow>;
 }
 
 /// @nodoc
-class _$SplashScreenFlowCopyWithImpl<$Res, $Val extends SplashScreenFlow>
-    implements $SplashScreenFlowCopyWith<$Res> {
-  _$SplashScreenFlowCopyWithImpl(this._value, this._then);
+class _$DecisionBoardFlowCopyWithImpl<$Res, $Val extends DecisionBoardFlow>
+    implements $DecisionBoardFlowCopyWith<$Res> {
+  _$DecisionBoardFlowCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -326,7 +326,7 @@ abstract class _$$SplashCopyWith<$Res> {
 
 /// @nodoc
 class __$$SplashCopyWithImpl<$Res>
-    extends _$SplashScreenFlowCopyWithImpl<$Res, _$Splash>
+    extends _$DecisionBoardFlowCopyWithImpl<$Res, _$Splash>
     implements _$$SplashCopyWith<$Res> {
   __$$SplashCopyWithImpl(_$Splash _value, $Res Function(_$Splash) _then)
       : super(_value, _then);
@@ -339,7 +339,7 @@ class _$Splash implements Splash {
 
   @override
   String toString() {
-    return 'SplashScreenFlow.splash()';
+    return 'DecisionBoardFlow.splash()';
   }
 
   @override
@@ -435,7 +435,7 @@ class _$Splash implements Splash {
   }
 }
 
-abstract class Splash implements SplashScreenFlow {
+abstract class Splash implements DecisionBoardFlow {
   const factory Splash() = _$Splash;
 }
 
@@ -449,7 +449,7 @@ abstract class _$$LoginOrRegistermentScreenCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoginOrRegistermentScreenCopyWithImpl<$Res>
-    extends _$SplashScreenFlowCopyWithImpl<$Res, _$LoginOrRegistermentScreen>
+    extends _$DecisionBoardFlowCopyWithImpl<$Res, _$LoginOrRegistermentScreen>
     implements _$$LoginOrRegistermentScreenCopyWith<$Res> {
   __$$LoginOrRegistermentScreenCopyWithImpl(_$LoginOrRegistermentScreen _value,
       $Res Function(_$LoginOrRegistermentScreen) _then)
@@ -463,7 +463,7 @@ class _$LoginOrRegistermentScreen implements LoginOrRegistermentScreen {
 
   @override
   String toString() {
-    return 'SplashScreenFlow.loginOrRegistermentScreen()';
+    return 'DecisionBoardFlow.loginOrRegistermentScreen()';
   }
 
   @override
@@ -560,7 +560,7 @@ class _$LoginOrRegistermentScreen implements LoginOrRegistermentScreen {
   }
 }
 
-abstract class LoginOrRegistermentScreen implements SplashScreenFlow {
+abstract class LoginOrRegistermentScreen implements DecisionBoardFlow {
   const factory LoginOrRegistermentScreen() = _$LoginOrRegistermentScreen;
 }
 
@@ -573,7 +573,7 @@ abstract class _$$SignInScreenCopyWith<$Res> {
 
 /// @nodoc
 class __$$SignInScreenCopyWithImpl<$Res>
-    extends _$SplashScreenFlowCopyWithImpl<$Res, _$SignInScreen>
+    extends _$DecisionBoardFlowCopyWithImpl<$Res, _$SignInScreen>
     implements _$$SignInScreenCopyWith<$Res> {
   __$$SignInScreenCopyWithImpl(
       _$SignInScreen _value, $Res Function(_$SignInScreen) _then)
@@ -587,7 +587,7 @@ class _$SignInScreen implements SignInScreen {
 
   @override
   String toString() {
-    return 'SplashScreenFlow.signInScreen()';
+    return 'DecisionBoardFlow.signInScreen()';
   }
 
   @override
@@ -683,7 +683,7 @@ class _$SignInScreen implements SignInScreen {
   }
 }
 
-abstract class SignInScreen implements SplashScreenFlow {
+abstract class SignInScreen implements DecisionBoardFlow {
   const factory SignInScreen() = _$SignInScreen;
 }
 
@@ -696,7 +696,7 @@ abstract class _$$SignUpScreenCopyWith<$Res> {
 
 /// @nodoc
 class __$$SignUpScreenCopyWithImpl<$Res>
-    extends _$SplashScreenFlowCopyWithImpl<$Res, _$SignUpScreen>
+    extends _$DecisionBoardFlowCopyWithImpl<$Res, _$SignUpScreen>
     implements _$$SignUpScreenCopyWith<$Res> {
   __$$SignUpScreenCopyWithImpl(
       _$SignUpScreen _value, $Res Function(_$SignUpScreen) _then)
@@ -710,7 +710,7 @@ class _$SignUpScreen implements SignUpScreen {
 
   @override
   String toString() {
-    return 'SplashScreenFlow.signUpScreen()';
+    return 'DecisionBoardFlow.signUpScreen()';
   }
 
   @override
@@ -806,7 +806,7 @@ class _$SignUpScreen implements SignUpScreen {
   }
 }
 
-abstract class SignUpScreen implements SplashScreenFlow {
+abstract class SignUpScreen implements DecisionBoardFlow {
   const factory SignUpScreen() = _$SignUpScreen;
 }
 
@@ -819,7 +819,7 @@ abstract class _$$ChartScreenCopyWith<$Res> {
 
 /// @nodoc
 class __$$ChartScreenCopyWithImpl<$Res>
-    extends _$SplashScreenFlowCopyWithImpl<$Res, _$ChartScreen>
+    extends _$DecisionBoardFlowCopyWithImpl<$Res, _$ChartScreen>
     implements _$$ChartScreenCopyWith<$Res> {
   __$$ChartScreenCopyWithImpl(
       _$ChartScreen _value, $Res Function(_$ChartScreen) _then)
@@ -833,7 +833,7 @@ class _$ChartScreen implements ChartScreen {
 
   @override
   String toString() {
-    return 'SplashScreenFlow.chartScreen()';
+    return 'DecisionBoardFlow.chartScreen()';
   }
 
   @override
@@ -929,12 +929,12 @@ class _$ChartScreen implements ChartScreen {
   }
 }
 
-abstract class ChartScreen implements SplashScreenFlow {
+abstract class ChartScreen implements DecisionBoardFlow {
   const factory ChartScreen() = _$ChartScreen;
 }
 
 /// @nodoc
-mixin _$SplashScreenEvent {
+mixin _$DecisionBoardEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() toLoginOrRegistermentScreen,
@@ -1003,16 +1003,16 @@ mixin _$SplashScreenEvent {
 }
 
 /// @nodoc
-abstract class $SplashScreenEventCopyWith<$Res> {
-  factory $SplashScreenEventCopyWith(
-          SplashScreenEvent value, $Res Function(SplashScreenEvent) then) =
-      _$SplashScreenEventCopyWithImpl<$Res, SplashScreenEvent>;
+abstract class $DecisionBoardEventCopyWith<$Res> {
+  factory $DecisionBoardEventCopyWith(
+          DecisionBoardEvent value, $Res Function(DecisionBoardEvent) then) =
+      _$DecisionBoardEventCopyWithImpl<$Res, DecisionBoardEvent>;
 }
 
 /// @nodoc
-class _$SplashScreenEventCopyWithImpl<$Res, $Val extends SplashScreenEvent>
-    implements $SplashScreenEventCopyWith<$Res> {
-  _$SplashScreenEventCopyWithImpl(this._value, this._then);
+class _$DecisionBoardEventCopyWithImpl<$Res, $Val extends DecisionBoardEvent>
+    implements $DecisionBoardEventCopyWith<$Res> {
+  _$DecisionBoardEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -1030,7 +1030,8 @@ abstract class _$$ToLoginOrRegistermentScreenCopyWith<$Res> {
 
 /// @nodoc
 class __$$ToLoginOrRegistermentScreenCopyWithImpl<$Res>
-    extends _$SplashScreenEventCopyWithImpl<$Res, _$ToLoginOrRegistermentScreen>
+    extends _$DecisionBoardEventCopyWithImpl<$Res,
+        _$ToLoginOrRegistermentScreen>
     implements _$$ToLoginOrRegistermentScreenCopyWith<$Res> {
   __$$ToLoginOrRegistermentScreenCopyWithImpl(
       _$ToLoginOrRegistermentScreen _value,
@@ -1045,7 +1046,7 @@ class _$ToLoginOrRegistermentScreen implements ToLoginOrRegistermentScreen {
 
   @override
   String toString() {
-    return 'SplashScreenEvent.toLoginOrRegistermentScreen()';
+    return 'DecisionBoardEvent.toLoginOrRegistermentScreen()';
   }
 
   @override
@@ -1148,7 +1149,7 @@ class _$ToLoginOrRegistermentScreen implements ToLoginOrRegistermentScreen {
   }
 }
 
-abstract class ToLoginOrRegistermentScreen implements SplashScreenEvent {
+abstract class ToLoginOrRegistermentScreen implements DecisionBoardEvent {
   const factory ToLoginOrRegistermentScreen() = _$ToLoginOrRegistermentScreen;
 }
 
@@ -1161,7 +1162,7 @@ abstract class _$$BackToInitialScreenCopyWith<$Res> {
 
 /// @nodoc
 class __$$BackToInitialScreenCopyWithImpl<$Res>
-    extends _$SplashScreenEventCopyWithImpl<$Res, _$BackToInitialScreen>
+    extends _$DecisionBoardEventCopyWithImpl<$Res, _$BackToInitialScreen>
     implements _$$BackToInitialScreenCopyWith<$Res> {
   __$$BackToInitialScreenCopyWithImpl(
       _$BackToInitialScreen _value, $Res Function(_$BackToInitialScreen) _then)
@@ -1175,7 +1176,7 @@ class _$BackToInitialScreen implements BackToInitialScreen {
 
   @override
   String toString() {
-    return 'SplashScreenEvent.backToInitialScreen()';
+    return 'DecisionBoardEvent.backToInitialScreen()';
   }
 
   @override
@@ -1277,7 +1278,7 @@ class _$BackToInitialScreen implements BackToInitialScreen {
   }
 }
 
-abstract class BackToInitialScreen implements SplashScreenEvent {
+abstract class BackToInitialScreen implements DecisionBoardEvent {
   const factory BackToInitialScreen() = _$BackToInitialScreen;
 }
 
@@ -1289,7 +1290,7 @@ abstract class _$$SignInCopyWith<$Res> {
 
 /// @nodoc
 class __$$SignInCopyWithImpl<$Res>
-    extends _$SplashScreenEventCopyWithImpl<$Res, _$SignIn>
+    extends _$DecisionBoardEventCopyWithImpl<$Res, _$SignIn>
     implements _$$SignInCopyWith<$Res> {
   __$$SignInCopyWithImpl(_$SignIn _value, $Res Function(_$SignIn) _then)
       : super(_value, _then);
@@ -1302,7 +1303,7 @@ class _$SignIn implements SignIn {
 
   @override
   String toString() {
-    return 'SplashScreenEvent.signIn()';
+    return 'DecisionBoardEvent.signIn()';
   }
 
   @override
@@ -1404,7 +1405,7 @@ class _$SignIn implements SignIn {
   }
 }
 
-abstract class SignIn implements SplashScreenEvent {
+abstract class SignIn implements DecisionBoardEvent {
   const factory SignIn() = _$SignIn;
 }
 
@@ -1416,7 +1417,7 @@ abstract class _$$SignUpCopyWith<$Res> {
 
 /// @nodoc
 class __$$SignUpCopyWithImpl<$Res>
-    extends _$SplashScreenEventCopyWithImpl<$Res, _$SignUp>
+    extends _$DecisionBoardEventCopyWithImpl<$Res, _$SignUp>
     implements _$$SignUpCopyWith<$Res> {
   __$$SignUpCopyWithImpl(_$SignUp _value, $Res Function(_$SignUp) _then)
       : super(_value, _then);
@@ -1429,7 +1430,7 @@ class _$SignUp implements SignUp {
 
   @override
   String toString() {
-    return 'SplashScreenEvent.signUp()';
+    return 'DecisionBoardEvent.signUp()';
   }
 
   @override
@@ -1531,7 +1532,7 @@ class _$SignUp implements SignUp {
   }
 }
 
-abstract class SignUp implements SplashScreenEvent {
+abstract class SignUp implements DecisionBoardEvent {
   const factory SignUp() = _$SignUp;
 }
 
@@ -1546,7 +1547,7 @@ abstract class _$$StoreGraphDataCopyWith<$Res> {
 
 /// @nodoc
 class __$$StoreGraphDataCopyWithImpl<$Res>
-    extends _$SplashScreenEventCopyWithImpl<$Res, _$StoreGraphData>
+    extends _$DecisionBoardEventCopyWithImpl<$Res, _$StoreGraphData>
     implements _$$StoreGraphDataCopyWith<$Res> {
   __$$StoreGraphDataCopyWithImpl(
       _$StoreGraphData _value, $Res Function(_$StoreGraphData) _then)
@@ -1581,7 +1582,7 @@ class _$StoreGraphData implements StoreGraphData {
 
   @override
   String toString() {
-    return 'SplashScreenEvent.storeGraphData(data: $data)';
+    return 'DecisionBoardEvent.storeGraphData(data: $data)';
   }
 
   @override
@@ -1692,7 +1693,7 @@ class _$StoreGraphData implements StoreGraphData {
   }
 }
 
-abstract class StoreGraphData implements SplashScreenEvent {
+abstract class StoreGraphData implements DecisionBoardEvent {
   const factory StoreGraphData({required final List<String> data}) =
       _$StoreGraphData;
 
@@ -1713,7 +1714,7 @@ abstract class _$$GoToChartsScreenCopyWith<$Res> {
 
 /// @nodoc
 class __$$GoToChartsScreenCopyWithImpl<$Res>
-    extends _$SplashScreenEventCopyWithImpl<$Res, _$GoToChartsScreen>
+    extends _$DecisionBoardEventCopyWithImpl<$Res, _$GoToChartsScreen>
     implements _$$GoToChartsScreenCopyWith<$Res> {
   __$$GoToChartsScreenCopyWithImpl(
       _$GoToChartsScreen _value, $Res Function(_$GoToChartsScreen) _then)
@@ -1749,7 +1750,7 @@ class _$GoToChartsScreen implements GoToChartsScreen {
 
   @override
   String toString() {
-    return 'SplashScreenEvent.goToChartsScreen(data: $data)';
+    return 'DecisionBoardEvent.goToChartsScreen(data: $data)';
   }
 
   @override
@@ -1860,7 +1861,7 @@ class _$GoToChartsScreen implements GoToChartsScreen {
   }
 }
 
-abstract class GoToChartsScreen implements SplashScreenEvent {
+abstract class GoToChartsScreen implements DecisionBoardEvent {
   const factory GoToChartsScreen({required final List<List<dynamic>> data}) =
       _$GoToChartsScreen;
 

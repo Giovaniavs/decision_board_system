@@ -1,13 +1,13 @@
 // ignore_for_file: constant_identifier_names
 
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:openredu_mobile_flutter/src/shared/data/entities/token_entity.dart';
-import 'package:openredu_mobile_flutter/src/shared/data/entities/user_credentials_entity.dart';
-import 'package:openredu_mobile_flutter/src/shared/data/errors/storage_error.dart';
-import 'package:openredu_mobile_flutter/src/shared/data/models/user_credentials_model.dart';
+import 'package:decision_board_system/src/shared/data/entities/token_entity.dart';
+import 'package:decision_board_system/src/shared/data/entities/user_credentials_entity.dart';
+import 'package:decision_board_system/src/shared/data/errors/storage_error.dart';
+import 'package:decision_board_system/src/shared/data/models/user_credentials_model.dart';
 import 'dart:convert';
 
-import 'package:openredu_mobile_flutter/src/shared/data/types/result.dart';
+import 'package:decision_board_system/src/shared/data/types/result.dart';
 
 const String TOKEN_KEY = 'PROJECT_AUTH_TOKEN';
 const String USER_CREDENTIALS = 'USER_CREDENTIALS';

@@ -1,22 +1,22 @@
 import 'package:bottom_drawer/bottom_drawer.dart';
+import 'package:decision_board_system/src/decision_board/domain/decision_board_usecase.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:openredu_mobile_flutter/src/shared/design_system/assets/ob_images.dart';
-import 'package:openredu_mobile_flutter/src/shared/design_system/tokens/color_tokens.dart';
-import 'package:openredu_mobile_flutter/src/shared/design_system/tokens/spacing_tokens.dart';
-import 'package:openredu_mobile_flutter/src/shared/widgets/blue_long_button.dart';
-import 'package:openredu_mobile_flutter/src/shared/widgets/white_long_button.dart';
-import 'package:openredu_mobile_flutter/src/splash_screen/domain/splash_screen_usecase.dart';
+import 'package:decision_board_system/src/shared/design_system/assets/ob_images.dart';
+import 'package:decision_board_system/src/shared/design_system/tokens/color_tokens.dart';
+import 'package:decision_board_system/src/shared/design_system/tokens/spacing_tokens.dart';
+import 'package:decision_board_system/src/shared/widgets/blue_long_button.dart';
+import 'package:decision_board_system/src/shared/widgets/white_long_button.dart';
 
 class SplashScreenLoginOrRegistermentScreen extends StatefulWidget {
-  final SplashScreenUseCase _splashScrenUseCase;
+  final DecisionBoardUseCase _decisionBoardUseCase;
 
   const SplashScreenLoginOrRegistermentScreen({
     Key? key,
-    required SplashScreenUseCase splashScreenUseCase,
-  })  : _splashScrenUseCase = splashScreenUseCase,
+    required DecisionBoardUseCase decisionBoardUseCase,
+  })  : _decisionBoardUseCase = decisionBoardUseCase,
         super(key: key);
 
   @override
@@ -61,9 +61,9 @@ class _SplashScreenLoginOrRegistermentScreenState
     return Scaffold(
       body: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
-          return BlocConsumer<SplashScreenUseCase, SplashScreenState>(
+          return BlocConsumer<DecisionBoardUseCase, DecisionBoardState>(
             listener: _listener,
-            bloc: widget._splashScrenUseCase,
+            bloc: widget._decisionBoardUseCase,
             builder: _builder,
             buildWhen: _buildWhen,
             listenWhen: _listenWhen,
@@ -74,7 +74,7 @@ class _SplashScreenLoginOrRegistermentScreenState
     );
   }
 
-  Widget _builder(BuildContext context, SplashScreenState state) {
+  Widget _builder(BuildContext context, DecisionBoardState state) {
     return state.flow.maybeMap(
       orElse: () {
         return Container();
@@ -157,7 +157,7 @@ class _SplashScreenLoginOrRegistermentScreenState
                       BlueLongButton(
                         buttonText: 'Faça o login',
                         onPressed: () {
-                          widget._splashScrenUseCase.add(const SignIn());
+                          widget._decisionBoardUseCase.add(const SignIn());
                         },
                       ),
                       const SizedBox(
@@ -166,7 +166,7 @@ class _SplashScreenLoginOrRegistermentScreenState
                       WhiteLongButton(
                         buttonText: 'Faça o cadastro',
                         onPressed: () {
-                          widget._splashScrenUseCase.add(const SignUp());
+                          widget._decisionBoardUseCase.add(const SignUp());
                         },
                       ),
                     ],
@@ -185,7 +185,7 @@ class _SplashScreenLoginOrRegistermentScreenState
     );
   }
 
-  void _listener(BuildContext context, SplashScreenState state) {
+  void _listener(BuildContext context, DecisionBoardState state) {
     state.flow.maybeMap(
       orElse: () {},
       loginOrRegistermentScreen: (flow) {
@@ -202,11 +202,11 @@ class _SplashScreenLoginOrRegistermentScreenState
     );
   }
 
-  bool _listenWhen(SplashScreenState previous, SplashScreenState current) {
+  bool _listenWhen(DecisionBoardState previous, DecisionBoardState current) {
     return previous.flow != current.flow;
   }
 
-  bool _buildWhen(SplashScreenState previous, SplashScreenState current) {
+  bool _buildWhen(DecisionBoardState previous, DecisionBoardState current) {
     return previous.flow != current.flow;
   }
 }

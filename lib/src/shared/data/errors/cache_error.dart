@@ -1,5 +1,5 @@
-import 'package:openredu_mobile_flutter/src/shared/data/errors/app_error.dart';
-import 'package:openredu_mobile_flutter/src/shared/data/errors/default_error_messages.dart';
+import 'package:decision_board_system/src/shared/data/errors/app_error.dart';
+import 'package:decision_board_system/src/shared/data/errors/default_error_messages.dart';
 import 'package:stack_trace/stack_trace.dart';
 
 abstract class CacheError extends AppError {

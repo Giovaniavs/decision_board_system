@@ -1,17 +1,17 @@
+import 'package:decision_board_system/src/decision_board/domain/decision_board_usecase.dart';
+import 'package:decision_board_system/src/decision_board/presentation/smarties/decision_board_smart_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:openredu_mobile_flutter/src/dependency_injection.dart';
-import 'package:openredu_mobile_flutter/src/shared/design_system/tokens/color_tokens.dart';
-import 'package:openredu_mobile_flutter/src/splash_screen/domain/splash_screen_usecase.dart';
-import 'package:openredu_mobile_flutter/src/splash_screen/presentation/smarties/splash_screen_smart_view.dart';
+import 'package:decision_board_system/src/dependency_injection.dart';
+import 'package:decision_board_system/src/shared/design_system/tokens/color_tokens.dart';
 
 class OpenReduMobile extends StatefulWidget {
-  final SplashScreenUseCase _splashScreenUseCase;
+  final DecisionBoardUseCase _decisionBoardUseCase;
 
   const OpenReduMobile({
     Key? key,
-    required SplashScreenUseCase splashScreenUseCase,
-  })  : _splashScreenUseCase = splashScreenUseCase,
+    required DecisionBoardUseCase decisionBoardUseCase,
+  })  : _decisionBoardUseCase = decisionBoardUseCase,
         super(key: key);
 
   @override
@@ -38,8 +38,8 @@ class _OpenReduMobileState extends State<OpenReduMobile> {
       ],
       localizationsDelegates: GlobalMaterialLocalizations.delegates,
       initialRoute: "/",
-      home: SplashScreenSmartView(
-        splashScreenUseCase: widget._splashScreenUseCase,
+      home: DecisionBoardSmartView(
+        decisionBoardUseCase: widget._decisionBoardUseCase,
       ),
     );
     return GestureDetector(

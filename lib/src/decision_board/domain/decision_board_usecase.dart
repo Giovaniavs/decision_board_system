@@ -1,15 +1,16 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'splash_screen_state.dart';
-part 'splash_screen_event.dart';
-part 'splash_screen_usecase.freezed.dart';
+part 'decision_board_state.dart';
+part 'decision_board_event.dart';
+part 'decision_board_usecase.freezed.dart';
 
-class SplashScreenUseCase extends Bloc<SplashScreenEvent, SplashScreenState> {
-  SplashScreenUseCase() : super(SplashScreenState.initial());
+class DecisionBoardUseCase
+    extends Bloc<DecisionBoardEvent, DecisionBoardState> {
+  DecisionBoardUseCase() : super(DecisionBoardState.initial());
 
   @override
-  Stream<SplashScreenState> mapEventToState(SplashScreenEvent event) async* {
+  Stream<DecisionBoardState> mapEventToState(DecisionBoardEvent event) async* {
     yield* event.map(
       backToInitialScreen: _backToInitialScreen,
       signIn: _signIn,
@@ -20,22 +21,22 @@ class SplashScreenUseCase extends Bloc<SplashScreenEvent, SplashScreenState> {
     );
   }
 
-  Stream<SplashScreenState> _backToInitialScreen(
+  Stream<DecisionBoardState> _backToInitialScreen(
       BackToInitialScreen value) async* {
     yield state;
   }
 
-  Stream<SplashScreenState> _signIn(SignIn value) async* {
+  Stream<DecisionBoardState> _signIn(SignIn value) async* {
     yield state.copyWith(
       flow: const SignInScreen(),
     );
   }
 
-  Stream<SplashScreenState> _signUp(SignUp value) async* {
+  Stream<DecisionBoardState> _signUp(SignUp value) async* {
     yield state;
   }
 
-  Stream<SplashScreenState> _toLoginOrRegistermentScreen(
+  Stream<DecisionBoardState> _toLoginOrRegistermentScreen(
     ToLoginOrRegistermentScreen value,
   ) async* {
     yield state.copyWith(
@@ -43,7 +44,7 @@ class SplashScreenUseCase extends Bloc<SplashScreenEvent, SplashScreenState> {
     );
   }
 
-  Stream<SplashScreenState> _storeGraphData(StoreGraphData value) async* {
+  Stream<DecisionBoardState> _storeGraphData(StoreGraphData value) async* {
     // List<String> auxListDates = state.listDates;
     // auxListDates.add(value.date);
     // List<String> auxListLocations = state.listLocations;
@@ -58,7 +59,7 @@ class SplashScreenUseCase extends Bloc<SplashScreenEvent, SplashScreenState> {
     // );
   }
 
-  Stream<SplashScreenState> _goToChartsScreen(GoToChartsScreen value) async* {
+  Stream<DecisionBoardState> _goToChartsScreen(GoToChartsScreen value) async* {
     List<List<dynamic>> auxRawList = [];
     List<String> auxListDates = [];
     List<String> auxListLocations = [];

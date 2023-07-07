@@ -1,17 +1,17 @@
+import 'package:decision_board_system/src/decision_board/domain/decision_board_usecase.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:openredu_mobile_flutter/src/shared/design_system/assets/ob_images.dart';
-import 'package:openredu_mobile_flutter/src/shared/design_system/tokens/color_tokens.dart';
-import 'package:openredu_mobile_flutter/src/splash_screen/domain/splash_screen_usecase.dart';
+import 'package:decision_board_system/src/shared/design_system/assets/ob_images.dart';
+import 'package:decision_board_system/src/shared/design_system/tokens/color_tokens.dart';
 
 class SplashScreenScreen extends StatefulWidget {
-  final SplashScreenUseCase _splashScrenUseCase;
+  final DecisionBoardUseCase _decisionBoardUseCase;
 
   const SplashScreenScreen({
     Key? key,
-    required SplashScreenUseCase splashScreenUseCase,
-  })  : _splashScrenUseCase = splashScreenUseCase,
+    required DecisionBoardUseCase decisionBoardUseCase,
+  })  : _decisionBoardUseCase = decisionBoardUseCase,
         super(key: key);
 
   @override
@@ -27,7 +27,7 @@ class _SplashScreenScreenState extends State<SplashScreenScreen>
         Future.delayed(
           const Duration(seconds: 1),
           () {
-            widget._splashScrenUseCase.add(
+            widget._decisionBoardUseCase.add(
               const ToLoginOrRegistermentScreen(),
             );
           },
@@ -40,8 +40,8 @@ class _SplashScreenScreenState extends State<SplashScreenScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocBuilder<SplashScreenUseCase, SplashScreenState>(
-        bloc: widget._splashScrenUseCase,
+      body: BlocBuilder<DecisionBoardUseCase, DecisionBoardState>(
+        bloc: widget._decisionBoardUseCase,
         builder: (context, state) {
           return Center(
             child: Image.asset(

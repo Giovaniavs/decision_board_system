@@ -1,7 +1,7 @@
-import 'package:openredu_mobile_flutter/src/shared/data/errors/form_error.dart';
-import 'package:openredu_mobile_flutter/src/shared/data/types/form_field.dart';
-import 'package:openredu_mobile_flutter/src/shared/data/types/maybe.dart';
-import 'package:openredu_mobile_flutter/src/shared/data/types/result.dart';
+import 'package:decision_board_system/src/shared/data/errors/form_error.dart';
+import 'package:decision_board_system/src/shared/data/types/form_field.dart';
+import 'package:decision_board_system/src/shared/data/types/maybe.dart';
+import 'package:decision_board_system/src/shared/data/types/result.dart';
 
 class FormUtils {
   Result<String> validateField({

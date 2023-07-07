@@ -1,5 +1,5 @@
-name: openredu_mobile_flutter
-description: OpenRedu Mobile Version.
+name: decision_board_system
+description: Decision Board System.
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -14,7 +14,7 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   freezed_annotation: ^2.2.0
-  json_annotation: ^4.7.0
+  json_annotation: ^4.8.1
   dio: ^4.0.6
   stack_trace: ^1.10.0
   google_fonts: ^4.0.3
@@ -33,7 +33,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   build_runner: ^2.3.3
   freezed: ^2.3.2
-  json_serializable: ^6.5.4
+  json_serializable: ^6.7.1
 
 # The following section is specific to Flutter packages.
 flutter:

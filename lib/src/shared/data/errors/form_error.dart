@@ -1,4 +1,4 @@
-import 'package:openredu_mobile_flutter/src/shared/data/errors/default_error_messages.dart';
+import 'package:decision_board_system/src/shared/data/errors/default_error_messages.dart';
 import 'package:stack_trace/stack_trace.dart';
 
 import 'app_error.dart';

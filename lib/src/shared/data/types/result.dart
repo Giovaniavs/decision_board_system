@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:openredu_mobile_flutter/src/shared/data/errors/app_error.dart';
+import 'package:decision_board_system/src/shared/data/errors/app_error.dart';
 
 part 'result.freezed.dart';
 

@@ -1,10 +1,10 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
 import 'package:dio/dio.dart';
-import 'package:openredu_mobile_flutter/src/shared/data/entities/api_state_entity.dart';
-import 'package:openredu_mobile_flutter/src/shared/data/errors/http_error.dart';
-import 'package:openredu_mobile_flutter/src/shared/data/repositories/token_repository.dart';
-import 'package:openredu_mobile_flutter/src/shared/data/types/result.dart';
+import 'package:decision_board_system/src/shared/data/entities/api_state_entity.dart';
+import 'package:decision_board_system/src/shared/data/errors/http_error.dart';
+import 'package:decision_board_system/src/shared/data/repositories/token_repository.dart';
+import 'package:decision_board_system/src/shared/data/types/result.dart';
 
 // ignore: constant_identifier_names
 

@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:openredu_mobile_flutter/src/shared/data/entities/user_credentials_entity.dart';
+import 'package:decision_board_system/src/shared/data/entities/user_credentials_entity.dart';
 
 part 'user_credentials_model.freezed.dart';
 

@@ -1,14 +1,14 @@
 import 'package:csv/csv.dart';
+import 'package:decision_board_system/src/decision_board/domain/decision_board_usecase.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:openredu_mobile_flutter/src/splash_screen/domain/splash_screen_usecase.dart';
 
 class LoadCsvScreen extends StatefulWidget {
-  final SplashScreenUseCase _splashScreenUseCase;
+  final DecisionBoardUseCase _decisionBoardUseCase;
   const LoadCsvScreen({
     super.key,
-    required SplashScreenUseCase splashScreenUseCase,
-  }) : _splashScreenUseCase = splashScreenUseCase;
+    required DecisionBoardUseCase decisionBoardUseCase,
+  }) : _decisionBoardUseCase = decisionBoardUseCase;
 
   @override
   State<LoadCsvScreen> createState() => _LoadCsvScreenState();
@@ -53,7 +53,7 @@ class _LoadCsvScreenState extends State<LoadCsvScreen> {
               if (_data.isNotEmpty) {
                 _data.removeAt(0);
               }
-              widget._splashScreenUseCase.add(
+              widget._decisionBoardUseCase.add(
                 GoToChartsScreen(
                   data: _data,
                 ),

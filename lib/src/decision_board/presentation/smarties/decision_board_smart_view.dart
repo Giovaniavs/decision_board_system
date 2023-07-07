@@ -1,25 +1,25 @@
+import 'package:decision_board_system/src/decision_board/domain/decision_board_usecase.dart';
+import 'package:decision_board_system/src/decision_board/presentation/dummies/charts_screen.dart';
+import 'package:decision_board_system/src/decision_board/presentation/dummies/load_csv_screen.dart';
+import 'package:decision_board_system/src/decision_board/presentation/dummies/splash_screen_login_or_registerment_screen.dart';
+import 'package:decision_board_system/src/decision_board/presentation/dummies/splash_screen_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:openredu_mobile_flutter/src/splash_screen/domain/splash_screen_usecase.dart';
-import 'package:openredu_mobile_flutter/src/splash_screen/presentation/dummies/charts_screen.dart';
-import 'package:openredu_mobile_flutter/src/splash_screen/presentation/dummies/load_csv_screen.dart';
-import 'package:openredu_mobile_flutter/src/splash_screen/presentation/dummies/splash_screen_login_or_registerment_screen.dart';
-import 'package:openredu_mobile_flutter/src/splash_screen/presentation/dummies/splash_screen_screen.dart';
 
-class SplashScreenSmartView extends StatefulWidget {
-  final SplashScreenUseCase _splashScreenUseCase;
+class DecisionBoardSmartView extends StatefulWidget {
+  final DecisionBoardUseCase _decisionBoardUseCase;
 
-  const SplashScreenSmartView({
+  const DecisionBoardSmartView({
     Key? key,
-    required SplashScreenUseCase splashScreenUseCase,
-  })  : _splashScreenUseCase = splashScreenUseCase,
+    required DecisionBoardUseCase decisionBoardUseCase,
+  })  : _decisionBoardUseCase = decisionBoardUseCase,
         super(key: key);
 
   @override
-  State<StatefulWidget> createState() => _SplashScreenSmartViewState();
+  State<StatefulWidget> createState() => _DecisionBoardSmartViewState();
 }
 
-class _SplashScreenSmartViewState extends State<SplashScreenSmartView> {
+class _DecisionBoardSmartViewState extends State<DecisionBoardSmartView> {
   final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
   late final List<Page> modulePages;
 
@@ -28,22 +28,22 @@ class _SplashScreenSmartViewState extends State<SplashScreenSmartView> {
     modulePages = [
       MaterialPage(
         child: SplashScreenScreen(
-          splashScreenUseCase: widget._splashScreenUseCase,
+          decisionBoardUseCase: widget._decisionBoardUseCase,
         ),
       ),
       MaterialPage(
         child: SplashScreenLoginOrRegistermentScreen(
-          splashScreenUseCase: widget._splashScreenUseCase,
+          decisionBoardUseCase: widget._decisionBoardUseCase,
         ),
       ),
       MaterialPage(
         child: LoadCsvScreen(
-          splashScreenUseCase: widget._splashScreenUseCase,
+          decisionBoardUseCase: widget._decisionBoardUseCase,
         ),
       ),
       MaterialPage(
         child: ChartsScreen(
-          splashScreenUseCase: widget._splashScreenUseCase,
+          decisionBoardUseCase: widget._decisionBoardUseCase,
         ),
       ),
     ];
@@ -52,27 +52,27 @@ class _SplashScreenSmartViewState extends State<SplashScreenSmartView> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<SplashScreenUseCase, SplashScreenState>(
-      bloc: widget._splashScreenUseCase,
+    return BlocConsumer<DecisionBoardUseCase, DecisionBoardState>(
+      bloc: widget._decisionBoardUseCase,
       listener: _listener,
       listenWhen: _listenWhen,
       builder: _builder,
     );
   }
 
-  void _listener(BuildContext context, SplashScreenState state) {
+  void _listener(BuildContext context, DecisionBoardState state) {
     state.flow.maybeMap(
       orElse: () {},
     );
   }
 
-  bool _listenWhen(SplashScreenState previous, SplashScreenState current) {
+  bool _listenWhen(DecisionBoardState previous, DecisionBoardState current) {
     return previous.flow != current.flow;
   }
 
   List<Page> _currentPageStack = [];
 
-  List<Page> _pageList(SplashScreenFlow flow) {
+  List<Page> _pageList(DecisionBoardFlow flow) {
     return flow.maybeMap(
       splash: (_) {
         _currentPageStack = [
@@ -110,7 +110,7 @@ class _SplashScreenSmartViewState extends State<SplashScreenSmartView> {
     );
   }
 
-  Widget _builder(BuildContext context, SplashScreenState state) {
+  Widget _builder(BuildContext context, DecisionBoardState state) {
     return Navigator(
       key: navigatorKey,
       pages: _pageList(state.flow),

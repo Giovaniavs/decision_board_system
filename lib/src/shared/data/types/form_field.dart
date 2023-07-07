@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:openredu_mobile_flutter/src/shared/data/types/maybe.dart';
+import 'package:decision_board_system/src/shared/data/types/maybe.dart';
 
 part 'form_field.freezed.dart';
 

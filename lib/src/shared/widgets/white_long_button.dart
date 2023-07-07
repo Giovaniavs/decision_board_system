@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:openredu_mobile_flutter/src/shared/design_system/tokens/color_tokens.dart';
+import 'package:decision_board_system/src/shared/design_system/tokens/color_tokens.dart';
 
 class WhiteLongButton extends StatelessWidget {
   final VoidCallback onPressed;
