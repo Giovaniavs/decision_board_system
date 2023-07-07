@@ -32,20 +32,20 @@ app:
 	if [ ! -d "lib/src/${name}" ]; then mkdir -p lib/src/${name} && cp -r module_template/* "lib/src/${name}"; fi
 	if [ ! -d "test/src/${name}" ]; then mkdir -p test/src/${name} && cp -r module_template/* "test/src/${name}"; fi
 
-run-debug: .env.$(env)
+run-debug: 
 	bash scripts/fvm-run.sh flutter run 
 
-run-release: .env.$(env)
-	bash scripts/fvm-run.sh flutter run --flavor $(env) -t lib/main.dart --release $(shell awk '{print "--dart-define=" $$0}' .env.$(env))
+run-release: 
+	bash scripts/fvm-run.sh flutter run --flavor $(env) -t lib/main.dart --release $(shell awk '{print "--dart-define=" $$0}' )
 
-build-apk: .env.$(env)
-	bash scripts/fvm-run.sh flutter build apk --flavor $(env) -t lib/main.dart $(shell awk '{print "--dart-define=" $$0}' .env.$(env))
+build-apk: 
+	bash scripts/fvm-run.sh flutter build apk --flavor $(env) -t lib/main.dart $(shell awk '{print "--dart-define=" $$0}' )
 
-build-ipa: .env.$(env)
-	bash scripts/fvm-run.sh flutter build ipa --flavor $(env) -t lib/main.dart $(shell awk '{print "--dart-define=" $$0}' .env.$(env))
+build-ipa: 
+	bash scripts/fvm-run.sh flutter build ipa --flavor $(env) -t lib/main.dart $(shell awk '{print "--dart-define=" $$0}' )
 
-build-appbundle: .env.$(env)
-	bash scripts/fvm-run.sh flutter build appbundle --flavor $(env) -t lib/main.dart $(shell awk '{print "--dart-define=" $$0}' .env.$(env))
+build-appbundle: 
+	bash scripts/fvm-run.sh flutter build appbundle --flavor $(env) -t lib/main.dart $(shell awk '{print "--dart-define=" $$0}' )
 
 setup-fvm:
 	dart pub global activate fvm

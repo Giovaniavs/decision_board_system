@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:openredu_mobile_flutter/src/shared/data/errors/default_error_messages.dart';
-import 'package:sentry_flutter/sentry_flutter.dart';
 import 'package:stack_trace/stack_trace.dart';
 
 import 'app_error.dart';
@@ -136,12 +135,6 @@ class HttpInternalServerError extends HttpError {
 }
 
 HttpError parseHttpError(DioError error) {
-  Sentry.captureException(
-    error.error,
-    stackTrace: error.stackTrace,
-    hint: error.message,
-  );
-
   String msg = DefaultErrorMessages.unknownError;
   String slug = '';
 

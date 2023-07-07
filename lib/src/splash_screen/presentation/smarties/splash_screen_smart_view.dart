@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:openredu_mobile_flutter/src/auth/splash_screen/domain/splash_screen_usecase.dart';
-import 'package:openredu_mobile_flutter/src/auth/splash_screen/presentation/dummies/charts_screen.dart';
-import 'package:openredu_mobile_flutter/src/auth/splash_screen/presentation/dummies/load_csv_screen.dart';
-import 'package:openredu_mobile_flutter/src/auth/splash_screen/presentation/dummies/splash_screen_login_or_registerment_screen.dart';
-import 'package:openredu_mobile_flutter/src/auth/splash_screen/presentation/dummies/splash_screen_screen.dart';
+import 'package:openredu_mobile_flutter/src/splash_screen/domain/splash_screen_usecase.dart';
+import 'package:openredu_mobile_flutter/src/splash_screen/presentation/dummies/charts_screen.dart';
+import 'package:openredu_mobile_flutter/src/splash_screen/presentation/dummies/load_csv_screen.dart';
+import 'package:openredu_mobile_flutter/src/splash_screen/presentation/dummies/splash_screen_login_or_registerment_screen.dart';
+import 'package:openredu_mobile_flutter/src/splash_screen/presentation/dummies/splash_screen_screen.dart';
 
 class SplashScreenSmartView extends StatefulWidget {
   final SplashScreenUseCase _splashScreenUseCase;
@@ -63,24 +63,6 @@ class _SplashScreenSmartViewState extends State<SplashScreenSmartView> {
   void _listener(BuildContext context, SplashScreenState state) {
     state.flow.maybeMap(
       orElse: () {},
-      // toSignIn: (_) {
-      // Navigator.of(context).push(
-      //   MaterialPageRoute(
-      //     builder: (context) => SignInSmartView(
-      //       signInUseCase: di<SignInUseCase>(),
-      //     ),
-      //   ),
-      // );
-      // },
-      // signUpScreen: (_) {
-      // Navigator.of(context).push(
-      //   MaterialPageRoute(
-      //     builder: (context) => SignUpSmartView(
-      //       signUpUseCase: di<SignUpUseCase>(),
-      //     ),
-      //   ),
-      // );
-      // },
     );
   }
 

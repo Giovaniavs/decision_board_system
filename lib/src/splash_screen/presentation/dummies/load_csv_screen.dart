@@ -1,7 +1,7 @@
 import 'package:csv/csv.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:openredu_mobile_flutter/src/auth/splash_screen/domain/splash_screen_usecase.dart';
+import 'package:openredu_mobile_flutter/src/splash_screen/domain/splash_screen_usecase.dart';
 
 class LoadCsvScreen extends StatefulWidget {
   final SplashScreenUseCase _splashScreenUseCase;

@@ -1,7 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:openredu_mobile_flutter/src/auth/splash_screen/domain/splash_screen_usecase.dart';
 import 'package:openredu_mobile_flutter/src/shared/design_system/tokens/color_tokens.dart';
+import 'package:openredu_mobile_flutter/src/splash_screen/domain/splash_screen_usecase.dart';
 
 class ChartsScreen extends StatelessWidget {
   final SplashScreenUseCase _splashScreenUseCase;

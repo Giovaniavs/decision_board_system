@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:openredu_mobile_flutter/src/auth/splash_screen/domain/splash_screen_usecase.dart';
 import 'package:openredu_mobile_flutter/src/shared/design_system/assets/ob_images.dart';
 import 'package:openredu_mobile_flutter/src/shared/design_system/tokens/color_tokens.dart';
+import 'package:openredu_mobile_flutter/src/splash_screen/domain/splash_screen_usecase.dart';
 
 class SplashScreenScreen extends StatefulWidget {
   final SplashScreenUseCase _splashScrenUseCase;

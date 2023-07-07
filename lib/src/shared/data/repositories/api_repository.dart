@@ -5,7 +5,6 @@ import 'package:openredu_mobile_flutter/src/shared/data/entities/api_state_entit
 import 'package:openredu_mobile_flutter/src/shared/data/errors/http_error.dart';
 import 'package:openredu_mobile_flutter/src/shared/data/repositories/token_repository.dart';
 import 'package:openredu_mobile_flutter/src/shared/data/types/result.dart';
-import 'package:sentry_flutter/sentry_flutter.dart';
 
 // ignore: constant_identifier_names
 
@@ -66,10 +65,6 @@ class ApiRepository extends Cubit<ApiState> {
       _handleErrors(error);
       return Failure(error);
     } catch (exception, stackTrace) {
-      await Sentry.captureException(
-        exception,
-        stackTrace: stackTrace,
-      );
       return Failure(HttpUnknownError(slug: "unknown_api"));
     }
   }
@@ -97,10 +92,6 @@ class ApiRepository extends Cubit<ApiState> {
       _handleErrors(error);
       return Failure(error);
     } catch (exception, stackTrace) {
-      await Sentry.captureException(
-        exception,
-        stackTrace: stackTrace,
-      );
       return Failure(HttpUnknownError());
     }
   }
@@ -123,10 +114,6 @@ class ApiRepository extends Cubit<ApiState> {
       _handleErrors(error);
       return Failure(error);
     } catch (exception, stackTrace) {
-      await Sentry.captureException(
-        exception,
-        stackTrace: stackTrace,
-      );
       return Failure(HttpUnknownError());
     }
   }
@@ -149,10 +136,6 @@ class ApiRepository extends Cubit<ApiState> {
       _handleErrors(error);
       return Failure(error);
     } catch (exception, stackTrace) {
-      await Sentry.captureException(
-        exception,
-        stackTrace: stackTrace,
-      );
       return Failure(HttpUnknownError());
     }
   }
@@ -175,10 +158,6 @@ class ApiRepository extends Cubit<ApiState> {
       _handleErrors(error);
       return Failure(error);
     } catch (exception, stackTrace) {
-      await Sentry.captureException(
-        exception,
-        stackTrace: stackTrace,
-      );
       return Failure(HttpUnknownError());
     }
   }
