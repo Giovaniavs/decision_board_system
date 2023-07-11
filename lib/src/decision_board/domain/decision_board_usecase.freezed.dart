@@ -241,60 +241,46 @@ abstract class _DecisionBoardState implements DecisionBoardState {
 mixin _$DecisionBoardFlow {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() splash,
-    required TResult Function() loginOrRegistermentScreen,
-    required TResult Function() signInScreen,
-    required TResult Function() signUpScreen,
-    required TResult Function() chartScreen,
+    required TResult Function() splashScreenFlow,
+    required TResult Function() uploadDatabaseScreenFlow,
+    required TResult Function() chartScreenFlow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? splash,
-    TResult? Function()? loginOrRegistermentScreen,
-    TResult? Function()? signInScreen,
-    TResult? Function()? signUpScreen,
-    TResult? Function()? chartScreen,
+    TResult? Function()? splashScreenFlow,
+    TResult? Function()? uploadDatabaseScreenFlow,
+    TResult? Function()? chartScreenFlow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? splash,
-    TResult Function()? loginOrRegistermentScreen,
-    TResult Function()? signInScreen,
-    TResult Function()? signUpScreen,
-    TResult Function()? chartScreen,
+    TResult Function()? splashScreenFlow,
+    TResult Function()? uploadDatabaseScreenFlow,
+    TResult Function()? chartScreenFlow,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Splash value) splash,
-    required TResult Function(LoginOrRegistermentScreen value)
-        loginOrRegistermentScreen,
-    required TResult Function(SignInScreen value) signInScreen,
-    required TResult Function(SignUpScreen value) signUpScreen,
-    required TResult Function(ChartScreen value) chartScreen,
+    required TResult Function(SplashScreenFlow value) splashScreenFlow,
+    required TResult Function(UploadDatabaseScreenFlow value)
+        uploadDatabaseScreenFlow,
+    required TResult Function(ChartScreenFlow value) chartScreenFlow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Splash value)? splash,
-    TResult? Function(LoginOrRegistermentScreen value)?
-        loginOrRegistermentScreen,
-    TResult? Function(SignInScreen value)? signInScreen,
-    TResult? Function(SignUpScreen value)? signUpScreen,
-    TResult? Function(ChartScreen value)? chartScreen,
+    TResult? Function(SplashScreenFlow value)? splashScreenFlow,
+    TResult? Function(UploadDatabaseScreenFlow value)? uploadDatabaseScreenFlow,
+    TResult? Function(ChartScreenFlow value)? chartScreenFlow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Splash value)? splash,
-    TResult Function(LoginOrRegistermentScreen value)?
-        loginOrRegistermentScreen,
-    TResult Function(SignInScreen value)? signInScreen,
-    TResult Function(SignUpScreen value)? signUpScreen,
-    TResult Function(ChartScreen value)? chartScreen,
+    TResult Function(SplashScreenFlow value)? splashScreenFlow,
+    TResult Function(UploadDatabaseScreenFlow value)? uploadDatabaseScreenFlow,
+    TResult Function(ChartScreenFlow value)? chartScreenFlow,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -319,33 +305,35 @@ class _$DecisionBoardFlowCopyWithImpl<$Res, $Val extends DecisionBoardFlow>
 }
 
 /// @nodoc
-abstract class _$$SplashCopyWith<$Res> {
-  factory _$$SplashCopyWith(_$Splash value, $Res Function(_$Splash) then) =
-      __$$SplashCopyWithImpl<$Res>;
+abstract class _$$SplashScreenFlowCopyWith<$Res> {
+  factory _$$SplashScreenFlowCopyWith(
+          _$SplashScreenFlow value, $Res Function(_$SplashScreenFlow) then) =
+      __$$SplashScreenFlowCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SplashCopyWithImpl<$Res>
-    extends _$DecisionBoardFlowCopyWithImpl<$Res, _$Splash>
-    implements _$$SplashCopyWith<$Res> {
-  __$$SplashCopyWithImpl(_$Splash _value, $Res Function(_$Splash) _then)
+class __$$SplashScreenFlowCopyWithImpl<$Res>
+    extends _$DecisionBoardFlowCopyWithImpl<$Res, _$SplashScreenFlow>
+    implements _$$SplashScreenFlowCopyWith<$Res> {
+  __$$SplashScreenFlowCopyWithImpl(
+      _$SplashScreenFlow _value, $Res Function(_$SplashScreenFlow) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$Splash implements Splash {
-  const _$Splash();
+class _$SplashScreenFlow implements SplashScreenFlow {
+  const _$SplashScreenFlow();
 
   @override
   String toString() {
-    return 'DecisionBoardFlow.splash()';
+    return 'DecisionBoardFlow.splashScreenFlow()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Splash);
+        (other.runtimeType == runtimeType && other is _$SplashScreenFlow);
   }
 
   @override
@@ -354,39 +342,33 @@ class _$Splash implements Splash {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() splash,
-    required TResult Function() loginOrRegistermentScreen,
-    required TResult Function() signInScreen,
-    required TResult Function() signUpScreen,
-    required TResult Function() chartScreen,
+    required TResult Function() splashScreenFlow,
+    required TResult Function() uploadDatabaseScreenFlow,
+    required TResult Function() chartScreenFlow,
   }) {
-    return splash();
+    return splashScreenFlow();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? splash,
-    TResult? Function()? loginOrRegistermentScreen,
-    TResult? Function()? signInScreen,
-    TResult? Function()? signUpScreen,
-    TResult? Function()? chartScreen,
+    TResult? Function()? splashScreenFlow,
+    TResult? Function()? uploadDatabaseScreenFlow,
+    TResult? Function()? chartScreenFlow,
   }) {
-    return splash?.call();
+    return splashScreenFlow?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? splash,
-    TResult Function()? loginOrRegistermentScreen,
-    TResult Function()? signInScreen,
-    TResult Function()? signUpScreen,
-    TResult Function()? chartScreen,
+    TResult Function()? splashScreenFlow,
+    TResult Function()? uploadDatabaseScreenFlow,
+    TResult Function()? chartScreenFlow,
     required TResult orElse(),
   }) {
-    if (splash != null) {
-      return splash();
+    if (splashScreenFlow != null) {
+      return splashScreenFlow();
     }
     return orElse();
   }
@@ -394,83 +376,74 @@ class _$Splash implements Splash {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Splash value) splash,
-    required TResult Function(LoginOrRegistermentScreen value)
-        loginOrRegistermentScreen,
-    required TResult Function(SignInScreen value) signInScreen,
-    required TResult Function(SignUpScreen value) signUpScreen,
-    required TResult Function(ChartScreen value) chartScreen,
+    required TResult Function(SplashScreenFlow value) splashScreenFlow,
+    required TResult Function(UploadDatabaseScreenFlow value)
+        uploadDatabaseScreenFlow,
+    required TResult Function(ChartScreenFlow value) chartScreenFlow,
   }) {
-    return splash(this);
+    return splashScreenFlow(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Splash value)? splash,
-    TResult? Function(LoginOrRegistermentScreen value)?
-        loginOrRegistermentScreen,
-    TResult? Function(SignInScreen value)? signInScreen,
-    TResult? Function(SignUpScreen value)? signUpScreen,
-    TResult? Function(ChartScreen value)? chartScreen,
+    TResult? Function(SplashScreenFlow value)? splashScreenFlow,
+    TResult? Function(UploadDatabaseScreenFlow value)? uploadDatabaseScreenFlow,
+    TResult? Function(ChartScreenFlow value)? chartScreenFlow,
   }) {
-    return splash?.call(this);
+    return splashScreenFlow?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Splash value)? splash,
-    TResult Function(LoginOrRegistermentScreen value)?
-        loginOrRegistermentScreen,
-    TResult Function(SignInScreen value)? signInScreen,
-    TResult Function(SignUpScreen value)? signUpScreen,
-    TResult Function(ChartScreen value)? chartScreen,
+    TResult Function(SplashScreenFlow value)? splashScreenFlow,
+    TResult Function(UploadDatabaseScreenFlow value)? uploadDatabaseScreenFlow,
+    TResult Function(ChartScreenFlow value)? chartScreenFlow,
     required TResult orElse(),
   }) {
-    if (splash != null) {
-      return splash(this);
+    if (splashScreenFlow != null) {
+      return splashScreenFlow(this);
     }
     return orElse();
   }
 }
 
-abstract class Splash implements DecisionBoardFlow {
-  const factory Splash() = _$Splash;
+abstract class SplashScreenFlow implements DecisionBoardFlow {
+  const factory SplashScreenFlow() = _$SplashScreenFlow;
 }
 
 /// @nodoc
-abstract class _$$LoginOrRegistermentScreenCopyWith<$Res> {
-  factory _$$LoginOrRegistermentScreenCopyWith(
-          _$LoginOrRegistermentScreen value,
-          $Res Function(_$LoginOrRegistermentScreen) then) =
-      __$$LoginOrRegistermentScreenCopyWithImpl<$Res>;
+abstract class _$$UploadDatabaseScreenFlowCopyWith<$Res> {
+  factory _$$UploadDatabaseScreenFlowCopyWith(_$UploadDatabaseScreenFlow value,
+          $Res Function(_$UploadDatabaseScreenFlow) then) =
+      __$$UploadDatabaseScreenFlowCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoginOrRegistermentScreenCopyWithImpl<$Res>
-    extends _$DecisionBoardFlowCopyWithImpl<$Res, _$LoginOrRegistermentScreen>
-    implements _$$LoginOrRegistermentScreenCopyWith<$Res> {
-  __$$LoginOrRegistermentScreenCopyWithImpl(_$LoginOrRegistermentScreen _value,
-      $Res Function(_$LoginOrRegistermentScreen) _then)
+class __$$UploadDatabaseScreenFlowCopyWithImpl<$Res>
+    extends _$DecisionBoardFlowCopyWithImpl<$Res, _$UploadDatabaseScreenFlow>
+    implements _$$UploadDatabaseScreenFlowCopyWith<$Res> {
+  __$$UploadDatabaseScreenFlowCopyWithImpl(_$UploadDatabaseScreenFlow _value,
+      $Res Function(_$UploadDatabaseScreenFlow) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LoginOrRegistermentScreen implements LoginOrRegistermentScreen {
-  const _$LoginOrRegistermentScreen();
+class _$UploadDatabaseScreenFlow implements UploadDatabaseScreenFlow {
+  const _$UploadDatabaseScreenFlow();
 
   @override
   String toString() {
-    return 'DecisionBoardFlow.loginOrRegistermentScreen()';
+    return 'DecisionBoardFlow.uploadDatabaseScreenFlow()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoginOrRegistermentScreen);
+            other is _$UploadDatabaseScreenFlow);
   }
 
   @override
@@ -479,39 +452,33 @@ class _$LoginOrRegistermentScreen implements LoginOrRegistermentScreen {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() splash,
-    required TResult Function() loginOrRegistermentScreen,
-    required TResult Function() signInScreen,
-    required TResult Function() signUpScreen,
-    required TResult Function() chartScreen,
+    required TResult Function() splashScreenFlow,
+    required TResult Function() uploadDatabaseScreenFlow,
+    required TResult Function() chartScreenFlow,
   }) {
-    return loginOrRegistermentScreen();
+    return uploadDatabaseScreenFlow();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? splash,
-    TResult? Function()? loginOrRegistermentScreen,
-    TResult? Function()? signInScreen,
-    TResult? Function()? signUpScreen,
-    TResult? Function()? chartScreen,
+    TResult? Function()? splashScreenFlow,
+    TResult? Function()? uploadDatabaseScreenFlow,
+    TResult? Function()? chartScreenFlow,
   }) {
-    return loginOrRegistermentScreen?.call();
+    return uploadDatabaseScreenFlow?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? splash,
-    TResult Function()? loginOrRegistermentScreen,
-    TResult Function()? signInScreen,
-    TResult Function()? signUpScreen,
-    TResult Function()? chartScreen,
+    TResult Function()? splashScreenFlow,
+    TResult Function()? uploadDatabaseScreenFlow,
+    TResult Function()? chartScreenFlow,
     required TResult orElse(),
   }) {
-    if (loginOrRegistermentScreen != null) {
-      return loginOrRegistermentScreen();
+    if (uploadDatabaseScreenFlow != null) {
+      return uploadDatabaseScreenFlow();
     }
     return orElse();
   }
@@ -519,81 +486,73 @@ class _$LoginOrRegistermentScreen implements LoginOrRegistermentScreen {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Splash value) splash,
-    required TResult Function(LoginOrRegistermentScreen value)
-        loginOrRegistermentScreen,
-    required TResult Function(SignInScreen value) signInScreen,
-    required TResult Function(SignUpScreen value) signUpScreen,
-    required TResult Function(ChartScreen value) chartScreen,
+    required TResult Function(SplashScreenFlow value) splashScreenFlow,
+    required TResult Function(UploadDatabaseScreenFlow value)
+        uploadDatabaseScreenFlow,
+    required TResult Function(ChartScreenFlow value) chartScreenFlow,
   }) {
-    return loginOrRegistermentScreen(this);
+    return uploadDatabaseScreenFlow(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Splash value)? splash,
-    TResult? Function(LoginOrRegistermentScreen value)?
-        loginOrRegistermentScreen,
-    TResult? Function(SignInScreen value)? signInScreen,
-    TResult? Function(SignUpScreen value)? signUpScreen,
-    TResult? Function(ChartScreen value)? chartScreen,
+    TResult? Function(SplashScreenFlow value)? splashScreenFlow,
+    TResult? Function(UploadDatabaseScreenFlow value)? uploadDatabaseScreenFlow,
+    TResult? Function(ChartScreenFlow value)? chartScreenFlow,
   }) {
-    return loginOrRegistermentScreen?.call(this);
+    return uploadDatabaseScreenFlow?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Splash value)? splash,
-    TResult Function(LoginOrRegistermentScreen value)?
-        loginOrRegistermentScreen,
-    TResult Function(SignInScreen value)? signInScreen,
-    TResult Function(SignUpScreen value)? signUpScreen,
-    TResult Function(ChartScreen value)? chartScreen,
+    TResult Function(SplashScreenFlow value)? splashScreenFlow,
+    TResult Function(UploadDatabaseScreenFlow value)? uploadDatabaseScreenFlow,
+    TResult Function(ChartScreenFlow value)? chartScreenFlow,
     required TResult orElse(),
   }) {
-    if (loginOrRegistermentScreen != null) {
-      return loginOrRegistermentScreen(this);
+    if (uploadDatabaseScreenFlow != null) {
+      return uploadDatabaseScreenFlow(this);
     }
     return orElse();
   }
 }
 
-abstract class LoginOrRegistermentScreen implements DecisionBoardFlow {
-  const factory LoginOrRegistermentScreen() = _$LoginOrRegistermentScreen;
+abstract class UploadDatabaseScreenFlow implements DecisionBoardFlow {
+  const factory UploadDatabaseScreenFlow() = _$UploadDatabaseScreenFlow;
 }
 
 /// @nodoc
-abstract class _$$SignInScreenCopyWith<$Res> {
-  factory _$$SignInScreenCopyWith(
-          _$SignInScreen value, $Res Function(_$SignInScreen) then) =
-      __$$SignInScreenCopyWithImpl<$Res>;
+abstract class _$$ChartScreenFlowCopyWith<$Res> {
+  factory _$$ChartScreenFlowCopyWith(
+          _$ChartScreenFlow value, $Res Function(_$ChartScreenFlow) then) =
+      __$$ChartScreenFlowCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SignInScreenCopyWithImpl<$Res>
-    extends _$DecisionBoardFlowCopyWithImpl<$Res, _$SignInScreen>
-    implements _$$SignInScreenCopyWith<$Res> {
-  __$$SignInScreenCopyWithImpl(
-      _$SignInScreen _value, $Res Function(_$SignInScreen) _then)
+class __$$ChartScreenFlowCopyWithImpl<$Res>
+    extends _$DecisionBoardFlowCopyWithImpl<$Res, _$ChartScreenFlow>
+    implements _$$ChartScreenFlowCopyWith<$Res> {
+  __$$ChartScreenFlowCopyWithImpl(
+      _$ChartScreenFlow _value, $Res Function(_$ChartScreenFlow) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$SignInScreen implements SignInScreen {
-  const _$SignInScreen();
+class _$ChartScreenFlow implements ChartScreenFlow {
+  const _$ChartScreenFlow();
 
   @override
   String toString() {
-    return 'DecisionBoardFlow.signInScreen()';
+    return 'DecisionBoardFlow.chartScreenFlow()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SignInScreen);
+        (other.runtimeType == runtimeType && other is _$ChartScreenFlow);
   }
 
   @override
@@ -602,39 +561,33 @@ class _$SignInScreen implements SignInScreen {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() splash,
-    required TResult Function() loginOrRegistermentScreen,
-    required TResult Function() signInScreen,
-    required TResult Function() signUpScreen,
-    required TResult Function() chartScreen,
+    required TResult Function() splashScreenFlow,
+    required TResult Function() uploadDatabaseScreenFlow,
+    required TResult Function() chartScreenFlow,
   }) {
-    return signInScreen();
+    return chartScreenFlow();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? splash,
-    TResult? Function()? loginOrRegistermentScreen,
-    TResult? Function()? signInScreen,
-    TResult? Function()? signUpScreen,
-    TResult? Function()? chartScreen,
+    TResult? Function()? splashScreenFlow,
+    TResult? Function()? uploadDatabaseScreenFlow,
+    TResult? Function()? chartScreenFlow,
   }) {
-    return signInScreen?.call();
+    return chartScreenFlow?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? splash,
-    TResult Function()? loginOrRegistermentScreen,
-    TResult Function()? signInScreen,
-    TResult Function()? signUpScreen,
-    TResult Function()? chartScreen,
+    TResult Function()? splashScreenFlow,
+    TResult Function()? uploadDatabaseScreenFlow,
+    TResult Function()? chartScreenFlow,
     required TResult orElse(),
   }) {
-    if (signInScreen != null) {
-      return signInScreen();
+    if (chartScreenFlow != null) {
+      return chartScreenFlow();
     }
     return orElse();
   }
@@ -642,360 +595,80 @@ class _$SignInScreen implements SignInScreen {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Splash value) splash,
-    required TResult Function(LoginOrRegistermentScreen value)
-        loginOrRegistermentScreen,
-    required TResult Function(SignInScreen value) signInScreen,
-    required TResult Function(SignUpScreen value) signUpScreen,
-    required TResult Function(ChartScreen value) chartScreen,
+    required TResult Function(SplashScreenFlow value) splashScreenFlow,
+    required TResult Function(UploadDatabaseScreenFlow value)
+        uploadDatabaseScreenFlow,
+    required TResult Function(ChartScreenFlow value) chartScreenFlow,
   }) {
-    return signInScreen(this);
+    return chartScreenFlow(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Splash value)? splash,
-    TResult? Function(LoginOrRegistermentScreen value)?
-        loginOrRegistermentScreen,
-    TResult? Function(SignInScreen value)? signInScreen,
-    TResult? Function(SignUpScreen value)? signUpScreen,
-    TResult? Function(ChartScreen value)? chartScreen,
+    TResult? Function(SplashScreenFlow value)? splashScreenFlow,
+    TResult? Function(UploadDatabaseScreenFlow value)? uploadDatabaseScreenFlow,
+    TResult? Function(ChartScreenFlow value)? chartScreenFlow,
   }) {
-    return signInScreen?.call(this);
+    return chartScreenFlow?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Splash value)? splash,
-    TResult Function(LoginOrRegistermentScreen value)?
-        loginOrRegistermentScreen,
-    TResult Function(SignInScreen value)? signInScreen,
-    TResult Function(SignUpScreen value)? signUpScreen,
-    TResult Function(ChartScreen value)? chartScreen,
+    TResult Function(SplashScreenFlow value)? splashScreenFlow,
+    TResult Function(UploadDatabaseScreenFlow value)? uploadDatabaseScreenFlow,
+    TResult Function(ChartScreenFlow value)? chartScreenFlow,
     required TResult orElse(),
   }) {
-    if (signInScreen != null) {
-      return signInScreen(this);
+    if (chartScreenFlow != null) {
+      return chartScreenFlow(this);
     }
     return orElse();
   }
 }
 
-abstract class SignInScreen implements DecisionBoardFlow {
-  const factory SignInScreen() = _$SignInScreen;
-}
-
-/// @nodoc
-abstract class _$$SignUpScreenCopyWith<$Res> {
-  factory _$$SignUpScreenCopyWith(
-          _$SignUpScreen value, $Res Function(_$SignUpScreen) then) =
-      __$$SignUpScreenCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$SignUpScreenCopyWithImpl<$Res>
-    extends _$DecisionBoardFlowCopyWithImpl<$Res, _$SignUpScreen>
-    implements _$$SignUpScreenCopyWith<$Res> {
-  __$$SignUpScreenCopyWithImpl(
-      _$SignUpScreen _value, $Res Function(_$SignUpScreen) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$SignUpScreen implements SignUpScreen {
-  const _$SignUpScreen();
-
-  @override
-  String toString() {
-    return 'DecisionBoardFlow.signUpScreen()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SignUpScreen);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() splash,
-    required TResult Function() loginOrRegistermentScreen,
-    required TResult Function() signInScreen,
-    required TResult Function() signUpScreen,
-    required TResult Function() chartScreen,
-  }) {
-    return signUpScreen();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? splash,
-    TResult? Function()? loginOrRegistermentScreen,
-    TResult? Function()? signInScreen,
-    TResult? Function()? signUpScreen,
-    TResult? Function()? chartScreen,
-  }) {
-    return signUpScreen?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? splash,
-    TResult Function()? loginOrRegistermentScreen,
-    TResult Function()? signInScreen,
-    TResult Function()? signUpScreen,
-    TResult Function()? chartScreen,
-    required TResult orElse(),
-  }) {
-    if (signUpScreen != null) {
-      return signUpScreen();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Splash value) splash,
-    required TResult Function(LoginOrRegistermentScreen value)
-        loginOrRegistermentScreen,
-    required TResult Function(SignInScreen value) signInScreen,
-    required TResult Function(SignUpScreen value) signUpScreen,
-    required TResult Function(ChartScreen value) chartScreen,
-  }) {
-    return signUpScreen(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Splash value)? splash,
-    TResult? Function(LoginOrRegistermentScreen value)?
-        loginOrRegistermentScreen,
-    TResult? Function(SignInScreen value)? signInScreen,
-    TResult? Function(SignUpScreen value)? signUpScreen,
-    TResult? Function(ChartScreen value)? chartScreen,
-  }) {
-    return signUpScreen?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Splash value)? splash,
-    TResult Function(LoginOrRegistermentScreen value)?
-        loginOrRegistermentScreen,
-    TResult Function(SignInScreen value)? signInScreen,
-    TResult Function(SignUpScreen value)? signUpScreen,
-    TResult Function(ChartScreen value)? chartScreen,
-    required TResult orElse(),
-  }) {
-    if (signUpScreen != null) {
-      return signUpScreen(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SignUpScreen implements DecisionBoardFlow {
-  const factory SignUpScreen() = _$SignUpScreen;
-}
-
-/// @nodoc
-abstract class _$$ChartScreenCopyWith<$Res> {
-  factory _$$ChartScreenCopyWith(
-          _$ChartScreen value, $Res Function(_$ChartScreen) then) =
-      __$$ChartScreenCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$ChartScreenCopyWithImpl<$Res>
-    extends _$DecisionBoardFlowCopyWithImpl<$Res, _$ChartScreen>
-    implements _$$ChartScreenCopyWith<$Res> {
-  __$$ChartScreenCopyWithImpl(
-      _$ChartScreen _value, $Res Function(_$ChartScreen) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$ChartScreen implements ChartScreen {
-  const _$ChartScreen();
-
-  @override
-  String toString() {
-    return 'DecisionBoardFlow.chartScreen()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ChartScreen);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() splash,
-    required TResult Function() loginOrRegistermentScreen,
-    required TResult Function() signInScreen,
-    required TResult Function() signUpScreen,
-    required TResult Function() chartScreen,
-  }) {
-    return chartScreen();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? splash,
-    TResult? Function()? loginOrRegistermentScreen,
-    TResult? Function()? signInScreen,
-    TResult? Function()? signUpScreen,
-    TResult? Function()? chartScreen,
-  }) {
-    return chartScreen?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? splash,
-    TResult Function()? loginOrRegistermentScreen,
-    TResult Function()? signInScreen,
-    TResult Function()? signUpScreen,
-    TResult Function()? chartScreen,
-    required TResult orElse(),
-  }) {
-    if (chartScreen != null) {
-      return chartScreen();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Splash value) splash,
-    required TResult Function(LoginOrRegistermentScreen value)
-        loginOrRegistermentScreen,
-    required TResult Function(SignInScreen value) signInScreen,
-    required TResult Function(SignUpScreen value) signUpScreen,
-    required TResult Function(ChartScreen value) chartScreen,
-  }) {
-    return chartScreen(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Splash value)? splash,
-    TResult? Function(LoginOrRegistermentScreen value)?
-        loginOrRegistermentScreen,
-    TResult? Function(SignInScreen value)? signInScreen,
-    TResult? Function(SignUpScreen value)? signUpScreen,
-    TResult? Function(ChartScreen value)? chartScreen,
-  }) {
-    return chartScreen?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Splash value)? splash,
-    TResult Function(LoginOrRegistermentScreen value)?
-        loginOrRegistermentScreen,
-    TResult Function(SignInScreen value)? signInScreen,
-    TResult Function(SignUpScreen value)? signUpScreen,
-    TResult Function(ChartScreen value)? chartScreen,
-    required TResult orElse(),
-  }) {
-    if (chartScreen != null) {
-      return chartScreen(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ChartScreen implements DecisionBoardFlow {
-  const factory ChartScreen() = _$ChartScreen;
+abstract class ChartScreenFlow implements DecisionBoardFlow {
+  const factory ChartScreenFlow() = _$ChartScreenFlow;
 }
 
 /// @nodoc
 mixin _$DecisionBoardEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() toLoginOrRegistermentScreen,
-    required TResult Function() backToInitialScreen,
-    required TResult Function() signIn,
-    required TResult Function() signUp,
-    required TResult Function(List<String> data) storeGraphData,
+    required TResult Function() goToUploadDataBaseScreen,
     required TResult Function(List<List<dynamic>> data) goToChartsScreen,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? toLoginOrRegistermentScreen,
-    TResult? Function()? backToInitialScreen,
-    TResult? Function()? signIn,
-    TResult? Function()? signUp,
-    TResult? Function(List<String> data)? storeGraphData,
+    TResult? Function()? goToUploadDataBaseScreen,
     TResult? Function(List<List<dynamic>> data)? goToChartsScreen,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? toLoginOrRegistermentScreen,
-    TResult Function()? backToInitialScreen,
-    TResult Function()? signIn,
-    TResult Function()? signUp,
-    TResult Function(List<String> data)? storeGraphData,
+    TResult Function()? goToUploadDataBaseScreen,
     TResult Function(List<List<dynamic>> data)? goToChartsScreen,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ToLoginOrRegistermentScreen value)
-        toLoginOrRegistermentScreen,
-    required TResult Function(BackToInitialScreen value) backToInitialScreen,
-    required TResult Function(SignIn value) signIn,
-    required TResult Function(SignUp value) signUp,
-    required TResult Function(StoreGraphData value) storeGraphData,
+    required TResult Function(GoToUploadDataBaseScreen value)
+        goToUploadDataBaseScreen,
     required TResult Function(GoToChartsScreen value) goToChartsScreen,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ToLoginOrRegistermentScreen value)?
-        toLoginOrRegistermentScreen,
-    TResult? Function(BackToInitialScreen value)? backToInitialScreen,
-    TResult? Function(SignIn value)? signIn,
-    TResult? Function(SignUp value)? signUp,
-    TResult? Function(StoreGraphData value)? storeGraphData,
+    TResult? Function(GoToUploadDataBaseScreen value)? goToUploadDataBaseScreen,
     TResult? Function(GoToChartsScreen value)? goToChartsScreen,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ToLoginOrRegistermentScreen value)?
-        toLoginOrRegistermentScreen,
-    TResult Function(BackToInitialScreen value)? backToInitialScreen,
-    TResult Function(SignIn value)? signIn,
-    TResult Function(SignUp value)? signUp,
-    TResult Function(StoreGraphData value)? storeGraphData,
+    TResult Function(GoToUploadDataBaseScreen value)? goToUploadDataBaseScreen,
     TResult Function(GoToChartsScreen value)? goToChartsScreen,
     required TResult orElse(),
   }) =>
@@ -1021,39 +694,36 @@ class _$DecisionBoardEventCopyWithImpl<$Res, $Val extends DecisionBoardEvent>
 }
 
 /// @nodoc
-abstract class _$$ToLoginOrRegistermentScreenCopyWith<$Res> {
-  factory _$$ToLoginOrRegistermentScreenCopyWith(
-          _$ToLoginOrRegistermentScreen value,
-          $Res Function(_$ToLoginOrRegistermentScreen) then) =
-      __$$ToLoginOrRegistermentScreenCopyWithImpl<$Res>;
+abstract class _$$GoToUploadDataBaseScreenCopyWith<$Res> {
+  factory _$$GoToUploadDataBaseScreenCopyWith(_$GoToUploadDataBaseScreen value,
+          $Res Function(_$GoToUploadDataBaseScreen) then) =
+      __$$GoToUploadDataBaseScreenCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ToLoginOrRegistermentScreenCopyWithImpl<$Res>
-    extends _$DecisionBoardEventCopyWithImpl<$Res,
-        _$ToLoginOrRegistermentScreen>
-    implements _$$ToLoginOrRegistermentScreenCopyWith<$Res> {
-  __$$ToLoginOrRegistermentScreenCopyWithImpl(
-      _$ToLoginOrRegistermentScreen _value,
-      $Res Function(_$ToLoginOrRegistermentScreen) _then)
+class __$$GoToUploadDataBaseScreenCopyWithImpl<$Res>
+    extends _$DecisionBoardEventCopyWithImpl<$Res, _$GoToUploadDataBaseScreen>
+    implements _$$GoToUploadDataBaseScreenCopyWith<$Res> {
+  __$$GoToUploadDataBaseScreenCopyWithImpl(_$GoToUploadDataBaseScreen _value,
+      $Res Function(_$GoToUploadDataBaseScreen) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ToLoginOrRegistermentScreen implements ToLoginOrRegistermentScreen {
-  const _$ToLoginOrRegistermentScreen();
+class _$GoToUploadDataBaseScreen implements GoToUploadDataBaseScreen {
+  const _$GoToUploadDataBaseScreen();
 
   @override
   String toString() {
-    return 'DecisionBoardEvent.toLoginOrRegistermentScreen()';
+    return 'DecisionBoardEvent.goToUploadDataBaseScreen()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ToLoginOrRegistermentScreen);
+            other is _$GoToUploadDataBaseScreen);
   }
 
   @override
@@ -1062,42 +732,30 @@ class _$ToLoginOrRegistermentScreen implements ToLoginOrRegistermentScreen {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() toLoginOrRegistermentScreen,
-    required TResult Function() backToInitialScreen,
-    required TResult Function() signIn,
-    required TResult Function() signUp,
-    required TResult Function(List<String> data) storeGraphData,
+    required TResult Function() goToUploadDataBaseScreen,
     required TResult Function(List<List<dynamic>> data) goToChartsScreen,
   }) {
-    return toLoginOrRegistermentScreen();
+    return goToUploadDataBaseScreen();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? toLoginOrRegistermentScreen,
-    TResult? Function()? backToInitialScreen,
-    TResult? Function()? signIn,
-    TResult? Function()? signUp,
-    TResult? Function(List<String> data)? storeGraphData,
+    TResult? Function()? goToUploadDataBaseScreen,
     TResult? Function(List<List<dynamic>> data)? goToChartsScreen,
   }) {
-    return toLoginOrRegistermentScreen?.call();
+    return goToUploadDataBaseScreen?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? toLoginOrRegistermentScreen,
-    TResult Function()? backToInitialScreen,
-    TResult Function()? signIn,
-    TResult Function()? signUp,
-    TResult Function(List<String> data)? storeGraphData,
+    TResult Function()? goToUploadDataBaseScreen,
     TResult Function(List<List<dynamic>> data)? goToChartsScreen,
     required TResult orElse(),
   }) {
-    if (toLoginOrRegistermentScreen != null) {
-      return toLoginOrRegistermentScreen();
+    if (goToUploadDataBaseScreen != null) {
+      return goToUploadDataBaseScreen();
     }
     return orElse();
   }
@@ -1105,602 +763,38 @@ class _$ToLoginOrRegistermentScreen implements ToLoginOrRegistermentScreen {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ToLoginOrRegistermentScreen value)
-        toLoginOrRegistermentScreen,
-    required TResult Function(BackToInitialScreen value) backToInitialScreen,
-    required TResult Function(SignIn value) signIn,
-    required TResult Function(SignUp value) signUp,
-    required TResult Function(StoreGraphData value) storeGraphData,
+    required TResult Function(GoToUploadDataBaseScreen value)
+        goToUploadDataBaseScreen,
     required TResult Function(GoToChartsScreen value) goToChartsScreen,
   }) {
-    return toLoginOrRegistermentScreen(this);
+    return goToUploadDataBaseScreen(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ToLoginOrRegistermentScreen value)?
-        toLoginOrRegistermentScreen,
-    TResult? Function(BackToInitialScreen value)? backToInitialScreen,
-    TResult? Function(SignIn value)? signIn,
-    TResult? Function(SignUp value)? signUp,
-    TResult? Function(StoreGraphData value)? storeGraphData,
+    TResult? Function(GoToUploadDataBaseScreen value)? goToUploadDataBaseScreen,
     TResult? Function(GoToChartsScreen value)? goToChartsScreen,
   }) {
-    return toLoginOrRegistermentScreen?.call(this);
+    return goToUploadDataBaseScreen?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ToLoginOrRegistermentScreen value)?
-        toLoginOrRegistermentScreen,
-    TResult Function(BackToInitialScreen value)? backToInitialScreen,
-    TResult Function(SignIn value)? signIn,
-    TResult Function(SignUp value)? signUp,
-    TResult Function(StoreGraphData value)? storeGraphData,
+    TResult Function(GoToUploadDataBaseScreen value)? goToUploadDataBaseScreen,
     TResult Function(GoToChartsScreen value)? goToChartsScreen,
     required TResult orElse(),
   }) {
-    if (toLoginOrRegistermentScreen != null) {
-      return toLoginOrRegistermentScreen(this);
+    if (goToUploadDataBaseScreen != null) {
+      return goToUploadDataBaseScreen(this);
     }
     return orElse();
   }
 }
 
-abstract class ToLoginOrRegistermentScreen implements DecisionBoardEvent {
-  const factory ToLoginOrRegistermentScreen() = _$ToLoginOrRegistermentScreen;
-}
-
-/// @nodoc
-abstract class _$$BackToInitialScreenCopyWith<$Res> {
-  factory _$$BackToInitialScreenCopyWith(_$BackToInitialScreen value,
-          $Res Function(_$BackToInitialScreen) then) =
-      __$$BackToInitialScreenCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$BackToInitialScreenCopyWithImpl<$Res>
-    extends _$DecisionBoardEventCopyWithImpl<$Res, _$BackToInitialScreen>
-    implements _$$BackToInitialScreenCopyWith<$Res> {
-  __$$BackToInitialScreenCopyWithImpl(
-      _$BackToInitialScreen _value, $Res Function(_$BackToInitialScreen) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$BackToInitialScreen implements BackToInitialScreen {
-  const _$BackToInitialScreen();
-
-  @override
-  String toString() {
-    return 'DecisionBoardEvent.backToInitialScreen()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$BackToInitialScreen);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() toLoginOrRegistermentScreen,
-    required TResult Function() backToInitialScreen,
-    required TResult Function() signIn,
-    required TResult Function() signUp,
-    required TResult Function(List<String> data) storeGraphData,
-    required TResult Function(List<List<dynamic>> data) goToChartsScreen,
-  }) {
-    return backToInitialScreen();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? toLoginOrRegistermentScreen,
-    TResult? Function()? backToInitialScreen,
-    TResult? Function()? signIn,
-    TResult? Function()? signUp,
-    TResult? Function(List<String> data)? storeGraphData,
-    TResult? Function(List<List<dynamic>> data)? goToChartsScreen,
-  }) {
-    return backToInitialScreen?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? toLoginOrRegistermentScreen,
-    TResult Function()? backToInitialScreen,
-    TResult Function()? signIn,
-    TResult Function()? signUp,
-    TResult Function(List<String> data)? storeGraphData,
-    TResult Function(List<List<dynamic>> data)? goToChartsScreen,
-    required TResult orElse(),
-  }) {
-    if (backToInitialScreen != null) {
-      return backToInitialScreen();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ToLoginOrRegistermentScreen value)
-        toLoginOrRegistermentScreen,
-    required TResult Function(BackToInitialScreen value) backToInitialScreen,
-    required TResult Function(SignIn value) signIn,
-    required TResult Function(SignUp value) signUp,
-    required TResult Function(StoreGraphData value) storeGraphData,
-    required TResult Function(GoToChartsScreen value) goToChartsScreen,
-  }) {
-    return backToInitialScreen(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ToLoginOrRegistermentScreen value)?
-        toLoginOrRegistermentScreen,
-    TResult? Function(BackToInitialScreen value)? backToInitialScreen,
-    TResult? Function(SignIn value)? signIn,
-    TResult? Function(SignUp value)? signUp,
-    TResult? Function(StoreGraphData value)? storeGraphData,
-    TResult? Function(GoToChartsScreen value)? goToChartsScreen,
-  }) {
-    return backToInitialScreen?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ToLoginOrRegistermentScreen value)?
-        toLoginOrRegistermentScreen,
-    TResult Function(BackToInitialScreen value)? backToInitialScreen,
-    TResult Function(SignIn value)? signIn,
-    TResult Function(SignUp value)? signUp,
-    TResult Function(StoreGraphData value)? storeGraphData,
-    TResult Function(GoToChartsScreen value)? goToChartsScreen,
-    required TResult orElse(),
-  }) {
-    if (backToInitialScreen != null) {
-      return backToInitialScreen(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class BackToInitialScreen implements DecisionBoardEvent {
-  const factory BackToInitialScreen() = _$BackToInitialScreen;
-}
-
-/// @nodoc
-abstract class _$$SignInCopyWith<$Res> {
-  factory _$$SignInCopyWith(_$SignIn value, $Res Function(_$SignIn) then) =
-      __$$SignInCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$SignInCopyWithImpl<$Res>
-    extends _$DecisionBoardEventCopyWithImpl<$Res, _$SignIn>
-    implements _$$SignInCopyWith<$Res> {
-  __$$SignInCopyWithImpl(_$SignIn _value, $Res Function(_$SignIn) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$SignIn implements SignIn {
-  const _$SignIn();
-
-  @override
-  String toString() {
-    return 'DecisionBoardEvent.signIn()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SignIn);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() toLoginOrRegistermentScreen,
-    required TResult Function() backToInitialScreen,
-    required TResult Function() signIn,
-    required TResult Function() signUp,
-    required TResult Function(List<String> data) storeGraphData,
-    required TResult Function(List<List<dynamic>> data) goToChartsScreen,
-  }) {
-    return signIn();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? toLoginOrRegistermentScreen,
-    TResult? Function()? backToInitialScreen,
-    TResult? Function()? signIn,
-    TResult? Function()? signUp,
-    TResult? Function(List<String> data)? storeGraphData,
-    TResult? Function(List<List<dynamic>> data)? goToChartsScreen,
-  }) {
-    return signIn?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? toLoginOrRegistermentScreen,
-    TResult Function()? backToInitialScreen,
-    TResult Function()? signIn,
-    TResult Function()? signUp,
-    TResult Function(List<String> data)? storeGraphData,
-    TResult Function(List<List<dynamic>> data)? goToChartsScreen,
-    required TResult orElse(),
-  }) {
-    if (signIn != null) {
-      return signIn();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ToLoginOrRegistermentScreen value)
-        toLoginOrRegistermentScreen,
-    required TResult Function(BackToInitialScreen value) backToInitialScreen,
-    required TResult Function(SignIn value) signIn,
-    required TResult Function(SignUp value) signUp,
-    required TResult Function(StoreGraphData value) storeGraphData,
-    required TResult Function(GoToChartsScreen value) goToChartsScreen,
-  }) {
-    return signIn(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ToLoginOrRegistermentScreen value)?
-        toLoginOrRegistermentScreen,
-    TResult? Function(BackToInitialScreen value)? backToInitialScreen,
-    TResult? Function(SignIn value)? signIn,
-    TResult? Function(SignUp value)? signUp,
-    TResult? Function(StoreGraphData value)? storeGraphData,
-    TResult? Function(GoToChartsScreen value)? goToChartsScreen,
-  }) {
-    return signIn?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ToLoginOrRegistermentScreen value)?
-        toLoginOrRegistermentScreen,
-    TResult Function(BackToInitialScreen value)? backToInitialScreen,
-    TResult Function(SignIn value)? signIn,
-    TResult Function(SignUp value)? signUp,
-    TResult Function(StoreGraphData value)? storeGraphData,
-    TResult Function(GoToChartsScreen value)? goToChartsScreen,
-    required TResult orElse(),
-  }) {
-    if (signIn != null) {
-      return signIn(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SignIn implements DecisionBoardEvent {
-  const factory SignIn() = _$SignIn;
-}
-
-/// @nodoc
-abstract class _$$SignUpCopyWith<$Res> {
-  factory _$$SignUpCopyWith(_$SignUp value, $Res Function(_$SignUp) then) =
-      __$$SignUpCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$SignUpCopyWithImpl<$Res>
-    extends _$DecisionBoardEventCopyWithImpl<$Res, _$SignUp>
-    implements _$$SignUpCopyWith<$Res> {
-  __$$SignUpCopyWithImpl(_$SignUp _value, $Res Function(_$SignUp) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$SignUp implements SignUp {
-  const _$SignUp();
-
-  @override
-  String toString() {
-    return 'DecisionBoardEvent.signUp()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SignUp);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() toLoginOrRegistermentScreen,
-    required TResult Function() backToInitialScreen,
-    required TResult Function() signIn,
-    required TResult Function() signUp,
-    required TResult Function(List<String> data) storeGraphData,
-    required TResult Function(List<List<dynamic>> data) goToChartsScreen,
-  }) {
-    return signUp();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? toLoginOrRegistermentScreen,
-    TResult? Function()? backToInitialScreen,
-    TResult? Function()? signIn,
-    TResult? Function()? signUp,
-    TResult? Function(List<String> data)? storeGraphData,
-    TResult? Function(List<List<dynamic>> data)? goToChartsScreen,
-  }) {
-    return signUp?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? toLoginOrRegistermentScreen,
-    TResult Function()? backToInitialScreen,
-    TResult Function()? signIn,
-    TResult Function()? signUp,
-    TResult Function(List<String> data)? storeGraphData,
-    TResult Function(List<List<dynamic>> data)? goToChartsScreen,
-    required TResult orElse(),
-  }) {
-    if (signUp != null) {
-      return signUp();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ToLoginOrRegistermentScreen value)
-        toLoginOrRegistermentScreen,
-    required TResult Function(BackToInitialScreen value) backToInitialScreen,
-    required TResult Function(SignIn value) signIn,
-    required TResult Function(SignUp value) signUp,
-    required TResult Function(StoreGraphData value) storeGraphData,
-    required TResult Function(GoToChartsScreen value) goToChartsScreen,
-  }) {
-    return signUp(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ToLoginOrRegistermentScreen value)?
-        toLoginOrRegistermentScreen,
-    TResult? Function(BackToInitialScreen value)? backToInitialScreen,
-    TResult? Function(SignIn value)? signIn,
-    TResult? Function(SignUp value)? signUp,
-    TResult? Function(StoreGraphData value)? storeGraphData,
-    TResult? Function(GoToChartsScreen value)? goToChartsScreen,
-  }) {
-    return signUp?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ToLoginOrRegistermentScreen value)?
-        toLoginOrRegistermentScreen,
-    TResult Function(BackToInitialScreen value)? backToInitialScreen,
-    TResult Function(SignIn value)? signIn,
-    TResult Function(SignUp value)? signUp,
-    TResult Function(StoreGraphData value)? storeGraphData,
-    TResult Function(GoToChartsScreen value)? goToChartsScreen,
-    required TResult orElse(),
-  }) {
-    if (signUp != null) {
-      return signUp(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SignUp implements DecisionBoardEvent {
-  const factory SignUp() = _$SignUp;
-}
-
-/// @nodoc
-abstract class _$$StoreGraphDataCopyWith<$Res> {
-  factory _$$StoreGraphDataCopyWith(
-          _$StoreGraphData value, $Res Function(_$StoreGraphData) then) =
-      __$$StoreGraphDataCopyWithImpl<$Res>;
-  @useResult
-  $Res call({List<String> data});
-}
-
-/// @nodoc
-class __$$StoreGraphDataCopyWithImpl<$Res>
-    extends _$DecisionBoardEventCopyWithImpl<$Res, _$StoreGraphData>
-    implements _$$StoreGraphDataCopyWith<$Res> {
-  __$$StoreGraphDataCopyWithImpl(
-      _$StoreGraphData _value, $Res Function(_$StoreGraphData) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = null,
-  }) {
-    return _then(_$StoreGraphData(
-      data: null == data
-          ? _value._data
-          : data // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$StoreGraphData implements StoreGraphData {
-  const _$StoreGraphData({required final List<String> data}) : _data = data;
-
-  final List<String> _data;
-  @override
-  List<String> get data {
-    if (_data is EqualUnmodifiableListView) return _data;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_data);
-  }
-
-  @override
-  String toString() {
-    return 'DecisionBoardEvent.storeGraphData(data: $data)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$StoreGraphData &&
-            const DeepCollectionEquality().equals(other._data, _data));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$StoreGraphDataCopyWith<_$StoreGraphData> get copyWith =>
-      __$$StoreGraphDataCopyWithImpl<_$StoreGraphData>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() toLoginOrRegistermentScreen,
-    required TResult Function() backToInitialScreen,
-    required TResult Function() signIn,
-    required TResult Function() signUp,
-    required TResult Function(List<String> data) storeGraphData,
-    required TResult Function(List<List<dynamic>> data) goToChartsScreen,
-  }) {
-    return storeGraphData(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? toLoginOrRegistermentScreen,
-    TResult? Function()? backToInitialScreen,
-    TResult? Function()? signIn,
-    TResult? Function()? signUp,
-    TResult? Function(List<String> data)? storeGraphData,
-    TResult? Function(List<List<dynamic>> data)? goToChartsScreen,
-  }) {
-    return storeGraphData?.call(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? toLoginOrRegistermentScreen,
-    TResult Function()? backToInitialScreen,
-    TResult Function()? signIn,
-    TResult Function()? signUp,
-    TResult Function(List<String> data)? storeGraphData,
-    TResult Function(List<List<dynamic>> data)? goToChartsScreen,
-    required TResult orElse(),
-  }) {
-    if (storeGraphData != null) {
-      return storeGraphData(data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ToLoginOrRegistermentScreen value)
-        toLoginOrRegistermentScreen,
-    required TResult Function(BackToInitialScreen value) backToInitialScreen,
-    required TResult Function(SignIn value) signIn,
-    required TResult Function(SignUp value) signUp,
-    required TResult Function(StoreGraphData value) storeGraphData,
-    required TResult Function(GoToChartsScreen value) goToChartsScreen,
-  }) {
-    return storeGraphData(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ToLoginOrRegistermentScreen value)?
-        toLoginOrRegistermentScreen,
-    TResult? Function(BackToInitialScreen value)? backToInitialScreen,
-    TResult? Function(SignIn value)? signIn,
-    TResult? Function(SignUp value)? signUp,
-    TResult? Function(StoreGraphData value)? storeGraphData,
-    TResult? Function(GoToChartsScreen value)? goToChartsScreen,
-  }) {
-    return storeGraphData?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ToLoginOrRegistermentScreen value)?
-        toLoginOrRegistermentScreen,
-    TResult Function(BackToInitialScreen value)? backToInitialScreen,
-    TResult Function(SignIn value)? signIn,
-    TResult Function(SignUp value)? signUp,
-    TResult Function(StoreGraphData value)? storeGraphData,
-    TResult Function(GoToChartsScreen value)? goToChartsScreen,
-    required TResult orElse(),
-  }) {
-    if (storeGraphData != null) {
-      return storeGraphData(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class StoreGraphData implements DecisionBoardEvent {
-  const factory StoreGraphData({required final List<String> data}) =
-      _$StoreGraphData;
-
-  List<String> get data;
-  @JsonKey(ignore: true)
-  _$$StoreGraphDataCopyWith<_$StoreGraphData> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class GoToUploadDataBaseScreen implements DecisionBoardEvent {
+  const factory GoToUploadDataBaseScreen() = _$GoToUploadDataBaseScreen;
 }
 
 /// @nodoc
@@ -1774,11 +868,7 @@ class _$GoToChartsScreen implements GoToChartsScreen {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() toLoginOrRegistermentScreen,
-    required TResult Function() backToInitialScreen,
-    required TResult Function() signIn,
-    required TResult Function() signUp,
-    required TResult Function(List<String> data) storeGraphData,
+    required TResult Function() goToUploadDataBaseScreen,
     required TResult Function(List<List<dynamic>> data) goToChartsScreen,
   }) {
     return goToChartsScreen(data);
@@ -1787,11 +877,7 @@ class _$GoToChartsScreen implements GoToChartsScreen {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? toLoginOrRegistermentScreen,
-    TResult? Function()? backToInitialScreen,
-    TResult? Function()? signIn,
-    TResult? Function()? signUp,
-    TResult? Function(List<String> data)? storeGraphData,
+    TResult? Function()? goToUploadDataBaseScreen,
     TResult? Function(List<List<dynamic>> data)? goToChartsScreen,
   }) {
     return goToChartsScreen?.call(data);
@@ -1800,11 +886,7 @@ class _$GoToChartsScreen implements GoToChartsScreen {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? toLoginOrRegistermentScreen,
-    TResult Function()? backToInitialScreen,
-    TResult Function()? signIn,
-    TResult Function()? signUp,
-    TResult Function(List<String> data)? storeGraphData,
+    TResult Function()? goToUploadDataBaseScreen,
     TResult Function(List<List<dynamic>> data)? goToChartsScreen,
     required TResult orElse(),
   }) {
@@ -1817,12 +899,8 @@ class _$GoToChartsScreen implements GoToChartsScreen {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ToLoginOrRegistermentScreen value)
-        toLoginOrRegistermentScreen,
-    required TResult Function(BackToInitialScreen value) backToInitialScreen,
-    required TResult Function(SignIn value) signIn,
-    required TResult Function(SignUp value) signUp,
-    required TResult Function(StoreGraphData value) storeGraphData,
+    required TResult Function(GoToUploadDataBaseScreen value)
+        goToUploadDataBaseScreen,
     required TResult Function(GoToChartsScreen value) goToChartsScreen,
   }) {
     return goToChartsScreen(this);
@@ -1831,12 +909,7 @@ class _$GoToChartsScreen implements GoToChartsScreen {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ToLoginOrRegistermentScreen value)?
-        toLoginOrRegistermentScreen,
-    TResult? Function(BackToInitialScreen value)? backToInitialScreen,
-    TResult? Function(SignIn value)? signIn,
-    TResult? Function(SignUp value)? signUp,
-    TResult? Function(StoreGraphData value)? storeGraphData,
+    TResult? Function(GoToUploadDataBaseScreen value)? goToUploadDataBaseScreen,
     TResult? Function(GoToChartsScreen value)? goToChartsScreen,
   }) {
     return goToChartsScreen?.call(this);
@@ -1845,12 +918,7 @@ class _$GoToChartsScreen implements GoToChartsScreen {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ToLoginOrRegistermentScreen value)?
-        toLoginOrRegistermentScreen,
-    TResult Function(BackToInitialScreen value)? backToInitialScreen,
-    TResult Function(SignIn value)? signIn,
-    TResult Function(SignUp value)? signUp,
-    TResult Function(StoreGraphData value)? storeGraphData,
+    TResult Function(GoToUploadDataBaseScreen value)? goToUploadDataBaseScreen,
     TResult Function(GoToChartsScreen value)? goToChartsScreen,
     required TResult orElse(),
   }) {

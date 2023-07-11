@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
-class ColorTokens {
-  static const Color primary = Color.fromARGB(255, 61, 120, 223);
-  static const Color whiteBackground = Color.fromARGB(255, 255, 255, 255);
-  static const Color borderGray = Color.fromARGB(255, 141, 138, 138);
+class BaseColors {
+  static const Color primary = Color(0xFFC6C8EE);
+  static const Color purpleButton = Color(0xFF8393E9);
 }
 
-class AppColors {
+class GraphColors {
   static const Color primary = contentColorCyan;
   static const Color menuBackground = Color(0xFF090912);
   static const Color itemsBackground = Color(0xFF1B2339);

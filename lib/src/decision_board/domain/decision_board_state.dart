@@ -10,7 +10,7 @@ class DecisionBoardState with _$DecisionBoardState {
   }) = _DecisionBoardState;
 
   factory DecisionBoardState.initial() => const DecisionBoardState(
-        flow: Splash(),
+        flow: SplashScreenFlow(),
         listDates: [],
         listLocations: [],
         listStatus: [],
@@ -19,10 +19,8 @@ class DecisionBoardState with _$DecisionBoardState {
 
 @freezed
 class DecisionBoardFlow with _$DecisionBoardFlow {
-  const factory DecisionBoardFlow.splash() = Splash;
-  const factory DecisionBoardFlow.loginOrRegistermentScreen() =
-      LoginOrRegistermentScreen;
-  const factory DecisionBoardFlow.signInScreen() = SignInScreen;
-  const factory DecisionBoardFlow.signUpScreen() = SignUpScreen;
-  const factory DecisionBoardFlow.chartScreen() = ChartScreen;
+  const factory DecisionBoardFlow.splashScreenFlow() = SplashScreenFlow;
+  const factory DecisionBoardFlow.uploadDatabaseScreenFlow() =
+      UploadDatabaseScreenFlow;
+  const factory DecisionBoardFlow.chartScreenFlow() = ChartScreenFlow;
 }

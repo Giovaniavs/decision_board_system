@@ -242,7 +242,7 @@ class _LineChart extends StatelessWidget {
         show: true,
         border: Border(
           bottom:
-              BorderSide(color: AppColors.primary.withOpacity(0.2), width: 4),
+              BorderSide(color: GraphColors.primary.withOpacity(0.2), width: 4),
           left: const BorderSide(color: Colors.transparent),
           right: const BorderSide(color: Colors.transparent),
           top: const BorderSide(color: Colors.transparent),
@@ -251,7 +251,7 @@ class _LineChart extends StatelessWidget {
 
   LineChartBarData get lineChartBarData1_1 => LineChartBarData(
         isCurved: true,
-        color: AppColors.contentColorGreen,
+        color: GraphColors.contentColorGreen,
         barWidth: 8,
         isStrokeCapRound: true,
         dotData: FlDotData(show: false),
@@ -269,13 +269,13 @@ class _LineChart extends StatelessWidget {
 
   LineChartBarData get lineChartBarData1_2 => LineChartBarData(
         isCurved: true,
-        color: AppColors.contentColorPink,
+        color: GraphColors.contentColorPink,
         barWidth: 8,
         isStrokeCapRound: true,
         dotData: FlDotData(show: false),
         belowBarData: BarAreaData(
           show: false,
-          color: AppColors.contentColorPink.withOpacity(0),
+          color: GraphColors.contentColorPink.withOpacity(0),
         ),
         spots: const [
           FlSpot(1, 1),
@@ -289,7 +289,7 @@ class _LineChart extends StatelessWidget {
 
   LineChartBarData get lineChartBarData1_3 => LineChartBarData(
         isCurved: true,
-        color: AppColors.contentColorCyan,
+        color: GraphColors.contentColorCyan,
         barWidth: 8,
         isStrokeCapRound: true,
         dotData: FlDotData(show: false),
@@ -304,7 +304,7 @@ class _LineChart extends StatelessWidget {
   LineChartBarData get lineChartBarData2_1 => LineChartBarData(
         isCurved: true,
         curveSmoothness: 0,
-        color: AppColors.contentColorGreen.withOpacity(0.5),
+        color: GraphColors.contentColorGreen.withOpacity(0.5),
         barWidth: 4,
         isStrokeCapRound: true,
         dotData: FlDotData(show: false),
@@ -322,13 +322,13 @@ class _LineChart extends StatelessWidget {
 
   LineChartBarData get lineChartBarData2_2 => LineChartBarData(
         isCurved: true,
-        color: AppColors.contentColorPink.withOpacity(0.5),
+        color: GraphColors.contentColorPink.withOpacity(0.5),
         barWidth: 4,
         isStrokeCapRound: true,
         dotData: FlDotData(show: false),
         belowBarData: BarAreaData(
           show: true,
-          color: AppColors.contentColorPink.withOpacity(0.2),
+          color: GraphColors.contentColorPink.withOpacity(0.2),
         ),
         spots: const [
           FlSpot(1, 1),
@@ -343,7 +343,7 @@ class _LineChart extends StatelessWidget {
   LineChartBarData get lineChartBarData2_3 => LineChartBarData(
         isCurved: true,
         curveSmoothness: 0,
-        color: AppColors.contentColorCyan.withOpacity(0.5),
+        color: GraphColors.contentColorCyan.withOpacity(0.5),
         barWidth: 2,
         isStrokeCapRound: true,
         dotData: FlDotData(show: true),
@@ -389,7 +389,7 @@ class LineChartSample1State extends State<LineChartSample1> {
               const Text(
                 'Incidentes/Mês',
                 style: TextStyle(
-                  color: AppColors.primary,
+                  color: GraphColors.primary,
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 2,
@@ -445,7 +445,7 @@ class PieChart2State extends State {
         const Text(
           'Status de Setembro',
           style: TextStyle(
-            color: AppColors.primary,
+            color: GraphColors.primary,
             fontSize: 32,
             fontWeight: FontWeight.bold,
             letterSpacing: 2,
@@ -498,7 +498,7 @@ class PieChart2State extends State {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: const <Widget>[
               Indicator(
-                color: AppColors.contentColorBlue,
+                color: GraphColors.contentColorBlue,
                 text: 'Respondido: 230',
                 isSquare: true,
               ),
@@ -506,7 +506,7 @@ class PieChart2State extends State {
                 height: 4,
               ),
               Indicator(
-                color: AppColors.contentColorYellow,
+                color: GraphColors.contentColorYellow,
                 text: 'Não respondido: 100',
                 isSquare: true,
               ),
@@ -514,7 +514,7 @@ class PieChart2State extends State {
                 height: 4,
               ),
               Indicator(
-                color: AppColors.contentColorPurple,
+                color: GraphColors.contentColorPurple,
                 text: 'Em réplica: 120',
                 isSquare: true,
               ),
@@ -522,7 +522,7 @@ class PieChart2State extends State {
                 height: 4,
               ),
               Indicator(
-                color: AppColors.contentColorGreen,
+                color: GraphColors.contentColorGreen,
                 text: 'Resolvido: 80',
                 isSquare: true,
               ),
@@ -550,53 +550,53 @@ class PieChart2State extends State {
       switch (i) {
         case 0:
           return PieChartSectionData(
-            color: AppColors.contentColorBlue,
+            color: GraphColors.contentColorBlue,
             value: 230,
             title: '${(230 / 530 * 100).toInt()}%',
             radius: radius,
             titleStyle: TextStyle(
               fontSize: fontSize,
               fontWeight: FontWeight.bold,
-              color: AppColors.mainTextColor1,
+              color: GraphColors.mainTextColor1,
               shadows: shadows,
             ),
           );
         case 1:
           return PieChartSectionData(
-            color: AppColors.contentColorYellow,
+            color: GraphColors.contentColorYellow,
             value: 100,
             title: '${(100 / 530 * 100).toInt()}%',
             radius: radius,
             titleStyle: TextStyle(
               fontSize: fontSize,
               fontWeight: FontWeight.bold,
-              color: AppColors.mainTextColor1,
+              color: GraphColors.mainTextColor1,
               shadows: shadows,
             ),
           );
         case 2:
           return PieChartSectionData(
-            color: AppColors.contentColorPurple,
+            color: GraphColors.contentColorPurple,
             value: 120,
             title: '${(120 / 530 * 100).toInt()}%',
             radius: radius,
             titleStyle: TextStyle(
               fontSize: fontSize,
               fontWeight: FontWeight.bold,
-              color: AppColors.mainTextColor1,
+              color: GraphColors.mainTextColor1,
               shadows: shadows,
             ),
           );
         case 3:
           return PieChartSectionData(
-            color: AppColors.contentColorGreen,
+            color: GraphColors.contentColorGreen,
             value: 80,
             title: '${(80 / 530 * 100).toInt()}%',
             radius: radius,
             titleStyle: TextStyle(
               fontSize: fontSize,
               fontWeight: FontWeight.bold,
-              color: AppColors.mainTextColor1,
+              color: GraphColors.mainTextColor1,
               shadows: shadows,
             ),
           );

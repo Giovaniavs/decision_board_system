@@ -15,13 +15,13 @@ class BlueLongButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: ColorTokens.primary,
+        backgroundColor: BaseColors.primary,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.0),
         ),
         side: const BorderSide(
           width: 1.0,
-          color: ColorTokens.primary,
+          color: BaseColors.primary,
         ),
         minimumSize: const Size(double.infinity, 48),
         elevation: 0.0,

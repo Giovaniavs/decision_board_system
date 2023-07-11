@@ -3,12 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:decision_board_system/src/shared/design_system/tokens/typography_tokens.dart';
 
 @immutable
-class OpenReduTextStyles {
+class DBTextStyles {
   final TextStyle style;
 
-  const OpenReduTextStyles._(this.style);
+  const DBTextStyles._(this.style);
 
-  static OpenReduTextStyles headline1 = OpenReduTextStyles._(
+  static DBTextStyles headline1 = DBTextStyles._(
     GoogleFonts.inter(
       fontSize: FontSizeTokens.weka,
       fontWeight: FontWeightTokens.light,

@@ -12,51 +12,9 @@ class DecisionBoardUseCase
   @override
   Stream<DecisionBoardState> mapEventToState(DecisionBoardEvent event) async* {
     yield* event.map(
-      backToInitialScreen: _backToInitialScreen,
-      signIn: _signIn,
-      signUp: _signUp,
-      toLoginOrRegistermentScreen: _toLoginOrRegistermentScreen,
-      storeGraphData: _storeGraphData,
       goToChartsScreen: _goToChartsScreen,
+      goToUploadDataBaseScreen: _goToUploadDataBaseScreen,
     );
-  }
-
-  Stream<DecisionBoardState> _backToInitialScreen(
-      BackToInitialScreen value) async* {
-    yield state;
-  }
-
-  Stream<DecisionBoardState> _signIn(SignIn value) async* {
-    yield state.copyWith(
-      flow: const SignInScreen(),
-    );
-  }
-
-  Stream<DecisionBoardState> _signUp(SignUp value) async* {
-    yield state;
-  }
-
-  Stream<DecisionBoardState> _toLoginOrRegistermentScreen(
-    ToLoginOrRegistermentScreen value,
-  ) async* {
-    yield state.copyWith(
-      flow: const LoginOrRegistermentScreen(),
-    );
-  }
-
-  Stream<DecisionBoardState> _storeGraphData(StoreGraphData value) async* {
-    // List<String> auxListDates = state.listDates;
-    // auxListDates.add(value.date);
-    // List<String> auxListLocations = state.listLocations;
-    // auxListLocations.add(value.location);
-    // List<String> auxListStatus = state.listStatus;
-    // auxListStatus.add(value.status);
-    // print('ola');
-    // yield state.copyWith(
-    //   listDates: auxListDates,
-    //   listLocations: auxListLocations,
-    //   listStatus: auxListStatus,
-    // );
   }
 
   Stream<DecisionBoardState> _goToChartsScreen(GoToChartsScreen value) async* {
@@ -74,10 +32,17 @@ class DecisionBoardUseCase
     }
 
     yield state.copyWith(
-      flow: const ChartScreen(),
+      flow: const ChartScreenFlow(),
       listDates: auxListDates,
       listLocations: auxListLocations,
       listStatus: auxListStatus,
+    );
+  }
+
+  Stream<DecisionBoardState> _goToUploadDataBaseScreen(
+      GoToUploadDataBaseScreen value) async* {
+    yield state.copyWith(
+      flow: const UploadDatabaseScreenFlow(),
     );
   }
 }

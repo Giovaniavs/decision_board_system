@@ -27,9 +27,9 @@ class _OpenReduMobileState extends State<OpenReduMobile> {
       title: 'OpenRedu Mobile',
       navigatorKey: navigatorKey,
       theme: ThemeData(
-        primaryColor: ColorTokens.primary,
+        primaryColor: BaseColors.primary,
         colorScheme: ColorScheme.fromSwatch(
-          accentColor: ColorTokens.primary,
+          accentColor: BaseColors.primary,
         ),
         canvasColor: Colors.transparent,
       ),

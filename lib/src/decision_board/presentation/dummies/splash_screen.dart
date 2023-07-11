@@ -2,7 +2,7 @@ import 'package:decision_board_system/src/decision_board/domain/decision_board_u
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:decision_board_system/src/shared/design_system/assets/ob_images.dart';
+import 'package:decision_board_system/src/shared/design_system/assets/db_images.dart';
 import 'package:decision_board_system/src/shared/design_system/tokens/color_tokens.dart';
 
 class SplashScreenScreen extends StatefulWidget {
@@ -18,8 +18,7 @@ class SplashScreenScreen extends StatefulWidget {
   State<StatefulWidget> createState() => _SplashScreenScreenState();
 }
 
-class _SplashScreenScreenState extends State<SplashScreenScreen>
-    with TickerProviderStateMixin {
+class _SplashScreenScreenState extends State<SplashScreenScreen> {
   @override
   void initState() {
     SchedulerBinding.instance.addPostFrameCallback(
@@ -28,7 +27,7 @@ class _SplashScreenScreenState extends State<SplashScreenScreen>
           const Duration(seconds: 1),
           () {
             widget._decisionBoardUseCase.add(
-              const ToLoginOrRegistermentScreen(),
+              const GoToUploadDataBaseScreen(),
             );
           },
         );
@@ -39,20 +38,35 @@ class _SplashScreenScreenState extends State<SplashScreenScreen>
 
   @override
   Widget build(BuildContext context) {
+    return BlocBuilder<DecisionBoardUseCase, DecisionBoardState>(
+      bloc: widget._decisionBoardUseCase,
+      builder: _builder,
+    );
+  }
+
+  Widget _builder(BuildContext context, DecisionBoardState state) {
     return Scaffold(
-      body: BlocBuilder<DecisionBoardUseCase, DecisionBoardState>(
-        bloc: widget._decisionBoardUseCase,
-        builder: (context, state) {
-          return Center(
-            child: Image.asset(
-              OpenReduImages.logoOpenRedu,
-              height: 158.0,
-              width: 158.0,
+      body: Center(
+        child: Container(
+          width: 100,
+          height: 100,
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.all(
+              Radius.circular(
+                10,
+              ),
             ),
-          );
-        },
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Image.asset(
+              DBImages.logoDecisionBoardSystem,
+            ),
+          ),
+        ),
       ),
-      backgroundColor: ColorTokens.whiteBackground,
+      backgroundColor: BaseColors.primary,
     );
   }
 }
