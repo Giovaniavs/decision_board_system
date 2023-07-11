@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:decision_board_system/src/shared/design_system/tokens/color_tokens.dart';
 
-class BlueLongButton extends StatelessWidget {
+class PurpleLongButton extends StatelessWidget {
   final VoidCallback onPressed;
   final String buttonText;
 
-  const BlueLongButton({
+  const PurpleLongButton({
     super.key,
     required this.onPressed,
     required this.buttonText,
@@ -15,7 +15,7 @@ class BlueLongButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: BaseColors.primary,
+        backgroundColor: BaseColors.purpleButton,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.0),
         ),

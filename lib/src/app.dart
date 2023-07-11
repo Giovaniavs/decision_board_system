@@ -28,6 +28,7 @@ class _OpenReduMobileState extends State<OpenReduMobile> {
       navigatorKey: navigatorKey,
       theme: ThemeData(
         primaryColor: BaseColors.primary,
+        fontFamily: 'Roboto',
         colorScheme: ColorScheme.fromSwatch(
           accentColor: BaseColors.primary,
         ),
