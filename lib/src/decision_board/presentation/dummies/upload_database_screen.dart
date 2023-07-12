@@ -1,6 +1,7 @@
 import 'package:decision_board_system/src/decision_board/domain/decision_board_usecase.dart';
 import 'package:decision_board_system/src/shared/design_system/tokens/spacing_tokens.dart';
 import 'package:decision_board_system/src/shared/widgets/purple_long_button.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:decision_board_system/src/shared/design_system/tokens/color_tokens.dart';
@@ -33,6 +34,7 @@ class _UploadDatabaseScreenState extends State<UploadDatabaseScreen> {
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: SpacingTokens.hecto,
+            vertical: SpacingTokens.kilo,
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -40,7 +42,6 @@ class _UploadDatabaseScreenState extends State<UploadDatabaseScreen> {
             children: [
               const Padding(
                 padding: EdgeInsets.only(
-                  top: SpacingTokens.kilo,
                   left: SpacingTokens.kilo,
                 ),
                 child: SizedBox(
@@ -62,7 +63,18 @@ class _UploadDatabaseScreenState extends State<UploadDatabaseScreen> {
                 ),
               ),
               PurpleLongButton(
-                onPressed: () {},
+                onPressed: () async {
+                  FilePickerResult? result =
+                      await FilePicker.platform.pickFiles();
+
+                  if (result != null) {
+                    if (result.files.first.extension! == "csv") {
+                      print("Arquivo válido");
+                    } else {
+                      print("Arquivo inválido");
+                    }
+                  }
+                },
                 buttonText: "Upload",
               ),
             ],
