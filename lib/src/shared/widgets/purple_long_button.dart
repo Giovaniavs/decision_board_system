@@ -23,7 +23,7 @@ class PurpleLongButton extends StatelessWidget {
           width: 1.0,
           color: BaseColors.primary,
         ),
-        minimumSize: const Size(double.infinity, 48),
+        minimumSize: const Size(500, 48),
         elevation: 0.0,
         shadowColor: Colors.transparent,
       ),

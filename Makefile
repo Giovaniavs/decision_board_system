@@ -35,6 +35,9 @@ app:
 run-debug: 
 	bash scripts/fvm-run.sh flutter run 
 
+run-debug-web: 
+	bash scripts/fvm-run.sh flutter run -d chrome
+
 run-release: 
 	bash scripts/fvm-run.sh flutter run --flavor $(env) -t lib/main.dart --release $(shell awk '{print "--dart-define=" $$0}' )
 
