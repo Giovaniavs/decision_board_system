@@ -14,6 +14,7 @@ class DecisionBoardUseCase
     yield* event.map(
       goToChartsScreen: _goToChartsScreen,
       goToUploadDataBaseScreen: _goToUploadDataBaseScreen,
+      goToHome: _goToHome,
     );
   }
 
@@ -43,6 +44,25 @@ class DecisionBoardUseCase
       GoToUploadDataBaseScreen value) async* {
     yield state.copyWith(
       flow: const UploadDatabaseScreenFlow(),
+    );
+  }
+
+  Stream<DecisionBoardState> _goToHome(GoToHome value) async* {
+    List<String> auxListDates = [];
+    List<String> auxListLocations = [];
+    List<String> auxListStatus = [];
+
+    for (var eachLine in value.formatedData) {
+      auxListDates.add(eachLine[3]);
+      auxListLocations.add(eachLine[4]);
+      auxListStatus.add(eachLine[5]);
+    }
+
+    yield state.copyWith(
+      // flow: const HomeFlow(),
+      listDates: auxListDates,
+      listLocations: auxListLocations,
+      listStatus: auxListStatus,
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:decision_board_system/src/decision_board/presentation/dummies/ch
 import 'package:decision_board_system/src/decision_board/presentation/dummies/load_csv_screen.dart';
 import 'package:decision_board_system/src/decision_board/presentation/dummies/splash_screen.dart';
 import 'package:decision_board_system/src/decision_board/presentation/dummies/upload_database_screen.dart';
+import 'package:decision_board_system/src/shared/utils/internal_navigation_condition.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -85,11 +86,22 @@ class _DecisionBoardSmartViewState extends State<DecisionBoardSmartView> {
     return Navigator(
       key: navigatorKey,
       pages: _pageList(state.flow),
-      onPopPage: (route, result) {
-        if (route.navigator?.canPop() == false) {
-          Navigator.of(context).pop();
-        }
-        return route.didPop(result);
+      onPopPage: (_, __) => _dealWithPop(state, false),
+    );
+  }
+
+  bool _dealWithPop(DecisionBoardState state, bool internalNavigator) {
+    bool condition = internalNavigationCondition(
+      context: context,
+      internalNavigator: internalNavigator,
+    );
+
+    return state.flow.maybeWhen(
+      uploadDatabaseScreenFlow: () {
+        return condition;
+      },
+      orElse: () {
+        return false;
       },
     );
   }

@@ -4,6 +4,9 @@ part of 'decision_board_usecase.dart';
 class DecisionBoardEvent with _$DecisionBoardEvent {
   const factory DecisionBoardEvent.goToUploadDataBaseScreen() =
       GoToUploadDataBaseScreen;
+  const factory DecisionBoardEvent.goToHome({
+    required List<List<dynamic>> formatedData,
+  }) = GoToHome;
   const factory DecisionBoardEvent.goToChartsScreen({
     required List<List<dynamic>> data,
   }) = GoToChartsScreen;
