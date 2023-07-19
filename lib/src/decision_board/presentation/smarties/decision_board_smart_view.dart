@@ -1,6 +1,6 @@
 import 'package:decision_board_system/src/decision_board/domain/decision_board_usecase.dart';
 import 'package:decision_board_system/src/decision_board/presentation/dummies/charts_screen.dart';
-import 'package:decision_board_system/src/decision_board/presentation/dummies/load_csv_screen.dart';
+import 'package:decision_board_system/src/decision_board/presentation/dummies/home_screen.dart';
 import 'package:decision_board_system/src/decision_board/presentation/dummies/splash_screen.dart';
 import 'package:decision_board_system/src/decision_board/presentation/dummies/upload_database_screen.dart';
 import 'package:decision_board_system/src/shared/utils/internal_navigation_condition.dart';
@@ -38,7 +38,7 @@ class _DecisionBoardSmartViewState extends State<DecisionBoardSmartView> {
         ),
       ),
       MaterialPage(
-        child: LoadCsvScreen(
+        child: HomeScreen(
           decisionBoardUseCase: widget._decisionBoardUseCase,
         ),
       ),
