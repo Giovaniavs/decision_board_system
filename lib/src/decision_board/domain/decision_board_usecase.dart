@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:decision_board_system/src/shared/data/models/complaint_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'decision_board_state.dart';
@@ -18,27 +19,7 @@ class DecisionBoardUseCase
     );
   }
 
-  Stream<DecisionBoardState> _goToChartsScreen(GoToChartsScreen value) async* {
-    List<List<dynamic>> auxRawList = [];
-    List<String> auxListDates = [];
-    List<String> auxListLocations = [];
-    List<String> auxListStatus = [];
-
-    auxRawList = value.data;
-
-    for (var eachLine in auxRawList) {
-      auxListDates.add(eachLine[3]);
-      auxListLocations.add(eachLine[4]);
-      auxListStatus.add(eachLine[5]);
-    }
-
-    yield state.copyWith(
-      flow: const ChartScreenFlow(),
-      listDates: auxListDates,
-      listLocations: auxListLocations,
-      listStatus: auxListStatus,
-    );
-  }
+  Stream<DecisionBoardState> _goToChartsScreen(GoToChartsScreen value) async* {}
 
   Stream<DecisionBoardState> _goToUploadDataBaseScreen(
       GoToUploadDataBaseScreen value) async* {
@@ -48,21 +29,24 @@ class DecisionBoardUseCase
   }
 
   Stream<DecisionBoardState> _goToHome(GoToHome value) async* {
-    List<String> auxListDates = [];
-    List<String> auxListLocations = [];
-    List<String> auxListStatus = [];
+    List<ComplaintModel> complaintList = [];
 
     for (var eachLine in value.formatedData) {
-      auxListDates.add(eachLine[3]);
-      auxListLocations.add(eachLine[4]);
-      auxListStatus.add(eachLine[5]);
+      complaintList.add(
+        ComplaintModel(
+          complaintId: eachLine[1].toString(),
+          title: eachLine[2],
+          dateTime: eachLine[3],
+          localization: eachLine[4],
+          status: eachLine[5],
+          text: eachLine[6],
+        ),
+      );
     }
 
     yield state.copyWith(
-      // flow: const HomeFlow(),
-      listDates: auxListDates,
-      listLocations: auxListLocations,
-      listStatus: auxListStatus,
+      flow: const HomeFlow(),
+      complaintList: complaintList,
     );
   }
 }

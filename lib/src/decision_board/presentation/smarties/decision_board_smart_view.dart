@@ -37,11 +37,11 @@ class _DecisionBoardSmartViewState extends State<DecisionBoardSmartView> {
           decisionBoardUseCase: widget._decisionBoardUseCase,
         ),
       ),
-      // MaterialPage(
-      //   child: LoadCsvScreen(
-      //     decisionBoardUseCase: widget._decisionBoardUseCase,
-      //   ),
-      // ),
+      MaterialPage(
+        child: LoadCsvScreen(
+          decisionBoardUseCase: widget._decisionBoardUseCase,
+        ),
+      ),
       // MaterialPage(
       //   child: ChartsScreen(
       //     decisionBoardUseCase: widget._decisionBoardUseCase,
@@ -73,6 +73,12 @@ class _DecisionBoardSmartViewState extends State<DecisionBoardSmartView> {
         _currentPageStack = [
           modulePages[0],
           modulePages[1],
+        ];
+        return _currentPageStack;
+      },
+      homeFlow: (value) {
+        _currentPageStack = [
+          modulePages[2],
         ];
         return _currentPageStack;
       },

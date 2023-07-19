@@ -24,30 +24,30 @@ class ChartsScreen extends StatelessWidget {
     int octoberIncidentsStatus = 0;
     int decemberIncidentsStatus = 0;
 
-    for (var element in _decisionBoardUseCase.state.listDates) {
-      if (element.contains('2022-09')) {
-        setemberIncidents.add(element);
+    // for (var element in _decisionBoardUseCase.state.listDates) {
+    //   if (element.contains('2022-09')) {
+    //     setemberIncidents.add(element);
 
-        int index = _decisionBoardUseCase.state.listDates.indexOf(element);
+    //     int index = _decisionBoardUseCase.state.listDates.indexOf(element);
 
-        if (_decisionBoardUseCase.state.listStatus[index] == "Respondida") {
-          setemberIncidentsStatusAswered++;
-        } else if (_decisionBoardUseCase.state.listStatus[index] ==
-            "Não resolvido") {
-          setemberIncidentsStatusNonAnswered++;
-        } else if (_decisionBoardUseCase.state.listStatus[index] ==
-            "Em réplica") {
-          setemberIncidentsStatusInReply++;
-        } else if (_decisionBoardUseCase.state.listStatus[index] ==
-            "Resolvido") {
-          setemberIncidentsStatusSolved++;
-        }
-      } else if (element.contains('2022-10')) {
-        octoberIncidents.add(element);
-      } else if (element.contains('2022-12')) {
-        decemberIncidents.add(element);
-      }
-    }
+    //     if (_decisionBoardUseCase.state.listStatus[index] == "Respondida") {
+    //       setemberIncidentsStatusAswered++;
+    //     } else if (_decisionBoardUseCase.state.listStatus[index] ==
+    //         "Não resolvido") {
+    //       setemberIncidentsStatusNonAnswered++;
+    //     } else if (_decisionBoardUseCase.state.listStatus[index] ==
+    //         "Em réplica") {
+    //       setemberIncidentsStatusInReply++;
+    //     } else if (_decisionBoardUseCase.state.listStatus[index] ==
+    //         "Resolvido") {
+    //       setemberIncidentsStatusSolved++;
+    //     }
+    //   } else if (element.contains('2022-10')) {
+    //     octoberIncidents.add(element);
+    //   } else if (element.contains('2022-12')) {
+    //     decemberIncidents.add(element);
+    //   }
+    // }
 
     print(setemberIncidentsStatusAswered);
     print(setemberIncidentsStatusNonAnswered);

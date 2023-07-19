@@ -1,35 +1,21 @@
 import 'package:csv/csv.dart';
 import 'package:decision_board_system/src/decision_board/domain/decision_board_usecase.dart';
+import 'package:decision_board_system/src/shared/data/models/complaint_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class LoadCsvScreen extends StatefulWidget {
+class LoadCsvScreen extends StatelessWidget {
   final DecisionBoardUseCase _decisionBoardUseCase;
+
   const LoadCsvScreen({
     super.key,
     required DecisionBoardUseCase decisionBoardUseCase,
   }) : _decisionBoardUseCase = decisionBoardUseCase;
 
   @override
-  State<LoadCsvScreen> createState() => _LoadCsvScreenState();
-}
-
-class _LoadCsvScreenState extends State<LoadCsvScreen> {
-  List<List<dynamic>> _data = [];
-
-  void _loadCSV() async {
-    final rawData =
-        await rootBundle.loadString("assets/csv/reclamacoesCSV.csv");
-    List<List<dynamic>> listData = const CsvToListConverter().convert(rawData);
-    setState(
-      () {
-        _data = listData;
-      },
-    );
-  }
-
-  @override
   Widget build(BuildContext context) {
+    List<ComplaintModel> data = _decisionBoardUseCase.state.complaintList;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Leitor de CSV"),
@@ -45,46 +31,26 @@ class _LoadCsvScreenState extends State<LoadCsvScreen> {
             );
           },
         ),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.auto_graph_sharp),
-            tooltip: 'Open shopping cart',
-            onPressed: () {
-              if (_data.isNotEmpty) {
-                _data.removeAt(0);
-              }
-              widget._decisionBoardUseCase.add(
-                GoToChartsScreen(
-                  data: _data,
-                ),
-              );
-            },
-          ),
-        ],
       ),
       backgroundColor: Colors.white,
       body: ListView.builder(
-        itemCount: _data.length,
+        itemCount: data.length,
         itemBuilder: (_, index) {
           return Card(
             margin: const EdgeInsets.all(3),
-            color: index == 0 ? Colors.amber : Colors.white,
+            color: Colors.white,
             child: Column(
               children: [
-                Text(_data[index][1].toString()),
-                Text(_data[index][2].toString()),
-                Text(_data[index][3].toString()),
-                Text(_data[index][4].toString()),
-                Text(_data[index][5].toString()),
-                Text(_data[index][6].toString()),
+                Text(data[index].complaintId),
+                Text(data[index].title),
+                Text(data[index].dateTime),
+                Text(data[index].localization),
+                Text(data[index].status),
+                Text(data[index].text),
               ],
             ),
           );
         },
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _loadCSV,
-        child: const Icon(Icons.add),
       ),
     );
   }
