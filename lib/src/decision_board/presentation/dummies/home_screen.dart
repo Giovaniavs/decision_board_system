@@ -72,15 +72,86 @@ class HomeScreen extends StatelessWidget {
           return Card(
             margin: const EdgeInsets.all(3),
             color: Colors.white,
-            child: Column(
-              children: [
-                Text(data[index].complaintId),
-                Text(data[index].title),
-                Text(data[index].dateTime),
-                Text(data[index].localization),
-                Text(data[index].status),
-                Text(data[index].text),
-              ],
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  RichText(
+                    text: TextSpan(
+                      style: const TextStyle(color: Colors.black),
+                      children: [
+                        const TextSpan(
+                          text: 'ID: ',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        TextSpan(
+                          text: '${data[index].complaintId}\n',
+                          style: const TextStyle(color: Colors.black),
+                        ),
+                        const TextSpan(
+                          text: 'Título: ',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        TextSpan(
+                          text: '${data[index].title}\n',
+                          style: const TextStyle(color: Colors.black),
+                        ),
+                        const TextSpan(
+                          text: 'Data: ',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        TextSpan(
+                          text: '${data[index].dateTime}\n',
+                          style: const TextStyle(color: Colors.black),
+                        ),
+                        const TextSpan(
+                          text: 'Local: ',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        TextSpan(
+                          text: '${data[index].localization}\n',
+                          style: const TextStyle(color: Colors.black),
+                        ),
+                        const TextSpan(
+                          text: 'Status: ',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        TextSpan(
+                          text: '${data[index].status}\n',
+                          style: const TextStyle(color: Colors.black),
+                        ),
+                        const TextSpan(
+                          text: 'Texto: ',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        TextSpan(
+                          text: '${data[index].text}\n',
+                          style: const TextStyle(color: Colors.black),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           );
         },
