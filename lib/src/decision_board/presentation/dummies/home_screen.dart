@@ -16,8 +16,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<ComplaintModel> data = _decisionBoardUseCase.state.complaintList;
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+    List<ComplaintModel> data = _decisionBoardUseCase.state.complaintList;
 
     return Scaffold(
       key: scaffoldKey,
@@ -109,35 +109,63 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Column(
-              children: [
-                InkWell(
-                  onTap: () {},
-                  child: Container(
-                    width: double.infinity,
-                    height: 50,
-                    decoration: const BoxDecoration(
-                      color: Colors.white,
-                      border: Border(
-                        bottom: BorderSide(
-                          color: Colors.black,
-                          width: 0.5,
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    children: [
+                      InkWell(
+                        onTap: () {},
+                        child: Container(
+                          width: double.infinity,
+                          height: 50,
+                          decoration: const BoxDecoration(
+                            color: Colors.white,
+                            border: Border(
+                              bottom: BorderSide(
+                                color: Colors.black,
+                                width: 0.5,
+                              ),
+                            ),
+                          ),
+                          child: const Center(
+                            child: Text(
+                              'Gráfcos',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w400,
+                                fontSize: FontSizeTokens.kilo,
+                              ),
+                            ),
+                          ),
                         ),
                       ),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      bottom: SpacingTokens.kilo,
                     ),
-                    child: const Center(
-                      child: Text(
-                        'Gráfcos',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w400,
-                          fontSize: FontSizeTokens.kilo,
+                    child: ElevatedButton(
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(
+                          Colors.black,
                         ),
                       ),
+                      child: const SizedBox(
+                        width: 100,
+                        child: Center(
+                          child: Text(
+                            'Sair',
+                          ),
+                        ),
+                      ),
+                      onPressed: () {},
                     ),
                   ),
-                )
-              ],
+                ],
+              ),
             ),
           ],
         ),

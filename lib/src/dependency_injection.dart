@@ -7,6 +7,8 @@ final GetIt di = GetIt.instance;
 void setupDi() {
   setupSharedDI();
   di.registerFactory(
-    () => DecisionBoardUseCase(),
+    () => DecisionBoardUseCase(
+      storageRepository: di(),
+    ),
   );
 }

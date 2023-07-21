@@ -1,5 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:decision_board_system/src/shared/data/models/complaint_model.dart';
+import 'package:decision_board_system/src/shared/data/repositories/storage_repository.dart';
+import 'package:decision_board_system/src/shared/data/types/result.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'decision_board_state.dart';
@@ -8,7 +10,12 @@ part 'decision_board_usecase.freezed.dart';
 
 class DecisionBoardUseCase
     extends Bloc<DecisionBoardEvent, DecisionBoardState> {
-  DecisionBoardUseCase() : super(DecisionBoardState.initial());
+  DecisionBoardUseCase({
+    required StorageRepository storageRepository,
+  })  : _storageRepository = storageRepository,
+        super(DecisionBoardState.initial());
+
+  final StorageRepository _storageRepository;
 
   @override
   Stream<DecisionBoardState> mapEventToState(DecisionBoardEvent event) async* {
@@ -44,6 +51,20 @@ class DecisionBoardUseCase
       );
     }
 
+    print('1');
+    await _storageRepository.writeLocalDatabase(data: complaintList);
+    print('2');
+    Result<List<ComplaintModel>> list =
+        await _storageRepository.readLocalDatabase();
+    print('3');
+    yield* list.handle(
+      onSuccess: (data) async* {
+        print(data);
+      },
+      onFailure: (error) async* {
+        print(error);
+      },
+    );
     yield state.copyWith(
       flow: const HomeFlow(),
       complaintList: complaintList,
