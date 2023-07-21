@@ -1,7 +1,9 @@
 import 'package:decision_board_system/src/decision_board/domain/decision_board_usecase.dart';
 import 'package:decision_board_system/src/shared/data/models/complaint_model.dart';
+import 'package:decision_board_system/src/shared/design_system/assets/db_images.dart';
 import 'package:decision_board_system/src/shared/design_system/tokens/color_tokens.dart';
 import 'package:decision_board_system/src/shared/design_system/tokens/spacing_tokens.dart';
+import 'package:decision_board_system/src/shared/design_system/tokens/typography_tokens.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -41,27 +43,102 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       drawer: Container(
-        color: Colors.white,
         width: MediaQuery.of(context).size.width * 0.7,
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+            topRight: Radius.circular(
+              30,
+            ),
+            bottomRight: Radius.circular(
+              30,
+            ),
+          ),
+        ),
         child: Column(
           children: [
             Container(
               height: 120,
               width: double.infinity,
-              color: BaseColors.primary,
-              child: const Padding(
-                padding: EdgeInsets.only(bottom: SpacingTokens.deka),
+              decoration: const BoxDecoration(
+                color: BaseColors.primary,
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(
+                    30,
+                  ),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: SpacingTokens.deka),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Text(
-                      "MeChart",
-                    )
+                    const Padding(
+                      padding: EdgeInsets.only(
+                        bottom: SpacingTokens.deka,
+                        right: SpacingTokens.deka,
+                      ),
+                      child: Text(
+                        "MeChart",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: FontSizeTokens.mega,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      width: 45,
+                      height: 45,
+                      decoration: const BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(
+                            10,
+                          ),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Image.asset(
+                          DBImages.logoDecisionBoardSystem,
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
-            )
+            ),
+            Column(
+              children: [
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    width: double.infinity,
+                    height: 50,
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      border: Border(
+                        bottom: BorderSide(
+                          color: Colors.black,
+                          width: 0.5,
+                        ),
+                      ),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        'Gráfcos',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w400,
+                          fontSize: FontSizeTokens.kilo,
+                        ),
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
           ],
         ),
       ),
