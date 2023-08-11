@@ -1,6 +1,6 @@
 {
-    "name": "openredu_mobile_flutter",
-    "short_name": "openredu_mobile_flutter",
+    "name": "MeChart",
+    "short_name": "MeChart",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

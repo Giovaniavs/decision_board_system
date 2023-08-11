@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.openredu_mobile_flutter">
+    package="com.MeChart">
    <application
-        android:label="openredu_mobile_flutter"
+        android:label="MeChart"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

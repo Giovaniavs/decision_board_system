@@ -1,4 +1,4 @@
-package com.example.openredu_mobile_flutter
+package com.MeChart
 
 import io.flutter.embedding.android.FlutterActivity
 

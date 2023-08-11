@@ -5,26 +5,26 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:decision_board_system/src/dependency_injection.dart';
 import 'package:decision_board_system/src/shared/design_system/tokens/color_tokens.dart';
 
-class OpenReduMobile extends StatefulWidget {
+class MeChartFlutter extends StatefulWidget {
   final DecisionBoardUseCase _decisionBoardUseCase;
 
-  const OpenReduMobile({
+  const MeChartFlutter({
     Key? key,
     required DecisionBoardUseCase decisionBoardUseCase,
   })  : _decisionBoardUseCase = decisionBoardUseCase,
         super(key: key);
 
   @override
-  State<OpenReduMobile> createState() => _OpenReduMobileState();
+  State<MeChartFlutter> createState() => _MeChartFlutterState();
 }
 
-class _OpenReduMobileState extends State<OpenReduMobile> {
+class _MeChartFlutterState extends State<MeChartFlutter> {
   final GlobalKey<NavigatorState> navigatorKey =
       di<GlobalKey<NavigatorState>>();
   @override
   Widget build(BuildContext context) {
     final app = MaterialApp(
-      title: 'OpenRedu Mobile',
+      title: 'MeChart',
       navigatorKey: navigatorKey,
       theme: ThemeData(
         primaryColor: BaseColors.primary,

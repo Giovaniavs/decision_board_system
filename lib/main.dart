@@ -8,7 +8,7 @@ Future<void> main() async {
   setupDi();
 
   runApp(
-    OpenReduMobile(
+    MeChartFlutter(
       decisionBoardUseCase: di<DecisionBoardUseCase>(),
     ),
   );
