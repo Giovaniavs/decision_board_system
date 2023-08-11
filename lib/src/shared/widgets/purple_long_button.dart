@@ -4,11 +4,13 @@ import 'package:decision_board_system/src/shared/design_system/tokens/color_toke
 class PurpleLongButton extends StatelessWidget {
   final VoidCallback onPressed;
   final String buttonText;
+  final bool isLoading;
 
   const PurpleLongButton({
     super.key,
     required this.onPressed,
     required this.buttonText,
+    required this.isLoading,
   });
 
   @override
@@ -28,12 +30,21 @@ class PurpleLongButton extends StatelessWidget {
         shadowColor: Colors.transparent,
       ),
       onPressed: onPressed,
-      child: Text(
-        buttonText,
-        style: const TextStyle(
-          color: Colors.white,
-        ),
-      ),
+      child: isLoading
+          ? const SizedBox(
+              height: 25,
+              width: 25,
+              child: CircularProgressIndicator(
+                color: Colors.white,
+                strokeWidth: 2,
+              ),
+            )
+          : Text(
+              buttonText,
+              style: const TextStyle(
+                color: Colors.white,
+              ),
+            ),
     );
   }
 }

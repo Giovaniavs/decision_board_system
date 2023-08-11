@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:csv/csv.dart';
 import 'package:decision_board_system/src/decision_board/domain/decision_board_usecase.dart';
 import 'package:decision_board_system/src/shared/design_system/tokens/spacing_tokens.dart';
@@ -7,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:decision_board_system/src/shared/design_system/tokens/color_tokens.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 class UploadDatabaseScreen extends StatefulWidget {
   final DecisionBoardUseCase _decisionBoardUseCase;
@@ -22,6 +25,8 @@ class UploadDatabaseScreen extends StatefulWidget {
 }
 
 class _UploadDatabaseScreenState extends State<UploadDatabaseScreen> {
+  bool isLoading = false;
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<DecisionBoardUseCase, DecisionBoardState>(
@@ -67,14 +72,23 @@ class _UploadDatabaseScreenState extends State<UploadDatabaseScreen> {
                   ),
                 ),
                 PurpleLongButton(
+                  buttonText: "Upload",
+                  isLoading: isLoading,
                   onPressed: () async {
+                    setState(() {
+                      isLoading = true;
+                    });
+
                     FilePickerResult? result =
                         await FilePicker.platform.pickFiles();
 
                     if (result != null) {
                       if (result.files.first.extension! == "csv") {
-                        dealWithCsvStructure(result.files.first.path!);
+                        dealWithCsvStructure(result);
                       } else {
+                        setState(() {
+                          isLoading = false;
+                        });
                         dealWithArchiveTypeError(
                           title: 'Erro ao carregar arquivo',
                           content:
@@ -83,7 +97,6 @@ class _UploadDatabaseScreenState extends State<UploadDatabaseScreen> {
                       }
                     }
                   },
-                  buttonText: "Upload",
                 ),
               ],
             ),
@@ -94,12 +107,19 @@ class _UploadDatabaseScreenState extends State<UploadDatabaseScreen> {
     );
   }
 
-  void dealWithCsvStructure(String filePath) async {
+  void dealWithCsvStructure(FilePickerResult file) async {
     try {
-      String rawData = await rootBundle.loadString(filePath);
+      List<List<dynamic>> formatedData = [];
 
-      List<List<dynamic>> formatedData =
-          const CsvToListConverter().convert(rawData);
+      if (kIsWeb) {
+        String bytes = utf8.decode(file.files[0].bytes!.toList());
+
+        formatedData = const CsvToListConverter().convert(bytes);
+      } else {
+        String rawData = await rootBundle.loadString(file.files.first.path!);
+
+        formatedData = const CsvToListConverter().convert(rawData);
+      }
 
       bool identificador =
           formatedData[0][1].toString() == "identificador" ? true : false;

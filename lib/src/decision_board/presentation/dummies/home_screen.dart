@@ -5,6 +5,7 @@ import 'package:decision_board_system/src/shared/design_system/tokens/color_toke
 import 'package:decision_board_system/src/shared/design_system/tokens/spacing_tokens.dart';
 import 'package:decision_board_system/src/shared/design_system/tokens/typography_tokens.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 class HomeScreen extends StatelessWidget {
   final DecisionBoardUseCase _decisionBoardUseCase;
@@ -149,7 +150,9 @@ class Drawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.7,
+      width: kIsWeb
+          ? MediaQuery.of(context).size.width * 0.3
+          : MediaQuery.of(context).size.width * 0.7,
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(

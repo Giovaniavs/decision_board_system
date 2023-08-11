@@ -39,4 +39,3 @@ flutter:
 
   assets:
     - assets/icons/decision_board_logo.png
-    - assets/csv/reclamacoesCSV.csv
