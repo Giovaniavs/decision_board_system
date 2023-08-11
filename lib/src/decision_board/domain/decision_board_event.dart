@@ -10,4 +10,5 @@ class DecisionBoardEvent with _$DecisionBoardEvent {
   const factory DecisionBoardEvent.goToChartsScreen({
     required List<List<dynamic>> data,
   }) = GoToChartsScreen;
+  const factory DecisionBoardEvent.goBackToUploadData() = GoBackToUploadData;
 }

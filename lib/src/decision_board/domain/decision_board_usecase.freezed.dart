@@ -713,6 +713,7 @@ mixin _$DecisionBoardEvent {
     required TResult Function() goToUploadDataBaseScreen,
     required TResult Function(List<List<dynamic>> formatedData) goToHome,
     required TResult Function(List<List<dynamic>> data) goToChartsScreen,
+    required TResult Function() goBackToUploadData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -720,6 +721,7 @@ mixin _$DecisionBoardEvent {
     TResult? Function()? goToUploadDataBaseScreen,
     TResult? Function(List<List<dynamic>> formatedData)? goToHome,
     TResult? Function(List<List<dynamic>> data)? goToChartsScreen,
+    TResult? Function()? goBackToUploadData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -727,6 +729,7 @@ mixin _$DecisionBoardEvent {
     TResult Function()? goToUploadDataBaseScreen,
     TResult Function(List<List<dynamic>> formatedData)? goToHome,
     TResult Function(List<List<dynamic>> data)? goToChartsScreen,
+    TResult Function()? goBackToUploadData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -736,6 +739,7 @@ mixin _$DecisionBoardEvent {
         goToUploadDataBaseScreen,
     required TResult Function(GoToHome value) goToHome,
     required TResult Function(GoToChartsScreen value) goToChartsScreen,
+    required TResult Function(GoBackToUploadData value) goBackToUploadData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -743,6 +747,7 @@ mixin _$DecisionBoardEvent {
     TResult? Function(GoToUploadDataBaseScreen value)? goToUploadDataBaseScreen,
     TResult? Function(GoToHome value)? goToHome,
     TResult? Function(GoToChartsScreen value)? goToChartsScreen,
+    TResult? Function(GoBackToUploadData value)? goBackToUploadData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -750,6 +755,7 @@ mixin _$DecisionBoardEvent {
     TResult Function(GoToUploadDataBaseScreen value)? goToUploadDataBaseScreen,
     TResult Function(GoToHome value)? goToHome,
     TResult Function(GoToChartsScreen value)? goToChartsScreen,
+    TResult Function(GoBackToUploadData value)? goBackToUploadData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -815,6 +821,7 @@ class _$GoToUploadDataBaseScreen implements GoToUploadDataBaseScreen {
     required TResult Function() goToUploadDataBaseScreen,
     required TResult Function(List<List<dynamic>> formatedData) goToHome,
     required TResult Function(List<List<dynamic>> data) goToChartsScreen,
+    required TResult Function() goBackToUploadData,
   }) {
     return goToUploadDataBaseScreen();
   }
@@ -825,6 +832,7 @@ class _$GoToUploadDataBaseScreen implements GoToUploadDataBaseScreen {
     TResult? Function()? goToUploadDataBaseScreen,
     TResult? Function(List<List<dynamic>> formatedData)? goToHome,
     TResult? Function(List<List<dynamic>> data)? goToChartsScreen,
+    TResult? Function()? goBackToUploadData,
   }) {
     return goToUploadDataBaseScreen?.call();
   }
@@ -835,6 +843,7 @@ class _$GoToUploadDataBaseScreen implements GoToUploadDataBaseScreen {
     TResult Function()? goToUploadDataBaseScreen,
     TResult Function(List<List<dynamic>> formatedData)? goToHome,
     TResult Function(List<List<dynamic>> data)? goToChartsScreen,
+    TResult Function()? goBackToUploadData,
     required TResult orElse(),
   }) {
     if (goToUploadDataBaseScreen != null) {
@@ -850,6 +859,7 @@ class _$GoToUploadDataBaseScreen implements GoToUploadDataBaseScreen {
         goToUploadDataBaseScreen,
     required TResult Function(GoToHome value) goToHome,
     required TResult Function(GoToChartsScreen value) goToChartsScreen,
+    required TResult Function(GoBackToUploadData value) goBackToUploadData,
   }) {
     return goToUploadDataBaseScreen(this);
   }
@@ -860,6 +870,7 @@ class _$GoToUploadDataBaseScreen implements GoToUploadDataBaseScreen {
     TResult? Function(GoToUploadDataBaseScreen value)? goToUploadDataBaseScreen,
     TResult? Function(GoToHome value)? goToHome,
     TResult? Function(GoToChartsScreen value)? goToChartsScreen,
+    TResult? Function(GoBackToUploadData value)? goBackToUploadData,
   }) {
     return goToUploadDataBaseScreen?.call(this);
   }
@@ -870,6 +881,7 @@ class _$GoToUploadDataBaseScreen implements GoToUploadDataBaseScreen {
     TResult Function(GoToUploadDataBaseScreen value)? goToUploadDataBaseScreen,
     TResult Function(GoToHome value)? goToHome,
     TResult Function(GoToChartsScreen value)? goToChartsScreen,
+    TResult Function(GoBackToUploadData value)? goBackToUploadData,
     required TResult orElse(),
   }) {
     if (goToUploadDataBaseScreen != null) {
@@ -957,6 +969,7 @@ class _$GoToHome implements GoToHome {
     required TResult Function() goToUploadDataBaseScreen,
     required TResult Function(List<List<dynamic>> formatedData) goToHome,
     required TResult Function(List<List<dynamic>> data) goToChartsScreen,
+    required TResult Function() goBackToUploadData,
   }) {
     return goToHome(formatedData);
   }
@@ -967,6 +980,7 @@ class _$GoToHome implements GoToHome {
     TResult? Function()? goToUploadDataBaseScreen,
     TResult? Function(List<List<dynamic>> formatedData)? goToHome,
     TResult? Function(List<List<dynamic>> data)? goToChartsScreen,
+    TResult? Function()? goBackToUploadData,
   }) {
     return goToHome?.call(formatedData);
   }
@@ -977,6 +991,7 @@ class _$GoToHome implements GoToHome {
     TResult Function()? goToUploadDataBaseScreen,
     TResult Function(List<List<dynamic>> formatedData)? goToHome,
     TResult Function(List<List<dynamic>> data)? goToChartsScreen,
+    TResult Function()? goBackToUploadData,
     required TResult orElse(),
   }) {
     if (goToHome != null) {
@@ -992,6 +1007,7 @@ class _$GoToHome implements GoToHome {
         goToUploadDataBaseScreen,
     required TResult Function(GoToHome value) goToHome,
     required TResult Function(GoToChartsScreen value) goToChartsScreen,
+    required TResult Function(GoBackToUploadData value) goBackToUploadData,
   }) {
     return goToHome(this);
   }
@@ -1002,6 +1018,7 @@ class _$GoToHome implements GoToHome {
     TResult? Function(GoToUploadDataBaseScreen value)? goToUploadDataBaseScreen,
     TResult? Function(GoToHome value)? goToHome,
     TResult? Function(GoToChartsScreen value)? goToChartsScreen,
+    TResult? Function(GoBackToUploadData value)? goBackToUploadData,
   }) {
     return goToHome?.call(this);
   }
@@ -1012,6 +1029,7 @@ class _$GoToHome implements GoToHome {
     TResult Function(GoToUploadDataBaseScreen value)? goToUploadDataBaseScreen,
     TResult Function(GoToHome value)? goToHome,
     TResult Function(GoToChartsScreen value)? goToChartsScreen,
+    TResult Function(GoBackToUploadData value)? goBackToUploadData,
     required TResult orElse(),
   }) {
     if (goToHome != null) {
@@ -1105,6 +1123,7 @@ class _$GoToChartsScreen implements GoToChartsScreen {
     required TResult Function() goToUploadDataBaseScreen,
     required TResult Function(List<List<dynamic>> formatedData) goToHome,
     required TResult Function(List<List<dynamic>> data) goToChartsScreen,
+    required TResult Function() goBackToUploadData,
   }) {
     return goToChartsScreen(data);
   }
@@ -1115,6 +1134,7 @@ class _$GoToChartsScreen implements GoToChartsScreen {
     TResult? Function()? goToUploadDataBaseScreen,
     TResult? Function(List<List<dynamic>> formatedData)? goToHome,
     TResult? Function(List<List<dynamic>> data)? goToChartsScreen,
+    TResult? Function()? goBackToUploadData,
   }) {
     return goToChartsScreen?.call(data);
   }
@@ -1125,6 +1145,7 @@ class _$GoToChartsScreen implements GoToChartsScreen {
     TResult Function()? goToUploadDataBaseScreen,
     TResult Function(List<List<dynamic>> formatedData)? goToHome,
     TResult Function(List<List<dynamic>> data)? goToChartsScreen,
+    TResult Function()? goBackToUploadData,
     required TResult orElse(),
   }) {
     if (goToChartsScreen != null) {
@@ -1140,6 +1161,7 @@ class _$GoToChartsScreen implements GoToChartsScreen {
         goToUploadDataBaseScreen,
     required TResult Function(GoToHome value) goToHome,
     required TResult Function(GoToChartsScreen value) goToChartsScreen,
+    required TResult Function(GoBackToUploadData value) goBackToUploadData,
   }) {
     return goToChartsScreen(this);
   }
@@ -1150,6 +1172,7 @@ class _$GoToChartsScreen implements GoToChartsScreen {
     TResult? Function(GoToUploadDataBaseScreen value)? goToUploadDataBaseScreen,
     TResult? Function(GoToHome value)? goToHome,
     TResult? Function(GoToChartsScreen value)? goToChartsScreen,
+    TResult? Function(GoBackToUploadData value)? goBackToUploadData,
   }) {
     return goToChartsScreen?.call(this);
   }
@@ -1160,6 +1183,7 @@ class _$GoToChartsScreen implements GoToChartsScreen {
     TResult Function(GoToUploadDataBaseScreen value)? goToUploadDataBaseScreen,
     TResult Function(GoToHome value)? goToHome,
     TResult Function(GoToChartsScreen value)? goToChartsScreen,
+    TResult Function(GoBackToUploadData value)? goBackToUploadData,
     required TResult orElse(),
   }) {
     if (goToChartsScreen != null) {
@@ -1177,4 +1201,119 @@ abstract class GoToChartsScreen implements DecisionBoardEvent {
   @JsonKey(ignore: true)
   _$$GoToChartsScreenCopyWith<_$GoToChartsScreen> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GoBackToUploadDataCopyWith<$Res> {
+  factory _$$GoBackToUploadDataCopyWith(_$GoBackToUploadData value,
+          $Res Function(_$GoBackToUploadData) then) =
+      __$$GoBackToUploadDataCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GoBackToUploadDataCopyWithImpl<$Res>
+    extends _$DecisionBoardEventCopyWithImpl<$Res, _$GoBackToUploadData>
+    implements _$$GoBackToUploadDataCopyWith<$Res> {
+  __$$GoBackToUploadDataCopyWithImpl(
+      _$GoBackToUploadData _value, $Res Function(_$GoBackToUploadData) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GoBackToUploadData implements GoBackToUploadData {
+  const _$GoBackToUploadData();
+
+  @override
+  String toString() {
+    return 'DecisionBoardEvent.goBackToUploadData()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GoBackToUploadData);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() goToUploadDataBaseScreen,
+    required TResult Function(List<List<dynamic>> formatedData) goToHome,
+    required TResult Function(List<List<dynamic>> data) goToChartsScreen,
+    required TResult Function() goBackToUploadData,
+  }) {
+    return goBackToUploadData();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? goToUploadDataBaseScreen,
+    TResult? Function(List<List<dynamic>> formatedData)? goToHome,
+    TResult? Function(List<List<dynamic>> data)? goToChartsScreen,
+    TResult? Function()? goBackToUploadData,
+  }) {
+    return goBackToUploadData?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? goToUploadDataBaseScreen,
+    TResult Function(List<List<dynamic>> formatedData)? goToHome,
+    TResult Function(List<List<dynamic>> data)? goToChartsScreen,
+    TResult Function()? goBackToUploadData,
+    required TResult orElse(),
+  }) {
+    if (goBackToUploadData != null) {
+      return goBackToUploadData();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GoToUploadDataBaseScreen value)
+        goToUploadDataBaseScreen,
+    required TResult Function(GoToHome value) goToHome,
+    required TResult Function(GoToChartsScreen value) goToChartsScreen,
+    required TResult Function(GoBackToUploadData value) goBackToUploadData,
+  }) {
+    return goBackToUploadData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GoToUploadDataBaseScreen value)? goToUploadDataBaseScreen,
+    TResult? Function(GoToHome value)? goToHome,
+    TResult? Function(GoToChartsScreen value)? goToChartsScreen,
+    TResult? Function(GoBackToUploadData value)? goBackToUploadData,
+  }) {
+    return goBackToUploadData?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GoToUploadDataBaseScreen value)? goToUploadDataBaseScreen,
+    TResult Function(GoToHome value)? goToHome,
+    TResult Function(GoToChartsScreen value)? goToChartsScreen,
+    TResult Function(GoBackToUploadData value)? goBackToUploadData,
+    required TResult orElse(),
+  }) {
+    if (goBackToUploadData != null) {
+      return goBackToUploadData(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GoBackToUploadData implements DecisionBoardEvent {
+  const factory GoBackToUploadData() = _$GoBackToUploadData;
 }

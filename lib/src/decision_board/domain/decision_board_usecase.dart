@@ -23,6 +23,7 @@ class DecisionBoardUseCase
       goToChartsScreen: _goToChartsScreen,
       goToUploadDataBaseScreen: _goToUploadDataBaseScreen,
       goToHome: _goToHome,
+      goBackToUploadData: _goBackToUploadData,
     );
   }
 
@@ -30,8 +31,27 @@ class DecisionBoardUseCase
 
   Stream<DecisionBoardState> _goToUploadDataBaseScreen(
       GoToUploadDataBaseScreen value) async* {
-    yield state.copyWith(
-      flow: const UploadDatabaseScreenFlow(),
+    Result<List<ComplaintModel>> list =
+        await _storageRepository.readLocalDatabase();
+
+    yield* list.handle(
+      onSuccess: (data) async* {
+        if (data.isEmpty) {
+          yield state.copyWith(
+            flow: const UploadDatabaseScreenFlow(),
+          );
+        } else {
+          yield state.copyWith(
+            flow: const HomeFlow(),
+            complaintList: data,
+          );
+        }
+      },
+      onFailure: (error) async* {
+        yield state.copyWith(
+          flow: const UploadDatabaseScreenFlow(),
+        );
+      },
     );
   }
 
@@ -51,23 +71,22 @@ class DecisionBoardUseCase
       );
     }
 
-    print('1');
     await _storageRepository.writeLocalDatabase(data: complaintList);
-    print('2');
-    Result<List<ComplaintModel>> list =
-        await _storageRepository.readLocalDatabase();
-    print('3');
-    yield* list.handle(
-      onSuccess: (data) async* {
-        print(data);
-      },
-      onFailure: (error) async* {
-        print(error);
-      },
-    );
+
     yield state.copyWith(
       flow: const HomeFlow(),
       complaintList: complaintList,
+    );
+  }
+
+  Stream<DecisionBoardState> _goBackToUploadData(
+      GoBackToUploadData value) async* {
+    await _storageRepository.writeLocalDatabase(
+      data: [],
+    );
+
+    yield state.copyWith(
+      flow: const UploadDatabaseScreenFlow(),
     );
   }
 }
