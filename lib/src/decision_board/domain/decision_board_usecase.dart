@@ -24,10 +24,16 @@ class DecisionBoardUseCase
       goToUploadDataBaseScreen: _goToUploadDataBaseScreen,
       goToHome: _goToHome,
       goBackToUploadData: _goBackToUploadData,
+      goToChartsListScreenFlow: _goToChartsListScreenFlow,
+      goBackToHomeFlow: _goBackToHomeFlow,
     );
   }
 
-  Stream<DecisionBoardState> _goToChartsScreen(GoToChartsScreen value) async* {}
+  Stream<DecisionBoardState> _goToChartsScreen(GoToChartsScreen value) async* {
+    yield state.copyWith(
+      flow: const ChartScreenFlow(),
+    );
+  }
 
   Stream<DecisionBoardState> _goToUploadDataBaseScreen(
       GoToUploadDataBaseScreen value) async* {
@@ -87,6 +93,19 @@ class DecisionBoardUseCase
 
     yield state.copyWith(
       flow: const UploadDatabaseScreenFlow(),
+    );
+  }
+
+  Stream<DecisionBoardState> _goToChartsListScreenFlow(
+      GoToChartsListScreenFlow value) async* {
+    yield state.copyWith(
+      flow: const ListChartsScreenFlow(),
+    );
+  }
+
+  Stream<DecisionBoardState> _goBackToHomeFlow(GoBackToHomeFlow value) async* {
+    yield state.copyWith(
+      flow: const HomeFlow(),
     );
   }
 }

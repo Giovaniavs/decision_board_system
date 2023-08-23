@@ -225,7 +225,11 @@ class Drawer extends StatelessWidget {
                 Column(
                   children: [
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        _decisionBoardUseCase.add(
+                          const GoToChartsListScreenFlow(),
+                        );
+                      },
                       child: Container(
                         width: double.infinity,
                         height: 50,

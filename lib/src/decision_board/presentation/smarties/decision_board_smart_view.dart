@@ -1,6 +1,7 @@
 import 'package:decision_board_system/src/decision_board/domain/decision_board_usecase.dart';
 import 'package:decision_board_system/src/decision_board/presentation/dummies/charts_screen.dart';
 import 'package:decision_board_system/src/decision_board/presentation/dummies/home_screen.dart';
+import 'package:decision_board_system/src/decision_board/presentation/dummies/list_charts_screen.dart';
 import 'package:decision_board_system/src/decision_board/presentation/dummies/splash_screen.dart';
 import 'package:decision_board_system/src/decision_board/presentation/dummies/upload_database_screen.dart';
 import 'package:decision_board_system/src/shared/utils/internal_navigation_condition.dart';
@@ -42,11 +43,16 @@ class _DecisionBoardSmartViewState extends State<DecisionBoardSmartView> {
           decisionBoardUseCase: widget._decisionBoardUseCase,
         ),
       ),
-      // MaterialPage(
-      //   child: ChartsScreen(
-      //     decisionBoardUseCase: widget._decisionBoardUseCase,
-      //   ),
-      // ),
+      MaterialPage(
+        child: ListChartsScreen(
+          decisionBoardUseCase: widget._decisionBoardUseCase,
+        ),
+      ),
+      MaterialPage(
+        child: ChartsScreen(
+          decisionBoardUseCase: widget._decisionBoardUseCase,
+        ),
+      ),
     ];
     super.initState();
   }
@@ -79,6 +85,21 @@ class _DecisionBoardSmartViewState extends State<DecisionBoardSmartView> {
       homeFlow: (value) {
         _currentPageStack = [
           modulePages[2],
+        ];
+        return _currentPageStack;
+      },
+      listChartsScreenFlow: (_) {
+        _currentPageStack = [
+          modulePages[2],
+          modulePages[3],
+        ];
+        return _currentPageStack;
+      },
+      chartScreenFlow: (_) {
+        _currentPageStack = [
+          modulePages[2],
+          modulePages[3],
+          modulePages[4],
         ];
         return _currentPageStack;
       },

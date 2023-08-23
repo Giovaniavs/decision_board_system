@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$DecisionBoardState {
   DecisionBoardFlow get flow => throw _privateConstructorUsedError;
+  ChartSelected get chartSelected => throw _privateConstructorUsedError;
   List<ComplaintModel> get complaintList => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -30,9 +31,13 @@ abstract class $DecisionBoardStateCopyWith<$Res> {
           DecisionBoardState value, $Res Function(DecisionBoardState) then) =
       _$DecisionBoardStateCopyWithImpl<$Res, DecisionBoardState>;
   @useResult
-  $Res call({DecisionBoardFlow flow, List<ComplaintModel> complaintList});
+  $Res call(
+      {DecisionBoardFlow flow,
+      ChartSelected chartSelected,
+      List<ComplaintModel> complaintList});
 
   $DecisionBoardFlowCopyWith<$Res> get flow;
+  $ChartSelectedCopyWith<$Res> get chartSelected;
 }
 
 /// @nodoc
@@ -49,6 +54,7 @@ class _$DecisionBoardStateCopyWithImpl<$Res, $Val extends DecisionBoardState>
   @override
   $Res call({
     Object? flow = null,
+    Object? chartSelected = null,
     Object? complaintList = null,
   }) {
     return _then(_value.copyWith(
@@ -56,6 +62,10 @@ class _$DecisionBoardStateCopyWithImpl<$Res, $Val extends DecisionBoardState>
           ? _value.flow
           : flow // ignore: cast_nullable_to_non_nullable
               as DecisionBoardFlow,
+      chartSelected: null == chartSelected
+          ? _value.chartSelected
+          : chartSelected // ignore: cast_nullable_to_non_nullable
+              as ChartSelected,
       complaintList: null == complaintList
           ? _value.complaintList
           : complaintList // ignore: cast_nullable_to_non_nullable
@@ -70,6 +80,14 @@ class _$DecisionBoardStateCopyWithImpl<$Res, $Val extends DecisionBoardState>
       return _then(_value.copyWith(flow: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ChartSelectedCopyWith<$Res> get chartSelected {
+    return $ChartSelectedCopyWith<$Res>(_value.chartSelected, (value) {
+      return _then(_value.copyWith(chartSelected: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -80,10 +98,15 @@ abstract class _$$_DecisionBoardStateCopyWith<$Res>
       __$$_DecisionBoardStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({DecisionBoardFlow flow, List<ComplaintModel> complaintList});
+  $Res call(
+      {DecisionBoardFlow flow,
+      ChartSelected chartSelected,
+      List<ComplaintModel> complaintList});
 
   @override
   $DecisionBoardFlowCopyWith<$Res> get flow;
+  @override
+  $ChartSelectedCopyWith<$Res> get chartSelected;
 }
 
 /// @nodoc
@@ -98,6 +121,7 @@ class __$$_DecisionBoardStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? flow = null,
+    Object? chartSelected = null,
     Object? complaintList = null,
   }) {
     return _then(_$_DecisionBoardState(
@@ -105,6 +129,10 @@ class __$$_DecisionBoardStateCopyWithImpl<$Res>
           ? _value.flow
           : flow // ignore: cast_nullable_to_non_nullable
               as DecisionBoardFlow,
+      chartSelected: null == chartSelected
+          ? _value.chartSelected
+          : chartSelected // ignore: cast_nullable_to_non_nullable
+              as ChartSelected,
       complaintList: null == complaintList
           ? _value._complaintList
           : complaintList // ignore: cast_nullable_to_non_nullable
@@ -117,11 +145,15 @@ class __$$_DecisionBoardStateCopyWithImpl<$Res>
 
 class _$_DecisionBoardState implements _DecisionBoardState {
   const _$_DecisionBoardState(
-      {required this.flow, required final List<ComplaintModel> complaintList})
+      {required this.flow,
+      required this.chartSelected,
+      required final List<ComplaintModel> complaintList})
       : _complaintList = complaintList;
 
   @override
   final DecisionBoardFlow flow;
+  @override
+  final ChartSelected chartSelected;
   final List<ComplaintModel> _complaintList;
   @override
   List<ComplaintModel> get complaintList {
@@ -132,7 +164,7 @@ class _$_DecisionBoardState implements _DecisionBoardState {
 
   @override
   String toString() {
-    return 'DecisionBoardState(flow: $flow, complaintList: $complaintList)';
+    return 'DecisionBoardState(flow: $flow, chartSelected: $chartSelected, complaintList: $complaintList)';
   }
 
   @override
@@ -141,13 +173,15 @@ class _$_DecisionBoardState implements _DecisionBoardState {
         (other.runtimeType == runtimeType &&
             other is _$_DecisionBoardState &&
             (identical(other.flow, flow) || other.flow == flow) &&
+            (identical(other.chartSelected, chartSelected) ||
+                other.chartSelected == chartSelected) &&
             const DeepCollectionEquality()
                 .equals(other._complaintList, _complaintList));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, flow, const DeepCollectionEquality().hash(_complaintList));
+  int get hashCode => Object.hash(runtimeType, flow, chartSelected,
+      const DeepCollectionEquality().hash(_complaintList));
 
   @JsonKey(ignore: true)
   @override
@@ -160,11 +194,14 @@ class _$_DecisionBoardState implements _DecisionBoardState {
 abstract class _DecisionBoardState implements DecisionBoardState {
   const factory _DecisionBoardState(
           {required final DecisionBoardFlow flow,
+          required final ChartSelected chartSelected,
           required final List<ComplaintModel> complaintList}) =
       _$_DecisionBoardState;
 
   @override
   DecisionBoardFlow get flow;
+  @override
+  ChartSelected get chartSelected;
   @override
   List<ComplaintModel> get complaintList;
   @override
@@ -181,6 +218,7 @@ mixin _$DecisionBoardFlow {
     required TResult Function() uploadDatabaseScreenFlow,
     required TResult Function() chartScreenFlow,
     required TResult Function() homeFlow,
+    required TResult Function() listChartsScreenFlow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -189,6 +227,7 @@ mixin _$DecisionBoardFlow {
     TResult? Function()? uploadDatabaseScreenFlow,
     TResult? Function()? chartScreenFlow,
     TResult? Function()? homeFlow,
+    TResult? Function()? listChartsScreenFlow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -197,6 +236,7 @@ mixin _$DecisionBoardFlow {
     TResult Function()? uploadDatabaseScreenFlow,
     TResult Function()? chartScreenFlow,
     TResult Function()? homeFlow,
+    TResult Function()? listChartsScreenFlow,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -207,6 +247,7 @@ mixin _$DecisionBoardFlow {
         uploadDatabaseScreenFlow,
     required TResult Function(ChartScreenFlow value) chartScreenFlow,
     required TResult Function(HomeFlow value) homeFlow,
+    required TResult Function(ListChartsScreenFlow value) listChartsScreenFlow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -215,6 +256,7 @@ mixin _$DecisionBoardFlow {
     TResult? Function(UploadDatabaseScreenFlow value)? uploadDatabaseScreenFlow,
     TResult? Function(ChartScreenFlow value)? chartScreenFlow,
     TResult? Function(HomeFlow value)? homeFlow,
+    TResult? Function(ListChartsScreenFlow value)? listChartsScreenFlow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -223,6 +265,7 @@ mixin _$DecisionBoardFlow {
     TResult Function(UploadDatabaseScreenFlow value)? uploadDatabaseScreenFlow,
     TResult Function(ChartScreenFlow value)? chartScreenFlow,
     TResult Function(HomeFlow value)? homeFlow,
+    TResult Function(ListChartsScreenFlow value)? listChartsScreenFlow,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -288,6 +331,7 @@ class _$SplashScreenFlow implements SplashScreenFlow {
     required TResult Function() uploadDatabaseScreenFlow,
     required TResult Function() chartScreenFlow,
     required TResult Function() homeFlow,
+    required TResult Function() listChartsScreenFlow,
   }) {
     return splashScreenFlow();
   }
@@ -299,6 +343,7 @@ class _$SplashScreenFlow implements SplashScreenFlow {
     TResult? Function()? uploadDatabaseScreenFlow,
     TResult? Function()? chartScreenFlow,
     TResult? Function()? homeFlow,
+    TResult? Function()? listChartsScreenFlow,
   }) {
     return splashScreenFlow?.call();
   }
@@ -310,6 +355,7 @@ class _$SplashScreenFlow implements SplashScreenFlow {
     TResult Function()? uploadDatabaseScreenFlow,
     TResult Function()? chartScreenFlow,
     TResult Function()? homeFlow,
+    TResult Function()? listChartsScreenFlow,
     required TResult orElse(),
   }) {
     if (splashScreenFlow != null) {
@@ -326,6 +372,7 @@ class _$SplashScreenFlow implements SplashScreenFlow {
         uploadDatabaseScreenFlow,
     required TResult Function(ChartScreenFlow value) chartScreenFlow,
     required TResult Function(HomeFlow value) homeFlow,
+    required TResult Function(ListChartsScreenFlow value) listChartsScreenFlow,
   }) {
     return splashScreenFlow(this);
   }
@@ -337,6 +384,7 @@ class _$SplashScreenFlow implements SplashScreenFlow {
     TResult? Function(UploadDatabaseScreenFlow value)? uploadDatabaseScreenFlow,
     TResult? Function(ChartScreenFlow value)? chartScreenFlow,
     TResult? Function(HomeFlow value)? homeFlow,
+    TResult? Function(ListChartsScreenFlow value)? listChartsScreenFlow,
   }) {
     return splashScreenFlow?.call(this);
   }
@@ -348,6 +396,7 @@ class _$SplashScreenFlow implements SplashScreenFlow {
     TResult Function(UploadDatabaseScreenFlow value)? uploadDatabaseScreenFlow,
     TResult Function(ChartScreenFlow value)? chartScreenFlow,
     TResult Function(HomeFlow value)? homeFlow,
+    TResult Function(ListChartsScreenFlow value)? listChartsScreenFlow,
     required TResult orElse(),
   }) {
     if (splashScreenFlow != null) {
@@ -404,6 +453,7 @@ class _$UploadDatabaseScreenFlow implements UploadDatabaseScreenFlow {
     required TResult Function() uploadDatabaseScreenFlow,
     required TResult Function() chartScreenFlow,
     required TResult Function() homeFlow,
+    required TResult Function() listChartsScreenFlow,
   }) {
     return uploadDatabaseScreenFlow();
   }
@@ -415,6 +465,7 @@ class _$UploadDatabaseScreenFlow implements UploadDatabaseScreenFlow {
     TResult? Function()? uploadDatabaseScreenFlow,
     TResult? Function()? chartScreenFlow,
     TResult? Function()? homeFlow,
+    TResult? Function()? listChartsScreenFlow,
   }) {
     return uploadDatabaseScreenFlow?.call();
   }
@@ -426,6 +477,7 @@ class _$UploadDatabaseScreenFlow implements UploadDatabaseScreenFlow {
     TResult Function()? uploadDatabaseScreenFlow,
     TResult Function()? chartScreenFlow,
     TResult Function()? homeFlow,
+    TResult Function()? listChartsScreenFlow,
     required TResult orElse(),
   }) {
     if (uploadDatabaseScreenFlow != null) {
@@ -442,6 +494,7 @@ class _$UploadDatabaseScreenFlow implements UploadDatabaseScreenFlow {
         uploadDatabaseScreenFlow,
     required TResult Function(ChartScreenFlow value) chartScreenFlow,
     required TResult Function(HomeFlow value) homeFlow,
+    required TResult Function(ListChartsScreenFlow value) listChartsScreenFlow,
   }) {
     return uploadDatabaseScreenFlow(this);
   }
@@ -453,6 +506,7 @@ class _$UploadDatabaseScreenFlow implements UploadDatabaseScreenFlow {
     TResult? Function(UploadDatabaseScreenFlow value)? uploadDatabaseScreenFlow,
     TResult? Function(ChartScreenFlow value)? chartScreenFlow,
     TResult? Function(HomeFlow value)? homeFlow,
+    TResult? Function(ListChartsScreenFlow value)? listChartsScreenFlow,
   }) {
     return uploadDatabaseScreenFlow?.call(this);
   }
@@ -464,6 +518,7 @@ class _$UploadDatabaseScreenFlow implements UploadDatabaseScreenFlow {
     TResult Function(UploadDatabaseScreenFlow value)? uploadDatabaseScreenFlow,
     TResult Function(ChartScreenFlow value)? chartScreenFlow,
     TResult Function(HomeFlow value)? homeFlow,
+    TResult Function(ListChartsScreenFlow value)? listChartsScreenFlow,
     required TResult orElse(),
   }) {
     if (uploadDatabaseScreenFlow != null) {
@@ -519,6 +574,7 @@ class _$ChartScreenFlow implements ChartScreenFlow {
     required TResult Function() uploadDatabaseScreenFlow,
     required TResult Function() chartScreenFlow,
     required TResult Function() homeFlow,
+    required TResult Function() listChartsScreenFlow,
   }) {
     return chartScreenFlow();
   }
@@ -530,6 +586,7 @@ class _$ChartScreenFlow implements ChartScreenFlow {
     TResult? Function()? uploadDatabaseScreenFlow,
     TResult? Function()? chartScreenFlow,
     TResult? Function()? homeFlow,
+    TResult? Function()? listChartsScreenFlow,
   }) {
     return chartScreenFlow?.call();
   }
@@ -541,6 +598,7 @@ class _$ChartScreenFlow implements ChartScreenFlow {
     TResult Function()? uploadDatabaseScreenFlow,
     TResult Function()? chartScreenFlow,
     TResult Function()? homeFlow,
+    TResult Function()? listChartsScreenFlow,
     required TResult orElse(),
   }) {
     if (chartScreenFlow != null) {
@@ -557,6 +615,7 @@ class _$ChartScreenFlow implements ChartScreenFlow {
         uploadDatabaseScreenFlow,
     required TResult Function(ChartScreenFlow value) chartScreenFlow,
     required TResult Function(HomeFlow value) homeFlow,
+    required TResult Function(ListChartsScreenFlow value) listChartsScreenFlow,
   }) {
     return chartScreenFlow(this);
   }
@@ -568,6 +627,7 @@ class _$ChartScreenFlow implements ChartScreenFlow {
     TResult? Function(UploadDatabaseScreenFlow value)? uploadDatabaseScreenFlow,
     TResult? Function(ChartScreenFlow value)? chartScreenFlow,
     TResult? Function(HomeFlow value)? homeFlow,
+    TResult? Function(ListChartsScreenFlow value)? listChartsScreenFlow,
   }) {
     return chartScreenFlow?.call(this);
   }
@@ -579,6 +639,7 @@ class _$ChartScreenFlow implements ChartScreenFlow {
     TResult Function(UploadDatabaseScreenFlow value)? uploadDatabaseScreenFlow,
     TResult Function(ChartScreenFlow value)? chartScreenFlow,
     TResult Function(HomeFlow value)? homeFlow,
+    TResult Function(ListChartsScreenFlow value)? listChartsScreenFlow,
     required TResult orElse(),
   }) {
     if (chartScreenFlow != null) {
@@ -633,6 +694,7 @@ class _$HomeFlow implements HomeFlow {
     required TResult Function() uploadDatabaseScreenFlow,
     required TResult Function() chartScreenFlow,
     required TResult Function() homeFlow,
+    required TResult Function() listChartsScreenFlow,
   }) {
     return homeFlow();
   }
@@ -644,6 +706,7 @@ class _$HomeFlow implements HomeFlow {
     TResult? Function()? uploadDatabaseScreenFlow,
     TResult? Function()? chartScreenFlow,
     TResult? Function()? homeFlow,
+    TResult? Function()? listChartsScreenFlow,
   }) {
     return homeFlow?.call();
   }
@@ -655,6 +718,7 @@ class _$HomeFlow implements HomeFlow {
     TResult Function()? uploadDatabaseScreenFlow,
     TResult Function()? chartScreenFlow,
     TResult Function()? homeFlow,
+    TResult Function()? listChartsScreenFlow,
     required TResult orElse(),
   }) {
     if (homeFlow != null) {
@@ -671,6 +735,7 @@ class _$HomeFlow implements HomeFlow {
         uploadDatabaseScreenFlow,
     required TResult Function(ChartScreenFlow value) chartScreenFlow,
     required TResult Function(HomeFlow value) homeFlow,
+    required TResult Function(ListChartsScreenFlow value) listChartsScreenFlow,
   }) {
     return homeFlow(this);
   }
@@ -682,6 +747,7 @@ class _$HomeFlow implements HomeFlow {
     TResult? Function(UploadDatabaseScreenFlow value)? uploadDatabaseScreenFlow,
     TResult? Function(ChartScreenFlow value)? chartScreenFlow,
     TResult? Function(HomeFlow value)? homeFlow,
+    TResult? Function(ListChartsScreenFlow value)? listChartsScreenFlow,
   }) {
     return homeFlow?.call(this);
   }
@@ -693,6 +759,7 @@ class _$HomeFlow implements HomeFlow {
     TResult Function(UploadDatabaseScreenFlow value)? uploadDatabaseScreenFlow,
     TResult Function(ChartScreenFlow value)? chartScreenFlow,
     TResult Function(HomeFlow value)? homeFlow,
+    TResult Function(ListChartsScreenFlow value)? listChartsScreenFlow,
     required TResult orElse(),
   }) {
     if (homeFlow != null) {
@@ -707,29 +774,418 @@ abstract class HomeFlow implements DecisionBoardFlow {
 }
 
 /// @nodoc
+abstract class _$$ListChartsScreenFlowCopyWith<$Res> {
+  factory _$$ListChartsScreenFlowCopyWith(_$ListChartsScreenFlow value,
+          $Res Function(_$ListChartsScreenFlow) then) =
+      __$$ListChartsScreenFlowCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ListChartsScreenFlowCopyWithImpl<$Res>
+    extends _$DecisionBoardFlowCopyWithImpl<$Res, _$ListChartsScreenFlow>
+    implements _$$ListChartsScreenFlowCopyWith<$Res> {
+  __$$ListChartsScreenFlowCopyWithImpl(_$ListChartsScreenFlow _value,
+      $Res Function(_$ListChartsScreenFlow) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ListChartsScreenFlow implements ListChartsScreenFlow {
+  const _$ListChartsScreenFlow();
+
+  @override
+  String toString() {
+    return 'DecisionBoardFlow.listChartsScreenFlow()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ListChartsScreenFlow);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() splashScreenFlow,
+    required TResult Function() uploadDatabaseScreenFlow,
+    required TResult Function() chartScreenFlow,
+    required TResult Function() homeFlow,
+    required TResult Function() listChartsScreenFlow,
+  }) {
+    return listChartsScreenFlow();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? splashScreenFlow,
+    TResult? Function()? uploadDatabaseScreenFlow,
+    TResult? Function()? chartScreenFlow,
+    TResult? Function()? homeFlow,
+    TResult? Function()? listChartsScreenFlow,
+  }) {
+    return listChartsScreenFlow?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? splashScreenFlow,
+    TResult Function()? uploadDatabaseScreenFlow,
+    TResult Function()? chartScreenFlow,
+    TResult Function()? homeFlow,
+    TResult Function()? listChartsScreenFlow,
+    required TResult orElse(),
+  }) {
+    if (listChartsScreenFlow != null) {
+      return listChartsScreenFlow();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SplashScreenFlow value) splashScreenFlow,
+    required TResult Function(UploadDatabaseScreenFlow value)
+        uploadDatabaseScreenFlow,
+    required TResult Function(ChartScreenFlow value) chartScreenFlow,
+    required TResult Function(HomeFlow value) homeFlow,
+    required TResult Function(ListChartsScreenFlow value) listChartsScreenFlow,
+  }) {
+    return listChartsScreenFlow(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SplashScreenFlow value)? splashScreenFlow,
+    TResult? Function(UploadDatabaseScreenFlow value)? uploadDatabaseScreenFlow,
+    TResult? Function(ChartScreenFlow value)? chartScreenFlow,
+    TResult? Function(HomeFlow value)? homeFlow,
+    TResult? Function(ListChartsScreenFlow value)? listChartsScreenFlow,
+  }) {
+    return listChartsScreenFlow?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SplashScreenFlow value)? splashScreenFlow,
+    TResult Function(UploadDatabaseScreenFlow value)? uploadDatabaseScreenFlow,
+    TResult Function(ChartScreenFlow value)? chartScreenFlow,
+    TResult Function(HomeFlow value)? homeFlow,
+    TResult Function(ListChartsScreenFlow value)? listChartsScreenFlow,
+    required TResult orElse(),
+  }) {
+    if (listChartsScreenFlow != null) {
+      return listChartsScreenFlow(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ListChartsScreenFlow implements DecisionBoardFlow {
+  const factory ListChartsScreenFlow() = _$ListChartsScreenFlow;
+}
+
+/// @nodoc
+mixin _$ChartSelected {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() none,
+    required TResult Function() chartByAnwer,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? none,
+    TResult? Function()? chartByAnwer,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? none,
+    TResult Function()? chartByAnwer,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(None value) none,
+    required TResult Function(ChartByAnwer value) chartByAnwer,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(None value)? none,
+    TResult? Function(ChartByAnwer value)? chartByAnwer,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(None value)? none,
+    TResult Function(ChartByAnwer value)? chartByAnwer,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ChartSelectedCopyWith<$Res> {
+  factory $ChartSelectedCopyWith(
+          ChartSelected value, $Res Function(ChartSelected) then) =
+      _$ChartSelectedCopyWithImpl<$Res, ChartSelected>;
+}
+
+/// @nodoc
+class _$ChartSelectedCopyWithImpl<$Res, $Val extends ChartSelected>
+    implements $ChartSelectedCopyWith<$Res> {
+  _$ChartSelectedCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$NoneCopyWith<$Res> {
+  factory _$$NoneCopyWith(_$None value, $Res Function(_$None) then) =
+      __$$NoneCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$NoneCopyWithImpl<$Res>
+    extends _$ChartSelectedCopyWithImpl<$Res, _$None>
+    implements _$$NoneCopyWith<$Res> {
+  __$$NoneCopyWithImpl(_$None _value, $Res Function(_$None) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$None implements None {
+  const _$None();
+
+  @override
+  String toString() {
+    return 'ChartSelected.none()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$None);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() none,
+    required TResult Function() chartByAnwer,
+  }) {
+    return none();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? none,
+    TResult? Function()? chartByAnwer,
+  }) {
+    return none?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? none,
+    TResult Function()? chartByAnwer,
+    required TResult orElse(),
+  }) {
+    if (none != null) {
+      return none();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(None value) none,
+    required TResult Function(ChartByAnwer value) chartByAnwer,
+  }) {
+    return none(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(None value)? none,
+    TResult? Function(ChartByAnwer value)? chartByAnwer,
+  }) {
+    return none?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(None value)? none,
+    TResult Function(ChartByAnwer value)? chartByAnwer,
+    required TResult orElse(),
+  }) {
+    if (none != null) {
+      return none(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class None implements ChartSelected {
+  const factory None() = _$None;
+}
+
+/// @nodoc
+abstract class _$$ChartByAnwerCopyWith<$Res> {
+  factory _$$ChartByAnwerCopyWith(
+          _$ChartByAnwer value, $Res Function(_$ChartByAnwer) then) =
+      __$$ChartByAnwerCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ChartByAnwerCopyWithImpl<$Res>
+    extends _$ChartSelectedCopyWithImpl<$Res, _$ChartByAnwer>
+    implements _$$ChartByAnwerCopyWith<$Res> {
+  __$$ChartByAnwerCopyWithImpl(
+      _$ChartByAnwer _value, $Res Function(_$ChartByAnwer) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ChartByAnwer implements ChartByAnwer {
+  const _$ChartByAnwer();
+
+  @override
+  String toString() {
+    return 'ChartSelected.chartByAnwer()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ChartByAnwer);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() none,
+    required TResult Function() chartByAnwer,
+  }) {
+    return chartByAnwer();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? none,
+    TResult? Function()? chartByAnwer,
+  }) {
+    return chartByAnwer?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? none,
+    TResult Function()? chartByAnwer,
+    required TResult orElse(),
+  }) {
+    if (chartByAnwer != null) {
+      return chartByAnwer();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(None value) none,
+    required TResult Function(ChartByAnwer value) chartByAnwer,
+  }) {
+    return chartByAnwer(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(None value)? none,
+    TResult? Function(ChartByAnwer value)? chartByAnwer,
+  }) {
+    return chartByAnwer?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(None value)? none,
+    TResult Function(ChartByAnwer value)? chartByAnwer,
+    required TResult orElse(),
+  }) {
+    if (chartByAnwer != null) {
+      return chartByAnwer(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChartByAnwer implements ChartSelected {
+  const factory ChartByAnwer() = _$ChartByAnwer;
+}
+
+/// @nodoc
 mixin _$DecisionBoardEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() goToUploadDataBaseScreen,
     required TResult Function(List<List<dynamic>> formatedData) goToHome,
-    required TResult Function(List<List<dynamic>> data) goToChartsScreen,
+    required TResult Function() goToChartsScreen,
     required TResult Function() goBackToUploadData,
+    required TResult Function() goToChartsListScreenFlow,
+    required TResult Function() goBackToHomeFlow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? goToUploadDataBaseScreen,
     TResult? Function(List<List<dynamic>> formatedData)? goToHome,
-    TResult? Function(List<List<dynamic>> data)? goToChartsScreen,
+    TResult? Function()? goToChartsScreen,
     TResult? Function()? goBackToUploadData,
+    TResult? Function()? goToChartsListScreenFlow,
+    TResult? Function()? goBackToHomeFlow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? goToUploadDataBaseScreen,
     TResult Function(List<List<dynamic>> formatedData)? goToHome,
-    TResult Function(List<List<dynamic>> data)? goToChartsScreen,
+    TResult Function()? goToChartsScreen,
     TResult Function()? goBackToUploadData,
+    TResult Function()? goToChartsListScreenFlow,
+    TResult Function()? goBackToHomeFlow,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -740,6 +1196,9 @@ mixin _$DecisionBoardEvent {
     required TResult Function(GoToHome value) goToHome,
     required TResult Function(GoToChartsScreen value) goToChartsScreen,
     required TResult Function(GoBackToUploadData value) goBackToUploadData,
+    required TResult Function(GoToChartsListScreenFlow value)
+        goToChartsListScreenFlow,
+    required TResult Function(GoBackToHomeFlow value) goBackToHomeFlow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -748,6 +1207,8 @@ mixin _$DecisionBoardEvent {
     TResult? Function(GoToHome value)? goToHome,
     TResult? Function(GoToChartsScreen value)? goToChartsScreen,
     TResult? Function(GoBackToUploadData value)? goBackToUploadData,
+    TResult? Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
+    TResult? Function(GoBackToHomeFlow value)? goBackToHomeFlow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -756,6 +1217,8 @@ mixin _$DecisionBoardEvent {
     TResult Function(GoToHome value)? goToHome,
     TResult Function(GoToChartsScreen value)? goToChartsScreen,
     TResult Function(GoBackToUploadData value)? goBackToUploadData,
+    TResult Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
+    TResult Function(GoBackToHomeFlow value)? goBackToHomeFlow,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -820,8 +1283,10 @@ class _$GoToUploadDataBaseScreen implements GoToUploadDataBaseScreen {
   TResult when<TResult extends Object?>({
     required TResult Function() goToUploadDataBaseScreen,
     required TResult Function(List<List<dynamic>> formatedData) goToHome,
-    required TResult Function(List<List<dynamic>> data) goToChartsScreen,
+    required TResult Function() goToChartsScreen,
     required TResult Function() goBackToUploadData,
+    required TResult Function() goToChartsListScreenFlow,
+    required TResult Function() goBackToHomeFlow,
   }) {
     return goToUploadDataBaseScreen();
   }
@@ -831,8 +1296,10 @@ class _$GoToUploadDataBaseScreen implements GoToUploadDataBaseScreen {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? goToUploadDataBaseScreen,
     TResult? Function(List<List<dynamic>> formatedData)? goToHome,
-    TResult? Function(List<List<dynamic>> data)? goToChartsScreen,
+    TResult? Function()? goToChartsScreen,
     TResult? Function()? goBackToUploadData,
+    TResult? Function()? goToChartsListScreenFlow,
+    TResult? Function()? goBackToHomeFlow,
   }) {
     return goToUploadDataBaseScreen?.call();
   }
@@ -842,8 +1309,10 @@ class _$GoToUploadDataBaseScreen implements GoToUploadDataBaseScreen {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? goToUploadDataBaseScreen,
     TResult Function(List<List<dynamic>> formatedData)? goToHome,
-    TResult Function(List<List<dynamic>> data)? goToChartsScreen,
+    TResult Function()? goToChartsScreen,
     TResult Function()? goBackToUploadData,
+    TResult Function()? goToChartsListScreenFlow,
+    TResult Function()? goBackToHomeFlow,
     required TResult orElse(),
   }) {
     if (goToUploadDataBaseScreen != null) {
@@ -860,6 +1329,9 @@ class _$GoToUploadDataBaseScreen implements GoToUploadDataBaseScreen {
     required TResult Function(GoToHome value) goToHome,
     required TResult Function(GoToChartsScreen value) goToChartsScreen,
     required TResult Function(GoBackToUploadData value) goBackToUploadData,
+    required TResult Function(GoToChartsListScreenFlow value)
+        goToChartsListScreenFlow,
+    required TResult Function(GoBackToHomeFlow value) goBackToHomeFlow,
   }) {
     return goToUploadDataBaseScreen(this);
   }
@@ -871,6 +1343,8 @@ class _$GoToUploadDataBaseScreen implements GoToUploadDataBaseScreen {
     TResult? Function(GoToHome value)? goToHome,
     TResult? Function(GoToChartsScreen value)? goToChartsScreen,
     TResult? Function(GoBackToUploadData value)? goBackToUploadData,
+    TResult? Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
+    TResult? Function(GoBackToHomeFlow value)? goBackToHomeFlow,
   }) {
     return goToUploadDataBaseScreen?.call(this);
   }
@@ -882,6 +1356,8 @@ class _$GoToUploadDataBaseScreen implements GoToUploadDataBaseScreen {
     TResult Function(GoToHome value)? goToHome,
     TResult Function(GoToChartsScreen value)? goToChartsScreen,
     TResult Function(GoBackToUploadData value)? goBackToUploadData,
+    TResult Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
+    TResult Function(GoBackToHomeFlow value)? goBackToHomeFlow,
     required TResult orElse(),
   }) {
     if (goToUploadDataBaseScreen != null) {
@@ -968,8 +1444,10 @@ class _$GoToHome implements GoToHome {
   TResult when<TResult extends Object?>({
     required TResult Function() goToUploadDataBaseScreen,
     required TResult Function(List<List<dynamic>> formatedData) goToHome,
-    required TResult Function(List<List<dynamic>> data) goToChartsScreen,
+    required TResult Function() goToChartsScreen,
     required TResult Function() goBackToUploadData,
+    required TResult Function() goToChartsListScreenFlow,
+    required TResult Function() goBackToHomeFlow,
   }) {
     return goToHome(formatedData);
   }
@@ -979,8 +1457,10 @@ class _$GoToHome implements GoToHome {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? goToUploadDataBaseScreen,
     TResult? Function(List<List<dynamic>> formatedData)? goToHome,
-    TResult? Function(List<List<dynamic>> data)? goToChartsScreen,
+    TResult? Function()? goToChartsScreen,
     TResult? Function()? goBackToUploadData,
+    TResult? Function()? goToChartsListScreenFlow,
+    TResult? Function()? goBackToHomeFlow,
   }) {
     return goToHome?.call(formatedData);
   }
@@ -990,8 +1470,10 @@ class _$GoToHome implements GoToHome {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? goToUploadDataBaseScreen,
     TResult Function(List<List<dynamic>> formatedData)? goToHome,
-    TResult Function(List<List<dynamic>> data)? goToChartsScreen,
+    TResult Function()? goToChartsScreen,
     TResult Function()? goBackToUploadData,
+    TResult Function()? goToChartsListScreenFlow,
+    TResult Function()? goBackToHomeFlow,
     required TResult orElse(),
   }) {
     if (goToHome != null) {
@@ -1008,6 +1490,9 @@ class _$GoToHome implements GoToHome {
     required TResult Function(GoToHome value) goToHome,
     required TResult Function(GoToChartsScreen value) goToChartsScreen,
     required TResult Function(GoBackToUploadData value) goBackToUploadData,
+    required TResult Function(GoToChartsListScreenFlow value)
+        goToChartsListScreenFlow,
+    required TResult Function(GoBackToHomeFlow value) goBackToHomeFlow,
   }) {
     return goToHome(this);
   }
@@ -1019,6 +1504,8 @@ class _$GoToHome implements GoToHome {
     TResult? Function(GoToHome value)? goToHome,
     TResult? Function(GoToChartsScreen value)? goToChartsScreen,
     TResult? Function(GoBackToUploadData value)? goBackToUploadData,
+    TResult? Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
+    TResult? Function(GoBackToHomeFlow value)? goBackToHomeFlow,
   }) {
     return goToHome?.call(this);
   }
@@ -1030,6 +1517,8 @@ class _$GoToHome implements GoToHome {
     TResult Function(GoToHome value)? goToHome,
     TResult Function(GoToChartsScreen value)? goToChartsScreen,
     TResult Function(GoBackToUploadData value)? goBackToUploadData,
+    TResult Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
+    TResult Function(GoBackToHomeFlow value)? goBackToHomeFlow,
     required TResult orElse(),
   }) {
     if (goToHome != null) {
@@ -1054,8 +1543,6 @@ abstract class _$$GoToChartsScreenCopyWith<$Res> {
   factory _$$GoToChartsScreenCopyWith(
           _$GoToChartsScreen value, $Res Function(_$GoToChartsScreen) then) =
       __$$GoToChartsScreenCopyWithImpl<$Res>;
-  @useResult
-  $Res call({List<List<dynamic>> data});
 }
 
 /// @nodoc
@@ -1065,67 +1552,38 @@ class __$$GoToChartsScreenCopyWithImpl<$Res>
   __$$GoToChartsScreenCopyWithImpl(
       _$GoToChartsScreen _value, $Res Function(_$GoToChartsScreen) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = null,
-  }) {
-    return _then(_$GoToChartsScreen(
-      data: null == data
-          ? _value._data
-          : data // ignore: cast_nullable_to_non_nullable
-              as List<List<dynamic>>,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$GoToChartsScreen implements GoToChartsScreen {
-  const _$GoToChartsScreen({required final List<List<dynamic>> data})
-      : _data = data;
-
-  final List<List<dynamic>> _data;
-  @override
-  List<List<dynamic>> get data {
-    if (_data is EqualUnmodifiableListView) return _data;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_data);
-  }
+  const _$GoToChartsScreen();
 
   @override
   String toString() {
-    return 'DecisionBoardEvent.goToChartsScreen(data: $data)';
+    return 'DecisionBoardEvent.goToChartsScreen()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GoToChartsScreen &&
-            const DeepCollectionEquality().equals(other._data, _data));
+        (other.runtimeType == runtimeType && other is _$GoToChartsScreen);
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GoToChartsScreenCopyWith<_$GoToChartsScreen> get copyWith =>
-      __$$GoToChartsScreenCopyWithImpl<_$GoToChartsScreen>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() goToUploadDataBaseScreen,
     required TResult Function(List<List<dynamic>> formatedData) goToHome,
-    required TResult Function(List<List<dynamic>> data) goToChartsScreen,
+    required TResult Function() goToChartsScreen,
     required TResult Function() goBackToUploadData,
+    required TResult Function() goToChartsListScreenFlow,
+    required TResult Function() goBackToHomeFlow,
   }) {
-    return goToChartsScreen(data);
+    return goToChartsScreen();
   }
 
   @override
@@ -1133,10 +1591,12 @@ class _$GoToChartsScreen implements GoToChartsScreen {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? goToUploadDataBaseScreen,
     TResult? Function(List<List<dynamic>> formatedData)? goToHome,
-    TResult? Function(List<List<dynamic>> data)? goToChartsScreen,
+    TResult? Function()? goToChartsScreen,
     TResult? Function()? goBackToUploadData,
+    TResult? Function()? goToChartsListScreenFlow,
+    TResult? Function()? goBackToHomeFlow,
   }) {
-    return goToChartsScreen?.call(data);
+    return goToChartsScreen?.call();
   }
 
   @override
@@ -1144,12 +1604,14 @@ class _$GoToChartsScreen implements GoToChartsScreen {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? goToUploadDataBaseScreen,
     TResult Function(List<List<dynamic>> formatedData)? goToHome,
-    TResult Function(List<List<dynamic>> data)? goToChartsScreen,
+    TResult Function()? goToChartsScreen,
     TResult Function()? goBackToUploadData,
+    TResult Function()? goToChartsListScreenFlow,
+    TResult Function()? goBackToHomeFlow,
     required TResult orElse(),
   }) {
     if (goToChartsScreen != null) {
-      return goToChartsScreen(data);
+      return goToChartsScreen();
     }
     return orElse();
   }
@@ -1162,6 +1624,9 @@ class _$GoToChartsScreen implements GoToChartsScreen {
     required TResult Function(GoToHome value) goToHome,
     required TResult Function(GoToChartsScreen value) goToChartsScreen,
     required TResult Function(GoBackToUploadData value) goBackToUploadData,
+    required TResult Function(GoToChartsListScreenFlow value)
+        goToChartsListScreenFlow,
+    required TResult Function(GoBackToHomeFlow value) goBackToHomeFlow,
   }) {
     return goToChartsScreen(this);
   }
@@ -1173,6 +1638,8 @@ class _$GoToChartsScreen implements GoToChartsScreen {
     TResult? Function(GoToHome value)? goToHome,
     TResult? Function(GoToChartsScreen value)? goToChartsScreen,
     TResult? Function(GoBackToUploadData value)? goBackToUploadData,
+    TResult? Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
+    TResult? Function(GoBackToHomeFlow value)? goBackToHomeFlow,
   }) {
     return goToChartsScreen?.call(this);
   }
@@ -1184,6 +1651,8 @@ class _$GoToChartsScreen implements GoToChartsScreen {
     TResult Function(GoToHome value)? goToHome,
     TResult Function(GoToChartsScreen value)? goToChartsScreen,
     TResult Function(GoBackToUploadData value)? goBackToUploadData,
+    TResult Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
+    TResult Function(GoBackToHomeFlow value)? goBackToHomeFlow,
     required TResult orElse(),
   }) {
     if (goToChartsScreen != null) {
@@ -1194,13 +1663,7 @@ class _$GoToChartsScreen implements GoToChartsScreen {
 }
 
 abstract class GoToChartsScreen implements DecisionBoardEvent {
-  const factory GoToChartsScreen({required final List<List<dynamic>> data}) =
-      _$GoToChartsScreen;
-
-  List<List<dynamic>> get data;
-  @JsonKey(ignore: true)
-  _$$GoToChartsScreenCopyWith<_$GoToChartsScreen> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory GoToChartsScreen() = _$GoToChartsScreen;
 }
 
 /// @nodoc
@@ -1243,8 +1706,10 @@ class _$GoBackToUploadData implements GoBackToUploadData {
   TResult when<TResult extends Object?>({
     required TResult Function() goToUploadDataBaseScreen,
     required TResult Function(List<List<dynamic>> formatedData) goToHome,
-    required TResult Function(List<List<dynamic>> data) goToChartsScreen,
+    required TResult Function() goToChartsScreen,
     required TResult Function() goBackToUploadData,
+    required TResult Function() goToChartsListScreenFlow,
+    required TResult Function() goBackToHomeFlow,
   }) {
     return goBackToUploadData();
   }
@@ -1254,8 +1719,10 @@ class _$GoBackToUploadData implements GoBackToUploadData {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? goToUploadDataBaseScreen,
     TResult? Function(List<List<dynamic>> formatedData)? goToHome,
-    TResult? Function(List<List<dynamic>> data)? goToChartsScreen,
+    TResult? Function()? goToChartsScreen,
     TResult? Function()? goBackToUploadData,
+    TResult? Function()? goToChartsListScreenFlow,
+    TResult? Function()? goBackToHomeFlow,
   }) {
     return goBackToUploadData?.call();
   }
@@ -1265,8 +1732,10 @@ class _$GoBackToUploadData implements GoBackToUploadData {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? goToUploadDataBaseScreen,
     TResult Function(List<List<dynamic>> formatedData)? goToHome,
-    TResult Function(List<List<dynamic>> data)? goToChartsScreen,
+    TResult Function()? goToChartsScreen,
     TResult Function()? goBackToUploadData,
+    TResult Function()? goToChartsListScreenFlow,
+    TResult Function()? goBackToHomeFlow,
     required TResult orElse(),
   }) {
     if (goBackToUploadData != null) {
@@ -1283,6 +1752,9 @@ class _$GoBackToUploadData implements GoBackToUploadData {
     required TResult Function(GoToHome value) goToHome,
     required TResult Function(GoToChartsScreen value) goToChartsScreen,
     required TResult Function(GoBackToUploadData value) goBackToUploadData,
+    required TResult Function(GoToChartsListScreenFlow value)
+        goToChartsListScreenFlow,
+    required TResult Function(GoBackToHomeFlow value) goBackToHomeFlow,
   }) {
     return goBackToUploadData(this);
   }
@@ -1294,6 +1766,8 @@ class _$GoBackToUploadData implements GoBackToUploadData {
     TResult? Function(GoToHome value)? goToHome,
     TResult? Function(GoToChartsScreen value)? goToChartsScreen,
     TResult? Function(GoBackToUploadData value)? goBackToUploadData,
+    TResult? Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
+    TResult? Function(GoBackToHomeFlow value)? goBackToHomeFlow,
   }) {
     return goBackToUploadData?.call(this);
   }
@@ -1305,6 +1779,8 @@ class _$GoBackToUploadData implements GoBackToUploadData {
     TResult Function(GoToHome value)? goToHome,
     TResult Function(GoToChartsScreen value)? goToChartsScreen,
     TResult Function(GoBackToUploadData value)? goBackToUploadData,
+    TResult Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
+    TResult Function(GoBackToHomeFlow value)? goBackToHomeFlow,
     required TResult orElse(),
   }) {
     if (goBackToUploadData != null) {
@@ -1316,4 +1792,261 @@ class _$GoBackToUploadData implements GoBackToUploadData {
 
 abstract class GoBackToUploadData implements DecisionBoardEvent {
   const factory GoBackToUploadData() = _$GoBackToUploadData;
+}
+
+/// @nodoc
+abstract class _$$GoToChartsListScreenFlowCopyWith<$Res> {
+  factory _$$GoToChartsListScreenFlowCopyWith(_$GoToChartsListScreenFlow value,
+          $Res Function(_$GoToChartsListScreenFlow) then) =
+      __$$GoToChartsListScreenFlowCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GoToChartsListScreenFlowCopyWithImpl<$Res>
+    extends _$DecisionBoardEventCopyWithImpl<$Res, _$GoToChartsListScreenFlow>
+    implements _$$GoToChartsListScreenFlowCopyWith<$Res> {
+  __$$GoToChartsListScreenFlowCopyWithImpl(_$GoToChartsListScreenFlow _value,
+      $Res Function(_$GoToChartsListScreenFlow) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GoToChartsListScreenFlow implements GoToChartsListScreenFlow {
+  const _$GoToChartsListScreenFlow();
+
+  @override
+  String toString() {
+    return 'DecisionBoardEvent.goToChartsListScreenFlow()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GoToChartsListScreenFlow);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() goToUploadDataBaseScreen,
+    required TResult Function(List<List<dynamic>> formatedData) goToHome,
+    required TResult Function() goToChartsScreen,
+    required TResult Function() goBackToUploadData,
+    required TResult Function() goToChartsListScreenFlow,
+    required TResult Function() goBackToHomeFlow,
+  }) {
+    return goToChartsListScreenFlow();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? goToUploadDataBaseScreen,
+    TResult? Function(List<List<dynamic>> formatedData)? goToHome,
+    TResult? Function()? goToChartsScreen,
+    TResult? Function()? goBackToUploadData,
+    TResult? Function()? goToChartsListScreenFlow,
+    TResult? Function()? goBackToHomeFlow,
+  }) {
+    return goToChartsListScreenFlow?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? goToUploadDataBaseScreen,
+    TResult Function(List<List<dynamic>> formatedData)? goToHome,
+    TResult Function()? goToChartsScreen,
+    TResult Function()? goBackToUploadData,
+    TResult Function()? goToChartsListScreenFlow,
+    TResult Function()? goBackToHomeFlow,
+    required TResult orElse(),
+  }) {
+    if (goToChartsListScreenFlow != null) {
+      return goToChartsListScreenFlow();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GoToUploadDataBaseScreen value)
+        goToUploadDataBaseScreen,
+    required TResult Function(GoToHome value) goToHome,
+    required TResult Function(GoToChartsScreen value) goToChartsScreen,
+    required TResult Function(GoBackToUploadData value) goBackToUploadData,
+    required TResult Function(GoToChartsListScreenFlow value)
+        goToChartsListScreenFlow,
+    required TResult Function(GoBackToHomeFlow value) goBackToHomeFlow,
+  }) {
+    return goToChartsListScreenFlow(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GoToUploadDataBaseScreen value)? goToUploadDataBaseScreen,
+    TResult? Function(GoToHome value)? goToHome,
+    TResult? Function(GoToChartsScreen value)? goToChartsScreen,
+    TResult? Function(GoBackToUploadData value)? goBackToUploadData,
+    TResult? Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
+    TResult? Function(GoBackToHomeFlow value)? goBackToHomeFlow,
+  }) {
+    return goToChartsListScreenFlow?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GoToUploadDataBaseScreen value)? goToUploadDataBaseScreen,
+    TResult Function(GoToHome value)? goToHome,
+    TResult Function(GoToChartsScreen value)? goToChartsScreen,
+    TResult Function(GoBackToUploadData value)? goBackToUploadData,
+    TResult Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
+    TResult Function(GoBackToHomeFlow value)? goBackToHomeFlow,
+    required TResult orElse(),
+  }) {
+    if (goToChartsListScreenFlow != null) {
+      return goToChartsListScreenFlow(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GoToChartsListScreenFlow implements DecisionBoardEvent {
+  const factory GoToChartsListScreenFlow() = _$GoToChartsListScreenFlow;
+}
+
+/// @nodoc
+abstract class _$$GoBackToHomeFlowCopyWith<$Res> {
+  factory _$$GoBackToHomeFlowCopyWith(
+          _$GoBackToHomeFlow value, $Res Function(_$GoBackToHomeFlow) then) =
+      __$$GoBackToHomeFlowCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GoBackToHomeFlowCopyWithImpl<$Res>
+    extends _$DecisionBoardEventCopyWithImpl<$Res, _$GoBackToHomeFlow>
+    implements _$$GoBackToHomeFlowCopyWith<$Res> {
+  __$$GoBackToHomeFlowCopyWithImpl(
+      _$GoBackToHomeFlow _value, $Res Function(_$GoBackToHomeFlow) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GoBackToHomeFlow implements GoBackToHomeFlow {
+  const _$GoBackToHomeFlow();
+
+  @override
+  String toString() {
+    return 'DecisionBoardEvent.goBackToHomeFlow()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GoBackToHomeFlow);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() goToUploadDataBaseScreen,
+    required TResult Function(List<List<dynamic>> formatedData) goToHome,
+    required TResult Function() goToChartsScreen,
+    required TResult Function() goBackToUploadData,
+    required TResult Function() goToChartsListScreenFlow,
+    required TResult Function() goBackToHomeFlow,
+  }) {
+    return goBackToHomeFlow();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? goToUploadDataBaseScreen,
+    TResult? Function(List<List<dynamic>> formatedData)? goToHome,
+    TResult? Function()? goToChartsScreen,
+    TResult? Function()? goBackToUploadData,
+    TResult? Function()? goToChartsListScreenFlow,
+    TResult? Function()? goBackToHomeFlow,
+  }) {
+    return goBackToHomeFlow?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? goToUploadDataBaseScreen,
+    TResult Function(List<List<dynamic>> formatedData)? goToHome,
+    TResult Function()? goToChartsScreen,
+    TResult Function()? goBackToUploadData,
+    TResult Function()? goToChartsListScreenFlow,
+    TResult Function()? goBackToHomeFlow,
+    required TResult orElse(),
+  }) {
+    if (goBackToHomeFlow != null) {
+      return goBackToHomeFlow();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GoToUploadDataBaseScreen value)
+        goToUploadDataBaseScreen,
+    required TResult Function(GoToHome value) goToHome,
+    required TResult Function(GoToChartsScreen value) goToChartsScreen,
+    required TResult Function(GoBackToUploadData value) goBackToUploadData,
+    required TResult Function(GoToChartsListScreenFlow value)
+        goToChartsListScreenFlow,
+    required TResult Function(GoBackToHomeFlow value) goBackToHomeFlow,
+  }) {
+    return goBackToHomeFlow(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GoToUploadDataBaseScreen value)? goToUploadDataBaseScreen,
+    TResult? Function(GoToHome value)? goToHome,
+    TResult? Function(GoToChartsScreen value)? goToChartsScreen,
+    TResult? Function(GoBackToUploadData value)? goBackToUploadData,
+    TResult? Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
+    TResult? Function(GoBackToHomeFlow value)? goBackToHomeFlow,
+  }) {
+    return goBackToHomeFlow?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GoToUploadDataBaseScreen value)? goToUploadDataBaseScreen,
+    TResult Function(GoToHome value)? goToHome,
+    TResult Function(GoToChartsScreen value)? goToChartsScreen,
+    TResult Function(GoBackToUploadData value)? goBackToUploadData,
+    TResult Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
+    TResult Function(GoBackToHomeFlow value)? goBackToHomeFlow,
+    required TResult orElse(),
+  }) {
+    if (goBackToHomeFlow != null) {
+      return goBackToHomeFlow(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GoBackToHomeFlow implements DecisionBoardEvent {
+  const factory GoBackToHomeFlow() = _$GoBackToHomeFlow;
 }
