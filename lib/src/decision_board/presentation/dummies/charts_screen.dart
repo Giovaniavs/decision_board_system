@@ -1,4 +1,7 @@
 import 'package:decision_board_system/src/decision_board/domain/decision_board_usecase.dart';
+import 'package:decision_board_system/src/decision_board/presentation/dummies/charts/answered_chart.dart';
+import 'package:decision_board_system/src/decision_board/presentation/dummies/charts/local_complaint_chart.dart';
+import 'package:decision_board_system/src/decision_board/presentation/dummies/charts/status_chart.dart';
 import 'package:decision_board_system/src/shared/design_system/tokens/color_tokens.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +23,18 @@ class _ChartsScreenState extends State<ChartsScreen> {
   @override
   void initState() {
     widget._decisionBoardUseCase.state.chartSelected.maybeWhen(
+      answeredChartFlow: () {
+        _selectedChartTitle = "Respondidos x Não respondidos";
+        _selectedChartWidget = const AnsweredChart();
+      },
+      localComplaintChartFlow: () {
+        _selectedChartTitle = "Reclamações por Estados";
+        _selectedChartWidget = const LocalComplaintChart();
+      },
+      statusChartFlow: () {
+        _selectedChartTitle = "Gráficos por Status da Reclamação";
+        _selectedChartWidget = const StatusChart();
+      },
       orElse: () {
         _selectedChartTitle = "Nenhum gráfico selecionado";
         _selectedChartWidget = Container();

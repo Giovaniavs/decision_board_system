@@ -899,38 +899,51 @@ mixin _$ChartSelected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() none,
-    required TResult Function() chartByAnwer,
+    required TResult Function() answeredChartFlow,
+    required TResult Function() localComplaintChartFlow,
+    required TResult Function() statusChartFlow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? none,
-    TResult? Function()? chartByAnwer,
+    TResult? Function()? answeredChartFlow,
+    TResult? Function()? localComplaintChartFlow,
+    TResult? Function()? statusChartFlow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? none,
-    TResult Function()? chartByAnwer,
+    TResult Function()? answeredChartFlow,
+    TResult Function()? localComplaintChartFlow,
+    TResult Function()? statusChartFlow,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(None value) none,
-    required TResult Function(ChartByAnwer value) chartByAnwer,
+    required TResult Function(AnsweredChartFlow value) answeredChartFlow,
+    required TResult Function(LocalComplaintChartFlow value)
+        localComplaintChartFlow,
+    required TResult Function(StatusChartFlow value) statusChartFlow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(None value)? none,
-    TResult? Function(ChartByAnwer value)? chartByAnwer,
+    TResult? Function(AnsweredChartFlow value)? answeredChartFlow,
+    TResult? Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
+    TResult? Function(StatusChartFlow value)? statusChartFlow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(None value)? none,
-    TResult Function(ChartByAnwer value)? chartByAnwer,
+    TResult Function(AnsweredChartFlow value)? answeredChartFlow,
+    TResult Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
+    TResult Function(StatusChartFlow value)? statusChartFlow,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -991,7 +1004,9 @@ class _$None implements None {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() none,
-    required TResult Function() chartByAnwer,
+    required TResult Function() answeredChartFlow,
+    required TResult Function() localComplaintChartFlow,
+    required TResult Function() statusChartFlow,
   }) {
     return none();
   }
@@ -1000,7 +1015,9 @@ class _$None implements None {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? none,
-    TResult? Function()? chartByAnwer,
+    TResult? Function()? answeredChartFlow,
+    TResult? Function()? localComplaintChartFlow,
+    TResult? Function()? statusChartFlow,
   }) {
     return none?.call();
   }
@@ -1009,7 +1026,9 @@ class _$None implements None {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? none,
-    TResult Function()? chartByAnwer,
+    TResult Function()? answeredChartFlow,
+    TResult Function()? localComplaintChartFlow,
+    TResult Function()? statusChartFlow,
     required TResult orElse(),
   }) {
     if (none != null) {
@@ -1022,7 +1041,10 @@ class _$None implements None {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(None value) none,
-    required TResult Function(ChartByAnwer value) chartByAnwer,
+    required TResult Function(AnsweredChartFlow value) answeredChartFlow,
+    required TResult Function(LocalComplaintChartFlow value)
+        localComplaintChartFlow,
+    required TResult Function(StatusChartFlow value) statusChartFlow,
   }) {
     return none(this);
   }
@@ -1031,7 +1053,9 @@ class _$None implements None {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(None value)? none,
-    TResult? Function(ChartByAnwer value)? chartByAnwer,
+    TResult? Function(AnsweredChartFlow value)? answeredChartFlow,
+    TResult? Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
+    TResult? Function(StatusChartFlow value)? statusChartFlow,
   }) {
     return none?.call(this);
   }
@@ -1040,7 +1064,9 @@ class _$None implements None {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(None value)? none,
-    TResult Function(ChartByAnwer value)? chartByAnwer,
+    TResult Function(AnsweredChartFlow value)? answeredChartFlow,
+    TResult Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
+    TResult Function(StatusChartFlow value)? statusChartFlow,
     required TResult orElse(),
   }) {
     if (none != null) {
@@ -1055,35 +1081,35 @@ abstract class None implements ChartSelected {
 }
 
 /// @nodoc
-abstract class _$$ChartByAnwerCopyWith<$Res> {
-  factory _$$ChartByAnwerCopyWith(
-          _$ChartByAnwer value, $Res Function(_$ChartByAnwer) then) =
-      __$$ChartByAnwerCopyWithImpl<$Res>;
+abstract class _$$AnsweredChartFlowCopyWith<$Res> {
+  factory _$$AnsweredChartFlowCopyWith(
+          _$AnsweredChartFlow value, $Res Function(_$AnsweredChartFlow) then) =
+      __$$AnsweredChartFlowCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ChartByAnwerCopyWithImpl<$Res>
-    extends _$ChartSelectedCopyWithImpl<$Res, _$ChartByAnwer>
-    implements _$$ChartByAnwerCopyWith<$Res> {
-  __$$ChartByAnwerCopyWithImpl(
-      _$ChartByAnwer _value, $Res Function(_$ChartByAnwer) _then)
+class __$$AnsweredChartFlowCopyWithImpl<$Res>
+    extends _$ChartSelectedCopyWithImpl<$Res, _$AnsweredChartFlow>
+    implements _$$AnsweredChartFlowCopyWith<$Res> {
+  __$$AnsweredChartFlowCopyWithImpl(
+      _$AnsweredChartFlow _value, $Res Function(_$AnsweredChartFlow) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ChartByAnwer implements ChartByAnwer {
-  const _$ChartByAnwer();
+class _$AnsweredChartFlow implements AnsweredChartFlow {
+  const _$AnsweredChartFlow();
 
   @override
   String toString() {
-    return 'ChartSelected.chartByAnwer()';
+    return 'ChartSelected.answeredChartFlow()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ChartByAnwer);
+        (other.runtimeType == runtimeType && other is _$AnsweredChartFlow);
   }
 
   @override
@@ -1093,29 +1119,35 @@ class _$ChartByAnwer implements ChartByAnwer {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() none,
-    required TResult Function() chartByAnwer,
+    required TResult Function() answeredChartFlow,
+    required TResult Function() localComplaintChartFlow,
+    required TResult Function() statusChartFlow,
   }) {
-    return chartByAnwer();
+    return answeredChartFlow();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? none,
-    TResult? Function()? chartByAnwer,
+    TResult? Function()? answeredChartFlow,
+    TResult? Function()? localComplaintChartFlow,
+    TResult? Function()? statusChartFlow,
   }) {
-    return chartByAnwer?.call();
+    return answeredChartFlow?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? none,
-    TResult Function()? chartByAnwer,
+    TResult Function()? answeredChartFlow,
+    TResult Function()? localComplaintChartFlow,
+    TResult Function()? statusChartFlow,
     required TResult orElse(),
   }) {
-    if (chartByAnwer != null) {
-      return chartByAnwer();
+    if (answeredChartFlow != null) {
+      return answeredChartFlow();
     }
     return orElse();
   }
@@ -1124,36 +1156,274 @@ class _$ChartByAnwer implements ChartByAnwer {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(None value) none,
-    required TResult Function(ChartByAnwer value) chartByAnwer,
+    required TResult Function(AnsweredChartFlow value) answeredChartFlow,
+    required TResult Function(LocalComplaintChartFlow value)
+        localComplaintChartFlow,
+    required TResult Function(StatusChartFlow value) statusChartFlow,
   }) {
-    return chartByAnwer(this);
+    return answeredChartFlow(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(None value)? none,
-    TResult? Function(ChartByAnwer value)? chartByAnwer,
+    TResult? Function(AnsweredChartFlow value)? answeredChartFlow,
+    TResult? Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
+    TResult? Function(StatusChartFlow value)? statusChartFlow,
   }) {
-    return chartByAnwer?.call(this);
+    return answeredChartFlow?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(None value)? none,
-    TResult Function(ChartByAnwer value)? chartByAnwer,
+    TResult Function(AnsweredChartFlow value)? answeredChartFlow,
+    TResult Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
+    TResult Function(StatusChartFlow value)? statusChartFlow,
     required TResult orElse(),
   }) {
-    if (chartByAnwer != null) {
-      return chartByAnwer(this);
+    if (answeredChartFlow != null) {
+      return answeredChartFlow(this);
     }
     return orElse();
   }
 }
 
-abstract class ChartByAnwer implements ChartSelected {
-  const factory ChartByAnwer() = _$ChartByAnwer;
+abstract class AnsweredChartFlow implements ChartSelected {
+  const factory AnsweredChartFlow() = _$AnsweredChartFlow;
+}
+
+/// @nodoc
+abstract class _$$LocalComplaintChartFlowCopyWith<$Res> {
+  factory _$$LocalComplaintChartFlowCopyWith(_$LocalComplaintChartFlow value,
+          $Res Function(_$LocalComplaintChartFlow) then) =
+      __$$LocalComplaintChartFlowCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LocalComplaintChartFlowCopyWithImpl<$Res>
+    extends _$ChartSelectedCopyWithImpl<$Res, _$LocalComplaintChartFlow>
+    implements _$$LocalComplaintChartFlowCopyWith<$Res> {
+  __$$LocalComplaintChartFlowCopyWithImpl(_$LocalComplaintChartFlow _value,
+      $Res Function(_$LocalComplaintChartFlow) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LocalComplaintChartFlow implements LocalComplaintChartFlow {
+  const _$LocalComplaintChartFlow();
+
+  @override
+  String toString() {
+    return 'ChartSelected.localComplaintChartFlow()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LocalComplaintChartFlow);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() none,
+    required TResult Function() answeredChartFlow,
+    required TResult Function() localComplaintChartFlow,
+    required TResult Function() statusChartFlow,
+  }) {
+    return localComplaintChartFlow();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? none,
+    TResult? Function()? answeredChartFlow,
+    TResult? Function()? localComplaintChartFlow,
+    TResult? Function()? statusChartFlow,
+  }) {
+    return localComplaintChartFlow?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? none,
+    TResult Function()? answeredChartFlow,
+    TResult Function()? localComplaintChartFlow,
+    TResult Function()? statusChartFlow,
+    required TResult orElse(),
+  }) {
+    if (localComplaintChartFlow != null) {
+      return localComplaintChartFlow();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(None value) none,
+    required TResult Function(AnsweredChartFlow value) answeredChartFlow,
+    required TResult Function(LocalComplaintChartFlow value)
+        localComplaintChartFlow,
+    required TResult Function(StatusChartFlow value) statusChartFlow,
+  }) {
+    return localComplaintChartFlow(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(None value)? none,
+    TResult? Function(AnsweredChartFlow value)? answeredChartFlow,
+    TResult? Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
+    TResult? Function(StatusChartFlow value)? statusChartFlow,
+  }) {
+    return localComplaintChartFlow?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(None value)? none,
+    TResult Function(AnsweredChartFlow value)? answeredChartFlow,
+    TResult Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
+    TResult Function(StatusChartFlow value)? statusChartFlow,
+    required TResult orElse(),
+  }) {
+    if (localComplaintChartFlow != null) {
+      return localComplaintChartFlow(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LocalComplaintChartFlow implements ChartSelected {
+  const factory LocalComplaintChartFlow() = _$LocalComplaintChartFlow;
+}
+
+/// @nodoc
+abstract class _$$StatusChartFlowCopyWith<$Res> {
+  factory _$$StatusChartFlowCopyWith(
+          _$StatusChartFlow value, $Res Function(_$StatusChartFlow) then) =
+      __$$StatusChartFlowCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$StatusChartFlowCopyWithImpl<$Res>
+    extends _$ChartSelectedCopyWithImpl<$Res, _$StatusChartFlow>
+    implements _$$StatusChartFlowCopyWith<$Res> {
+  __$$StatusChartFlowCopyWithImpl(
+      _$StatusChartFlow _value, $Res Function(_$StatusChartFlow) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$StatusChartFlow implements StatusChartFlow {
+  const _$StatusChartFlow();
+
+  @override
+  String toString() {
+    return 'ChartSelected.statusChartFlow()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$StatusChartFlow);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() none,
+    required TResult Function() answeredChartFlow,
+    required TResult Function() localComplaintChartFlow,
+    required TResult Function() statusChartFlow,
+  }) {
+    return statusChartFlow();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? none,
+    TResult? Function()? answeredChartFlow,
+    TResult? Function()? localComplaintChartFlow,
+    TResult? Function()? statusChartFlow,
+  }) {
+    return statusChartFlow?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? none,
+    TResult Function()? answeredChartFlow,
+    TResult Function()? localComplaintChartFlow,
+    TResult Function()? statusChartFlow,
+    required TResult orElse(),
+  }) {
+    if (statusChartFlow != null) {
+      return statusChartFlow();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(None value) none,
+    required TResult Function(AnsweredChartFlow value) answeredChartFlow,
+    required TResult Function(LocalComplaintChartFlow value)
+        localComplaintChartFlow,
+    required TResult Function(StatusChartFlow value) statusChartFlow,
+  }) {
+    return statusChartFlow(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(None value)? none,
+    TResult? Function(AnsweredChartFlow value)? answeredChartFlow,
+    TResult? Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
+    TResult? Function(StatusChartFlow value)? statusChartFlow,
+  }) {
+    return statusChartFlow?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(None value)? none,
+    TResult Function(AnsweredChartFlow value)? answeredChartFlow,
+    TResult Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
+    TResult Function(StatusChartFlow value)? statusChartFlow,
+    required TResult orElse(),
+  }) {
+    if (statusChartFlow != null) {
+      return statusChartFlow(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class StatusChartFlow implements ChartSelected {
+  const factory StatusChartFlow() = _$StatusChartFlow;
 }
 
 /// @nodoc
@@ -1162,7 +1432,7 @@ mixin _$DecisionBoardEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() goToUploadDataBaseScreen,
     required TResult Function(List<List<dynamic>> formatedData) goToHome,
-    required TResult Function() goToChartsScreen,
+    required TResult Function(ChartSelected chartSelected) goToChartsScreen,
     required TResult Function() goBackToUploadData,
     required TResult Function() goToChartsListScreenFlow,
     required TResult Function() goBackToHomeFlow,
@@ -1172,7 +1442,7 @@ mixin _$DecisionBoardEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? goToUploadDataBaseScreen,
     TResult? Function(List<List<dynamic>> formatedData)? goToHome,
-    TResult? Function()? goToChartsScreen,
+    TResult? Function(ChartSelected chartSelected)? goToChartsScreen,
     TResult? Function()? goBackToUploadData,
     TResult? Function()? goToChartsListScreenFlow,
     TResult? Function()? goBackToHomeFlow,
@@ -1182,7 +1452,7 @@ mixin _$DecisionBoardEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? goToUploadDataBaseScreen,
     TResult Function(List<List<dynamic>> formatedData)? goToHome,
-    TResult Function()? goToChartsScreen,
+    TResult Function(ChartSelected chartSelected)? goToChartsScreen,
     TResult Function()? goBackToUploadData,
     TResult Function()? goToChartsListScreenFlow,
     TResult Function()? goBackToHomeFlow,
@@ -1283,7 +1553,7 @@ class _$GoToUploadDataBaseScreen implements GoToUploadDataBaseScreen {
   TResult when<TResult extends Object?>({
     required TResult Function() goToUploadDataBaseScreen,
     required TResult Function(List<List<dynamic>> formatedData) goToHome,
-    required TResult Function() goToChartsScreen,
+    required TResult Function(ChartSelected chartSelected) goToChartsScreen,
     required TResult Function() goBackToUploadData,
     required TResult Function() goToChartsListScreenFlow,
     required TResult Function() goBackToHomeFlow,
@@ -1296,7 +1566,7 @@ class _$GoToUploadDataBaseScreen implements GoToUploadDataBaseScreen {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? goToUploadDataBaseScreen,
     TResult? Function(List<List<dynamic>> formatedData)? goToHome,
-    TResult? Function()? goToChartsScreen,
+    TResult? Function(ChartSelected chartSelected)? goToChartsScreen,
     TResult? Function()? goBackToUploadData,
     TResult? Function()? goToChartsListScreenFlow,
     TResult? Function()? goBackToHomeFlow,
@@ -1309,7 +1579,7 @@ class _$GoToUploadDataBaseScreen implements GoToUploadDataBaseScreen {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? goToUploadDataBaseScreen,
     TResult Function(List<List<dynamic>> formatedData)? goToHome,
-    TResult Function()? goToChartsScreen,
+    TResult Function(ChartSelected chartSelected)? goToChartsScreen,
     TResult Function()? goBackToUploadData,
     TResult Function()? goToChartsListScreenFlow,
     TResult Function()? goBackToHomeFlow,
@@ -1444,7 +1714,7 @@ class _$GoToHome implements GoToHome {
   TResult when<TResult extends Object?>({
     required TResult Function() goToUploadDataBaseScreen,
     required TResult Function(List<List<dynamic>> formatedData) goToHome,
-    required TResult Function() goToChartsScreen,
+    required TResult Function(ChartSelected chartSelected) goToChartsScreen,
     required TResult Function() goBackToUploadData,
     required TResult Function() goToChartsListScreenFlow,
     required TResult Function() goBackToHomeFlow,
@@ -1457,7 +1727,7 @@ class _$GoToHome implements GoToHome {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? goToUploadDataBaseScreen,
     TResult? Function(List<List<dynamic>> formatedData)? goToHome,
-    TResult? Function()? goToChartsScreen,
+    TResult? Function(ChartSelected chartSelected)? goToChartsScreen,
     TResult? Function()? goBackToUploadData,
     TResult? Function()? goToChartsListScreenFlow,
     TResult? Function()? goBackToHomeFlow,
@@ -1470,7 +1740,7 @@ class _$GoToHome implements GoToHome {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? goToUploadDataBaseScreen,
     TResult Function(List<List<dynamic>> formatedData)? goToHome,
-    TResult Function()? goToChartsScreen,
+    TResult Function(ChartSelected chartSelected)? goToChartsScreen,
     TResult Function()? goBackToUploadData,
     TResult Function()? goToChartsListScreenFlow,
     TResult Function()? goBackToHomeFlow,
@@ -1543,6 +1813,10 @@ abstract class _$$GoToChartsScreenCopyWith<$Res> {
   factory _$$GoToChartsScreenCopyWith(
           _$GoToChartsScreen value, $Res Function(_$GoToChartsScreen) then) =
       __$$GoToChartsScreenCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ChartSelected chartSelected});
+
+  $ChartSelectedCopyWith<$Res> get chartSelected;
 }
 
 /// @nodoc
@@ -1552,38 +1826,71 @@ class __$$GoToChartsScreenCopyWithImpl<$Res>
   __$$GoToChartsScreenCopyWithImpl(
       _$GoToChartsScreen _value, $Res Function(_$GoToChartsScreen) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? chartSelected = null,
+  }) {
+    return _then(_$GoToChartsScreen(
+      chartSelected: null == chartSelected
+          ? _value.chartSelected
+          : chartSelected // ignore: cast_nullable_to_non_nullable
+              as ChartSelected,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ChartSelectedCopyWith<$Res> get chartSelected {
+    return $ChartSelectedCopyWith<$Res>(_value.chartSelected, (value) {
+      return _then(_value.copyWith(chartSelected: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$GoToChartsScreen implements GoToChartsScreen {
-  const _$GoToChartsScreen();
+  const _$GoToChartsScreen({required this.chartSelected});
+
+  @override
+  final ChartSelected chartSelected;
 
   @override
   String toString() {
-    return 'DecisionBoardEvent.goToChartsScreen()';
+    return 'DecisionBoardEvent.goToChartsScreen(chartSelected: $chartSelected)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GoToChartsScreen);
+        (other.runtimeType == runtimeType &&
+            other is _$GoToChartsScreen &&
+            (identical(other.chartSelected, chartSelected) ||
+                other.chartSelected == chartSelected));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, chartSelected);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GoToChartsScreenCopyWith<_$GoToChartsScreen> get copyWith =>
+      __$$GoToChartsScreenCopyWithImpl<_$GoToChartsScreen>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() goToUploadDataBaseScreen,
     required TResult Function(List<List<dynamic>> formatedData) goToHome,
-    required TResult Function() goToChartsScreen,
+    required TResult Function(ChartSelected chartSelected) goToChartsScreen,
     required TResult Function() goBackToUploadData,
     required TResult Function() goToChartsListScreenFlow,
     required TResult Function() goBackToHomeFlow,
   }) {
-    return goToChartsScreen();
+    return goToChartsScreen(chartSelected);
   }
 
   @override
@@ -1591,12 +1898,12 @@ class _$GoToChartsScreen implements GoToChartsScreen {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? goToUploadDataBaseScreen,
     TResult? Function(List<List<dynamic>> formatedData)? goToHome,
-    TResult? Function()? goToChartsScreen,
+    TResult? Function(ChartSelected chartSelected)? goToChartsScreen,
     TResult? Function()? goBackToUploadData,
     TResult? Function()? goToChartsListScreenFlow,
     TResult? Function()? goBackToHomeFlow,
   }) {
-    return goToChartsScreen?.call();
+    return goToChartsScreen?.call(chartSelected);
   }
 
   @override
@@ -1604,14 +1911,14 @@ class _$GoToChartsScreen implements GoToChartsScreen {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? goToUploadDataBaseScreen,
     TResult Function(List<List<dynamic>> formatedData)? goToHome,
-    TResult Function()? goToChartsScreen,
+    TResult Function(ChartSelected chartSelected)? goToChartsScreen,
     TResult Function()? goBackToUploadData,
     TResult Function()? goToChartsListScreenFlow,
     TResult Function()? goBackToHomeFlow,
     required TResult orElse(),
   }) {
     if (goToChartsScreen != null) {
-      return goToChartsScreen();
+      return goToChartsScreen(chartSelected);
     }
     return orElse();
   }
@@ -1663,7 +1970,13 @@ class _$GoToChartsScreen implements GoToChartsScreen {
 }
 
 abstract class GoToChartsScreen implements DecisionBoardEvent {
-  const factory GoToChartsScreen() = _$GoToChartsScreen;
+  const factory GoToChartsScreen({required final ChartSelected chartSelected}) =
+      _$GoToChartsScreen;
+
+  ChartSelected get chartSelected;
+  @JsonKey(ignore: true)
+  _$$GoToChartsScreenCopyWith<_$GoToChartsScreen> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1706,7 +2019,7 @@ class _$GoBackToUploadData implements GoBackToUploadData {
   TResult when<TResult extends Object?>({
     required TResult Function() goToUploadDataBaseScreen,
     required TResult Function(List<List<dynamic>> formatedData) goToHome,
-    required TResult Function() goToChartsScreen,
+    required TResult Function(ChartSelected chartSelected) goToChartsScreen,
     required TResult Function() goBackToUploadData,
     required TResult Function() goToChartsListScreenFlow,
     required TResult Function() goBackToHomeFlow,
@@ -1719,7 +2032,7 @@ class _$GoBackToUploadData implements GoBackToUploadData {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? goToUploadDataBaseScreen,
     TResult? Function(List<List<dynamic>> formatedData)? goToHome,
-    TResult? Function()? goToChartsScreen,
+    TResult? Function(ChartSelected chartSelected)? goToChartsScreen,
     TResult? Function()? goBackToUploadData,
     TResult? Function()? goToChartsListScreenFlow,
     TResult? Function()? goBackToHomeFlow,
@@ -1732,7 +2045,7 @@ class _$GoBackToUploadData implements GoBackToUploadData {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? goToUploadDataBaseScreen,
     TResult Function(List<List<dynamic>> formatedData)? goToHome,
-    TResult Function()? goToChartsScreen,
+    TResult Function(ChartSelected chartSelected)? goToChartsScreen,
     TResult Function()? goBackToUploadData,
     TResult Function()? goToChartsListScreenFlow,
     TResult Function()? goBackToHomeFlow,
@@ -1835,7 +2148,7 @@ class _$GoToChartsListScreenFlow implements GoToChartsListScreenFlow {
   TResult when<TResult extends Object?>({
     required TResult Function() goToUploadDataBaseScreen,
     required TResult Function(List<List<dynamic>> formatedData) goToHome,
-    required TResult Function() goToChartsScreen,
+    required TResult Function(ChartSelected chartSelected) goToChartsScreen,
     required TResult Function() goBackToUploadData,
     required TResult Function() goToChartsListScreenFlow,
     required TResult Function() goBackToHomeFlow,
@@ -1848,7 +2161,7 @@ class _$GoToChartsListScreenFlow implements GoToChartsListScreenFlow {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? goToUploadDataBaseScreen,
     TResult? Function(List<List<dynamic>> formatedData)? goToHome,
-    TResult? Function()? goToChartsScreen,
+    TResult? Function(ChartSelected chartSelected)? goToChartsScreen,
     TResult? Function()? goBackToUploadData,
     TResult? Function()? goToChartsListScreenFlow,
     TResult? Function()? goBackToHomeFlow,
@@ -1861,7 +2174,7 @@ class _$GoToChartsListScreenFlow implements GoToChartsListScreenFlow {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? goToUploadDataBaseScreen,
     TResult Function(List<List<dynamic>> formatedData)? goToHome,
-    TResult Function()? goToChartsScreen,
+    TResult Function(ChartSelected chartSelected)? goToChartsScreen,
     TResult Function()? goBackToUploadData,
     TResult Function()? goToChartsListScreenFlow,
     TResult Function()? goBackToHomeFlow,
@@ -1963,7 +2276,7 @@ class _$GoBackToHomeFlow implements GoBackToHomeFlow {
   TResult when<TResult extends Object?>({
     required TResult Function() goToUploadDataBaseScreen,
     required TResult Function(List<List<dynamic>> formatedData) goToHome,
-    required TResult Function() goToChartsScreen,
+    required TResult Function(ChartSelected chartSelected) goToChartsScreen,
     required TResult Function() goBackToUploadData,
     required TResult Function() goToChartsListScreenFlow,
     required TResult Function() goBackToHomeFlow,
@@ -1976,7 +2289,7 @@ class _$GoBackToHomeFlow implements GoBackToHomeFlow {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? goToUploadDataBaseScreen,
     TResult? Function(List<List<dynamic>> formatedData)? goToHome,
-    TResult? Function()? goToChartsScreen,
+    TResult? Function(ChartSelected chartSelected)? goToChartsScreen,
     TResult? Function()? goBackToUploadData,
     TResult? Function()? goToChartsListScreenFlow,
     TResult? Function()? goBackToHomeFlow,
@@ -1989,7 +2302,7 @@ class _$GoBackToHomeFlow implements GoBackToHomeFlow {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? goToUploadDataBaseScreen,
     TResult Function(List<List<dynamic>> formatedData)? goToHome,
-    TResult Function()? goToChartsScreen,
+    TResult Function(ChartSelected chartSelected)? goToChartsScreen,
     TResult Function()? goBackToUploadData,
     TResult Function()? goToChartsListScreenFlow,
     TResult Function()? goBackToHomeFlow,

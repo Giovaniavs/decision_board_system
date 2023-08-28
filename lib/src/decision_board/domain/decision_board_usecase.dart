@@ -32,6 +32,7 @@ class DecisionBoardUseCase
   Stream<DecisionBoardState> _goToChartsScreen(GoToChartsScreen value) async* {
     yield state.copyWith(
       flow: const ChartScreenFlow(),
+      chartSelected: value.chartSelected,
     );
   }
 

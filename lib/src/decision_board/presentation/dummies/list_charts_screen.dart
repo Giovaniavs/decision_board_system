@@ -57,11 +57,13 @@ class ListChartsScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: SpacingTokens.deka),
               child: PurpleLongButton(
-                buttonText: 'Gráfico 1',
+                buttonText: 'Respondidos e Não respondidos',
                 isLoading: false,
                 onPressed: () {
                   _decisionBoardUseCase.add(
-                    const GoToChartsScreen(),
+                    const GoToChartsScreen(
+                      chartSelected: ChartSelected.answeredChartFlow(),
+                    ),
                   );
                 },
               ),
@@ -69,17 +71,29 @@ class ListChartsScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: SpacingTokens.deka),
               child: PurpleLongButton(
-                buttonText: 'Gráfico 1',
+                buttonText: 'Reclamações por Estados',
                 isLoading: false,
-                onPressed: () {},
+                onPressed: () {
+                  _decisionBoardUseCase.add(
+                    const GoToChartsScreen(
+                      chartSelected: ChartSelected.localComplaintChartFlow(),
+                    ),
+                  );
+                },
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(top: SpacingTokens.deka),
               child: PurpleLongButton(
-                buttonText: 'Gráfico 1',
+                buttonText: 'Gráficos por Status da Reclamação',
                 isLoading: false,
-                onPressed: () {},
+                onPressed: () {
+                  _decisionBoardUseCase.add(
+                    const GoToChartsScreen(
+                      chartSelected: ChartSelected.statusChartFlow(),
+                    ),
+                  );
+                },
               ),
             ),
             Padding(
