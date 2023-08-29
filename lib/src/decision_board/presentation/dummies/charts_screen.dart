@@ -2,6 +2,7 @@ import 'package:decision_board_system/src/decision_board/domain/decision_board_u
 import 'package:decision_board_system/src/decision_board/presentation/dummies/charts/answered_chart.dart';
 import 'package:decision_board_system/src/decision_board/presentation/dummies/charts/local_complaint_chart.dart';
 import 'package:decision_board_system/src/decision_board/presentation/dummies/charts/status_chart.dart';
+import 'package:decision_board_system/src/decision_board/presentation/dummies/charts/time_chart.dart';
 import 'package:decision_board_system/src/shared/design_system/tokens/color_tokens.dart';
 import 'package:flutter/material.dart';
 
@@ -34,6 +35,10 @@ class _ChartsScreenState extends State<ChartsScreen> {
       statusChartFlow: () {
         _selectedChartTitle = "Gráficos por Status da Reclamação";
         _selectedChartWidget = const StatusChart();
+      },
+      timeBasedChartFlow: () {
+        _selectedChartTitle = "Gráficos por Tempo";
+        _selectedChartWidget = TimeChart();
       },
       orElse: () {
         _selectedChartTitle = "Nenhum gráfico selecionado";

@@ -99,9 +99,15 @@ class ListChartsScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: SpacingTokens.deka),
               child: PurpleLongButton(
-                buttonText: 'Gráfico 1',
+                buttonText: 'Gráfico por Tempo',
                 isLoading: false,
-                onPressed: () {},
+                onPressed: () {
+                  _decisionBoardUseCase.add(
+                    const GoToChartsScreen(
+                      chartSelected: ChartSelected.timeBasedChartFlow(),
+                    ),
+                  );
+                },
               ),
             ),
           ],
