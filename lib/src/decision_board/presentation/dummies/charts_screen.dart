@@ -33,7 +33,9 @@ class _ChartsScreenState extends State<ChartsScreen> {
       },
       localComplaintChartFlow: () {
         _selectedChartTitle = "Reclamações por Estados";
-        _selectedChartWidget = const LocalComplaintChart();
+        _selectedChartWidget = LocalComplaintChart(
+          decisionBoardUseCase: widget._decisionBoardUseCase,
+        );
       },
       statusChartFlow: () {
         _selectedChartTitle = "Gráficos por Status da Reclamação";
