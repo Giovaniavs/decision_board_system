@@ -4,6 +4,7 @@ import 'package:decision_board_system/src/shared/design_system/assets/db_images.
 import 'package:decision_board_system/src/shared/design_system/tokens/color_tokens.dart';
 import 'package:decision_board_system/src/shared/design_system/tokens/spacing_tokens.dart';
 import 'package:decision_board_system/src/shared/design_system/tokens/typography_tokens.dart';
+import 'package:decision_board_system/src/shared/utils/date_time.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 
@@ -90,7 +91,8 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                         TextSpan(
-                          text: '${data[index].dateTime}\n',
+                          text:
+                              '${formatDateTimeToHomeScreen(data[index].dateTime)}\n',
                           style: const TextStyle(color: Colors.black),
                         ),
                         const TextSpan(

@@ -1,9 +1,15 @@
+import 'package:decision_board_system/src/decision_board/domain/decision_board_usecase.dart';
 import 'package:decision_board_system/src/shared/design_system/tokens/color_tokens.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 class AnsweredChart extends StatefulWidget {
-  const AnsweredChart({super.key});
+  final DecisionBoardUseCase _decisionBoardUseCase;
+
+  const AnsweredChart({
+    super.key,
+    required DecisionBoardUseCase decisionBoardUseCase,
+  }) : _decisionBoardUseCase = decisionBoardUseCase;
 
   @override
   State<AnsweredChart> createState() => _AnsweredChartState();

@@ -9,9 +9,10 @@ import 'package:flutter/material.dart';
 class ChartsScreen extends StatefulWidget {
   final DecisionBoardUseCase _decisionBoardUseCase;
 
-  const ChartsScreen(
-      {super.key, required DecisionBoardUseCase decisionBoardUseCase})
-      : _decisionBoardUseCase = decisionBoardUseCase;
+  const ChartsScreen({
+    super.key,
+    required DecisionBoardUseCase decisionBoardUseCase,
+  }) : _decisionBoardUseCase = decisionBoardUseCase;
 
   @override
   State<ChartsScreen> createState() => _ChartsScreenState();
@@ -26,7 +27,9 @@ class _ChartsScreenState extends State<ChartsScreen> {
     widget._decisionBoardUseCase.state.chartSelected.maybeWhen(
       answeredChartFlow: () {
         _selectedChartTitle = "Respondidos x Não respondidos";
-        _selectedChartWidget = const AnsweredChart();
+        _selectedChartWidget = AnsweredChart(
+          decisionBoardUseCase: widget._decisionBoardUseCase,
+        );
       },
       localComplaintChartFlow: () {
         _selectedChartTitle = "Reclamações por Estados";
