@@ -899,7 +899,7 @@ mixin _$ChartSelected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() none,
-    required TResult Function() answeredChartFlow,
+    required TResult Function() answeredByTrimesterChartFlow,
     required TResult Function() localComplaintChartFlow,
     required TResult Function() statusChartFlow,
     required TResult Function() timeBasedChartFlow,
@@ -908,7 +908,7 @@ mixin _$ChartSelected {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? none,
-    TResult? Function()? answeredChartFlow,
+    TResult? Function()? answeredByTrimesterChartFlow,
     TResult? Function()? localComplaintChartFlow,
     TResult? Function()? statusChartFlow,
     TResult? Function()? timeBasedChartFlow,
@@ -917,7 +917,7 @@ mixin _$ChartSelected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? none,
-    TResult Function()? answeredChartFlow,
+    TResult Function()? answeredByTrimesterChartFlow,
     TResult Function()? localComplaintChartFlow,
     TResult Function()? statusChartFlow,
     TResult Function()? timeBasedChartFlow,
@@ -927,7 +927,8 @@ mixin _$ChartSelected {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(None value) none,
-    required TResult Function(AnsweredChartFlow value) answeredChartFlow,
+    required TResult Function(AnsweredByTrimesterChartFlow value)
+        answeredByTrimesterChartFlow,
     required TResult Function(LocalComplaintChartFlow value)
         localComplaintChartFlow,
     required TResult Function(StatusChartFlow value) statusChartFlow,
@@ -937,7 +938,8 @@ mixin _$ChartSelected {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(None value)? none,
-    TResult? Function(AnsweredChartFlow value)? answeredChartFlow,
+    TResult? Function(AnsweredByTrimesterChartFlow value)?
+        answeredByTrimesterChartFlow,
     TResult? Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
     TResult? Function(StatusChartFlow value)? statusChartFlow,
     TResult? Function(TimeBasedChartFlow value)? timeBasedChartFlow,
@@ -946,7 +948,8 @@ mixin _$ChartSelected {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(None value)? none,
-    TResult Function(AnsweredChartFlow value)? answeredChartFlow,
+    TResult Function(AnsweredByTrimesterChartFlow value)?
+        answeredByTrimesterChartFlow,
     TResult Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
     TResult Function(StatusChartFlow value)? statusChartFlow,
     TResult Function(TimeBasedChartFlow value)? timeBasedChartFlow,
@@ -1010,7 +1013,7 @@ class _$None implements None {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() none,
-    required TResult Function() answeredChartFlow,
+    required TResult Function() answeredByTrimesterChartFlow,
     required TResult Function() localComplaintChartFlow,
     required TResult Function() statusChartFlow,
     required TResult Function() timeBasedChartFlow,
@@ -1022,7 +1025,7 @@ class _$None implements None {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? none,
-    TResult? Function()? answeredChartFlow,
+    TResult? Function()? answeredByTrimesterChartFlow,
     TResult? Function()? localComplaintChartFlow,
     TResult? Function()? statusChartFlow,
     TResult? Function()? timeBasedChartFlow,
@@ -1034,7 +1037,7 @@ class _$None implements None {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? none,
-    TResult Function()? answeredChartFlow,
+    TResult Function()? answeredByTrimesterChartFlow,
     TResult Function()? localComplaintChartFlow,
     TResult Function()? statusChartFlow,
     TResult Function()? timeBasedChartFlow,
@@ -1050,7 +1053,8 @@ class _$None implements None {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(None value) none,
-    required TResult Function(AnsweredChartFlow value) answeredChartFlow,
+    required TResult Function(AnsweredByTrimesterChartFlow value)
+        answeredByTrimesterChartFlow,
     required TResult Function(LocalComplaintChartFlow value)
         localComplaintChartFlow,
     required TResult Function(StatusChartFlow value) statusChartFlow,
@@ -1063,7 +1067,8 @@ class _$None implements None {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(None value)? none,
-    TResult? Function(AnsweredChartFlow value)? answeredChartFlow,
+    TResult? Function(AnsweredByTrimesterChartFlow value)?
+        answeredByTrimesterChartFlow,
     TResult? Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
     TResult? Function(StatusChartFlow value)? statusChartFlow,
     TResult? Function(TimeBasedChartFlow value)? timeBasedChartFlow,
@@ -1075,7 +1080,8 @@ class _$None implements None {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(None value)? none,
-    TResult Function(AnsweredChartFlow value)? answeredChartFlow,
+    TResult Function(AnsweredByTrimesterChartFlow value)?
+        answeredByTrimesterChartFlow,
     TResult Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
     TResult Function(StatusChartFlow value)? statusChartFlow,
     TResult Function(TimeBasedChartFlow value)? timeBasedChartFlow,
@@ -1093,35 +1099,38 @@ abstract class None implements ChartSelected {
 }
 
 /// @nodoc
-abstract class _$$AnsweredChartFlowCopyWith<$Res> {
-  factory _$$AnsweredChartFlowCopyWith(
-          _$AnsweredChartFlow value, $Res Function(_$AnsweredChartFlow) then) =
-      __$$AnsweredChartFlowCopyWithImpl<$Res>;
+abstract class _$$AnsweredByTrimesterChartFlowCopyWith<$Res> {
+  factory _$$AnsweredByTrimesterChartFlowCopyWith(
+          _$AnsweredByTrimesterChartFlow value,
+          $Res Function(_$AnsweredByTrimesterChartFlow) then) =
+      __$$AnsweredByTrimesterChartFlowCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$AnsweredChartFlowCopyWithImpl<$Res>
-    extends _$ChartSelectedCopyWithImpl<$Res, _$AnsweredChartFlow>
-    implements _$$AnsweredChartFlowCopyWith<$Res> {
-  __$$AnsweredChartFlowCopyWithImpl(
-      _$AnsweredChartFlow _value, $Res Function(_$AnsweredChartFlow) _then)
+class __$$AnsweredByTrimesterChartFlowCopyWithImpl<$Res>
+    extends _$ChartSelectedCopyWithImpl<$Res, _$AnsweredByTrimesterChartFlow>
+    implements _$$AnsweredByTrimesterChartFlowCopyWith<$Res> {
+  __$$AnsweredByTrimesterChartFlowCopyWithImpl(
+      _$AnsweredByTrimesterChartFlow _value,
+      $Res Function(_$AnsweredByTrimesterChartFlow) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$AnsweredChartFlow implements AnsweredChartFlow {
-  const _$AnsweredChartFlow();
+class _$AnsweredByTrimesterChartFlow implements AnsweredByTrimesterChartFlow {
+  const _$AnsweredByTrimesterChartFlow();
 
   @override
   String toString() {
-    return 'ChartSelected.answeredChartFlow()';
+    return 'ChartSelected.answeredByTrimesterChartFlow()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AnsweredChartFlow);
+        (other.runtimeType == runtimeType &&
+            other is _$AnsweredByTrimesterChartFlow);
   }
 
   @override
@@ -1131,38 +1140,38 @@ class _$AnsweredChartFlow implements AnsweredChartFlow {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() none,
-    required TResult Function() answeredChartFlow,
+    required TResult Function() answeredByTrimesterChartFlow,
     required TResult Function() localComplaintChartFlow,
     required TResult Function() statusChartFlow,
     required TResult Function() timeBasedChartFlow,
   }) {
-    return answeredChartFlow();
+    return answeredByTrimesterChartFlow();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? none,
-    TResult? Function()? answeredChartFlow,
+    TResult? Function()? answeredByTrimesterChartFlow,
     TResult? Function()? localComplaintChartFlow,
     TResult? Function()? statusChartFlow,
     TResult? Function()? timeBasedChartFlow,
   }) {
-    return answeredChartFlow?.call();
+    return answeredByTrimesterChartFlow?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? none,
-    TResult Function()? answeredChartFlow,
+    TResult Function()? answeredByTrimesterChartFlow,
     TResult Function()? localComplaintChartFlow,
     TResult Function()? statusChartFlow,
     TResult Function()? timeBasedChartFlow,
     required TResult orElse(),
   }) {
-    if (answeredChartFlow != null) {
-      return answeredChartFlow();
+    if (answeredByTrimesterChartFlow != null) {
+      return answeredByTrimesterChartFlow();
     }
     return orElse();
   }
@@ -1171,46 +1180,49 @@ class _$AnsweredChartFlow implements AnsweredChartFlow {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(None value) none,
-    required TResult Function(AnsweredChartFlow value) answeredChartFlow,
+    required TResult Function(AnsweredByTrimesterChartFlow value)
+        answeredByTrimesterChartFlow,
     required TResult Function(LocalComplaintChartFlow value)
         localComplaintChartFlow,
     required TResult Function(StatusChartFlow value) statusChartFlow,
     required TResult Function(TimeBasedChartFlow value) timeBasedChartFlow,
   }) {
-    return answeredChartFlow(this);
+    return answeredByTrimesterChartFlow(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(None value)? none,
-    TResult? Function(AnsweredChartFlow value)? answeredChartFlow,
+    TResult? Function(AnsweredByTrimesterChartFlow value)?
+        answeredByTrimesterChartFlow,
     TResult? Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
     TResult? Function(StatusChartFlow value)? statusChartFlow,
     TResult? Function(TimeBasedChartFlow value)? timeBasedChartFlow,
   }) {
-    return answeredChartFlow?.call(this);
+    return answeredByTrimesterChartFlow?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(None value)? none,
-    TResult Function(AnsweredChartFlow value)? answeredChartFlow,
+    TResult Function(AnsweredByTrimesterChartFlow value)?
+        answeredByTrimesterChartFlow,
     TResult Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
     TResult Function(StatusChartFlow value)? statusChartFlow,
     TResult Function(TimeBasedChartFlow value)? timeBasedChartFlow,
     required TResult orElse(),
   }) {
-    if (answeredChartFlow != null) {
-      return answeredChartFlow(this);
+    if (answeredByTrimesterChartFlow != null) {
+      return answeredByTrimesterChartFlow(this);
     }
     return orElse();
   }
 }
 
-abstract class AnsweredChartFlow implements ChartSelected {
-  const factory AnsweredChartFlow() = _$AnsweredChartFlow;
+abstract class AnsweredByTrimesterChartFlow implements ChartSelected {
+  const factory AnsweredByTrimesterChartFlow() = _$AnsweredByTrimesterChartFlow;
 }
 
 /// @nodoc
@@ -1253,7 +1265,7 @@ class _$LocalComplaintChartFlow implements LocalComplaintChartFlow {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() none,
-    required TResult Function() answeredChartFlow,
+    required TResult Function() answeredByTrimesterChartFlow,
     required TResult Function() localComplaintChartFlow,
     required TResult Function() statusChartFlow,
     required TResult Function() timeBasedChartFlow,
@@ -1265,7 +1277,7 @@ class _$LocalComplaintChartFlow implements LocalComplaintChartFlow {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? none,
-    TResult? Function()? answeredChartFlow,
+    TResult? Function()? answeredByTrimesterChartFlow,
     TResult? Function()? localComplaintChartFlow,
     TResult? Function()? statusChartFlow,
     TResult? Function()? timeBasedChartFlow,
@@ -1277,7 +1289,7 @@ class _$LocalComplaintChartFlow implements LocalComplaintChartFlow {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? none,
-    TResult Function()? answeredChartFlow,
+    TResult Function()? answeredByTrimesterChartFlow,
     TResult Function()? localComplaintChartFlow,
     TResult Function()? statusChartFlow,
     TResult Function()? timeBasedChartFlow,
@@ -1293,7 +1305,8 @@ class _$LocalComplaintChartFlow implements LocalComplaintChartFlow {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(None value) none,
-    required TResult Function(AnsweredChartFlow value) answeredChartFlow,
+    required TResult Function(AnsweredByTrimesterChartFlow value)
+        answeredByTrimesterChartFlow,
     required TResult Function(LocalComplaintChartFlow value)
         localComplaintChartFlow,
     required TResult Function(StatusChartFlow value) statusChartFlow,
@@ -1306,7 +1319,8 @@ class _$LocalComplaintChartFlow implements LocalComplaintChartFlow {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(None value)? none,
-    TResult? Function(AnsweredChartFlow value)? answeredChartFlow,
+    TResult? Function(AnsweredByTrimesterChartFlow value)?
+        answeredByTrimesterChartFlow,
     TResult? Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
     TResult? Function(StatusChartFlow value)? statusChartFlow,
     TResult? Function(TimeBasedChartFlow value)? timeBasedChartFlow,
@@ -1318,7 +1332,8 @@ class _$LocalComplaintChartFlow implements LocalComplaintChartFlow {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(None value)? none,
-    TResult Function(AnsweredChartFlow value)? answeredChartFlow,
+    TResult Function(AnsweredByTrimesterChartFlow value)?
+        answeredByTrimesterChartFlow,
     TResult Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
     TResult Function(StatusChartFlow value)? statusChartFlow,
     TResult Function(TimeBasedChartFlow value)? timeBasedChartFlow,
@@ -1374,7 +1389,7 @@ class _$StatusChartFlow implements StatusChartFlow {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() none,
-    required TResult Function() answeredChartFlow,
+    required TResult Function() answeredByTrimesterChartFlow,
     required TResult Function() localComplaintChartFlow,
     required TResult Function() statusChartFlow,
     required TResult Function() timeBasedChartFlow,
@@ -1386,7 +1401,7 @@ class _$StatusChartFlow implements StatusChartFlow {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? none,
-    TResult? Function()? answeredChartFlow,
+    TResult? Function()? answeredByTrimesterChartFlow,
     TResult? Function()? localComplaintChartFlow,
     TResult? Function()? statusChartFlow,
     TResult? Function()? timeBasedChartFlow,
@@ -1398,7 +1413,7 @@ class _$StatusChartFlow implements StatusChartFlow {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? none,
-    TResult Function()? answeredChartFlow,
+    TResult Function()? answeredByTrimesterChartFlow,
     TResult Function()? localComplaintChartFlow,
     TResult Function()? statusChartFlow,
     TResult Function()? timeBasedChartFlow,
@@ -1414,7 +1429,8 @@ class _$StatusChartFlow implements StatusChartFlow {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(None value) none,
-    required TResult Function(AnsweredChartFlow value) answeredChartFlow,
+    required TResult Function(AnsweredByTrimesterChartFlow value)
+        answeredByTrimesterChartFlow,
     required TResult Function(LocalComplaintChartFlow value)
         localComplaintChartFlow,
     required TResult Function(StatusChartFlow value) statusChartFlow,
@@ -1427,7 +1443,8 @@ class _$StatusChartFlow implements StatusChartFlow {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(None value)? none,
-    TResult? Function(AnsweredChartFlow value)? answeredChartFlow,
+    TResult? Function(AnsweredByTrimesterChartFlow value)?
+        answeredByTrimesterChartFlow,
     TResult? Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
     TResult? Function(StatusChartFlow value)? statusChartFlow,
     TResult? Function(TimeBasedChartFlow value)? timeBasedChartFlow,
@@ -1439,7 +1456,8 @@ class _$StatusChartFlow implements StatusChartFlow {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(None value)? none,
-    TResult Function(AnsweredChartFlow value)? answeredChartFlow,
+    TResult Function(AnsweredByTrimesterChartFlow value)?
+        answeredByTrimesterChartFlow,
     TResult Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
     TResult Function(StatusChartFlow value)? statusChartFlow,
     TResult Function(TimeBasedChartFlow value)? timeBasedChartFlow,
@@ -1495,7 +1513,7 @@ class _$TimeBasedChartFlow implements TimeBasedChartFlow {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() none,
-    required TResult Function() answeredChartFlow,
+    required TResult Function() answeredByTrimesterChartFlow,
     required TResult Function() localComplaintChartFlow,
     required TResult Function() statusChartFlow,
     required TResult Function() timeBasedChartFlow,
@@ -1507,7 +1525,7 @@ class _$TimeBasedChartFlow implements TimeBasedChartFlow {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? none,
-    TResult? Function()? answeredChartFlow,
+    TResult? Function()? answeredByTrimesterChartFlow,
     TResult? Function()? localComplaintChartFlow,
     TResult? Function()? statusChartFlow,
     TResult? Function()? timeBasedChartFlow,
@@ -1519,7 +1537,7 @@ class _$TimeBasedChartFlow implements TimeBasedChartFlow {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? none,
-    TResult Function()? answeredChartFlow,
+    TResult Function()? answeredByTrimesterChartFlow,
     TResult Function()? localComplaintChartFlow,
     TResult Function()? statusChartFlow,
     TResult Function()? timeBasedChartFlow,
@@ -1535,7 +1553,8 @@ class _$TimeBasedChartFlow implements TimeBasedChartFlow {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(None value) none,
-    required TResult Function(AnsweredChartFlow value) answeredChartFlow,
+    required TResult Function(AnsweredByTrimesterChartFlow value)
+        answeredByTrimesterChartFlow,
     required TResult Function(LocalComplaintChartFlow value)
         localComplaintChartFlow,
     required TResult Function(StatusChartFlow value) statusChartFlow,
@@ -1548,7 +1567,8 @@ class _$TimeBasedChartFlow implements TimeBasedChartFlow {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(None value)? none,
-    TResult? Function(AnsweredChartFlow value)? answeredChartFlow,
+    TResult? Function(AnsweredByTrimesterChartFlow value)?
+        answeredByTrimesterChartFlow,
     TResult? Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
     TResult? Function(StatusChartFlow value)? statusChartFlow,
     TResult? Function(TimeBasedChartFlow value)? timeBasedChartFlow,
@@ -1560,7 +1580,8 @@ class _$TimeBasedChartFlow implements TimeBasedChartFlow {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(None value)? none,
-    TResult Function(AnsweredChartFlow value)? answeredChartFlow,
+    TResult Function(AnsweredByTrimesterChartFlow value)?
+        answeredByTrimesterChartFlow,
     TResult Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
     TResult Function(StatusChartFlow value)? statusChartFlow,
     TResult Function(TimeBasedChartFlow value)? timeBasedChartFlow,

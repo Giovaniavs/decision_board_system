@@ -1,5 +1,5 @@
 import 'package:decision_board_system/src/decision_board/domain/decision_board_usecase.dart';
-import 'package:decision_board_system/src/decision_board/presentation/dummies/charts/answered_chart.dart';
+import 'package:decision_board_system/src/decision_board/presentation/dummies/charts/answered_by_trimester_chart.dart';
 import 'package:decision_board_system/src/decision_board/presentation/dummies/charts/local_complaint_chart.dart';
 import 'package:decision_board_system/src/decision_board/presentation/dummies/charts/status_chart.dart';
 import 'package:decision_board_system/src/decision_board/presentation/dummies/charts/time_chart.dart';
@@ -25,9 +25,9 @@ class _ChartsScreenState extends State<ChartsScreen> {
   @override
   void initState() {
     widget._decisionBoardUseCase.state.chartSelected.maybeWhen(
-      answeredChartFlow: () {
-        _selectedChartTitle = "Respondidos x Não respondidos";
-        _selectedChartWidget = AnsweredChart(
+      answeredByTrimesterChartFlow: () {
+        _selectedChartTitle = "Reclamações por trimestre";
+        _selectedChartWidget = AnsweredByTrimesterChart(
           decisionBoardUseCase: widget._decisionBoardUseCase,
         );
       },

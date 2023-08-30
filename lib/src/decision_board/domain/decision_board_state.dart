@@ -28,7 +28,8 @@ class DecisionBoardFlow with _$DecisionBoardFlow {
 @freezed
 class ChartSelected with _$ChartSelected {
   const factory ChartSelected.none() = None;
-  const factory ChartSelected.answeredChartFlow() = AnsweredChartFlow;
+  const factory ChartSelected.answeredByTrimesterChartFlow() =
+      AnsweredByTrimesterChartFlow;
   const factory ChartSelected.localComplaintChartFlow() =
       LocalComplaintChartFlow;
   const factory ChartSelected.statusChartFlow() = StatusChartFlow;
