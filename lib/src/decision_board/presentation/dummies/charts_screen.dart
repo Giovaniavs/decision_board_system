@@ -39,7 +39,9 @@ class _ChartsScreenState extends State<ChartsScreen> {
       },
       statusChartFlow: () {
         _selectedChartTitle = "Gráficos por Status da Reclamação";
-        _selectedChartWidget = const StatusChart();
+        _selectedChartWidget = StatusChart(
+          decisionBoardUseCase: widget._decisionBoardUseCase,
+        );
       },
       timeBasedChartFlow: () {
         _selectedChartTitle = "Gráficos por Tempo";

@@ -1,16 +1,68 @@
+import 'package:decision_board_system/src/decision_board/domain/decision_board_usecase.dart';
 import 'package:decision_board_system/src/shared/design_system/tokens/color_tokens.dart';
+import 'package:decision_board_system/src/shared/design_system/tokens/spacing_tokens.dart';
 import 'package:decision_board_system/src/shared/widgets/indicator.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 class StatusChart extends StatefulWidget {
-  const StatusChart({super.key});
+  final DecisionBoardUseCase _decisionBoardUseCase;
+
+  const StatusChart({
+    super.key,
+    required DecisionBoardUseCase decisionBoardUseCase,
+  }) : _decisionBoardUseCase = decisionBoardUseCase;
 
   @override
   State<StatefulWidget> createState() => StatusChartState();
 }
 
-class StatusChartState extends State {
+class StatusChartState extends State<StatusChart> {
+  late int nonAnsweredStatusPorcentage;
+  late int answeredStatusPorcentage;
+  late int solvedStatusPorcentage;
+  late int replyStatusPorcentage;
+  late int nonSolvedStatusPorcentage;
+  Map<String, int> statusMap = {};
+
+  @override
+  void initState() {
+    super.initState();
+
+    for (var element in widget._decisionBoardUseCase.state.complaintList) {
+      if (statusMap.containsKey(element.status)) {
+        statusMap[element.status] = statusMap[element.status]! + 1;
+      } else {
+        statusMap[element.status] = 1;
+      }
+    }
+
+    nonAnsweredStatusPorcentage = (statusMap['Não respondida']! /
+            widget._decisionBoardUseCase.state.complaintList.length *
+            100)
+        .toInt();
+
+    answeredStatusPorcentage = (statusMap['Respondida']! /
+            widget._decisionBoardUseCase.state.complaintList.length *
+            100)
+        .toInt();
+
+    solvedStatusPorcentage = (statusMap['Resolvido']! /
+            widget._decisionBoardUseCase.state.complaintList.length *
+            100)
+        .toInt();
+
+    replyStatusPorcentage = (statusMap['Em réplica']! /
+            widget._decisionBoardUseCase.state.complaintList.length *
+            100)
+        .toInt();
+
+    nonSolvedStatusPorcentage = (statusMap['Não resolvido']! /
+            widget._decisionBoardUseCase.state.complaintList.length *
+            100)
+        .toInt();
+  }
+
   int touchedIndex = -1;
 
   @override
@@ -21,50 +73,6 @@ class StatusChartState extends State {
         children: <Widget>[
           const SizedBox(
             height: 28,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Indicator(
-                color: GraphColors.contentColorBlue,
-                text: 'One',
-                isSquare: false,
-                size: touchedIndex == 0 ? 18 : 16,
-                textColor: touchedIndex == 0
-                    ? GraphColors.mainTextColor1
-                    : GraphColors.mainTextColor3,
-              ),
-              Indicator(
-                color: GraphColors.contentColorYellow,
-                text: 'Two',
-                isSquare: false,
-                size: touchedIndex == 1 ? 18 : 16,
-                textColor: touchedIndex == 1
-                    ? GraphColors.mainTextColor1
-                    : GraphColors.mainTextColor3,
-              ),
-              Indicator(
-                color: GraphColors.contentColorPink,
-                text: 'Three',
-                isSquare: false,
-                size: touchedIndex == 2 ? 18 : 16,
-                textColor: touchedIndex == 2
-                    ? GraphColors.mainTextColor1
-                    : GraphColors.mainTextColor3,
-              ),
-              Indicator(
-                color: GraphColors.contentColorGreen,
-                text: 'Four',
-                isSquare: false,
-                size: touchedIndex == 3 ? 18 : 16,
-                textColor: touchedIndex == 3
-                    ? GraphColors.mainTextColor1
-                    : GraphColors.mainTextColor3,
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 18,
           ),
           Expanded(
             child: AspectRatio(
@@ -96,6 +104,62 @@ class StatusChartState extends State {
               ),
             ),
           ),
+          const SizedBox(
+            height: 18,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: SpacingTokens.deka),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Indicator(
+                  color: GraphColors.contentColorBlue,
+                  text: touchedIndex == 0
+                      ? '$nonAnsweredStatusPorcentage%'
+                      : 'Não respondida',
+                  isSquare: false,
+                  size: touchedIndex == 0 ? 18 : 16,
+                  textColor: Colors.black,
+                ),
+                Indicator(
+                  color: GraphColors.contentColorYellow,
+                  text: touchedIndex == 1
+                      ? '$answeredStatusPorcentage%'
+                      : 'Respondida',
+                  isSquare: false,
+                  size: touchedIndex == 1 ? 18 : 16,
+                  textColor: Colors.black,
+                ),
+                Indicator(
+                  color: GraphColors.contentColorPink,
+                  text: touchedIndex == 2
+                      ? '$solvedStatusPorcentage%'
+                      : 'Resolvido',
+                  isSquare: false,
+                  size: touchedIndex == 2 ? 18 : 16,
+                  textColor: Colors.black,
+                ),
+                Indicator(
+                  color: GraphColors.contentColorGreen,
+                  text: touchedIndex == 3
+                      ? '$replyStatusPorcentage%'
+                      : 'Em réplica',
+                  isSquare: false,
+                  size: touchedIndex == 3 ? 18 : 16,
+                  textColor: Colors.black,
+                ),
+                Indicator(
+                  color: GraphColors.contentColorRed,
+                  text: touchedIndex == 4
+                      ? '$nonSolvedStatusPorcentage%'
+                      : 'Não resolvido',
+                  isSquare: false,
+                  size: touchedIndex == 4 ? 18 : 16,
+                  textColor: Colors.black,
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
@@ -103,19 +167,20 @@ class StatusChartState extends State {
 
   List<PieChartSectionData> showingSections() {
     return List.generate(
-      4,
+      5,
       (i) {
         final isTouched = i == touchedIndex;
         const color0 = GraphColors.contentColorBlue;
         const color1 = GraphColors.contentColorYellow;
         const color2 = GraphColors.contentColorPink;
         const color3 = GraphColors.contentColorGreen;
+        const color4 = GraphColors.contentColorRed;
 
         switch (i) {
           case 0:
             return PieChartSectionData(
               color: color0,
-              value: 25,
+              value: nonAnsweredStatusPorcentage.toDouble(),
               title: '',
               radius: 80,
               titlePositionPercentageOffset: 0.55,
@@ -128,7 +193,7 @@ class StatusChartState extends State {
           case 1:
             return PieChartSectionData(
               color: color1,
-              value: 25,
+              value: answeredStatusPorcentage.toDouble(),
               title: '',
               radius: 65,
               titlePositionPercentageOffset: 0.55,
@@ -141,7 +206,7 @@ class StatusChartState extends State {
           case 2:
             return PieChartSectionData(
               color: color2,
-              value: 25,
+              value: solvedStatusPorcentage.toDouble(),
               title: '',
               radius: 60,
               titlePositionPercentageOffset: 0.6,
@@ -154,7 +219,20 @@ class StatusChartState extends State {
           case 3:
             return PieChartSectionData(
               color: color3,
-              value: 25,
+              value: replyStatusPorcentage.toDouble(),
+              title: '',
+              radius: 70,
+              titlePositionPercentageOffset: 0.55,
+              borderSide: isTouched
+                  ? const BorderSide(
+                      color: GraphColors.contentColorWhite, width: 6)
+                  : BorderSide(
+                      color: GraphColors.contentColorWhite.withOpacity(0)),
+            );
+          case 4:
+            return PieChartSectionData(
+              color: color4,
+              value: nonSolvedStatusPorcentage.toDouble(),
               title: '',
               radius: 70,
               titlePositionPercentageOffset: 0.55,
