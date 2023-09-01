@@ -24,6 +24,7 @@ class StatusChartState extends State<StatusChart> {
   late int replyStatusPorcentage;
   late int nonSolvedStatusPorcentage;
   Map<String, int> statusMap = {};
+  int touchedIndex = -1;
 
   @override
   void initState() {
@@ -62,8 +63,6 @@ class StatusChartState extends State<StatusChart> {
             100)
         .toInt();
   }
-
-  int touchedIndex = -1;
 
   @override
   Widget build(BuildContext context) {

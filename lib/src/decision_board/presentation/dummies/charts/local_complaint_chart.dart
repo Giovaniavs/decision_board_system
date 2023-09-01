@@ -26,6 +26,7 @@ class LocalComplaintChartState extends State<LocalComplaintChart> {
   late String thirdMostComplaintStatePorcentage;
   late String fourthMostComplaintStatePorcentage;
   Map<String, int> statesMap = {};
+  int touchedIndex = -1;
 
   @override
   void initState() {
@@ -67,8 +68,6 @@ class LocalComplaintChartState extends State<LocalComplaintChart> {
     fourthMostComplaintStatePorcentage =
         "${(fourthMostStateWithComplaints.value / widget._decisionBoardUseCase.state.complaintList.length * 100).toInt()}%";
   }
-
-  int touchedIndex = -1;
 
   @override
   Widget build(BuildContext context) {

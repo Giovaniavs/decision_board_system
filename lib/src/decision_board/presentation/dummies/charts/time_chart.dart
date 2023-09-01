@@ -1,13 +1,19 @@
 import 'dart:async';
 import 'dart:math';
 
+import 'package:decision_board_system/src/decision_board/domain/decision_board_usecase.dart';
 import 'package:decision_board_system/src/shared/design_system/tokens/color_tokens.dart';
 import 'package:decision_board_system/src/shared/utils/color_extension.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 class TimeChart extends StatefulWidget {
-  TimeChart({super.key});
+  final DecisionBoardUseCase _decisionBoardUseCase;
+
+  TimeChart({
+    super.key,
+    required DecisionBoardUseCase decisionBoardUseCase,
+  }) : _decisionBoardUseCase = decisionBoardUseCase;
 
   List<Color> get availableColors => const <Color>[
         GraphColors.contentColorPurple,
@@ -29,10 +35,40 @@ class TimeChart extends StatefulWidget {
 
 class TimeChartState extends State<TimeChart> {
   final Duration animDuration = const Duration(milliseconds: 250);
-
+  late Map<String, double> sevenLastYearsMap;
   int touchedIndex = -1;
-
   bool isPlaying = false;
+  int currentYear = DateTime.now().year;
+  int pastYear = DateTime.now().year - 1;
+  int pastTwoYears = DateTime.now().year - 2;
+  int pastThreeYears = DateTime.now().year - 3;
+  int pastFourYears = DateTime.now().year - 4;
+  int pastFiveYears = DateTime.now().year - 5;
+  int pastSixYears = DateTime.now().year - 6;
+
+  @override
+  void initState() {
+    super.initState();
+
+    sevenLastYearsMap = {
+      currentYear.toString(): 0,
+      pastYear.toString(): 0,
+      pastTwoYears.toString(): 0,
+      pastThreeYears.toString(): 0,
+      pastFourYears.toString(): 0,
+      pastFiveYears.toString(): 0,
+      pastSixYears.toString(): 0,
+    };
+
+    for (var element in widget._decisionBoardUseCase.state.complaintList) {
+      String yearFromDateTime = element.dateTime.substring(0, 4);
+
+      if (sevenLastYearsMap.containsKey(yearFromDateTime)) {
+        sevenLastYearsMap[yearFromDateTime] =
+            sevenLastYearsMap[yearFromDateTime]! + 1;
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -143,19 +179,29 @@ class TimeChartState extends State<TimeChart> {
   List<BarChartGroupData> showingGroups() => List.generate(7, (i) {
         switch (i) {
           case 0:
-            return makeGroupData(0, 5, isTouched: i == touchedIndex);
+            return makeGroupData(0, sevenLastYearsMap[currentYear.toString()]!,
+                isTouched: i == touchedIndex);
           case 1:
-            return makeGroupData(1, 6.5, isTouched: i == touchedIndex);
+            return makeGroupData(1, sevenLastYearsMap[pastYear.toString()]!,
+                isTouched: i == touchedIndex);
           case 2:
-            return makeGroupData(2, 5, isTouched: i == touchedIndex);
+            return makeGroupData(2, sevenLastYearsMap[pastTwoYears.toString()]!,
+                isTouched: i == touchedIndex);
           case 3:
-            return makeGroupData(3, 7.5, isTouched: i == touchedIndex);
+            return makeGroupData(
+                3, sevenLastYearsMap[pastThreeYears.toString()]!,
+                isTouched: i == touchedIndex);
           case 4:
-            return makeGroupData(4, 9, isTouched: i == touchedIndex);
+            return makeGroupData(
+                4, sevenLastYearsMap[pastFourYears.toString()]!,
+                isTouched: i == touchedIndex);
           case 5:
-            return makeGroupData(5, 11.5, isTouched: i == touchedIndex);
+            return makeGroupData(
+                5, sevenLastYearsMap[pastFiveYears.toString()]!,
+                isTouched: i == touchedIndex);
           case 6:
-            return makeGroupData(6, 6.5, isTouched: i == touchedIndex);
+            return makeGroupData(6, sevenLastYearsMap[pastSixYears.toString()]!,
+                isTouched: i == touchedIndex);
           default:
             return throw Error();
         }
@@ -172,25 +218,25 @@ class TimeChartState extends State<TimeChart> {
             String weekDay;
             switch (group.x) {
               case 0:
-                weekDay = 'Monday';
+                weekDay = currentYear.toString();
                 break;
               case 1:
-                weekDay = 'Tuesday';
+                weekDay = pastYear.toString();
                 break;
               case 2:
-                weekDay = 'Wednesday';
+                weekDay = pastTwoYears.toString();
                 break;
               case 3:
-                weekDay = 'Thursday';
+                weekDay = pastThreeYears.toString();
                 break;
               case 4:
-                weekDay = 'Friday';
+                weekDay = pastFourYears.toString();
                 break;
               case 5:
-                weekDay = 'Saturday';
+                weekDay = pastFiveYears.toString();
                 break;
               case 6:
-                weekDay = 'Sunday';
+                weekDay = pastSixYears.toString();
                 break;
               default:
                 throw Error();
@@ -265,25 +311,25 @@ class TimeChartState extends State<TimeChart> {
     Widget text;
     switch (value.toInt()) {
       case 0:
-        text = const Text('M', style: style);
+        text = Text(currentYear.toString(), style: style);
         break;
       case 1:
-        text = const Text('T', style: style);
+        text = Text(pastYear.toString(), style: style);
         break;
       case 2:
-        text = const Text('W', style: style);
+        text = Text(pastTwoYears.toString(), style: style);
         break;
       case 3:
-        text = const Text('T', style: style);
+        text = Text(pastThreeYears.toString(), style: style);
         break;
       case 4:
-        text = const Text('F', style: style);
+        text = Text(pastFourYears.toString(), style: style);
         break;
       case 5:
-        text = const Text('S', style: style);
+        text = Text(pastFiveYears.toString(), style: style);
         break;
       case 6:
-        text = const Text('S', style: style);
+        text = Text(pastSixYears.toString(), style: style);
         break;
       default:
         text = const Text('', style: style);

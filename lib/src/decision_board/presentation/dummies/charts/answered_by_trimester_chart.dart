@@ -17,6 +17,10 @@ class AnsweredByTrimesterChart extends StatefulWidget {
 }
 
 class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
+  List<Color> gradientColors = [
+    GraphColors.contentColorCyan,
+    GraphColors.contentColorBlue,
+  ];
   double jan = 0;
   double feb = 0;
   double mar = 0;
@@ -62,11 +66,6 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
       }
     }
   }
-
-  List<Color> gradientColors = [
-    GraphColors.contentColorCyan,
-    GraphColors.contentColorBlue,
-  ];
 
   @override
   Widget build(BuildContext context) {

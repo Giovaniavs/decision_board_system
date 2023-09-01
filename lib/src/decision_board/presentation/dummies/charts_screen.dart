@@ -45,7 +45,9 @@ class _ChartsScreenState extends State<ChartsScreen> {
       },
       timeBasedChartFlow: () {
         _selectedChartTitle = "Gráficos por Tempo";
-        _selectedChartWidget = TimeChart();
+        _selectedChartWidget = TimeChart(
+          decisionBoardUseCase: widget._decisionBoardUseCase,
+        );
       },
       orElse: () {
         _selectedChartTitle = "Nenhum gráfico selecionado";
