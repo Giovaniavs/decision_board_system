@@ -74,7 +74,7 @@ class LocalComplaintChartState extends State<LocalComplaintChart> {
     return Center(
       child: AspectRatio(
         aspectRatio: 1.3,
-        child: Row(
+        child: Column(
           children: <Widget>[
             const SizedBox(
               height: 18,
@@ -108,8 +108,11 @@ class LocalComplaintChartState extends State<LocalComplaintChart> {
                 ),
               ),
             ),
+            const SizedBox(
+              height: 100,
+            ),
             Column(
-              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Indicator(

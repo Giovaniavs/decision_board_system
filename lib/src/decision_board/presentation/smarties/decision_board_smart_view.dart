@@ -110,10 +110,13 @@ class _DecisionBoardSmartViewState extends State<DecisionBoardSmartView> {
   }
 
   Widget _builder(BuildContext context, DecisionBoardState state) {
-    return Navigator(
-      key: navigatorKey,
-      pages: _pageList(state.flow),
-      onPopPage: (_, __) => _dealWithPop(state, false),
+    return WillPopScope(
+      onWillPop: () async => _dealWithPop(state, false),
+      child: Navigator(
+        key: navigatorKey,
+        pages: _pageList(state.flow),
+        onPopPage: (_, __) => _dealWithPop(state, false),
+      ),
     );
   }
 
@@ -124,7 +127,16 @@ class _DecisionBoardSmartViewState extends State<DecisionBoardSmartView> {
     );
 
     return state.flow.maybeWhen(
-      uploadDatabaseScreenFlow: () {
+      listChartsScreenFlow: () {
+        widget._decisionBoardUseCase.add(
+          const GoBackToHomeFlow(),
+        );
+        return condition;
+      },
+      chartScreenFlow: () {
+        widget._decisionBoardUseCase.add(
+          const GoToChartsListScreenFlow(),
+        );
         return condition;
       },
       orElse: () {

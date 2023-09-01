@@ -105,7 +105,7 @@ class StatusChartState extends State<StatusChart> {
               ),
             ),
             const SizedBox(
-              height: 18,
+              height: 100,
             ),
             Padding(
               padding: const EdgeInsets.only(left: SpacingTokens.deka),
