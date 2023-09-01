@@ -70,12 +70,15 @@ class TimeChartState extends State<TimeChart> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+        color: BaseColors.primary,
+        borderRadius: BorderRadius.circular(18),
+      ),
       margin: const EdgeInsets.symmetric(
         horizontal: SpacingTokens.hecto,
         vertical: SpacingTokens.kilo,
       ),
       padding: const EdgeInsets.only(top: SpacingTokens.deka),
-      color: BaseColors.primary,
       child: AspectRatio(
         aspectRatio: 1,
         child: Stack(

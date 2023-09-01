@@ -100,7 +100,7 @@ class ListChartsScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: SpacingTokens.deka),
               child: PurpleLongButton(
-                buttonText: 'Gráfico por Tempo',
+                buttonText: 'Reclamações por Ano',
                 isLoading: false,
                 onPressed: () {
                   _decisionBoardUseCase.add(

@@ -44,7 +44,7 @@ class _ChartsScreenState extends State<ChartsScreen> {
         );
       },
       timeBasedChartFlow: () {
-        _selectedChartTitle = "Gráficos por Tempo";
+        _selectedChartTitle = "Reclamações por Ano";
         _selectedChartWidget = TimeChart(
           decisionBoardUseCase: widget._decisionBoardUseCase,
         );
