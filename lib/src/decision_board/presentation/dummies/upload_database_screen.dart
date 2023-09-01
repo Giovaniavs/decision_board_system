@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:csv/csv.dart';
 import 'package:decision_board_system/src/decision_board/domain/decision_board_usecase.dart';
@@ -6,7 +7,6 @@ import 'package:decision_board_system/src/shared/design_system/tokens/spacing_to
 import 'package:decision_board_system/src/shared/widgets/purple_long_button.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:decision_board_system/src/shared/design_system/tokens/color_tokens.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
@@ -116,7 +116,9 @@ class _UploadDatabaseScreenState extends State<UploadDatabaseScreen> {
 
         formatedData = const CsvToListConverter().convert(bytes);
       } else {
-        String rawData = await rootBundle.loadString(file.files.first.path!);
+        File localFile = File(file.files.first.path!);
+
+        String rawData = await localFile.readAsString();
 
         formatedData = const CsvToListConverter().convert(rawData);
       }
@@ -139,6 +141,10 @@ class _UploadDatabaseScreenState extends State<UploadDatabaseScreen> {
         );
       }
     } catch (e) {
+      setState(() {
+        isLoading = false;
+      });
+
       dealWithArchiveTypeError(
         title: 'Erro ao carregar arquivo',
         content: 'O arquivo selecionado não possui a estrutura correta.',
