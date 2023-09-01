@@ -69,41 +69,43 @@ class TimeChartState extends State<TimeChart> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: BaseColors.primary,
-        borderRadius: BorderRadius.circular(18),
-      ),
-      margin: const EdgeInsets.symmetric(
-        horizontal: SpacingTokens.hecto,
-        vertical: SpacingTokens.kilo,
-      ),
-      padding: const EdgeInsets.only(top: SpacingTokens.deka),
-      child: AspectRatio(
-        aspectRatio: 1,
-        child: Stack(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8),
-                      child: BarChart(
-                        mainBarData(),
-                        swapAnimationDuration: animDuration,
+    return Center(
+      child: Container(
+        decoration: BoxDecoration(
+          color: BaseColors.primary,
+          borderRadius: BorderRadius.circular(18),
+        ),
+        margin: const EdgeInsets.symmetric(
+          horizontal: SpacingTokens.hecto,
+          vertical: SpacingTokens.kilo,
+        ),
+        padding: const EdgeInsets.only(top: SpacingTokens.deka),
+        child: AspectRatio(
+          aspectRatio: 1,
+          child: Stack(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8),
+                        child: BarChart(
+                          mainBarData(),
+                          swapAnimationDuration: animDuration,
+                        ),
                       ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 12,
-                  ),
-                ],
+                    const SizedBox(
+                      height: 12,
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

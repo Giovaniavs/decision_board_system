@@ -52,66 +52,72 @@ class ListChartsScreen extends StatelessWidget {
           horizontal: SpacingTokens.deka,
           vertical: SpacingTokens.deka,
         ),
-        child: ListView(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: SpacingTokens.deka),
-              child: PurpleLongButton(
-                buttonText: 'Reclamações por trimestre',
-                isLoading: false,
-                onPressed: () {
-                  _decisionBoardUseCase.add(
-                    const GoToChartsScreen(
-                      chartSelected:
-                          ChartSelected.answeredByTrimesterChartFlow(),
-                    ),
-                  );
-                },
-              ),
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 500),
+            child: ListView(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: SpacingTokens.deka),
+                  child: PurpleLongButton(
+                    buttonText: 'Reclamações por trimestre',
+                    isLoading: false,
+                    onPressed: () {
+                      _decisionBoardUseCase.add(
+                        const GoToChartsScreen(
+                          chartSelected:
+                              ChartSelected.answeredByTrimesterChartFlow(),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: SpacingTokens.deka),
+                  child: PurpleLongButton(
+                    buttonText: 'Reclamações por Estados',
+                    isLoading: false,
+                    onPressed: () {
+                      _decisionBoardUseCase.add(
+                        const GoToChartsScreen(
+                          chartSelected:
+                              ChartSelected.localComplaintChartFlow(),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: SpacingTokens.deka),
+                  child: PurpleLongButton(
+                    buttonText: 'Gráficos por Status da Reclamação',
+                    isLoading: false,
+                    onPressed: () {
+                      _decisionBoardUseCase.add(
+                        const GoToChartsScreen(
+                          chartSelected: ChartSelected.statusChartFlow(),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: SpacingTokens.deka),
+                  child: PurpleLongButton(
+                    buttonText: 'Reclamações por Ano',
+                    isLoading: false,
+                    onPressed: () {
+                      _decisionBoardUseCase.add(
+                        const GoToChartsScreen(
+                          chartSelected: ChartSelected.timeBasedChartFlow(),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ],
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: SpacingTokens.deka),
-              child: PurpleLongButton(
-                buttonText: 'Reclamações por Estados',
-                isLoading: false,
-                onPressed: () {
-                  _decisionBoardUseCase.add(
-                    const GoToChartsScreen(
-                      chartSelected: ChartSelected.localComplaintChartFlow(),
-                    ),
-                  );
-                },
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: SpacingTokens.deka),
-              child: PurpleLongButton(
-                buttonText: 'Gráficos por Status da Reclamação',
-                isLoading: false,
-                onPressed: () {
-                  _decisionBoardUseCase.add(
-                    const GoToChartsScreen(
-                      chartSelected: ChartSelected.statusChartFlow(),
-                    ),
-                  );
-                },
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: SpacingTokens.deka),
-              child: PurpleLongButton(
-                buttonText: 'Reclamações por Ano',
-                isLoading: false,
-                onPressed: () {
-                  _decisionBoardUseCase.add(
-                    const GoToChartsScreen(
-                      chartSelected: ChartSelected.timeBasedChartFlow(),
-                    ),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );

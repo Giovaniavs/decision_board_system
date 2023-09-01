@@ -71,84 +71,86 @@ class LocalComplaintChartState extends State<LocalComplaintChart> {
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 1.3,
-      child: Row(
-        children: <Widget>[
-          const SizedBox(
-            height: 18,
-          ),
-          Expanded(
-            child: AspectRatio(
-              aspectRatio: 1,
-              child: PieChart(
-                PieChartData(
-                  pieTouchData: PieTouchData(
-                    touchCallback: (FlTouchEvent event, pieTouchResponse) {
-                      setState(() {
-                        if (!event.isInterestedForInteractions ||
-                            pieTouchResponse == null ||
-                            pieTouchResponse.touchedSection == null) {
-                          touchedIndex = -1;
-                          return;
-                        }
-                        touchedIndex = pieTouchResponse
-                            .touchedSection!.touchedSectionIndex;
-                      });
-                    },
+    return Center(
+      child: AspectRatio(
+        aspectRatio: 1.3,
+        child: Row(
+          children: <Widget>[
+            const SizedBox(
+              height: 18,
+            ),
+            Expanded(
+              child: AspectRatio(
+                aspectRatio: 1,
+                child: PieChart(
+                  PieChartData(
+                    pieTouchData: PieTouchData(
+                      touchCallback: (FlTouchEvent event, pieTouchResponse) {
+                        setState(() {
+                          if (!event.isInterestedForInteractions ||
+                              pieTouchResponse == null ||
+                              pieTouchResponse.touchedSection == null) {
+                            touchedIndex = -1;
+                            return;
+                          }
+                          touchedIndex = pieTouchResponse
+                              .touchedSection!.touchedSectionIndex;
+                        });
+                      },
+                    ),
+                    borderData: FlBorderData(
+                      show: false,
+                    ),
+                    sectionsSpace: 0,
+                    centerSpaceRadius: 40,
+                    sections: showingSections(),
                   ),
-                  borderData: FlBorderData(
-                    show: false,
-                  ),
-                  sectionsSpace: 0,
-                  centerSpaceRadius: 40,
-                  sections: showingSections(),
                 ),
               ),
             ),
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Indicator(
-                color: GraphColors.contentColorBlue,
-                text: firstMostStateWithComplaints.key,
-                isSquare: true,
-              ),
-              const SizedBox(
-                height: 4,
-              ),
-              Indicator(
-                color: GraphColors.contentColorYellow,
-                text: secondMostStateWithComplaints.key,
-                isSquare: true,
-              ),
-              const SizedBox(
-                height: 4,
-              ),
-              Indicator(
-                color: GraphColors.contentColorPurple,
-                text: thirdMostStateWithComplaints.key,
-                isSquare: true,
-              ),
-              const SizedBox(
-                height: 4,
-              ),
-              Indicator(
-                color: GraphColors.contentColorGreen,
-                text: fourthMostStateWithComplaints.key,
-                isSquare: true,
-              ),
-              const SizedBox(
-                height: 18,
-              ),
-            ],
-          ),
-          const SizedBox(
-            width: 28,
-          ),
-        ],
+            Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Indicator(
+                  color: GraphColors.contentColorBlue,
+                  text: firstMostStateWithComplaints.key,
+                  isSquare: true,
+                ),
+                const SizedBox(
+                  height: 4,
+                ),
+                Indicator(
+                  color: GraphColors.contentColorYellow,
+                  text: secondMostStateWithComplaints.key,
+                  isSquare: true,
+                ),
+                const SizedBox(
+                  height: 4,
+                ),
+                Indicator(
+                  color: GraphColors.contentColorPurple,
+                  text: thirdMostStateWithComplaints.key,
+                  isSquare: true,
+                ),
+                const SizedBox(
+                  height: 4,
+                ),
+                Indicator(
+                  color: GraphColors.contentColorGreen,
+                  text: fourthMostStateWithComplaints.key,
+                  isSquare: true,
+                ),
+                const SizedBox(
+                  height: 18,
+                ),
+              ],
+            ),
+            const SizedBox(
+              width: 28,
+            ),
+          ],
+        ),
       ),
     );
   }

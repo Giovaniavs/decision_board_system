@@ -69,23 +69,25 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        AspectRatio(
-          aspectRatio: 1.70,
-          child: Padding(
-            padding: const EdgeInsets.only(
-              right: 18,
-              left: 12,
-              top: 24,
-              bottom: 12,
-            ),
-            child: LineChart(
-              mainData(),
+    return Center(
+      child: Stack(
+        children: <Widget>[
+          AspectRatio(
+            aspectRatio: 1.70,
+            child: Padding(
+              padding: const EdgeInsets.only(
+                right: 18,
+                left: 12,
+                top: 24,
+                bottom: 12,
+              ),
+              child: LineChart(
+                mainData(),
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 

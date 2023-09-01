@@ -66,100 +66,102 @@ class StatusChartState extends State<StatusChart> {
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 1.3,
-      child: Column(
-        children: <Widget>[
-          const SizedBox(
-            height: 28,
-          ),
-          Expanded(
-            child: AspectRatio(
-              aspectRatio: 1,
-              child: PieChart(
-                PieChartData(
-                  pieTouchData: PieTouchData(
-                    touchCallback: (FlTouchEvent event, pieTouchResponse) {
-                      setState(() {
-                        if (!event.isInterestedForInteractions ||
-                            pieTouchResponse == null ||
-                            pieTouchResponse.touchedSection == null) {
-                          touchedIndex = -1;
-                          return;
-                        }
-                        touchedIndex = pieTouchResponse
-                            .touchedSection!.touchedSectionIndex;
-                      });
-                    },
+    return Center(
+      child: AspectRatio(
+        aspectRatio: 1.3,
+        child: Column(
+          children: <Widget>[
+            const SizedBox(
+              height: 28,
+            ),
+            Expanded(
+              child: AspectRatio(
+                aspectRatio: 1,
+                child: PieChart(
+                  PieChartData(
+                    pieTouchData: PieTouchData(
+                      touchCallback: (FlTouchEvent event, pieTouchResponse) {
+                        setState(() {
+                          if (!event.isInterestedForInteractions ||
+                              pieTouchResponse == null ||
+                              pieTouchResponse.touchedSection == null) {
+                            touchedIndex = -1;
+                            return;
+                          }
+                          touchedIndex = pieTouchResponse
+                              .touchedSection!.touchedSectionIndex;
+                        });
+                      },
+                    ),
+                    startDegreeOffset: 180,
+                    borderData: FlBorderData(
+                      show: false,
+                    ),
+                    sectionsSpace: 1,
+                    centerSpaceRadius: 0,
+                    sections: showingSections(),
                   ),
-                  startDegreeOffset: 180,
-                  borderData: FlBorderData(
-                    show: false,
-                  ),
-                  sectionsSpace: 1,
-                  centerSpaceRadius: 0,
-                  sections: showingSections(),
                 ),
               ),
             ),
-          ),
-          const SizedBox(
-            height: 18,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: SpacingTokens.deka),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Indicator(
-                  color: GraphColors.contentColorBlue,
-                  text: touchedIndex == 0
-                      ? '$nonAnsweredStatusPorcentage%'
-                      : 'Não respondida',
-                  isSquare: false,
-                  size: touchedIndex == 0 ? 18 : 16,
-                  textColor: Colors.black,
-                ),
-                Indicator(
-                  color: GraphColors.contentColorYellow,
-                  text: touchedIndex == 1
-                      ? '$answeredStatusPorcentage%'
-                      : 'Respondida',
-                  isSquare: false,
-                  size: touchedIndex == 1 ? 18 : 16,
-                  textColor: Colors.black,
-                ),
-                Indicator(
-                  color: GraphColors.contentColorPink,
-                  text: touchedIndex == 2
-                      ? '$solvedStatusPorcentage%'
-                      : 'Resolvido',
-                  isSquare: false,
-                  size: touchedIndex == 2 ? 18 : 16,
-                  textColor: Colors.black,
-                ),
-                Indicator(
-                  color: GraphColors.contentColorGreen,
-                  text: touchedIndex == 3
-                      ? '$replyStatusPorcentage%'
-                      : 'Em réplica',
-                  isSquare: false,
-                  size: touchedIndex == 3 ? 18 : 16,
-                  textColor: Colors.black,
-                ),
-                Indicator(
-                  color: GraphColors.contentColorRed,
-                  text: touchedIndex == 4
-                      ? '$nonSolvedStatusPorcentage%'
-                      : 'Não resolvido',
-                  isSquare: false,
-                  size: touchedIndex == 4 ? 18 : 16,
-                  textColor: Colors.black,
-                ),
-              ],
+            const SizedBox(
+              height: 18,
             ),
-          ),
-        ],
+            Padding(
+              padding: const EdgeInsets.only(left: SpacingTokens.deka),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Indicator(
+                    color: GraphColors.contentColorBlue,
+                    text: touchedIndex == 0
+                        ? '$nonAnsweredStatusPorcentage%'
+                        : 'Não respondida',
+                    isSquare: false,
+                    size: touchedIndex == 0 ? 18 : 16,
+                    textColor: Colors.black,
+                  ),
+                  Indicator(
+                    color: GraphColors.contentColorYellow,
+                    text: touchedIndex == 1
+                        ? '$answeredStatusPorcentage%'
+                        : 'Respondida',
+                    isSquare: false,
+                    size: touchedIndex == 1 ? 18 : 16,
+                    textColor: Colors.black,
+                  ),
+                  Indicator(
+                    color: GraphColors.contentColorPink,
+                    text: touchedIndex == 2
+                        ? '$solvedStatusPorcentage%'
+                        : 'Resolvido',
+                    isSquare: false,
+                    size: touchedIndex == 2 ? 18 : 16,
+                    textColor: Colors.black,
+                  ),
+                  Indicator(
+                    color: GraphColors.contentColorGreen,
+                    text: touchedIndex == 3
+                        ? '$replyStatusPorcentage%'
+                        : 'Em réplica',
+                    isSquare: false,
+                    size: touchedIndex == 3 ? 18 : 16,
+                    textColor: Colors.black,
+                  ),
+                  Indicator(
+                    color: GraphColors.contentColorRed,
+                    text: touchedIndex == 4
+                        ? '$nonSolvedStatusPorcentage%'
+                        : 'Não resolvido',
+                    isSquare: false,
+                    size: touchedIndex == 4 ? 18 : 16,
+                    textColor: Colors.black,
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
