@@ -19,15 +19,53 @@ class AnsweredByTrimesterChart extends StatefulWidget {
 }
 
 class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
+  String currentYear = DateTime.now().year.toString();
+  String pastYear = (DateTime.now().year - 1).toString();
+  String pastTwoYears = (DateTime.now().year - 2).toString();
+  String pastThreeYears = (DateTime.now().year - 3).toString();
+  String pastFourYears = (DateTime.now().year - 4).toString();
+  String pastFiveYears = (DateTime.now().year - 5).toString();
+
   List<ComplaintModel> currentFilteredComplaintList = [];
 
-  bool checkboxValueOne = false;
-  bool checkboxValueTwo = false;
-  bool checkboxValueThree = false;
-  bool checkboxValueFour = false;
-  bool checkboxValueFive = false;
-  bool checkboxValueSix = false;
-  bool checkboxValueSeven = false;
+  bool currentYearValue = false;
+  bool pastYearValue = false;
+  bool pastTwoYearsValue = false;
+  bool pastThreeYearsValue = false;
+  bool pastFourYearsValue = false;
+  bool pastFiveYearsValue = false;
+
+  bool dayOneValue = false;
+  bool dayTwoValue = false;
+  bool dayThreeValue = false;
+  bool dayFourValue = false;
+  bool dayFiveValue = false;
+  bool daySixValue = false;
+  bool daySevenValue = false;
+  bool dayEightValue = false;
+  bool dayNineValue = false;
+  bool dayTenValue = false;
+  bool dayElevenValue = false;
+  bool dayTwelveValue = false;
+  bool dayThirteenValue = false;
+  bool dayFourteenValue = false;
+  bool dayFifteenValue = false;
+  bool daySixteenValue = false;
+  bool daySeventeenValue = false;
+  bool dayEighteenValue = false;
+  bool dayNineteenValue = false;
+  bool dayTwentyValue = false;
+  bool dayTwentyOneValue = false;
+  bool dayTwentyTwoValue = false;
+  bool dayTwentyThreeValue = false;
+  bool dayTwentyFourValue = false;
+  bool dayTwentyFiveValue = false;
+  bool dayTwentySixValue = false;
+  bool dayTwentySevenValue = false;
+  bool dayTwentyEightValue = false;
+  bool dayTwentyNineValue = false;
+  bool dayThirtyValue = false;
+  bool dayThirtyOneValue = false;
 
   List<Color> gradientColors = [
     GraphColors.contentColorCyan,
@@ -59,9 +97,11 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
 
   @override
   Widget build(BuildContext context) {
-    if (!isAnySelected()) {
+    if (isAnySelected() == 0) {
       currentFilteredComplaintList =
           widget._decisionBoardUseCase.state.complaintList;
+
+      applyAllMonthsValues(currentFilteredComplaintList);
     }
 
     return SingleChildScrollView(
@@ -104,48 +144,46 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
                     Row(
                       children: [
                         Checkbox(
-                          value: checkboxValueOne,
+                          value: currentYearValue,
                           onChanged: (value) => setState(
                             () {
+                              currentYearValue = value!;
                               currentFilteredComplaintList =
-                                  applyYearFilter(value!, "2023");
-                              checkboxValueOne = value;
+                                  applyYearFilter(value, currentYear);
                             },
                           ),
                         ),
-                        Text(DateTime.now().year.toString()),
+                        Text(currentYear),
                       ],
                     ),
                     Row(
                       children: [
                         Checkbox(
-                          value: checkboxValueTwo,
+                          value: pastYearValue,
                           onChanged: (value) => setState(
                             () {
+                              pastYearValue = value!;
                               currentFilteredComplaintList =
-                                  applyYearFilter(value!, "2022");
-
-                              checkboxValueTwo = value;
+                                  applyYearFilter(value, pastYear);
                             },
                           ),
                         ),
-                        Text((DateTime.now().year - 1).toString()),
+                        Text(pastYear),
                       ],
                     ),
                     Row(
                       children: [
                         Checkbox(
-                          value: checkboxValueThree,
+                          value: pastTwoYearsValue,
                           onChanged: (value) => setState(
                             () {
+                              pastTwoYearsValue = value!;
                               currentFilteredComplaintList =
-                                  applyYearFilter(value!, "2021");
-
-                              checkboxValueThree = value;
+                                  applyYearFilter(value, pastTwoYears);
                             },
                           ),
                         ),
-                        Text((DateTime.now().year - 2).toString()),
+                        Text(pastTwoYears),
                       ],
                     ),
                   ],
@@ -156,48 +194,159 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
                     Row(
                       children: [
                         Checkbox(
-                          value: checkboxValueFour,
+                          value: pastThreeYearsValue,
                           onChanged: (value) => setState(
                             () {
+                              pastThreeYearsValue = value!;
                               currentFilteredComplaintList =
-                                  applyYearFilter(value!, "2020");
-                              checkboxValueFour = value;
+                                  applyYearFilter(value, pastThreeYears);
                             },
                           ),
                         ),
-                        Text((DateTime.now().year - 3).toString()),
+                        Text(pastThreeYears),
                       ],
                     ),
                     Row(
                       children: [
                         Checkbox(
-                          value: checkboxValueFive,
+                          value: pastFourYearsValue,
                           onChanged: (value) => setState(
                             () {
+                              pastFourYearsValue = value!;
                               currentFilteredComplaintList =
-                                  applyYearFilter(value!, "2019");
-
-                              checkboxValueFive = value;
+                                  applyYearFilter(value, pastFourYears);
                             },
                           ),
                         ),
-                        Text((DateTime.now().year - 4).toString()),
+                        Text(pastFourYears),
                       ],
                     ),
                     Row(
                       children: [
                         Checkbox(
-                          value: checkboxValueSix,
+                          value: pastFiveYearsValue,
                           onChanged: (value) => setState(
                             () {
+                              pastFiveYearsValue = value!;
                               currentFilteredComplaintList =
-                                  applyYearFilter(value!, "2018");
-
-                              checkboxValueSix = value;
+                                  applyYearFilter(value, pastFiveYears);
                             },
                           ),
                         ),
-                        Text((DateTime.now().year - 5).toString()),
+                        Text(pastFiveYears),
+                      ],
+                    ),
+                  ],
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(
+                    left: SpacingTokens.hecto,
+                    bottom: SpacingTokens.deka,
+                  ),
+                  child: Text(
+                    'Filtrar por dias:',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Row(
+                      children: [
+                        Checkbox(
+                          value: dayThirtyOneValue,
+                          onChanged: (value) => setState(
+                            () {
+                              dayThirtyOneValue = value!;
+                              currentFilteredComplaintList =
+                                  applyDayFilter(value, "31");
+                            },
+                          ),
+                        ),
+                        const Text('31'),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Checkbox(
+                          value: dayThirtyValue,
+                          onChanged: (value) => setState(
+                            () {
+                              dayThirtyValue = value!;
+                              currentFilteredComplaintList =
+                                  applyDayFilter(value, "30");
+                            },
+                          ),
+                        ),
+                        const Text('30'),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Checkbox(
+                          value: dayTwentyNineValue,
+                          onChanged: (value) => setState(
+                            () {
+                              dayTwentyNineValue = value!;
+                              currentFilteredComplaintList =
+                                  applyDayFilter(value, "29");
+                            },
+                          ),
+                        ),
+                        const Text('29'),
+                      ],
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Row(
+                      children: [
+                        Checkbox(
+                          value: dayTwentyEightValue,
+                          onChanged: (value) => setState(
+                            () {
+                              dayTwentyEightValue = value!;
+                              currentFilteredComplaintList =
+                                  applyDayFilter(value, "28");
+                            },
+                          ),
+                        ),
+                        const Text('28'),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Checkbox(
+                          value: dayTwentySevenValue,
+                          onChanged: (value) => setState(
+                            () {
+                              dayTwentySevenValue = value!;
+                              currentFilteredComplaintList =
+                                  applyDayFilter(value, "27");
+                            },
+                          ),
+                        ),
+                        const Text('27'),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Checkbox(
+                          value: dayTwentySixValue,
+                          onChanged: (value) => setState(
+                            () {
+                              dayTwentySixValue = value!;
+                              currentFilteredComplaintList =
+                                  applyDayFilter(value, "26");
+                            },
+                          ),
+                        ),
+                        const Text('26'),
                       ],
                     ),
                   ],
@@ -396,23 +545,214 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
     }
   }
 
-  bool isAnySelected() {
-    List<bool> boolsList = [
-      checkboxValueOne,
-      checkboxValueTwo,
-      checkboxValueThree,
-      checkboxValueFour,
-      checkboxValueFive,
-      checkboxValueSix,
-      checkboxValueSeven,
+  int isAnySelected() {
+    List<bool> boolList = [
+      currentYearValue,
+      pastYearValue,
+      pastTwoYearsValue,
+      pastThreeYearsValue,
+      pastFourYearsValue,
+      pastFiveYearsValue,
+      dayOneValue,
+      dayTwoValue,
+      dayThreeValue,
+      dayFourValue,
+      dayFiveValue,
+      daySixValue,
+      daySevenValue,
+      dayEightValue,
+      dayNineValue,
+      dayTenValue,
+      dayElevenValue,
+      dayTwelveValue,
+      dayThirteenValue,
+      dayFourteenValue,
+      dayFifteenValue,
+      daySixteenValue,
+      daySeventeenValue,
+      dayEighteenValue,
+      dayNineteenValue,
+      dayTwentyValue,
+      dayTwentyOneValue,
+      dayTwentyTwoValue,
+      dayTwentyThreeValue,
+      dayTwentyFourValue,
+      dayTwentyFiveValue,
+      dayTwentySixValue,
+      dayTwentySevenValue,
+      dayTwentyEightValue,
+      dayTwentyNineValue,
+      dayThirtyValue,
+      dayThirtyOneValue,
     ];
 
-    return boolsList.contains(true);
+    boolList.removeWhere((element) => element == false);
+
+    return boolList.length;
+  }
+
+  List<String> wichYearsAreSelected() {
+    List<String> selectedYears = [];
+
+    if (currentYearValue) {
+      selectedYears.add(currentYear);
+    }
+    if (pastYearValue) {
+      selectedYears.add(pastYear);
+    }
+    if (pastTwoYearsValue) {
+      selectedYears.add(pastTwoYears);
+    }
+    if (pastThreeYearsValue) {
+      selectedYears.add(pastThreeYears);
+    }
+    if (pastFourYearsValue) {
+      selectedYears.add(pastFourYears);
+    }
+    if (pastFiveYearsValue) {
+      selectedYears.add(pastFiveYears);
+    }
+
+    return selectedYears;
+  }
+
+  List<String> wichDaysAreSelected() {
+    List<String> selectedDays = [];
+
+    if (dayOneValue) {
+      selectedDays.add("01");
+    }
+    if (dayTwoValue) {
+      selectedDays.add("02");
+    }
+    if (dayThreeValue) {
+      selectedDays.add("03");
+    }
+    if (dayFourValue) {
+      selectedDays.add("04");
+    }
+    if (dayFiveValue) {
+      selectedDays.add("05");
+    }
+    if (daySixValue) {
+      selectedDays.add("06");
+    }
+    if (daySevenValue) {
+      selectedDays.add("07");
+    }
+    if (dayEightValue) {
+      selectedDays.add("08");
+    }
+    if (dayNineValue) {
+      selectedDays.add("09");
+    }
+    if (dayTenValue) {
+      selectedDays.add("10");
+    }
+    if (dayElevenValue) {
+      selectedDays.add("11");
+    }
+    if (dayTwelveValue) {
+      selectedDays.add("12");
+    }
+    if (dayThirteenValue) {
+      selectedDays.add("13");
+    }
+    if (dayFourteenValue) {
+      selectedDays.add("14");
+    }
+    if (dayFifteenValue) {
+      selectedDays.add("15");
+    }
+    if (daySixteenValue) {
+      selectedDays.add("16");
+    }
+    if (daySeventeenValue) {
+      selectedDays.add("17");
+    }
+    if (dayEighteenValue) {
+      selectedDays.add("18");
+    }
+    if (dayNineteenValue) {
+      selectedDays.add("19");
+    }
+    if (dayTwentyValue) {
+      selectedDays.add("20");
+    }
+    if (dayTwentyOneValue) {
+      selectedDays.add("21");
+    }
+    if (dayTwentyTwoValue) {
+      selectedDays.add("22");
+    }
+    if (dayTwentyThreeValue) {
+      selectedDays.add("23");
+    }
+    if (dayTwentyFourValue) {
+      selectedDays.add("24");
+    }
+    if (dayTwentyFiveValue) {
+      selectedDays.add("25");
+    }
+    if (dayTwentySixValue) {
+      selectedDays.add("26");
+    }
+    if (dayTwentySevenValue) {
+      selectedDays.add("27");
+    }
+    if (dayTwentyEightValue) {
+      selectedDays.add("28");
+    }
+    if (dayTwentyNineValue) {
+      selectedDays.add("29");
+    }
+    if (dayThirtyValue) {
+      selectedDays.add("30");
+    }
+    if (dayThirtyOneValue) {
+      selectedDays.add("31");
+    }
+
+    return selectedDays;
+  }
+
+  List<ComplaintModel> addSelectedItemsFilter() {
+    List<String> selectedYears = wichYearsAreSelected();
+    List<String> selectedDays = wichDaysAreSelected();
+
+    List<ComplaintModel> filteredComplaintList = [];
+
+    for (ComplaintModel element
+        in widget._decisionBoardUseCase.state.complaintList) {
+      if (selectedYears.isNotEmpty) {
+        if (selectedYears.contains(element.dateTime.substring(0, 4))) {
+          if (selectedDays.isNotEmpty) {
+            if (selectedDays.contains(element.dateTime.substring(8, 10))) {
+              filteredComplaintList.add(element);
+            }
+          } else {
+            if (selectedYears.isNotEmpty) {
+              if (selectedYears.contains(element.dateTime.substring(0, 4))) {
+                filteredComplaintList.add(element);
+              }
+            }
+          }
+        }
+      } else {
+        if (selectedDays.contains(element.dateTime.substring(8, 10))) {
+          filteredComplaintList.add(element);
+        }
+      }
+    }
+
+    currentFilteredComplaintList = filteredComplaintList;
+    applyAllMonthsValues(currentFilteredComplaintList);
+    return currentFilteredComplaintList;
   }
 
   List<ComplaintModel> applyYearFilter(bool value, String year) {
     if (value) {
-      if (!isAnySelected()) {
+      if (isAnySelected() == 1) {
         List<ComplaintModel> filteredComplaintList = [];
 
         for (ComplaintModel element
@@ -426,27 +766,57 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
         applyAllMonthsValues(currentFilteredComplaintList);
         return currentFilteredComplaintList;
       } else {
+        return addSelectedItemsFilter();
+      }
+    } else {
+      if (isAnySelected() == 1) {
+        List<ComplaintModel> filteredComplaintList = [];
+
+        for (ComplaintModel element in currentFilteredComplaintList) {
+          if (element.dateTime.substring(0, 4) != year) {
+            filteredComplaintList.add(element);
+          }
+        }
+
+        if (filteredComplaintList.isEmpty) {
+          currentFilteredComplaintList =
+              widget._decisionBoardUseCase.state.complaintList;
+          applyAllMonthsValues(currentFilteredComplaintList);
+          return currentFilteredComplaintList;
+        } else {
+          currentFilteredComplaintList = filteredComplaintList;
+          applyAllMonthsValues(currentFilteredComplaintList);
+          return currentFilteredComplaintList;
+        }
+      } else {
+        return addSelectedItemsFilter();
+      }
+    }
+  }
+
+  List<ComplaintModel> applyDayFilter(bool value, String day) {
+    if (value) {
+      if (isAnySelected() == 1) {
         List<ComplaintModel> filteredComplaintList = [];
 
         for (ComplaintModel element
             in widget._decisionBoardUseCase.state.complaintList) {
-          if (element.dateTime.substring(0, 4) == year) {
-            if (!currentFilteredComplaintList.contains(element)) {
-              filteredComplaintList.add(element);
-            }
+          if (element.dateTime.substring(8, 10) == day) {
+            filteredComplaintList.add(element);
           }
         }
 
-        currentFilteredComplaintList =
-            filteredComplaintList + currentFilteredComplaintList;
+        currentFilteredComplaintList = filteredComplaintList;
         applyAllMonthsValues(currentFilteredComplaintList);
         return currentFilteredComplaintList;
+      } else {
+        return addSelectedItemsFilter();
       }
     } else {
       List<ComplaintModel> filteredComplaintList = [];
 
       for (ComplaintModel element in currentFilteredComplaintList) {
-        if (element.dateTime.substring(0, 4) != year) {
+        if (element.dateTime.substring(8, 10) != day) {
           filteredComplaintList.add(element);
         }
       }
