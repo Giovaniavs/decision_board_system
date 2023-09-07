@@ -1,5 +1,7 @@
 import 'package:decision_board_system/src/decision_board/domain/decision_board_usecase.dart';
+import 'package:decision_board_system/src/shared/data/models/complaint_model.dart';
 import 'package:decision_board_system/src/shared/design_system/tokens/color_tokens.dart';
+import 'package:decision_board_system/src/shared/design_system/tokens/spacing_tokens.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -17,10 +19,21 @@ class AnsweredByTrimesterChart extends StatefulWidget {
 }
 
 class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
+  List<ComplaintModel> currentFilteredComplaintList = [];
+
+  bool checkboxValueOne = false;
+  bool checkboxValueTwo = false;
+  bool checkboxValueThree = false;
+  bool checkboxValueFour = false;
+  bool checkboxValueFive = false;
+  bool checkboxValueSix = false;
+  bool checkboxValueSeven = false;
+
   List<Color> gradientColors = [
     GraphColors.contentColorCyan,
     GraphColors.contentColorBlue,
   ];
+
   double jan = 0;
   double feb = 0;
   double mar = 0;
@@ -38,55 +51,161 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
   void initState() {
     super.initState();
 
-    for (var element in widget._decisionBoardUseCase.state.complaintList) {
-      if (element.dateTime.substring(5, 7) == "01") {
-        jan++;
-      } else if (element.dateTime.substring(5, 7) == "02") {
-        feb++;
-      } else if (element.dateTime.substring(5, 7) == "03") {
-        mar++;
-      } else if (element.dateTime.substring(5, 7) == "04") {
-        apr++;
-      } else if (element.dateTime.substring(5, 7) == "05") {
-        may++;
-      } else if (element.dateTime.substring(5, 7) == "06") {
-        jun++;
-      } else if (element.dateTime.substring(5, 7) == "07") {
-        jul++;
-      } else if (element.dateTime.substring(5, 7) == "08") {
-        aug++;
-      } else if (element.dateTime.substring(5, 7) == "09") {
-        sep++;
-      } else if (element.dateTime.substring(5, 7) == "10") {
-        oct++;
-      } else if (element.dateTime.substring(5, 7) == "11") {
-        nov++;
-      } else if (element.dateTime.substring(5, 7) == "12") {
-        dec++;
-      }
-    }
+    currentFilteredComplaintList =
+        widget._decisionBoardUseCase.state.complaintList;
+
+    applyAllMonthsValues(currentFilteredComplaintList);
   }
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Stack(
-        children: <Widget>[
-          AspectRatio(
-            aspectRatio: 1.70,
-            child: Padding(
-              padding: const EdgeInsets.only(
-                right: 18,
-                left: 12,
-                top: 24,
-                bottom: 12,
-              ),
-              child: LineChart(
-                mainData(),
+    if (!isAnySelected()) {
+      currentFilteredComplaintList =
+          widget._decisionBoardUseCase.state.complaintList;
+    }
+
+    return SingleChildScrollView(
+      child: Center(
+        child: Column(
+          children: [
+            AspectRatio(
+              aspectRatio: 1.70,
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  right: 18,
+                  left: 12,
+                  top: 24,
+                  bottom: 12,
+                ),
+                child: LineChart(
+                  mainData(),
+                ),
               ),
             ),
-          ),
-        ],
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(
+                    left: SpacingTokens.hecto,
+                    bottom: SpacingTokens.deka,
+                  ),
+                  child: Text(
+                    'Filtrar por ano:',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Row(
+                      children: [
+                        Checkbox(
+                          value: checkboxValueOne,
+                          onChanged: (value) => setState(
+                            () {
+                              currentFilteredComplaintList =
+                                  applyYearFilter(value!, "2023");
+                              checkboxValueOne = value;
+                            },
+                          ),
+                        ),
+                        Text(DateTime.now().year.toString()),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Checkbox(
+                          value: checkboxValueTwo,
+                          onChanged: (value) => setState(
+                            () {
+                              currentFilteredComplaintList =
+                                  applyYearFilter(value!, "2022");
+
+                              checkboxValueTwo = value;
+                            },
+                          ),
+                        ),
+                        Text((DateTime.now().year - 1).toString()),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Checkbox(
+                          value: checkboxValueThree,
+                          onChanged: (value) => setState(
+                            () {
+                              currentFilteredComplaintList =
+                                  applyYearFilter(value!, "2021");
+
+                              checkboxValueThree = value;
+                            },
+                          ),
+                        ),
+                        Text((DateTime.now().year - 2).toString()),
+                      ],
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Row(
+                      children: [
+                        Checkbox(
+                          value: checkboxValueFour,
+                          onChanged: (value) => setState(
+                            () {
+                              currentFilteredComplaintList =
+                                  applyYearFilter(value!, "2020");
+                              checkboxValueFour = value;
+                            },
+                          ),
+                        ),
+                        Text((DateTime.now().year - 3).toString()),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Checkbox(
+                          value: checkboxValueFive,
+                          onChanged: (value) => setState(
+                            () {
+                              currentFilteredComplaintList =
+                                  applyYearFilter(value!, "2019");
+
+                              checkboxValueFive = value;
+                            },
+                          ),
+                        ),
+                        Text((DateTime.now().year - 4).toString()),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Checkbox(
+                          value: checkboxValueSix,
+                          onChanged: (value) => setState(
+                            () {
+                              currentFilteredComplaintList =
+                                  applyYearFilter(value!, "2018");
+
+                              checkboxValueSix = value;
+                            },
+                          ),
+                        ),
+                        Text((DateTime.now().year - 5).toString()),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -128,14 +247,10 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
     if (value.toDouble() == 0) {
       text = "0";
     } else if (value.toDouble() ==
-        (widget._decisionBoardUseCase.state.complaintList.length * 0.50)
-            .toInt()) {
-      text = (widget._decisionBoardUseCase.state.complaintList.length * 0.50)
-          .toInt()
-          .toString();
-    } else if (value.toDouble() ==
-        widget._decisionBoardUseCase.state.complaintList.length) {
-      text = widget._decisionBoardUseCase.state.complaintList.length.toString();
+        (currentFilteredComplaintList.length * 0.50).toInt()) {
+      text = (currentFilteredComplaintList.length * 0.50).toInt().toString();
+    } else if (value.toDouble() == currentFilteredComplaintList.length) {
+      text = currentFilteredComplaintList.length.toString();
     } else {
       return Container();
     }
@@ -195,7 +310,7 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
       minX: 0,
       maxX: 11,
       minY: 0,
-      maxY: widget._decisionBoardUseCase.state.complaintList.length.toDouble(),
+      maxY: currentFilteredComplaintList.length.toDouble(),
       lineBarsData: [
         LineChartBarData(
           spots: [
@@ -232,5 +347,120 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
         ),
       ],
     );
+  }
+
+  void resetAllMonthsValues() {
+    jan = 0;
+    feb = 0;
+    mar = 0;
+    apr = 0;
+    may = 0;
+    jun = 0;
+    jul = 0;
+    aug = 0;
+    sep = 0;
+    oct = 0;
+    nov = 0;
+    dec = 0;
+  }
+
+  void applyAllMonthsValues(List<ComplaintModel> complaintList) {
+    resetAllMonthsValues();
+
+    for (var element in complaintList) {
+      if (element.dateTime.substring(5, 7) == "01") {
+        jan++;
+      } else if (element.dateTime.substring(5, 7) == "02") {
+        feb++;
+      } else if (element.dateTime.substring(5, 7) == "03") {
+        mar++;
+      } else if (element.dateTime.substring(5, 7) == "04") {
+        apr++;
+      } else if (element.dateTime.substring(5, 7) == "05") {
+        may++;
+      } else if (element.dateTime.substring(5, 7) == "06") {
+        jun++;
+      } else if (element.dateTime.substring(5, 7) == "07") {
+        jul++;
+      } else if (element.dateTime.substring(5, 7) == "08") {
+        aug++;
+      } else if (element.dateTime.substring(5, 7) == "09") {
+        sep++;
+      } else if (element.dateTime.substring(5, 7) == "10") {
+        oct++;
+      } else if (element.dateTime.substring(5, 7) == "11") {
+        nov++;
+      } else if (element.dateTime.substring(5, 7) == "12") {
+        dec++;
+      }
+    }
+  }
+
+  bool isAnySelected() {
+    List<bool> boolsList = [
+      checkboxValueOne,
+      checkboxValueTwo,
+      checkboxValueThree,
+      checkboxValueFour,
+      checkboxValueFive,
+      checkboxValueSix,
+      checkboxValueSeven,
+    ];
+
+    return boolsList.contains(true);
+  }
+
+  List<ComplaintModel> applyYearFilter(bool value, String year) {
+    if (value) {
+      if (!isAnySelected()) {
+        List<ComplaintModel> filteredComplaintList = [];
+
+        for (ComplaintModel element
+            in widget._decisionBoardUseCase.state.complaintList) {
+          if (element.dateTime.substring(0, 4) == year) {
+            filteredComplaintList.add(element);
+          }
+        }
+
+        currentFilteredComplaintList = filteredComplaintList;
+        applyAllMonthsValues(currentFilteredComplaintList);
+        return currentFilteredComplaintList;
+      } else {
+        List<ComplaintModel> filteredComplaintList = [];
+
+        for (ComplaintModel element
+            in widget._decisionBoardUseCase.state.complaintList) {
+          if (element.dateTime.substring(0, 4) == year) {
+            if (!currentFilteredComplaintList.contains(element)) {
+              filteredComplaintList.add(element);
+            }
+          }
+        }
+
+        currentFilteredComplaintList =
+            filteredComplaintList + currentFilteredComplaintList;
+        applyAllMonthsValues(currentFilteredComplaintList);
+        return currentFilteredComplaintList;
+      }
+    } else {
+      List<ComplaintModel> filteredComplaintList = [];
+
+      for (ComplaintModel element in currentFilteredComplaintList) {
+        if (element.dateTime.substring(0, 4) != year) {
+          filteredComplaintList.add(element);
+        }
+      }
+
+      if (filteredComplaintList.isEmpty) {
+        currentFilteredComplaintList =
+            widget._decisionBoardUseCase.state.complaintList;
+        applyAllMonthsValues(currentFilteredComplaintList);
+        return currentFilteredComplaintList;
+      } else {
+        currentFilteredComplaintList = filteredComplaintList;
+        applyAllMonthsValues(currentFilteredComplaintList);
+        return currentFilteredComplaintList;
+      }
+    }
   }
 }
