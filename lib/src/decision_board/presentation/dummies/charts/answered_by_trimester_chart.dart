@@ -35,6 +35,19 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
   bool pastFourYearsValue = false;
   bool pastFiveYearsValue = false;
 
+  bool januaryValue = false;
+  bool ferbuaryValue = false;
+  bool marchValue = false;
+  bool aprilValue = false;
+  bool mayValue = false;
+  bool juneValue = false;
+  bool julyValue = false;
+  bool augustValue = false;
+  bool septemberValue = false;
+  bool octoberValue = false;
+  bool novemberValue = false;
+  bool decemberValue = false;
+
   bool dayOneValue = false;
   bool dayTwoValue = false;
   bool dayThreeValue = false;
@@ -66,6 +79,11 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
   bool dayTwentyNineValue = false;
   bool dayThirtyValue = false;
   bool dayThirtyOneValue = false;
+
+  bool nonAnswered = false;
+  bool answered = false;
+  bool solved = false;
+  bool inReply = false;
 
   List<Color> gradientColors = [
     GraphColors.contentColorCyan,
@@ -235,6 +253,216 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
                           ),
                         ),
                         Text(pastFiveYears),
+                      ],
+                    ),
+                  ],
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(
+                    left: SpacingTokens.hecto,
+                    bottom: SpacingTokens.deka,
+                  ),
+                  child: Text(
+                    'Filtrar por meses:',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+                Wrap(
+                  alignment: WrapAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Checkbox(
+                          value: januaryValue,
+                          onChanged: (value) => setState(
+                            () {
+                              januaryValue = value!;
+                              currentFilteredComplaintList =
+                                  applyMonthFilter(value, '01');
+                            },
+                          ),
+                        ),
+                        const Text('Janeiro'),
+                      ],
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Checkbox(
+                          value: ferbuaryValue,
+                          onChanged: (value) => setState(
+                            () {
+                              ferbuaryValue = value!;
+                              currentFilteredComplaintList =
+                                  applyMonthFilter(value, '02');
+                            },
+                          ),
+                        ),
+                        const Text('Fervereiro'),
+                      ],
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Checkbox(
+                          value: marchValue,
+                          onChanged: (value) => setState(
+                            () {
+                              marchValue = value!;
+                              currentFilteredComplaintList =
+                                  applyMonthFilter(value, '03');
+                            },
+                          ),
+                        ),
+                        const Text('Março'),
+                      ],
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Checkbox(
+                          value: aprilValue,
+                          onChanged: (value) => setState(
+                            () {
+                              aprilValue = value!;
+                              currentFilteredComplaintList =
+                                  applyMonthFilter(value, '04');
+                            },
+                          ),
+                        ),
+                        const Text('Abril'),
+                      ],
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Checkbox(
+                          value: mayValue,
+                          onChanged: (value) => setState(
+                            () {
+                              mayValue = value!;
+                              currentFilteredComplaintList =
+                                  applyMonthFilter(value, '05');
+                            },
+                          ),
+                        ),
+                        const Text('Maio'),
+                      ],
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Checkbox(
+                          value: juneValue,
+                          onChanged: (value) => setState(
+                            () {
+                              juneValue = value!;
+                              currentFilteredComplaintList =
+                                  applyMonthFilter(value, '06');
+                            },
+                          ),
+                        ),
+                        const Text('Junho'),
+                      ],
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Checkbox(
+                          value: julyValue,
+                          onChanged: (value) => setState(
+                            () {
+                              julyValue = value!;
+                              currentFilteredComplaintList =
+                                  applyMonthFilter(value, '07');
+                            },
+                          ),
+                        ),
+                        const Text('Julho'),
+                      ],
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Checkbox(
+                          value: augustValue,
+                          onChanged: (value) => setState(
+                            () {
+                              augustValue = value!;
+                              currentFilteredComplaintList =
+                                  applyMonthFilter(value, '08');
+                            },
+                          ),
+                        ),
+                        const Text('Julho'),
+                      ],
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Checkbox(
+                          value: septemberValue,
+                          onChanged: (value) => setState(
+                            () {
+                              septemberValue = value!;
+                              currentFilteredComplaintList =
+                                  applyMonthFilter(value, '09');
+                            },
+                          ),
+                        ),
+                        const Text('Setembro'),
+                      ],
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Checkbox(
+                          value: octoberValue,
+                          onChanged: (value) => setState(
+                            () {
+                              octoberValue = value!;
+                              currentFilteredComplaintList =
+                                  applyMonthFilter(value, '10');
+                            },
+                          ),
+                        ),
+                        const Text('Outubro'),
+                      ],
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Checkbox(
+                          value: novemberValue,
+                          onChanged: (value) => setState(
+                            () {
+                              novemberValue = value!;
+                              currentFilteredComplaintList =
+                                  applyMonthFilter(value, '11');
+                            },
+                          ),
+                        ),
+                        const Text('Novembro'),
+                      ],
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Checkbox(
+                          value: decemberValue,
+                          onChanged: (value) => setState(
+                            () {
+                              decemberValue = value!;
+                              currentFilteredComplaintList =
+                                  applyMonthFilter(value, '12');
+                            },
+                          ),
+                        ),
+                        const Text('Dezembro'),
                       ],
                     ),
                   ],
@@ -771,6 +999,88 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
                     ),
                   ],
                 ),
+                const Padding(
+                  padding: EdgeInsets.only(
+                    left: SpacingTokens.hecto,
+                    bottom: SpacingTokens.deka,
+                  ),
+                  child: Text(
+                    'Filtrar por estado da reclamação:',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+                Wrap(
+                  alignment: WrapAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Checkbox(
+                          value: nonAnswered,
+                          onChanged: (value) => setState(
+                            () {
+                              nonAnswered = value!;
+                              currentFilteredComplaintList =
+                                  applyStatusFilter(value, 'Não respondida');
+                            },
+                          ),
+                        ),
+                        const Text('Não respondida'),
+                      ],
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Checkbox(
+                          value: answered,
+                          onChanged: (value) => setState(
+                            () {
+                              answered = value!;
+                              currentFilteredComplaintList =
+                                  applyStatusFilter(value, 'Respondida');
+                            },
+                          ),
+                        ),
+                        const Text('Respondida'),
+                      ],
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Checkbox(
+                          value: solved,
+                          onChanged: (value) => setState(
+                            () {
+                              solved = value!;
+                              currentFilteredComplaintList =
+                                  applyStatusFilter(value, 'Resolvido');
+                            },
+                          ),
+                        ),
+                        const Text('Resolvido'),
+                      ],
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Checkbox(
+                          value: inReply,
+                          onChanged: (value) => setState(
+                            () {
+                              inReply = value!;
+                              currentFilteredComplaintList =
+                                  applyStatusFilter(value, 'Em réplica');
+                            },
+                          ),
+                        ),
+                        const Text('Em réplica'),
+                      ],
+                    ),
+                  ],
+                ),
               ],
             ),
           ],
@@ -973,6 +1283,18 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
       pastThreeYearsValue,
       pastFourYearsValue,
       pastFiveYearsValue,
+      januaryValue,
+      ferbuaryValue,
+      marchValue,
+      aprilValue,
+      mayValue,
+      juneValue,
+      julyValue,
+      augustValue,
+      septemberValue,
+      octoberValue,
+      novemberValue,
+      decemberValue,
       dayOneValue,
       dayTwoValue,
       dayThreeValue,
@@ -1004,6 +1326,10 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
       dayTwentyNineValue,
       dayThirtyValue,
       dayThirtyOneValue,
+      nonAnswered,
+      answered,
+      solved,
+      inReply,
     ];
 
     boolList.removeWhere((element) => element == false);
@@ -1034,6 +1360,49 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
     }
 
     return selectedYears;
+  }
+
+  List<String> wichMonthsAreSelected() {
+    List<String> selectedMonths = [];
+
+    if (januaryValue) {
+      selectedMonths.add("01");
+    }
+    if (ferbuaryValue) {
+      selectedMonths.add("02");
+    }
+    if (marchValue) {
+      selectedMonths.add("03");
+    }
+    if (aprilValue) {
+      selectedMonths.add("04");
+    }
+    if (mayValue) {
+      selectedMonths.add("05");
+    }
+    if (juneValue) {
+      selectedMonths.add("06");
+    }
+    if (julyValue) {
+      selectedMonths.add("07");
+    }
+    if (augustValue) {
+      selectedMonths.add("08");
+    }
+    if (septemberValue) {
+      selectedMonths.add("09");
+    }
+    if (octoberValue) {
+      selectedMonths.add("10");
+    }
+    if (novemberValue) {
+      selectedMonths.add("11");
+    }
+    if (decemberValue) {
+      selectedMonths.add("12");
+    }
+
+    return selectedMonths;
   }
 
   List<String> wichDaysAreSelected() {
@@ -1136,38 +1505,69 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
     return selectedDays;
   }
 
-  List<ComplaintModel> addSelectedItemsFilter() {
-    List<String> selectedYears = wichYearsAreSelected();
-    List<String> selectedDays = wichDaysAreSelected();
+  List<String> wichStatesAreSelected() {
+    List<String> selectedStates = [];
 
+    if (nonAnswered) {
+      selectedStates.add('Não respondida');
+    }
+
+    if (answered) {
+      selectedStates.add('Respondida');
+    }
+    if (solved) {
+      selectedStates.add('Resolvido');
+    }
+    if (inReply) {
+      selectedStates.add('Em réplica');
+    }
+
+    return selectedStates;
+  }
+
+  List<ComplaintModel> addSelectedItemsFilter() {
     List<ComplaintModel> filteredComplaintList = [];
 
     for (ComplaintModel element
         in widget._decisionBoardUseCase.state.complaintList) {
-      if (selectedYears.isNotEmpty) {
-        if (selectedYears.contains(element.dateTime.substring(0, 4))) {
-          if (selectedDays.isNotEmpty) {
-            if (selectedDays.contains(element.dateTime.substring(8, 10))) {
-              filteredComplaintList.add(element);
-            }
-          } else {
-            if (selectedYears.isNotEmpty) {
-              if (selectedYears.contains(element.dateTime.substring(0, 4))) {
-                filteredComplaintList.add(element);
-              }
-            }
-          }
-        }
-      } else {
-        if (selectedDays.contains(element.dateTime.substring(8, 10))) {
-          filteredComplaintList.add(element);
-        }
+      if (passesFilters(element)) {
+        filteredComplaintList.add(element);
       }
     }
 
     currentFilteredComplaintList = filteredComplaintList;
     applyAllMonthsValues(currentFilteredComplaintList);
     return currentFilteredComplaintList;
+  }
+
+  bool passesFilters(ComplaintModel element) {
+    return passesYearFilter(element) &&
+        passesDayFilter(element) &&
+        passesMonthFilter(element) &&
+        passesStatusFilter(element);
+  }
+
+  bool passesYearFilter(ComplaintModel element) {
+    List<String> selectedYears = wichYearsAreSelected();
+    return selectedYears.isEmpty ||
+        selectedYears.contains(element.dateTime.substring(0, 4));
+  }
+
+  bool passesMonthFilter(ComplaintModel element) {
+    List<String> selectedMonths = wichMonthsAreSelected();
+    return selectedMonths.isEmpty ||
+        selectedMonths.contains(element.dateTime.substring(5, 7));
+  }
+
+  bool passesDayFilter(ComplaintModel element) {
+    List<String> selectedDays = wichDaysAreSelected();
+    return selectedDays.isEmpty ||
+        selectedDays.contains(element.dateTime.substring(8, 10));
+  }
+
+  bool passesStatusFilter(ComplaintModel element) {
+    List<String> selectedStates = wichStatesAreSelected();
+    return selectedStates.isEmpty || selectedStates.contains(element.status);
   }
 
   List<ComplaintModel> applyYearFilter(bool value, String year) {
@@ -1193,6 +1593,29 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
     }
   }
 
+  List<ComplaintModel> applyMonthFilter(bool value, String month) {
+    if (value) {
+      if (isAnySelected() == 1) {
+        List<ComplaintModel> filteredComplaintList = [];
+
+        for (ComplaintModel element
+            in widget._decisionBoardUseCase.state.complaintList) {
+          if (element.dateTime.substring(5, 7) == month) {
+            filteredComplaintList.add(element);
+          }
+        }
+
+        currentFilteredComplaintList = filteredComplaintList;
+        applyAllMonthsValues(currentFilteredComplaintList);
+        return currentFilteredComplaintList;
+      } else {
+        return addSelectedItemsFilter();
+      }
+    } else {
+      return addSelectedItemsFilter();
+    }
+  }
+
   List<ComplaintModel> applyDayFilter(bool value, String day) {
     if (value) {
       if (isAnySelected() == 1) {
@@ -1201,6 +1624,29 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
         for (ComplaintModel element
             in widget._decisionBoardUseCase.state.complaintList) {
           if (element.dateTime.substring(8, 10) == day) {
+            filteredComplaintList.add(element);
+          }
+        }
+
+        currentFilteredComplaintList = filteredComplaintList;
+        applyAllMonthsValues(currentFilteredComplaintList);
+        return currentFilteredComplaintList;
+      } else {
+        return addSelectedItemsFilter();
+      }
+    } else {
+      return addSelectedItemsFilter();
+    }
+  }
+
+  List<ComplaintModel> applyStatusFilter(bool value, String day) {
+    if (value) {
+      if (isAnySelected() == 1) {
+        List<ComplaintModel> filteredComplaintList = [];
+
+        for (ComplaintModel element
+            in widget._decisionBoardUseCase.state.complaintList) {
+          if (element.status == day) {
             filteredComplaintList.add(element);
           }
         }
