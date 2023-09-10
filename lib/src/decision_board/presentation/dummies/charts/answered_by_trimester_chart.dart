@@ -108,6 +108,12 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
   double nov = 0;
   double dec = 0;
 
+  bool showFilterByYears = false;
+  bool showFilterByMonths = false;
+  bool showFilterByDays = false;
+  bool showFilterByStates = false;
+  bool showFilterByKeyWord = false;
+
   @override
   void initState() {
     super.initState();
@@ -150,1033 +156,1187 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Padding(
-                    padding: EdgeInsets.only(
-                      top: SpacingTokens.deka,
-                      left: SpacingTokens.hecto,
-                      bottom: SpacingTokens.deka,
-                    ),
-                    child: Text(
-                      'Filtrar por anos:',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                      ),
-                    ),
-                  ),
-                  Wrap(
-                    alignment: WrapAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: currentYearValue,
-                            onChanged: (value) => setState(
-                              () {
-                                currentYearValue = value!;
-                                currentFilteredComplaintList =
-                                    applyYearFilter(value, currentYear);
-                              },
-                            ),
-                          ),
-                          Text(currentYear),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: pastYearValue,
-                            onChanged: (value) => setState(
-                              () {
-                                pastYearValue = value!;
-                                currentFilteredComplaintList =
-                                    applyYearFilter(value, pastYear);
-                              },
-                            ),
-                          ),
-                          Text(pastYear),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: pastTwoYearsValue,
-                            onChanged: (value) => setState(
-                              () {
-                                pastTwoYearsValue = value!;
-                                currentFilteredComplaintList =
-                                    applyYearFilter(value, pastTwoYears);
-                              },
-                            ),
-                          ),
-                          Text(pastTwoYears),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: pastThreeYearsValue,
-                            onChanged: (value) => setState(
-                              () {
-                                pastThreeYearsValue = value!;
-                                currentFilteredComplaintList =
-                                    applyYearFilter(value, pastThreeYears);
-                              },
-                            ),
-                          ),
-                          Text(pastThreeYears),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: pastFourYearsValue,
-                            onChanged: (value) => setState(
-                              () {
-                                pastFourYearsValue = value!;
-                                currentFilteredComplaintList =
-                                    applyYearFilter(value, pastFourYears);
-                              },
-                            ),
-                          ),
-                          Text(pastFourYears),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: pastFiveYearsValue,
-                            onChanged: (value) => setState(
-                              () {
-                                pastFiveYearsValue = value!;
-                                currentFilteredComplaintList =
-                                    applyYearFilter(value, pastFiveYears);
-                              },
-                            ),
-                          ),
-                          Text(pastFiveYears),
-                        ],
-                      ),
-                    ],
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(
-                      top: SpacingTokens.deka,
-                      left: SpacingTokens.hecto,
-                      bottom: SpacingTokens.deka,
-                    ),
-                    child: Text(
-                      'Filtrar por meses:',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                      ),
-                    ),
-                  ),
-                  Wrap(
-                    alignment: WrapAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: januaryValue,
-                            onChanged: (value) => setState(
-                              () {
-                                januaryValue = value!;
-                                currentFilteredComplaintList =
-                                    applyMonthFilter(value, '01');
-                              },
-                            ),
-                          ),
-                          const Text('Janeiro'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: ferbuaryValue,
-                            onChanged: (value) => setState(
-                              () {
-                                ferbuaryValue = value!;
-                                currentFilteredComplaintList =
-                                    applyMonthFilter(value, '02');
-                              },
-                            ),
-                          ),
-                          const Text('Fervereiro'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: marchValue,
-                            onChanged: (value) => setState(
-                              () {
-                                marchValue = value!;
-                                currentFilteredComplaintList =
-                                    applyMonthFilter(value, '03');
-                              },
-                            ),
-                          ),
-                          const Text('Março'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: aprilValue,
-                            onChanged: (value) => setState(
-                              () {
-                                aprilValue = value!;
-                                currentFilteredComplaintList =
-                                    applyMonthFilter(value, '04');
-                              },
-                            ),
-                          ),
-                          const Text('Abril'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: mayValue,
-                            onChanged: (value) => setState(
-                              () {
-                                mayValue = value!;
-                                currentFilteredComplaintList =
-                                    applyMonthFilter(value, '05');
-                              },
-                            ),
-                          ),
-                          const Text('Maio'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: juneValue,
-                            onChanged: (value) => setState(
-                              () {
-                                juneValue = value!;
-                                currentFilteredComplaintList =
-                                    applyMonthFilter(value, '06');
-                              },
-                            ),
-                          ),
-                          const Text('Junho'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: julyValue,
-                            onChanged: (value) => setState(
-                              () {
-                                julyValue = value!;
-                                currentFilteredComplaintList =
-                                    applyMonthFilter(value, '07');
-                              },
-                            ),
-                          ),
-                          const Text('Julho'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: augustValue,
-                            onChanged: (value) => setState(
-                              () {
-                                augustValue = value!;
-                                currentFilteredComplaintList =
-                                    applyMonthFilter(value, '08');
-                              },
-                            ),
-                          ),
-                          const Text('Julho'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: septemberValue,
-                            onChanged: (value) => setState(
-                              () {
-                                septemberValue = value!;
-                                currentFilteredComplaintList =
-                                    applyMonthFilter(value, '09');
-                              },
-                            ),
-                          ),
-                          const Text('Setembro'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: octoberValue,
-                            onChanged: (value) => setState(
-                              () {
-                                octoberValue = value!;
-                                currentFilteredComplaintList =
-                                    applyMonthFilter(value, '10');
-                              },
-                            ),
-                          ),
-                          const Text('Outubro'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: novemberValue,
-                            onChanged: (value) => setState(
-                              () {
-                                novemberValue = value!;
-                                currentFilteredComplaintList =
-                                    applyMonthFilter(value, '11');
-                              },
-                            ),
-                          ),
-                          const Text('Novembro'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: decemberValue,
-                            onChanged: (value) => setState(
-                              () {
-                                decemberValue = value!;
-                                currentFilteredComplaintList =
-                                    applyMonthFilter(value, '12');
-                              },
-                            ),
-                          ),
-                          const Text('Dezembro'),
-                        ],
-                      ),
-                    ],
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(
-                      top: SpacingTokens.deka,
-                      left: SpacingTokens.hecto,
-                      bottom: SpacingTokens.deka,
-                    ),
-                    child: Text(
-                      'Filtrar por dias:',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                      ),
-                    ),
-                  ),
-                  Wrap(
-                    alignment: WrapAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: dayThirtyOneValue,
-                            onChanged: (value) => setState(
-                              () {
-                                dayThirtyOneValue = value!;
-                                currentFilteredComplaintList =
-                                    applyDayFilter(value, "31");
-                              },
-                            ),
-                          ),
-                          const Text('31'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: dayThirtyValue,
-                            onChanged: (value) => setState(
-                              () {
-                                dayThirtyValue = value!;
-                                currentFilteredComplaintList =
-                                    applyDayFilter(value, "30");
-                              },
-                            ),
-                          ),
-                          const Text('30'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: dayTwentyNineValue,
-                            onChanged: (value) => setState(
-                              () {
-                                dayTwentyNineValue = value!;
-                                currentFilteredComplaintList =
-                                    applyDayFilter(value, "29");
-                              },
-                            ),
-                          ),
-                          const Text('29'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: dayTwentyEightValue,
-                            onChanged: (value) => setState(
-                              () {
-                                dayTwentyEightValue = value!;
-                                currentFilteredComplaintList =
-                                    applyDayFilter(value, "28");
-                              },
-                            ),
-                          ),
-                          const Text('28'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: dayTwentySevenValue,
-                            onChanged: (value) => setState(
-                              () {
-                                dayTwentySevenValue = value!;
-                                currentFilteredComplaintList =
-                                    applyDayFilter(value, "27");
-                              },
-                            ),
-                          ),
-                          const Text('27'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: dayTwentySixValue,
-                            onChanged: (value) => setState(
-                              () {
-                                dayTwentySixValue = value!;
-                                currentFilteredComplaintList =
-                                    applyDayFilter(value, "26");
-                              },
-                            ),
-                          ),
-                          const Text('26'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Checkbox(
-                                value: dayTwentyFiveValue,
-                                onChanged: (value) => setState(
-                                  () {
-                                    dayTwentyFiveValue = value!;
-                                    currentFilteredComplaintList =
-                                        applyDayFilter(value, "25");
-                                  },
-                                ),
-                              ),
-                              const Text('25'),
-                            ],
-                          ),
-                          Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Checkbox(
-                                value: dayTwentyFourValue,
-                                onChanged: (value) => setState(
-                                  () {
-                                    dayTwentyFourValue = value!;
-                                    currentFilteredComplaintList =
-                                        applyDayFilter(value, "24");
-                                  },
-                                ),
-                              ),
-                              const Text('24'),
-                            ],
-                          ),
-                          Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Checkbox(
-                                value: dayTwentyThreeValue,
-                                onChanged: (value) => setState(
-                                  () {
-                                    dayTwentyThreeValue = value!;
-                                    currentFilteredComplaintList =
-                                        applyDayFilter(value, "23");
-                                  },
-                                ),
-                              ),
-                              const Text('23'),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: dayTwentyTwoValue,
-                            onChanged: (value) => setState(
-                              () {
-                                dayTwentyTwoValue = value!;
-                                currentFilteredComplaintList =
-                                    applyDayFilter(value, "22");
-                              },
-                            ),
-                          ),
-                          const Text('22'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: dayTwentyOneValue,
-                            onChanged: (value) => setState(
-                              () {
-                                dayTwentyOneValue = value!;
-                                currentFilteredComplaintList =
-                                    applyDayFilter(value, "21");
-                              },
-                            ),
-                          ),
-                          const Text('21'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: dayTwentyValue,
-                            onChanged: (value) => setState(
-                              () {
-                                dayTwentyValue = value!;
-                                currentFilteredComplaintList =
-                                    applyDayFilter(value, "20");
-                              },
-                            ),
-                          ),
-                          const Text('20'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Checkbox(
-                                value: dayNineteenValue,
-                                onChanged: (value) => setState(
-                                  () {
-                                    dayNineteenValue = value!;
-                                    currentFilteredComplaintList =
-                                        applyDayFilter(value, "19");
-                                  },
-                                ),
-                              ),
-                              const Text('19'),
-                            ],
-                          ),
-                          Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Checkbox(
-                                value: dayEighteenValue,
-                                onChanged: (value) => setState(
-                                  () {
-                                    dayEighteenValue = value!;
-                                    currentFilteredComplaintList =
-                                        applyDayFilter(value, "18");
-                                  },
-                                ),
-                              ),
-                              const Text('18'),
-                            ],
-                          ),
-                          Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Checkbox(
-                                value: daySeventeenValue,
-                                onChanged: (value) => setState(
-                                  () {
-                                    daySeventeenValue = value!;
-                                    currentFilteredComplaintList =
-                                        applyDayFilter(value, "17");
-                                  },
-                                ),
-                              ),
-                              const Text('17'),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: daySixteenValue,
-                            onChanged: (value) => setState(
-                              () {
-                                daySixteenValue = value!;
-                                currentFilteredComplaintList =
-                                    applyDayFilter(value, "16");
-                              },
-                            ),
-                          ),
-                          const Text('16'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: dayFifteenValue,
-                            onChanged: (value) => setState(
-                              () {
-                                dayFifteenValue = value!;
-                                currentFilteredComplaintList =
-                                    applyDayFilter(value, "15");
-                              },
-                            ),
-                          ),
-                          const Text('15'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: dayFourteenValue,
-                            onChanged: (value) => setState(
-                              () {
-                                dayFourteenValue = value!;
-                                currentFilteredComplaintList =
-                                    applyDayFilter(value, "14");
-                              },
-                            ),
-                          ),
-                          const Text('14'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: dayThirteenValue,
-                            onChanged: (value) => setState(
-                              () {
-                                dayThirteenValue = value!;
-                                currentFilteredComplaintList =
-                                    applyDayFilter(value, "13");
-                              },
-                            ),
-                          ),
-                          const Text('13'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: dayTwelveValue,
-                            onChanged: (value) => setState(
-                              () {
-                                dayTwelveValue = value!;
-                                currentFilteredComplaintList =
-                                    applyDayFilter(value, "12");
-                              },
-                            ),
-                          ),
-                          const Text('12'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: dayElevenValue,
-                            onChanged: (value) => setState(
-                              () {
-                                dayElevenValue = value!;
-                                currentFilteredComplaintList =
-                                    applyDayFilter(value, "11");
-                              },
-                            ),
-                          ),
-                          const Text('11'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Checkbox(
-                                value: dayTenValue,
-                                onChanged: (value) => setState(
-                                  () {
-                                    dayTenValue = value!;
-                                    currentFilteredComplaintList =
-                                        applyDayFilter(value, "10");
-                                  },
-                                ),
-                              ),
-                              const Text('10'),
-                            ],
-                          ),
-                          Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Checkbox(
-                                value: dayNineValue,
-                                onChanged: (value) => setState(
-                                  () {
-                                    dayNineValue = value!;
-                                    currentFilteredComplaintList =
-                                        applyDayFilter(value, "09");
-                                  },
-                                ),
-                              ),
-                              const Text('09'),
-                            ],
-                          ),
-                          Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Checkbox(
-                                value: dayEightValue,
-                                onChanged: (value) => setState(
-                                  () {
-                                    dayEightValue = value!;
-                                    currentFilteredComplaintList =
-                                        applyDayFilter(value, "08");
-                                  },
-                                ),
-                              ),
-                              const Text('08'),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: daySevenValue,
-                            onChanged: (value) => setState(
-                              () {
-                                daySevenValue = value!;
-                                currentFilteredComplaintList =
-                                    applyDayFilter(value, "07");
-                              },
-                            ),
-                          ),
-                          const Text('07'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: daySixValue,
-                            onChanged: (value) => setState(
-                              () {
-                                daySixValue = value!;
-                                currentFilteredComplaintList =
-                                    applyDayFilter(value, "06");
-                              },
-                            ),
-                          ),
-                          const Text('06'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: dayFiveValue,
-                            onChanged: (value) => setState(
-                              () {
-                                dayFiveValue = value!;
-                                currentFilteredComplaintList =
-                                    applyDayFilter(value, "05");
-                              },
-                            ),
-                          ),
-                          const Text('05'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: dayFourValue,
-                            onChanged: (value) => setState(
-                              () {
-                                dayFourValue = value!;
-                                currentFilteredComplaintList =
-                                    applyDayFilter(value, "04");
-                              },
-                            ),
-                          ),
-                          const Text('04'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: dayThreeValue,
-                            onChanged: (value) => setState(
-                              () {
-                                dayThreeValue = value!;
-                                currentFilteredComplaintList =
-                                    applyDayFilter(value, "03");
-                              },
-                            ),
-                          ),
-                          const Text('03'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: dayTwoValue,
-                            onChanged: (value) => setState(
-                              () {
-                                dayTwoValue = value!;
-                                currentFilteredComplaintList =
-                                    applyDayFilter(value, "02");
-                              },
-                            ),
-                          ),
-                          const Text('02'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: dayOneValue,
-                            onChanged: (value) => setState(
-                              () {
-                                dayOneValue = value!;
-                                currentFilteredComplaintList =
-                                    applyDayFilter(value, "01");
-                              },
-                            ),
-                          ),
-                          const Text('01'),
-                        ],
-                      ),
-                    ],
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(
-                      top: SpacingTokens.deka,
-                      left: SpacingTokens.hecto,
-                      bottom: SpacingTokens.deka,
-                    ),
-                    child: Text(
-                      'Filtrar por estado da reclamação:',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                      ),
-                    ),
-                  ),
-                  Wrap(
-                    alignment: WrapAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: nonAnswered,
-                            onChanged: (value) => setState(
-                              () {
-                                nonAnswered = value!;
-                                currentFilteredComplaintList =
-                                    applyStatusFilter(value, 'Não respondida');
-                              },
-                            ),
-                          ),
-                          const Text('Não respondida'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: answered,
-                            onChanged: (value) => setState(
-                              () {
-                                answered = value!;
-                                currentFilteredComplaintList =
-                                    applyStatusFilter(value, 'Respondida');
-                              },
-                            ),
-                          ),
-                          const Text('Respondida'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: solved,
-                            onChanged: (value) => setState(
-                              () {
-                                solved = value!;
-                                currentFilteredComplaintList =
-                                    applyStatusFilter(value, 'Resolvido');
-                              },
-                            ),
-                          ),
-                          const Text('Resolvido'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Checkbox(
-                            value: inReply,
-                            onChanged: (value) => setState(
-                              () {
-                                inReply = value!;
-                                currentFilteredComplaintList =
-                                    applyStatusFilter(value, 'Em réplica');
-                              },
-                            ),
-                          ),
-                          const Text('Em réplica'),
-                        ],
-                      ),
-                    ],
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(
-                      top: SpacingTokens.deka,
-                      left: SpacingTokens.hecto,
-                      bottom: SpacingTokens.deka,
-                    ),
-                    child: Text(
-                      'Filtrar por palavras chave:',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: SpacingTokens.hecto,
-                      right: SpacingTokens.hecto,
-                      bottom: SpacingTokens.kilo,
-                    ),
-                    child: TextField(
-                      controller: fieldTextController,
-                      decoration: const InputDecoration(
-                        hintText: 'Exemplo: Adicionar a palavra "Defeituoso"',
-                      ),
-                      onSubmitted: (keyWord) {
-                        if (!keyWordsList.contains(keyWord)) {
-                          setState(() {
-                            keyWordsList.add(keyWord);
-
-                            applyKeyWordFilter(true, keyWord);
-                          });
-                        } else {
-                          final snackBar = SnackBar(
-                            content:
-                                const Text('Essa palavra já foi adicionada!'),
-                            action: SnackBarAction(
-                              label: 'OK',
-                              onPressed: () {},
-                            ),
-                          );
-
-                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                        }
-
-                        fieldTextController.clear();
-                      },
-                    ),
-                  ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
+                      vertical: SpacingTokens.deka,
                       horizontal: SpacingTokens.hecto,
                     ),
-                    child: ListView.builder(
-                      physics: const NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      itemCount: keyWordsList.length,
-                      itemBuilder: (context, index) {
-                        return Column(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          'Filtrar por anos:',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            top: 2,
+                            left: SpacingTokens.deka,
+                          ),
+                          child: InkWell(
+                            onTap: () {
+                              setState(() {
+                                showFilterByYears = !showFilterByYears;
+                              });
+                            },
+                            child: Text(
+                              showFilterByYears
+                                  ? 'Mostrar menos ▼'
+                                  : 'Mostrar mais ▶︎',
+                              style: const TextStyle(
+                                color: BaseColors.purpleButton,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  showFilterByYears
+                      ? Wrap(
+                          alignment: WrapAlignment.spaceBetween,
                           children: [
                             Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisSize: MainAxisSize.min,
                               children: [
-                                Text(keyWordsList[index]),
-                                GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      applyKeyWordFilter(
-                                        false,
-                                        keyWordsList[index],
-                                      );
-                                    });
-                                  },
-                                  child: const Icon(Icons.close),
+                                Checkbox(
+                                  value: currentYearValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      currentYearValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyYearFilter(value, currentYear);
+                                    },
+                                  ),
+                                ),
+                                Text(currentYear),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: pastYearValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      pastYearValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyYearFilter(value, pastYear);
+                                    },
+                                  ),
+                                ),
+                                Text(pastYear),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: pastTwoYearsValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      pastTwoYearsValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyYearFilter(value, pastTwoYears);
+                                    },
+                                  ),
+                                ),
+                                Text(pastTwoYears),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: pastThreeYearsValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      pastThreeYearsValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyYearFilter(
+                                              value, pastThreeYears);
+                                    },
+                                  ),
+                                ),
+                                Text(pastThreeYears),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: pastFourYearsValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      pastFourYearsValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyYearFilter(value, pastFourYears);
+                                    },
+                                  ),
+                                ),
+                                Text(pastFourYears),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: pastFiveYearsValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      pastFiveYearsValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyYearFilter(value, pastFiveYears);
+                                    },
+                                  ),
+                                ),
+                                Text(pastFiveYears),
+                              ],
+                            ),
+                          ],
+                        )
+                      : Container(),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: SpacingTokens.deka,
+                      horizontal: SpacingTokens.hecto,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          'Filtrar por meses:',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            top: 2,
+                            left: SpacingTokens.deka,
+                          ),
+                          child: InkWell(
+                            onTap: () {
+                              setState(() {
+                                showFilterByMonths = !showFilterByMonths;
+                              });
+                            },
+                            child: Text(
+                              showFilterByMonths
+                                  ? 'Mostrar menos ▼'
+                                  : 'Mostrar mais ▶︎',
+                              style: const TextStyle(
+                                color: BaseColors.purpleButton,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  showFilterByMonths
+                      ? Wrap(
+                          alignment: WrapAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: januaryValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      januaryValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyMonthFilter(value, '01');
+                                    },
+                                  ),
+                                ),
+                                const Text('Janeiro'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: ferbuaryValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      ferbuaryValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyMonthFilter(value, '02');
+                                    },
+                                  ),
+                                ),
+                                const Text('Fervereiro'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: marchValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      marchValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyMonthFilter(value, '03');
+                                    },
+                                  ),
+                                ),
+                                const Text('Março'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: aprilValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      aprilValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyMonthFilter(value, '04');
+                                    },
+                                  ),
+                                ),
+                                const Text('Abril'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: mayValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      mayValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyMonthFilter(value, '05');
+                                    },
+                                  ),
+                                ),
+                                const Text('Maio'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: juneValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      juneValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyMonthFilter(value, '06');
+                                    },
+                                  ),
+                                ),
+                                const Text('Junho'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: julyValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      julyValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyMonthFilter(value, '07');
+                                    },
+                                  ),
+                                ),
+                                const Text('Julho'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: augustValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      augustValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyMonthFilter(value, '08');
+                                    },
+                                  ),
+                                ),
+                                const Text('Julho'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: septemberValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      septemberValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyMonthFilter(value, '09');
+                                    },
+                                  ),
+                                ),
+                                const Text('Setembro'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: octoberValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      octoberValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyMonthFilter(value, '10');
+                                    },
+                                  ),
+                                ),
+                                const Text('Outubro'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: novemberValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      novemberValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyMonthFilter(value, '11');
+                                    },
+                                  ),
+                                ),
+                                const Text('Novembro'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: decemberValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      decemberValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyMonthFilter(value, '12');
+                                    },
+                                  ),
+                                ),
+                                const Text('Dezembro'),
+                              ],
+                            ),
+                          ],
+                        )
+                      : Container(),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: SpacingTokens.deka,
+                      horizontal: SpacingTokens.hecto,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          'Filtrar por dias:',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            top: 2,
+                            left: SpacingTokens.deka,
+                          ),
+                          child: InkWell(
+                            onTap: () {
+                              setState(() {
+                                showFilterByDays = !showFilterByDays;
+                              });
+                            },
+                            child: Text(
+                              showFilterByDays
+                                  ? 'Mostrar menos ▼'
+                                  : 'Mostrar mais ▶︎',
+                              style: const TextStyle(
+                                color: BaseColors.purpleButton,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  showFilterByDays
+                      ? Wrap(
+                          alignment: WrapAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: dayThirtyOneValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      dayThirtyOneValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyDayFilter(value, "31");
+                                    },
+                                  ),
+                                ),
+                                const Text('31'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: dayThirtyValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      dayThirtyValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyDayFilter(value, "30");
+                                    },
+                                  ),
+                                ),
+                                const Text('30'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: dayTwentyNineValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      dayTwentyNineValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyDayFilter(value, "29");
+                                    },
+                                  ),
+                                ),
+                                const Text('29'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: dayTwentyEightValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      dayTwentyEightValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyDayFilter(value, "28");
+                                    },
+                                  ),
+                                ),
+                                const Text('28'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: dayTwentySevenValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      dayTwentySevenValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyDayFilter(value, "27");
+                                    },
+                                  ),
+                                ),
+                                const Text('27'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: dayTwentySixValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      dayTwentySixValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyDayFilter(value, "26");
+                                    },
+                                  ),
+                                ),
+                                const Text('26'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Checkbox(
+                                      value: dayTwentyFiveValue,
+                                      onChanged: (value) => setState(
+                                        () {
+                                          dayTwentyFiveValue = value!;
+                                          currentFilteredComplaintList =
+                                              applyDayFilter(value, "25");
+                                        },
+                                      ),
+                                    ),
+                                    const Text('25'),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Checkbox(
+                                      value: dayTwentyFourValue,
+                                      onChanged: (value) => setState(
+                                        () {
+                                          dayTwentyFourValue = value!;
+                                          currentFilteredComplaintList =
+                                              applyDayFilter(value, "24");
+                                        },
+                                      ),
+                                    ),
+                                    const Text('24'),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Checkbox(
+                                      value: dayTwentyThreeValue,
+                                      onChanged: (value) => setState(
+                                        () {
+                                          dayTwentyThreeValue = value!;
+                                          currentFilteredComplaintList =
+                                              applyDayFilter(value, "23");
+                                        },
+                                      ),
+                                    ),
+                                    const Text('23'),
+                                  ],
                                 ),
                               ],
                             ),
-                            const Divider(
-                              thickness: 1,
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: dayTwentyTwoValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      dayTwentyTwoValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyDayFilter(value, "22");
+                                    },
+                                  ),
+                                ),
+                                const Text('22'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: dayTwentyOneValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      dayTwentyOneValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyDayFilter(value, "21");
+                                    },
+                                  ),
+                                ),
+                                const Text('21'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: dayTwentyValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      dayTwentyValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyDayFilter(value, "20");
+                                    },
+                                  ),
+                                ),
+                                const Text('20'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Checkbox(
+                                      value: dayNineteenValue,
+                                      onChanged: (value) => setState(
+                                        () {
+                                          dayNineteenValue = value!;
+                                          currentFilteredComplaintList =
+                                              applyDayFilter(value, "19");
+                                        },
+                                      ),
+                                    ),
+                                    const Text('19'),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Checkbox(
+                                      value: dayEighteenValue,
+                                      onChanged: (value) => setState(
+                                        () {
+                                          dayEighteenValue = value!;
+                                          currentFilteredComplaintList =
+                                              applyDayFilter(value, "18");
+                                        },
+                                      ),
+                                    ),
+                                    const Text('18'),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Checkbox(
+                                      value: daySeventeenValue,
+                                      onChanged: (value) => setState(
+                                        () {
+                                          daySeventeenValue = value!;
+                                          currentFilteredComplaintList =
+                                              applyDayFilter(value, "17");
+                                        },
+                                      ),
+                                    ),
+                                    const Text('17'),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: daySixteenValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      daySixteenValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyDayFilter(value, "16");
+                                    },
+                                  ),
+                                ),
+                                const Text('16'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: dayFifteenValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      dayFifteenValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyDayFilter(value, "15");
+                                    },
+                                  ),
+                                ),
+                                const Text('15'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: dayFourteenValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      dayFourteenValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyDayFilter(value, "14");
+                                    },
+                                  ),
+                                ),
+                                const Text('14'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: dayThirteenValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      dayThirteenValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyDayFilter(value, "13");
+                                    },
+                                  ),
+                                ),
+                                const Text('13'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: dayTwelveValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      dayTwelveValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyDayFilter(value, "12");
+                                    },
+                                  ),
+                                ),
+                                const Text('12'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: dayElevenValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      dayElevenValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyDayFilter(value, "11");
+                                    },
+                                  ),
+                                ),
+                                const Text('11'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Checkbox(
+                                      value: dayTenValue,
+                                      onChanged: (value) => setState(
+                                        () {
+                                          dayTenValue = value!;
+                                          currentFilteredComplaintList =
+                                              applyDayFilter(value, "10");
+                                        },
+                                      ),
+                                    ),
+                                    const Text('10'),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Checkbox(
+                                      value: dayNineValue,
+                                      onChanged: (value) => setState(
+                                        () {
+                                          dayNineValue = value!;
+                                          currentFilteredComplaintList =
+                                              applyDayFilter(value, "09");
+                                        },
+                                      ),
+                                    ),
+                                    const Text('09'),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Checkbox(
+                                      value: dayEightValue,
+                                      onChanged: (value) => setState(
+                                        () {
+                                          dayEightValue = value!;
+                                          currentFilteredComplaintList =
+                                              applyDayFilter(value, "08");
+                                        },
+                                      ),
+                                    ),
+                                    const Text('08'),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: daySevenValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      daySevenValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyDayFilter(value, "07");
+                                    },
+                                  ),
+                                ),
+                                const Text('07'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: daySixValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      daySixValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyDayFilter(value, "06");
+                                    },
+                                  ),
+                                ),
+                                const Text('06'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: dayFiveValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      dayFiveValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyDayFilter(value, "05");
+                                    },
+                                  ),
+                                ),
+                                const Text('05'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: dayFourValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      dayFourValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyDayFilter(value, "04");
+                                    },
+                                  ),
+                                ),
+                                const Text('04'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: dayThreeValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      dayThreeValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyDayFilter(value, "03");
+                                    },
+                                  ),
+                                ),
+                                const Text('03'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: dayTwoValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      dayTwoValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyDayFilter(value, "02");
+                                    },
+                                  ),
+                                ),
+                                const Text('02'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: dayOneValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      dayOneValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyDayFilter(value, "01");
+                                    },
+                                  ),
+                                ),
+                                const Text('01'),
+                              ],
                             ),
                           ],
-                        );
-                      },
+                        )
+                      : Container(),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: SpacingTokens.deka,
+                      horizontal: SpacingTokens.hecto,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          'Filtrar por status:',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            top: 2,
+                            left: SpacingTokens.deka,
+                          ),
+                          child: InkWell(
+                            onTap: () {
+                              setState(() {
+                                showFilterByStates = !showFilterByStates;
+                              });
+                            },
+                            child: Text(
+                              showFilterByStates
+                                  ? 'Mostrar menos ▼'
+                                  : 'Mostrar mais ▶︎',
+                              style: const TextStyle(
+                                color: BaseColors.purpleButton,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
+                  showFilterByStates
+                      ? Wrap(
+                          alignment: WrapAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: nonAnswered,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      nonAnswered = value!;
+                                      currentFilteredComplaintList =
+                                          applyStatusFilter(
+                                              value, 'Não respondida');
+                                    },
+                                  ),
+                                ),
+                                const Text('Não respondida'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: answered,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      answered = value!;
+                                      currentFilteredComplaintList =
+                                          applyStatusFilter(
+                                              value, 'Respondida');
+                                    },
+                                  ),
+                                ),
+                                const Text('Respondida'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: solved,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      solved = value!;
+                                      currentFilteredComplaintList =
+                                          applyStatusFilter(value, 'Resolvido');
+                                    },
+                                  ),
+                                ),
+                                const Text('Resolvido'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: inReply,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      inReply = value!;
+                                      currentFilteredComplaintList =
+                                          applyStatusFilter(
+                                              value, 'Em réplica');
+                                    },
+                                  ),
+                                ),
+                                const Text('Em réplica'),
+                              ],
+                            ),
+                          ],
+                        )
+                      : Container(),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: SpacingTokens.deka,
+                      horizontal: SpacingTokens.hecto,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          'Filtrar por palavras chave:',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            top: 2,
+                            left: SpacingTokens.deka,
+                          ),
+                          child: InkWell(
+                            onTap: () {
+                              setState(() {
+                                showFilterByKeyWord = !showFilterByKeyWord;
+                              });
+                            },
+                            child: Text(
+                              showFilterByKeyWord
+                                  ? 'Mostrar menos ▼'
+                                  : 'Mostrar mais ▶︎',
+                              style: const TextStyle(
+                                color: BaseColors.purpleButton,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  showFilterByKeyWord
+                      ? Padding(
+                          padding: const EdgeInsets.only(
+                            left: SpacingTokens.hecto,
+                            right: SpacingTokens.hecto,
+                            bottom: SpacingTokens.kilo,
+                          ),
+                          child: TextField(
+                            controller: fieldTextController,
+                            decoration: const InputDecoration(
+                              hintText:
+                                  'Exemplo: Adicionar a palavra "Defeituoso"',
+                            ),
+                            onSubmitted: (keyWord) {
+                              if (!keyWordsList.contains(keyWord)) {
+                                setState(() {
+                                  keyWordsList.add(keyWord);
+
+                                  applyKeyWordFilter(true, keyWord);
+                                });
+                              } else {
+                                final snackBar = SnackBar(
+                                  content: const Text(
+                                      'Essa palavra já foi adicionada!'),
+                                  action: SnackBarAction(
+                                    label: 'OK',
+                                    onPressed: () {},
+                                  ),
+                                );
+
+                                ScaffoldMessenger.of(context)
+                                    .showSnackBar(snackBar);
+                              }
+
+                              fieldTextController.clear();
+                            },
+                          ),
+                        )
+                      : Container(),
+                  showFilterByKeyWord
+                      ? Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: SpacingTokens.hecto,
+                          ),
+                          child: ListView.builder(
+                            physics: const NeverScrollableScrollPhysics(),
+                            shrinkWrap: true,
+                            itemCount: keyWordsList.length,
+                            itemBuilder: (context, index) {
+                              return Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(keyWordsList[index]),
+                                      GestureDetector(
+                                        onTap: () {
+                                          setState(() {
+                                            applyKeyWordFilter(
+                                              false,
+                                              keyWordsList[index],
+                                            );
+                                          });
+                                        },
+                                        child: const Icon(Icons.close),
+                                      ),
+                                    ],
+                                  ),
+                                  const Divider(
+                                    thickness: 1,
+                                  ),
+                                ],
+                              );
+                            },
+                          ),
+                        )
+                      : Padding(
+                          padding: const EdgeInsets.only(
+                            bottom: SpacingTokens.kilo,
+                          ),
+                          child: Container(),
+                        ),
                 ],
               ),
               ConstrainedBox(
@@ -1323,11 +1483,11 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
             FlSpot(10, nov),
             FlSpot(11, dec),
           ],
-          isCurved: true,
+          isCurved: false,
           gradient: LinearGradient(
             colors: gradientColors,
           ),
-          barWidth: 5,
+          barWidth: 3,
           isStrokeCapRound: true,
           dotData: const FlDotData(
             show: false,
