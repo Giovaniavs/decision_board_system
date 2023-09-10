@@ -3,6 +3,7 @@ import 'package:decision_board_system/src/shared/data/models/complaint_model.dar
 import 'package:decision_board_system/src/shared/design_system/tokens/color_tokens.dart';
 import 'package:decision_board_system/src/shared/design_system/tokens/spacing_tokens.dart';
 import 'package:decision_board_system/src/shared/widgets/purple_long_button.dart';
+import 'package:decision_board_system/src/shared/widgets/red_long_button.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -1359,6 +1360,26 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
                   ),
                 ),
               ),
+              const SizedBox(
+                height: 15,
+              ),
+              ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 500),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: SpacingTokens.hecto,
+                  ),
+                  child: RedLongButton(
+                    buttonText: 'Resetar filtros',
+                    isLoading: false,
+                    onPressed: () {
+                      setState(() {
+                        resetFilter();
+                      });
+                    },
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -1875,9 +1896,8 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
           }
         }
 
-        currentFilteredComplaintList = filteredComplaintList;
-        applyAllMonthsValues(currentFilteredComplaintList);
-        return currentFilteredComplaintList;
+        applyAllMonthsValues(filteredComplaintList);
+        return filteredComplaintList;
       } else {
         return addSelectedItemsFilter();
       }
@@ -1898,9 +1918,8 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
           }
         }
 
-        currentFilteredComplaintList = filteredComplaintList;
-        applyAllMonthsValues(currentFilteredComplaintList);
-        return currentFilteredComplaintList;
+        applyAllMonthsValues(filteredComplaintList);
+        return filteredComplaintList;
       } else {
         return addSelectedItemsFilter();
       }
@@ -1921,8 +1940,7 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
           }
         }
 
-        currentFilteredComplaintList = filteredComplaintList;
-        applyAllMonthsValues(currentFilteredComplaintList);
+        applyAllMonthsValues(filteredComplaintList);
         return currentFilteredComplaintList;
       } else {
         return addSelectedItemsFilter();
@@ -1944,9 +1962,8 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
           }
         }
 
-        currentFilteredComplaintList = filteredComplaintList;
-        applyAllMonthsValues(currentFilteredComplaintList);
-        return currentFilteredComplaintList;
+        applyAllMonthsValues(filteredComplaintList);
+        return filteredComplaintList;
       } else {
         return addSelectedItemsFilter();
       }
@@ -1972,11 +1989,8 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
           }
         }
 
-        currentFilteredComplaintList = filteredComplaintList;
-
-        applyAllMonthsValues(currentFilteredComplaintList);
-
-        return currentFilteredComplaintList;
+        applyAllMonthsValues(filteredComplaintList);
+        return filteredComplaintList;
       } else {
         return addSelectedItemsFilter();
       }
@@ -1985,5 +1999,87 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
 
       return addSelectedItemsFilter();
     }
+  }
+
+  void resetFilter() {
+    currentFilteredComplaintList = [];
+
+    currentYearValue = false;
+    pastYearValue = false;
+    pastTwoYearsValue = false;
+    pastThreeYearsValue = false;
+    pastFourYearsValue = false;
+    pastFiveYearsValue = false;
+
+    januaryValue = false;
+    ferbuaryValue = false;
+    marchValue = false;
+    aprilValue = false;
+    mayValue = false;
+    juneValue = false;
+    julyValue = false;
+    augustValue = false;
+    septemberValue = false;
+    octoberValue = false;
+    novemberValue = false;
+    decemberValue = false;
+
+    dayOneValue = false;
+    dayTwoValue = false;
+    dayThreeValue = false;
+    dayFourValue = false;
+    dayFiveValue = false;
+    daySixValue = false;
+    daySevenValue = false;
+    dayEightValue = false;
+    dayNineValue = false;
+    dayTenValue = false;
+    dayElevenValue = false;
+    dayTwelveValue = false;
+    dayThirteenValue = false;
+    dayFourteenValue = false;
+    dayFifteenValue = false;
+    daySixteenValue = false;
+    daySeventeenValue = false;
+    dayEighteenValue = false;
+    dayNineteenValue = false;
+    dayTwentyValue = false;
+    dayTwentyOneValue = false;
+    dayTwentyTwoValue = false;
+    dayTwentyThreeValue = false;
+    dayTwentyFourValue = false;
+    dayTwentyFiveValue = false;
+    dayTwentySixValue = false;
+    dayTwentySevenValue = false;
+    dayTwentyEightValue = false;
+    dayTwentyNineValue = false;
+    dayThirtyValue = false;
+    dayThirtyOneValue = false;
+
+    keyWordsList = [];
+
+    nonAnswered = false;
+    answered = false;
+    solved = false;
+    inReply = false;
+
+    jan = 0;
+    feb = 0;
+    mar = 0;
+    apr = 0;
+    may = 0;
+    jun = 0;
+    jul = 0;
+    aug = 0;
+    sep = 0;
+    oct = 0;
+    nov = 0;
+    dec = 0;
+
+    showFilterByYears = true;
+    showFilterByMonths = true;
+    showFilterByDays = true;
+    showFilterByStates = true;
+    showFilterByKeyWord = true;
   }
 }
