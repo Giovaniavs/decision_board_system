@@ -2,6 +2,7 @@ import 'package:decision_board_system/src/decision_board/domain/decision_board_u
 import 'package:decision_board_system/src/shared/data/models/complaint_model.dart';
 import 'package:decision_board_system/src/shared/design_system/tokens/color_tokens.dart';
 import 'package:decision_board_system/src/shared/design_system/tokens/spacing_tokens.dart';
+import 'package:decision_board_system/src/shared/widgets/purple_long_button.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -1177,6 +1178,26 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
                     ),
                   ),
                 ],
+              ),
+              ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 500),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: SpacingTokens.hecto,
+                  ),
+                  child: PurpleLongButton(
+                    buttonText:
+                        'Ver reclamações filtradas: ${currentFilteredComplaintList.length}',
+                    isLoading: false,
+                    onPressed: () {
+                      widget._decisionBoardUseCase.add(
+                        GoToFilteredComplaintsFlow(
+                          filteredComplaintList: currentFilteredComplaintList,
+                        ),
+                      );
+                    },
+                  ),
+                ),
               ),
             ],
           ),

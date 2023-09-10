@@ -19,6 +19,8 @@ mixin _$DecisionBoardState {
   DecisionBoardFlow get flow => throw _privateConstructorUsedError;
   ChartSelected get chartSelected => throw _privateConstructorUsedError;
   List<ComplaintModel> get complaintList => throw _privateConstructorUsedError;
+  List<ComplaintModel> get filteredComplaintList =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $DecisionBoardStateCopyWith<DecisionBoardState> get copyWith =>
@@ -34,7 +36,8 @@ abstract class $DecisionBoardStateCopyWith<$Res> {
   $Res call(
       {DecisionBoardFlow flow,
       ChartSelected chartSelected,
-      List<ComplaintModel> complaintList});
+      List<ComplaintModel> complaintList,
+      List<ComplaintModel> filteredComplaintList});
 
   $DecisionBoardFlowCopyWith<$Res> get flow;
   $ChartSelectedCopyWith<$Res> get chartSelected;
@@ -56,6 +59,7 @@ class _$DecisionBoardStateCopyWithImpl<$Res, $Val extends DecisionBoardState>
     Object? flow = null,
     Object? chartSelected = null,
     Object? complaintList = null,
+    Object? filteredComplaintList = null,
   }) {
     return _then(_value.copyWith(
       flow: null == flow
@@ -69,6 +73,10 @@ class _$DecisionBoardStateCopyWithImpl<$Res, $Val extends DecisionBoardState>
       complaintList: null == complaintList
           ? _value.complaintList
           : complaintList // ignore: cast_nullable_to_non_nullable
+              as List<ComplaintModel>,
+      filteredComplaintList: null == filteredComplaintList
+          ? _value.filteredComplaintList
+          : filteredComplaintList // ignore: cast_nullable_to_non_nullable
               as List<ComplaintModel>,
     ) as $Val);
   }
@@ -101,7 +109,8 @@ abstract class _$$_DecisionBoardStateCopyWith<$Res>
   $Res call(
       {DecisionBoardFlow flow,
       ChartSelected chartSelected,
-      List<ComplaintModel> complaintList});
+      List<ComplaintModel> complaintList,
+      List<ComplaintModel> filteredComplaintList});
 
   @override
   $DecisionBoardFlowCopyWith<$Res> get flow;
@@ -123,6 +132,7 @@ class __$$_DecisionBoardStateCopyWithImpl<$Res>
     Object? flow = null,
     Object? chartSelected = null,
     Object? complaintList = null,
+    Object? filteredComplaintList = null,
   }) {
     return _then(_$_DecisionBoardState(
       flow: null == flow
@@ -137,6 +147,10 @@ class __$$_DecisionBoardStateCopyWithImpl<$Res>
           ? _value._complaintList
           : complaintList // ignore: cast_nullable_to_non_nullable
               as List<ComplaintModel>,
+      filteredComplaintList: null == filteredComplaintList
+          ? _value._filteredComplaintList
+          : filteredComplaintList // ignore: cast_nullable_to_non_nullable
+              as List<ComplaintModel>,
     ));
   }
 }
@@ -147,8 +161,10 @@ class _$_DecisionBoardState implements _DecisionBoardState {
   const _$_DecisionBoardState(
       {required this.flow,
       required this.chartSelected,
-      required final List<ComplaintModel> complaintList})
-      : _complaintList = complaintList;
+      required final List<ComplaintModel> complaintList,
+      required final List<ComplaintModel> filteredComplaintList})
+      : _complaintList = complaintList,
+        _filteredComplaintList = filteredComplaintList;
 
   @override
   final DecisionBoardFlow flow;
@@ -162,9 +178,18 @@ class _$_DecisionBoardState implements _DecisionBoardState {
     return EqualUnmodifiableListView(_complaintList);
   }
 
+  final List<ComplaintModel> _filteredComplaintList;
+  @override
+  List<ComplaintModel> get filteredComplaintList {
+    if (_filteredComplaintList is EqualUnmodifiableListView)
+      return _filteredComplaintList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_filteredComplaintList);
+  }
+
   @override
   String toString() {
-    return 'DecisionBoardState(flow: $flow, chartSelected: $chartSelected, complaintList: $complaintList)';
+    return 'DecisionBoardState(flow: $flow, chartSelected: $chartSelected, complaintList: $complaintList, filteredComplaintList: $filteredComplaintList)';
   }
 
   @override
@@ -176,12 +201,18 @@ class _$_DecisionBoardState implements _DecisionBoardState {
             (identical(other.chartSelected, chartSelected) ||
                 other.chartSelected == chartSelected) &&
             const DeepCollectionEquality()
-                .equals(other._complaintList, _complaintList));
+                .equals(other._complaintList, _complaintList) &&
+            const DeepCollectionEquality()
+                .equals(other._filteredComplaintList, _filteredComplaintList));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, flow, chartSelected,
-      const DeepCollectionEquality().hash(_complaintList));
+  int get hashCode => Object.hash(
+      runtimeType,
+      flow,
+      chartSelected,
+      const DeepCollectionEquality().hash(_complaintList),
+      const DeepCollectionEquality().hash(_filteredComplaintList));
 
   @JsonKey(ignore: true)
   @override
@@ -195,7 +226,8 @@ abstract class _DecisionBoardState implements DecisionBoardState {
   const factory _DecisionBoardState(
           {required final DecisionBoardFlow flow,
           required final ChartSelected chartSelected,
-          required final List<ComplaintModel> complaintList}) =
+          required final List<ComplaintModel> complaintList,
+          required final List<ComplaintModel> filteredComplaintList}) =
       _$_DecisionBoardState;
 
   @override
@@ -204,6 +236,8 @@ abstract class _DecisionBoardState implements DecisionBoardState {
   ChartSelected get chartSelected;
   @override
   List<ComplaintModel> get complaintList;
+  @override
+  List<ComplaintModel> get filteredComplaintList;
   @override
   @JsonKey(ignore: true)
   _$$_DecisionBoardStateCopyWith<_$_DecisionBoardState> get copyWith =>
@@ -219,6 +253,7 @@ mixin _$DecisionBoardFlow {
     required TResult Function() chartScreenFlow,
     required TResult Function() homeFlow,
     required TResult Function() listChartsScreenFlow,
+    required TResult Function() filteredComplaintsFlow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -228,6 +263,7 @@ mixin _$DecisionBoardFlow {
     TResult? Function()? chartScreenFlow,
     TResult? Function()? homeFlow,
     TResult? Function()? listChartsScreenFlow,
+    TResult? Function()? filteredComplaintsFlow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -237,6 +273,7 @@ mixin _$DecisionBoardFlow {
     TResult Function()? chartScreenFlow,
     TResult Function()? homeFlow,
     TResult Function()? listChartsScreenFlow,
+    TResult Function()? filteredComplaintsFlow,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -248,6 +285,8 @@ mixin _$DecisionBoardFlow {
     required TResult Function(ChartScreenFlow value) chartScreenFlow,
     required TResult Function(HomeFlow value) homeFlow,
     required TResult Function(ListChartsScreenFlow value) listChartsScreenFlow,
+    required TResult Function(FilteredComplaintsFlow value)
+        filteredComplaintsFlow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -257,6 +296,7 @@ mixin _$DecisionBoardFlow {
     TResult? Function(ChartScreenFlow value)? chartScreenFlow,
     TResult? Function(HomeFlow value)? homeFlow,
     TResult? Function(ListChartsScreenFlow value)? listChartsScreenFlow,
+    TResult? Function(FilteredComplaintsFlow value)? filteredComplaintsFlow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -266,6 +306,7 @@ mixin _$DecisionBoardFlow {
     TResult Function(ChartScreenFlow value)? chartScreenFlow,
     TResult Function(HomeFlow value)? homeFlow,
     TResult Function(ListChartsScreenFlow value)? listChartsScreenFlow,
+    TResult Function(FilteredComplaintsFlow value)? filteredComplaintsFlow,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -332,6 +373,7 @@ class _$SplashScreenFlow implements SplashScreenFlow {
     required TResult Function() chartScreenFlow,
     required TResult Function() homeFlow,
     required TResult Function() listChartsScreenFlow,
+    required TResult Function() filteredComplaintsFlow,
   }) {
     return splashScreenFlow();
   }
@@ -344,6 +386,7 @@ class _$SplashScreenFlow implements SplashScreenFlow {
     TResult? Function()? chartScreenFlow,
     TResult? Function()? homeFlow,
     TResult? Function()? listChartsScreenFlow,
+    TResult? Function()? filteredComplaintsFlow,
   }) {
     return splashScreenFlow?.call();
   }
@@ -356,6 +399,7 @@ class _$SplashScreenFlow implements SplashScreenFlow {
     TResult Function()? chartScreenFlow,
     TResult Function()? homeFlow,
     TResult Function()? listChartsScreenFlow,
+    TResult Function()? filteredComplaintsFlow,
     required TResult orElse(),
   }) {
     if (splashScreenFlow != null) {
@@ -373,6 +417,8 @@ class _$SplashScreenFlow implements SplashScreenFlow {
     required TResult Function(ChartScreenFlow value) chartScreenFlow,
     required TResult Function(HomeFlow value) homeFlow,
     required TResult Function(ListChartsScreenFlow value) listChartsScreenFlow,
+    required TResult Function(FilteredComplaintsFlow value)
+        filteredComplaintsFlow,
   }) {
     return splashScreenFlow(this);
   }
@@ -385,6 +431,7 @@ class _$SplashScreenFlow implements SplashScreenFlow {
     TResult? Function(ChartScreenFlow value)? chartScreenFlow,
     TResult? Function(HomeFlow value)? homeFlow,
     TResult? Function(ListChartsScreenFlow value)? listChartsScreenFlow,
+    TResult? Function(FilteredComplaintsFlow value)? filteredComplaintsFlow,
   }) {
     return splashScreenFlow?.call(this);
   }
@@ -397,6 +444,7 @@ class _$SplashScreenFlow implements SplashScreenFlow {
     TResult Function(ChartScreenFlow value)? chartScreenFlow,
     TResult Function(HomeFlow value)? homeFlow,
     TResult Function(ListChartsScreenFlow value)? listChartsScreenFlow,
+    TResult Function(FilteredComplaintsFlow value)? filteredComplaintsFlow,
     required TResult orElse(),
   }) {
     if (splashScreenFlow != null) {
@@ -454,6 +502,7 @@ class _$UploadDatabaseScreenFlow implements UploadDatabaseScreenFlow {
     required TResult Function() chartScreenFlow,
     required TResult Function() homeFlow,
     required TResult Function() listChartsScreenFlow,
+    required TResult Function() filteredComplaintsFlow,
   }) {
     return uploadDatabaseScreenFlow();
   }
@@ -466,6 +515,7 @@ class _$UploadDatabaseScreenFlow implements UploadDatabaseScreenFlow {
     TResult? Function()? chartScreenFlow,
     TResult? Function()? homeFlow,
     TResult? Function()? listChartsScreenFlow,
+    TResult? Function()? filteredComplaintsFlow,
   }) {
     return uploadDatabaseScreenFlow?.call();
   }
@@ -478,6 +528,7 @@ class _$UploadDatabaseScreenFlow implements UploadDatabaseScreenFlow {
     TResult Function()? chartScreenFlow,
     TResult Function()? homeFlow,
     TResult Function()? listChartsScreenFlow,
+    TResult Function()? filteredComplaintsFlow,
     required TResult orElse(),
   }) {
     if (uploadDatabaseScreenFlow != null) {
@@ -495,6 +546,8 @@ class _$UploadDatabaseScreenFlow implements UploadDatabaseScreenFlow {
     required TResult Function(ChartScreenFlow value) chartScreenFlow,
     required TResult Function(HomeFlow value) homeFlow,
     required TResult Function(ListChartsScreenFlow value) listChartsScreenFlow,
+    required TResult Function(FilteredComplaintsFlow value)
+        filteredComplaintsFlow,
   }) {
     return uploadDatabaseScreenFlow(this);
   }
@@ -507,6 +560,7 @@ class _$UploadDatabaseScreenFlow implements UploadDatabaseScreenFlow {
     TResult? Function(ChartScreenFlow value)? chartScreenFlow,
     TResult? Function(HomeFlow value)? homeFlow,
     TResult? Function(ListChartsScreenFlow value)? listChartsScreenFlow,
+    TResult? Function(FilteredComplaintsFlow value)? filteredComplaintsFlow,
   }) {
     return uploadDatabaseScreenFlow?.call(this);
   }
@@ -519,6 +573,7 @@ class _$UploadDatabaseScreenFlow implements UploadDatabaseScreenFlow {
     TResult Function(ChartScreenFlow value)? chartScreenFlow,
     TResult Function(HomeFlow value)? homeFlow,
     TResult Function(ListChartsScreenFlow value)? listChartsScreenFlow,
+    TResult Function(FilteredComplaintsFlow value)? filteredComplaintsFlow,
     required TResult orElse(),
   }) {
     if (uploadDatabaseScreenFlow != null) {
@@ -575,6 +630,7 @@ class _$ChartScreenFlow implements ChartScreenFlow {
     required TResult Function() chartScreenFlow,
     required TResult Function() homeFlow,
     required TResult Function() listChartsScreenFlow,
+    required TResult Function() filteredComplaintsFlow,
   }) {
     return chartScreenFlow();
   }
@@ -587,6 +643,7 @@ class _$ChartScreenFlow implements ChartScreenFlow {
     TResult? Function()? chartScreenFlow,
     TResult? Function()? homeFlow,
     TResult? Function()? listChartsScreenFlow,
+    TResult? Function()? filteredComplaintsFlow,
   }) {
     return chartScreenFlow?.call();
   }
@@ -599,6 +656,7 @@ class _$ChartScreenFlow implements ChartScreenFlow {
     TResult Function()? chartScreenFlow,
     TResult Function()? homeFlow,
     TResult Function()? listChartsScreenFlow,
+    TResult Function()? filteredComplaintsFlow,
     required TResult orElse(),
   }) {
     if (chartScreenFlow != null) {
@@ -616,6 +674,8 @@ class _$ChartScreenFlow implements ChartScreenFlow {
     required TResult Function(ChartScreenFlow value) chartScreenFlow,
     required TResult Function(HomeFlow value) homeFlow,
     required TResult Function(ListChartsScreenFlow value) listChartsScreenFlow,
+    required TResult Function(FilteredComplaintsFlow value)
+        filteredComplaintsFlow,
   }) {
     return chartScreenFlow(this);
   }
@@ -628,6 +688,7 @@ class _$ChartScreenFlow implements ChartScreenFlow {
     TResult? Function(ChartScreenFlow value)? chartScreenFlow,
     TResult? Function(HomeFlow value)? homeFlow,
     TResult? Function(ListChartsScreenFlow value)? listChartsScreenFlow,
+    TResult? Function(FilteredComplaintsFlow value)? filteredComplaintsFlow,
   }) {
     return chartScreenFlow?.call(this);
   }
@@ -640,6 +701,7 @@ class _$ChartScreenFlow implements ChartScreenFlow {
     TResult Function(ChartScreenFlow value)? chartScreenFlow,
     TResult Function(HomeFlow value)? homeFlow,
     TResult Function(ListChartsScreenFlow value)? listChartsScreenFlow,
+    TResult Function(FilteredComplaintsFlow value)? filteredComplaintsFlow,
     required TResult orElse(),
   }) {
     if (chartScreenFlow != null) {
@@ -695,6 +757,7 @@ class _$HomeFlow implements HomeFlow {
     required TResult Function() chartScreenFlow,
     required TResult Function() homeFlow,
     required TResult Function() listChartsScreenFlow,
+    required TResult Function() filteredComplaintsFlow,
   }) {
     return homeFlow();
   }
@@ -707,6 +770,7 @@ class _$HomeFlow implements HomeFlow {
     TResult? Function()? chartScreenFlow,
     TResult? Function()? homeFlow,
     TResult? Function()? listChartsScreenFlow,
+    TResult? Function()? filteredComplaintsFlow,
   }) {
     return homeFlow?.call();
   }
@@ -719,6 +783,7 @@ class _$HomeFlow implements HomeFlow {
     TResult Function()? chartScreenFlow,
     TResult Function()? homeFlow,
     TResult Function()? listChartsScreenFlow,
+    TResult Function()? filteredComplaintsFlow,
     required TResult orElse(),
   }) {
     if (homeFlow != null) {
@@ -736,6 +801,8 @@ class _$HomeFlow implements HomeFlow {
     required TResult Function(ChartScreenFlow value) chartScreenFlow,
     required TResult Function(HomeFlow value) homeFlow,
     required TResult Function(ListChartsScreenFlow value) listChartsScreenFlow,
+    required TResult Function(FilteredComplaintsFlow value)
+        filteredComplaintsFlow,
   }) {
     return homeFlow(this);
   }
@@ -748,6 +815,7 @@ class _$HomeFlow implements HomeFlow {
     TResult? Function(ChartScreenFlow value)? chartScreenFlow,
     TResult? Function(HomeFlow value)? homeFlow,
     TResult? Function(ListChartsScreenFlow value)? listChartsScreenFlow,
+    TResult? Function(FilteredComplaintsFlow value)? filteredComplaintsFlow,
   }) {
     return homeFlow?.call(this);
   }
@@ -760,6 +828,7 @@ class _$HomeFlow implements HomeFlow {
     TResult Function(ChartScreenFlow value)? chartScreenFlow,
     TResult Function(HomeFlow value)? homeFlow,
     TResult Function(ListChartsScreenFlow value)? listChartsScreenFlow,
+    TResult Function(FilteredComplaintsFlow value)? filteredComplaintsFlow,
     required TResult orElse(),
   }) {
     if (homeFlow != null) {
@@ -816,6 +885,7 @@ class _$ListChartsScreenFlow implements ListChartsScreenFlow {
     required TResult Function() chartScreenFlow,
     required TResult Function() homeFlow,
     required TResult Function() listChartsScreenFlow,
+    required TResult Function() filteredComplaintsFlow,
   }) {
     return listChartsScreenFlow();
   }
@@ -828,6 +898,7 @@ class _$ListChartsScreenFlow implements ListChartsScreenFlow {
     TResult? Function()? chartScreenFlow,
     TResult? Function()? homeFlow,
     TResult? Function()? listChartsScreenFlow,
+    TResult? Function()? filteredComplaintsFlow,
   }) {
     return listChartsScreenFlow?.call();
   }
@@ -840,6 +911,7 @@ class _$ListChartsScreenFlow implements ListChartsScreenFlow {
     TResult Function()? chartScreenFlow,
     TResult Function()? homeFlow,
     TResult Function()? listChartsScreenFlow,
+    TResult Function()? filteredComplaintsFlow,
     required TResult orElse(),
   }) {
     if (listChartsScreenFlow != null) {
@@ -857,6 +929,8 @@ class _$ListChartsScreenFlow implements ListChartsScreenFlow {
     required TResult Function(ChartScreenFlow value) chartScreenFlow,
     required TResult Function(HomeFlow value) homeFlow,
     required TResult Function(ListChartsScreenFlow value) listChartsScreenFlow,
+    required TResult Function(FilteredComplaintsFlow value)
+        filteredComplaintsFlow,
   }) {
     return listChartsScreenFlow(this);
   }
@@ -869,6 +943,7 @@ class _$ListChartsScreenFlow implements ListChartsScreenFlow {
     TResult? Function(ChartScreenFlow value)? chartScreenFlow,
     TResult? Function(HomeFlow value)? homeFlow,
     TResult? Function(ListChartsScreenFlow value)? listChartsScreenFlow,
+    TResult? Function(FilteredComplaintsFlow value)? filteredComplaintsFlow,
   }) {
     return listChartsScreenFlow?.call(this);
   }
@@ -881,6 +956,7 @@ class _$ListChartsScreenFlow implements ListChartsScreenFlow {
     TResult Function(ChartScreenFlow value)? chartScreenFlow,
     TResult Function(HomeFlow value)? homeFlow,
     TResult Function(ListChartsScreenFlow value)? listChartsScreenFlow,
+    TResult Function(FilteredComplaintsFlow value)? filteredComplaintsFlow,
     required TResult orElse(),
   }) {
     if (listChartsScreenFlow != null) {
@@ -892,6 +968,134 @@ class _$ListChartsScreenFlow implements ListChartsScreenFlow {
 
 abstract class ListChartsScreenFlow implements DecisionBoardFlow {
   const factory ListChartsScreenFlow() = _$ListChartsScreenFlow;
+}
+
+/// @nodoc
+abstract class _$$FilteredComplaintsFlowCopyWith<$Res> {
+  factory _$$FilteredComplaintsFlowCopyWith(_$FilteredComplaintsFlow value,
+          $Res Function(_$FilteredComplaintsFlow) then) =
+      __$$FilteredComplaintsFlowCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$FilteredComplaintsFlowCopyWithImpl<$Res>
+    extends _$DecisionBoardFlowCopyWithImpl<$Res, _$FilteredComplaintsFlow>
+    implements _$$FilteredComplaintsFlowCopyWith<$Res> {
+  __$$FilteredComplaintsFlowCopyWithImpl(_$FilteredComplaintsFlow _value,
+      $Res Function(_$FilteredComplaintsFlow) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$FilteredComplaintsFlow implements FilteredComplaintsFlow {
+  const _$FilteredComplaintsFlow();
+
+  @override
+  String toString() {
+    return 'DecisionBoardFlow.filteredComplaintsFlow()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$FilteredComplaintsFlow);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() splashScreenFlow,
+    required TResult Function() uploadDatabaseScreenFlow,
+    required TResult Function() chartScreenFlow,
+    required TResult Function() homeFlow,
+    required TResult Function() listChartsScreenFlow,
+    required TResult Function() filteredComplaintsFlow,
+  }) {
+    return filteredComplaintsFlow();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? splashScreenFlow,
+    TResult? Function()? uploadDatabaseScreenFlow,
+    TResult? Function()? chartScreenFlow,
+    TResult? Function()? homeFlow,
+    TResult? Function()? listChartsScreenFlow,
+    TResult? Function()? filteredComplaintsFlow,
+  }) {
+    return filteredComplaintsFlow?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? splashScreenFlow,
+    TResult Function()? uploadDatabaseScreenFlow,
+    TResult Function()? chartScreenFlow,
+    TResult Function()? homeFlow,
+    TResult Function()? listChartsScreenFlow,
+    TResult Function()? filteredComplaintsFlow,
+    required TResult orElse(),
+  }) {
+    if (filteredComplaintsFlow != null) {
+      return filteredComplaintsFlow();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SplashScreenFlow value) splashScreenFlow,
+    required TResult Function(UploadDatabaseScreenFlow value)
+        uploadDatabaseScreenFlow,
+    required TResult Function(ChartScreenFlow value) chartScreenFlow,
+    required TResult Function(HomeFlow value) homeFlow,
+    required TResult Function(ListChartsScreenFlow value) listChartsScreenFlow,
+    required TResult Function(FilteredComplaintsFlow value)
+        filteredComplaintsFlow,
+  }) {
+    return filteredComplaintsFlow(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SplashScreenFlow value)? splashScreenFlow,
+    TResult? Function(UploadDatabaseScreenFlow value)? uploadDatabaseScreenFlow,
+    TResult? Function(ChartScreenFlow value)? chartScreenFlow,
+    TResult? Function(HomeFlow value)? homeFlow,
+    TResult? Function(ListChartsScreenFlow value)? listChartsScreenFlow,
+    TResult? Function(FilteredComplaintsFlow value)? filteredComplaintsFlow,
+  }) {
+    return filteredComplaintsFlow?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SplashScreenFlow value)? splashScreenFlow,
+    TResult Function(UploadDatabaseScreenFlow value)? uploadDatabaseScreenFlow,
+    TResult Function(ChartScreenFlow value)? chartScreenFlow,
+    TResult Function(HomeFlow value)? homeFlow,
+    TResult Function(ListChartsScreenFlow value)? listChartsScreenFlow,
+    TResult Function(FilteredComplaintsFlow value)? filteredComplaintsFlow,
+    required TResult orElse(),
+  }) {
+    if (filteredComplaintsFlow != null) {
+      return filteredComplaintsFlow(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FilteredComplaintsFlow implements DecisionBoardFlow {
+  const factory FilteredComplaintsFlow() = _$FilteredComplaintsFlow;
 }
 
 /// @nodoc
@@ -1608,6 +1812,8 @@ mixin _$DecisionBoardEvent {
     required TResult Function() goBackToUploadData,
     required TResult Function() goToChartsListScreenFlow,
     required TResult Function() goBackToHomeFlow,
+    required TResult Function(List<ComplaintModel> filteredComplaintList)
+        goToFilteredComplaintsFlow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1618,6 +1824,8 @@ mixin _$DecisionBoardEvent {
     TResult? Function()? goBackToUploadData,
     TResult? Function()? goToChartsListScreenFlow,
     TResult? Function()? goBackToHomeFlow,
+    TResult? Function(List<ComplaintModel> filteredComplaintList)?
+        goToFilteredComplaintsFlow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1628,6 +1836,8 @@ mixin _$DecisionBoardEvent {
     TResult Function()? goBackToUploadData,
     TResult Function()? goToChartsListScreenFlow,
     TResult Function()? goBackToHomeFlow,
+    TResult Function(List<ComplaintModel> filteredComplaintList)?
+        goToFilteredComplaintsFlow,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1641,6 +1851,8 @@ mixin _$DecisionBoardEvent {
     required TResult Function(GoToChartsListScreenFlow value)
         goToChartsListScreenFlow,
     required TResult Function(GoBackToHomeFlow value) goBackToHomeFlow,
+    required TResult Function(GoToFilteredComplaintsFlow value)
+        goToFilteredComplaintsFlow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1651,6 +1863,8 @@ mixin _$DecisionBoardEvent {
     TResult? Function(GoBackToUploadData value)? goBackToUploadData,
     TResult? Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
     TResult? Function(GoBackToHomeFlow value)? goBackToHomeFlow,
+    TResult? Function(GoToFilteredComplaintsFlow value)?
+        goToFilteredComplaintsFlow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1661,6 +1875,8 @@ mixin _$DecisionBoardEvent {
     TResult Function(GoBackToUploadData value)? goBackToUploadData,
     TResult Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
     TResult Function(GoBackToHomeFlow value)? goBackToHomeFlow,
+    TResult Function(GoToFilteredComplaintsFlow value)?
+        goToFilteredComplaintsFlow,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1729,6 +1945,8 @@ class _$GoToUploadDataBaseScreen implements GoToUploadDataBaseScreen {
     required TResult Function() goBackToUploadData,
     required TResult Function() goToChartsListScreenFlow,
     required TResult Function() goBackToHomeFlow,
+    required TResult Function(List<ComplaintModel> filteredComplaintList)
+        goToFilteredComplaintsFlow,
   }) {
     return goToUploadDataBaseScreen();
   }
@@ -1742,6 +1960,8 @@ class _$GoToUploadDataBaseScreen implements GoToUploadDataBaseScreen {
     TResult? Function()? goBackToUploadData,
     TResult? Function()? goToChartsListScreenFlow,
     TResult? Function()? goBackToHomeFlow,
+    TResult? Function(List<ComplaintModel> filteredComplaintList)?
+        goToFilteredComplaintsFlow,
   }) {
     return goToUploadDataBaseScreen?.call();
   }
@@ -1755,6 +1975,8 @@ class _$GoToUploadDataBaseScreen implements GoToUploadDataBaseScreen {
     TResult Function()? goBackToUploadData,
     TResult Function()? goToChartsListScreenFlow,
     TResult Function()? goBackToHomeFlow,
+    TResult Function(List<ComplaintModel> filteredComplaintList)?
+        goToFilteredComplaintsFlow,
     required TResult orElse(),
   }) {
     if (goToUploadDataBaseScreen != null) {
@@ -1774,6 +1996,8 @@ class _$GoToUploadDataBaseScreen implements GoToUploadDataBaseScreen {
     required TResult Function(GoToChartsListScreenFlow value)
         goToChartsListScreenFlow,
     required TResult Function(GoBackToHomeFlow value) goBackToHomeFlow,
+    required TResult Function(GoToFilteredComplaintsFlow value)
+        goToFilteredComplaintsFlow,
   }) {
     return goToUploadDataBaseScreen(this);
   }
@@ -1787,6 +2011,8 @@ class _$GoToUploadDataBaseScreen implements GoToUploadDataBaseScreen {
     TResult? Function(GoBackToUploadData value)? goBackToUploadData,
     TResult? Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
     TResult? Function(GoBackToHomeFlow value)? goBackToHomeFlow,
+    TResult? Function(GoToFilteredComplaintsFlow value)?
+        goToFilteredComplaintsFlow,
   }) {
     return goToUploadDataBaseScreen?.call(this);
   }
@@ -1800,6 +2026,8 @@ class _$GoToUploadDataBaseScreen implements GoToUploadDataBaseScreen {
     TResult Function(GoBackToUploadData value)? goBackToUploadData,
     TResult Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
     TResult Function(GoBackToHomeFlow value)? goBackToHomeFlow,
+    TResult Function(GoToFilteredComplaintsFlow value)?
+        goToFilteredComplaintsFlow,
     required TResult orElse(),
   }) {
     if (goToUploadDataBaseScreen != null) {
@@ -1890,6 +2118,8 @@ class _$GoToHome implements GoToHome {
     required TResult Function() goBackToUploadData,
     required TResult Function() goToChartsListScreenFlow,
     required TResult Function() goBackToHomeFlow,
+    required TResult Function(List<ComplaintModel> filteredComplaintList)
+        goToFilteredComplaintsFlow,
   }) {
     return goToHome(formatedData);
   }
@@ -1903,6 +2133,8 @@ class _$GoToHome implements GoToHome {
     TResult? Function()? goBackToUploadData,
     TResult? Function()? goToChartsListScreenFlow,
     TResult? Function()? goBackToHomeFlow,
+    TResult? Function(List<ComplaintModel> filteredComplaintList)?
+        goToFilteredComplaintsFlow,
   }) {
     return goToHome?.call(formatedData);
   }
@@ -1916,6 +2148,8 @@ class _$GoToHome implements GoToHome {
     TResult Function()? goBackToUploadData,
     TResult Function()? goToChartsListScreenFlow,
     TResult Function()? goBackToHomeFlow,
+    TResult Function(List<ComplaintModel> filteredComplaintList)?
+        goToFilteredComplaintsFlow,
     required TResult orElse(),
   }) {
     if (goToHome != null) {
@@ -1935,6 +2169,8 @@ class _$GoToHome implements GoToHome {
     required TResult Function(GoToChartsListScreenFlow value)
         goToChartsListScreenFlow,
     required TResult Function(GoBackToHomeFlow value) goBackToHomeFlow,
+    required TResult Function(GoToFilteredComplaintsFlow value)
+        goToFilteredComplaintsFlow,
   }) {
     return goToHome(this);
   }
@@ -1948,6 +2184,8 @@ class _$GoToHome implements GoToHome {
     TResult? Function(GoBackToUploadData value)? goBackToUploadData,
     TResult? Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
     TResult? Function(GoBackToHomeFlow value)? goBackToHomeFlow,
+    TResult? Function(GoToFilteredComplaintsFlow value)?
+        goToFilteredComplaintsFlow,
   }) {
     return goToHome?.call(this);
   }
@@ -1961,6 +2199,8 @@ class _$GoToHome implements GoToHome {
     TResult Function(GoBackToUploadData value)? goBackToUploadData,
     TResult Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
     TResult Function(GoBackToHomeFlow value)? goBackToHomeFlow,
+    TResult Function(GoToFilteredComplaintsFlow value)?
+        goToFilteredComplaintsFlow,
     required TResult orElse(),
   }) {
     if (goToHome != null) {
@@ -2061,6 +2301,8 @@ class _$GoToChartsScreen implements GoToChartsScreen {
     required TResult Function() goBackToUploadData,
     required TResult Function() goToChartsListScreenFlow,
     required TResult Function() goBackToHomeFlow,
+    required TResult Function(List<ComplaintModel> filteredComplaintList)
+        goToFilteredComplaintsFlow,
   }) {
     return goToChartsScreen(chartSelected);
   }
@@ -2074,6 +2316,8 @@ class _$GoToChartsScreen implements GoToChartsScreen {
     TResult? Function()? goBackToUploadData,
     TResult? Function()? goToChartsListScreenFlow,
     TResult? Function()? goBackToHomeFlow,
+    TResult? Function(List<ComplaintModel> filteredComplaintList)?
+        goToFilteredComplaintsFlow,
   }) {
     return goToChartsScreen?.call(chartSelected);
   }
@@ -2087,6 +2331,8 @@ class _$GoToChartsScreen implements GoToChartsScreen {
     TResult Function()? goBackToUploadData,
     TResult Function()? goToChartsListScreenFlow,
     TResult Function()? goBackToHomeFlow,
+    TResult Function(List<ComplaintModel> filteredComplaintList)?
+        goToFilteredComplaintsFlow,
     required TResult orElse(),
   }) {
     if (goToChartsScreen != null) {
@@ -2106,6 +2352,8 @@ class _$GoToChartsScreen implements GoToChartsScreen {
     required TResult Function(GoToChartsListScreenFlow value)
         goToChartsListScreenFlow,
     required TResult Function(GoBackToHomeFlow value) goBackToHomeFlow,
+    required TResult Function(GoToFilteredComplaintsFlow value)
+        goToFilteredComplaintsFlow,
   }) {
     return goToChartsScreen(this);
   }
@@ -2119,6 +2367,8 @@ class _$GoToChartsScreen implements GoToChartsScreen {
     TResult? Function(GoBackToUploadData value)? goBackToUploadData,
     TResult? Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
     TResult? Function(GoBackToHomeFlow value)? goBackToHomeFlow,
+    TResult? Function(GoToFilteredComplaintsFlow value)?
+        goToFilteredComplaintsFlow,
   }) {
     return goToChartsScreen?.call(this);
   }
@@ -2132,6 +2382,8 @@ class _$GoToChartsScreen implements GoToChartsScreen {
     TResult Function(GoBackToUploadData value)? goBackToUploadData,
     TResult Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
     TResult Function(GoBackToHomeFlow value)? goBackToHomeFlow,
+    TResult Function(GoToFilteredComplaintsFlow value)?
+        goToFilteredComplaintsFlow,
     required TResult orElse(),
   }) {
     if (goToChartsScreen != null) {
@@ -2195,6 +2447,8 @@ class _$GoBackToUploadData implements GoBackToUploadData {
     required TResult Function() goBackToUploadData,
     required TResult Function() goToChartsListScreenFlow,
     required TResult Function() goBackToHomeFlow,
+    required TResult Function(List<ComplaintModel> filteredComplaintList)
+        goToFilteredComplaintsFlow,
   }) {
     return goBackToUploadData();
   }
@@ -2208,6 +2462,8 @@ class _$GoBackToUploadData implements GoBackToUploadData {
     TResult? Function()? goBackToUploadData,
     TResult? Function()? goToChartsListScreenFlow,
     TResult? Function()? goBackToHomeFlow,
+    TResult? Function(List<ComplaintModel> filteredComplaintList)?
+        goToFilteredComplaintsFlow,
   }) {
     return goBackToUploadData?.call();
   }
@@ -2221,6 +2477,8 @@ class _$GoBackToUploadData implements GoBackToUploadData {
     TResult Function()? goBackToUploadData,
     TResult Function()? goToChartsListScreenFlow,
     TResult Function()? goBackToHomeFlow,
+    TResult Function(List<ComplaintModel> filteredComplaintList)?
+        goToFilteredComplaintsFlow,
     required TResult orElse(),
   }) {
     if (goBackToUploadData != null) {
@@ -2240,6 +2498,8 @@ class _$GoBackToUploadData implements GoBackToUploadData {
     required TResult Function(GoToChartsListScreenFlow value)
         goToChartsListScreenFlow,
     required TResult Function(GoBackToHomeFlow value) goBackToHomeFlow,
+    required TResult Function(GoToFilteredComplaintsFlow value)
+        goToFilteredComplaintsFlow,
   }) {
     return goBackToUploadData(this);
   }
@@ -2253,6 +2513,8 @@ class _$GoBackToUploadData implements GoBackToUploadData {
     TResult? Function(GoBackToUploadData value)? goBackToUploadData,
     TResult? Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
     TResult? Function(GoBackToHomeFlow value)? goBackToHomeFlow,
+    TResult? Function(GoToFilteredComplaintsFlow value)?
+        goToFilteredComplaintsFlow,
   }) {
     return goBackToUploadData?.call(this);
   }
@@ -2266,6 +2528,8 @@ class _$GoBackToUploadData implements GoBackToUploadData {
     TResult Function(GoBackToUploadData value)? goBackToUploadData,
     TResult Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
     TResult Function(GoBackToHomeFlow value)? goBackToHomeFlow,
+    TResult Function(GoToFilteredComplaintsFlow value)?
+        goToFilteredComplaintsFlow,
     required TResult orElse(),
   }) {
     if (goBackToUploadData != null) {
@@ -2324,6 +2588,8 @@ class _$GoToChartsListScreenFlow implements GoToChartsListScreenFlow {
     required TResult Function() goBackToUploadData,
     required TResult Function() goToChartsListScreenFlow,
     required TResult Function() goBackToHomeFlow,
+    required TResult Function(List<ComplaintModel> filteredComplaintList)
+        goToFilteredComplaintsFlow,
   }) {
     return goToChartsListScreenFlow();
   }
@@ -2337,6 +2603,8 @@ class _$GoToChartsListScreenFlow implements GoToChartsListScreenFlow {
     TResult? Function()? goBackToUploadData,
     TResult? Function()? goToChartsListScreenFlow,
     TResult? Function()? goBackToHomeFlow,
+    TResult? Function(List<ComplaintModel> filteredComplaintList)?
+        goToFilteredComplaintsFlow,
   }) {
     return goToChartsListScreenFlow?.call();
   }
@@ -2350,6 +2618,8 @@ class _$GoToChartsListScreenFlow implements GoToChartsListScreenFlow {
     TResult Function()? goBackToUploadData,
     TResult Function()? goToChartsListScreenFlow,
     TResult Function()? goBackToHomeFlow,
+    TResult Function(List<ComplaintModel> filteredComplaintList)?
+        goToFilteredComplaintsFlow,
     required TResult orElse(),
   }) {
     if (goToChartsListScreenFlow != null) {
@@ -2369,6 +2639,8 @@ class _$GoToChartsListScreenFlow implements GoToChartsListScreenFlow {
     required TResult Function(GoToChartsListScreenFlow value)
         goToChartsListScreenFlow,
     required TResult Function(GoBackToHomeFlow value) goBackToHomeFlow,
+    required TResult Function(GoToFilteredComplaintsFlow value)
+        goToFilteredComplaintsFlow,
   }) {
     return goToChartsListScreenFlow(this);
   }
@@ -2382,6 +2654,8 @@ class _$GoToChartsListScreenFlow implements GoToChartsListScreenFlow {
     TResult? Function(GoBackToUploadData value)? goBackToUploadData,
     TResult? Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
     TResult? Function(GoBackToHomeFlow value)? goBackToHomeFlow,
+    TResult? Function(GoToFilteredComplaintsFlow value)?
+        goToFilteredComplaintsFlow,
   }) {
     return goToChartsListScreenFlow?.call(this);
   }
@@ -2395,6 +2669,8 @@ class _$GoToChartsListScreenFlow implements GoToChartsListScreenFlow {
     TResult Function(GoBackToUploadData value)? goBackToUploadData,
     TResult Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
     TResult Function(GoBackToHomeFlow value)? goBackToHomeFlow,
+    TResult Function(GoToFilteredComplaintsFlow value)?
+        goToFilteredComplaintsFlow,
     required TResult orElse(),
   }) {
     if (goToChartsListScreenFlow != null) {
@@ -2452,6 +2728,8 @@ class _$GoBackToHomeFlow implements GoBackToHomeFlow {
     required TResult Function() goBackToUploadData,
     required TResult Function() goToChartsListScreenFlow,
     required TResult Function() goBackToHomeFlow,
+    required TResult Function(List<ComplaintModel> filteredComplaintList)
+        goToFilteredComplaintsFlow,
   }) {
     return goBackToHomeFlow();
   }
@@ -2465,6 +2743,8 @@ class _$GoBackToHomeFlow implements GoBackToHomeFlow {
     TResult? Function()? goBackToUploadData,
     TResult? Function()? goToChartsListScreenFlow,
     TResult? Function()? goBackToHomeFlow,
+    TResult? Function(List<ComplaintModel> filteredComplaintList)?
+        goToFilteredComplaintsFlow,
   }) {
     return goBackToHomeFlow?.call();
   }
@@ -2478,6 +2758,8 @@ class _$GoBackToHomeFlow implements GoBackToHomeFlow {
     TResult Function()? goBackToUploadData,
     TResult Function()? goToChartsListScreenFlow,
     TResult Function()? goBackToHomeFlow,
+    TResult Function(List<ComplaintModel> filteredComplaintList)?
+        goToFilteredComplaintsFlow,
     required TResult orElse(),
   }) {
     if (goBackToHomeFlow != null) {
@@ -2497,6 +2779,8 @@ class _$GoBackToHomeFlow implements GoBackToHomeFlow {
     required TResult Function(GoToChartsListScreenFlow value)
         goToChartsListScreenFlow,
     required TResult Function(GoBackToHomeFlow value) goBackToHomeFlow,
+    required TResult Function(GoToFilteredComplaintsFlow value)
+        goToFilteredComplaintsFlow,
   }) {
     return goBackToHomeFlow(this);
   }
@@ -2510,6 +2794,8 @@ class _$GoBackToHomeFlow implements GoBackToHomeFlow {
     TResult? Function(GoBackToUploadData value)? goBackToUploadData,
     TResult? Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
     TResult? Function(GoBackToHomeFlow value)? goBackToHomeFlow,
+    TResult? Function(GoToFilteredComplaintsFlow value)?
+        goToFilteredComplaintsFlow,
   }) {
     return goBackToHomeFlow?.call(this);
   }
@@ -2523,6 +2809,8 @@ class _$GoBackToHomeFlow implements GoBackToHomeFlow {
     TResult Function(GoBackToUploadData value)? goBackToUploadData,
     TResult Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
     TResult Function(GoBackToHomeFlow value)? goBackToHomeFlow,
+    TResult Function(GoToFilteredComplaintsFlow value)?
+        goToFilteredComplaintsFlow,
     required TResult orElse(),
   }) {
     if (goBackToHomeFlow != null) {
@@ -2534,4 +2822,190 @@ class _$GoBackToHomeFlow implements GoBackToHomeFlow {
 
 abstract class GoBackToHomeFlow implements DecisionBoardEvent {
   const factory GoBackToHomeFlow() = _$GoBackToHomeFlow;
+}
+
+/// @nodoc
+abstract class _$$GoToFilteredComplaintsFlowCopyWith<$Res> {
+  factory _$$GoToFilteredComplaintsFlowCopyWith(
+          _$GoToFilteredComplaintsFlow value,
+          $Res Function(_$GoToFilteredComplaintsFlow) then) =
+      __$$GoToFilteredComplaintsFlowCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<ComplaintModel> filteredComplaintList});
+}
+
+/// @nodoc
+class __$$GoToFilteredComplaintsFlowCopyWithImpl<$Res>
+    extends _$DecisionBoardEventCopyWithImpl<$Res, _$GoToFilteredComplaintsFlow>
+    implements _$$GoToFilteredComplaintsFlowCopyWith<$Res> {
+  __$$GoToFilteredComplaintsFlowCopyWithImpl(
+      _$GoToFilteredComplaintsFlow _value,
+      $Res Function(_$GoToFilteredComplaintsFlow) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? filteredComplaintList = null,
+  }) {
+    return _then(_$GoToFilteredComplaintsFlow(
+      filteredComplaintList: null == filteredComplaintList
+          ? _value._filteredComplaintList
+          : filteredComplaintList // ignore: cast_nullable_to_non_nullable
+              as List<ComplaintModel>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GoToFilteredComplaintsFlow implements GoToFilteredComplaintsFlow {
+  const _$GoToFilteredComplaintsFlow(
+      {required final List<ComplaintModel> filteredComplaintList})
+      : _filteredComplaintList = filteredComplaintList;
+
+  final List<ComplaintModel> _filteredComplaintList;
+  @override
+  List<ComplaintModel> get filteredComplaintList {
+    if (_filteredComplaintList is EqualUnmodifiableListView)
+      return _filteredComplaintList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_filteredComplaintList);
+  }
+
+  @override
+  String toString() {
+    return 'DecisionBoardEvent.goToFilteredComplaintsFlow(filteredComplaintList: $filteredComplaintList)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GoToFilteredComplaintsFlow &&
+            const DeepCollectionEquality()
+                .equals(other._filteredComplaintList, _filteredComplaintList));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_filteredComplaintList));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GoToFilteredComplaintsFlowCopyWith<_$GoToFilteredComplaintsFlow>
+      get copyWith => __$$GoToFilteredComplaintsFlowCopyWithImpl<
+          _$GoToFilteredComplaintsFlow>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() goToUploadDataBaseScreen,
+    required TResult Function(List<List<dynamic>> formatedData) goToHome,
+    required TResult Function(ChartSelected chartSelected) goToChartsScreen,
+    required TResult Function() goBackToUploadData,
+    required TResult Function() goToChartsListScreenFlow,
+    required TResult Function() goBackToHomeFlow,
+    required TResult Function(List<ComplaintModel> filteredComplaintList)
+        goToFilteredComplaintsFlow,
+  }) {
+    return goToFilteredComplaintsFlow(filteredComplaintList);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? goToUploadDataBaseScreen,
+    TResult? Function(List<List<dynamic>> formatedData)? goToHome,
+    TResult? Function(ChartSelected chartSelected)? goToChartsScreen,
+    TResult? Function()? goBackToUploadData,
+    TResult? Function()? goToChartsListScreenFlow,
+    TResult? Function()? goBackToHomeFlow,
+    TResult? Function(List<ComplaintModel> filteredComplaintList)?
+        goToFilteredComplaintsFlow,
+  }) {
+    return goToFilteredComplaintsFlow?.call(filteredComplaintList);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? goToUploadDataBaseScreen,
+    TResult Function(List<List<dynamic>> formatedData)? goToHome,
+    TResult Function(ChartSelected chartSelected)? goToChartsScreen,
+    TResult Function()? goBackToUploadData,
+    TResult Function()? goToChartsListScreenFlow,
+    TResult Function()? goBackToHomeFlow,
+    TResult Function(List<ComplaintModel> filteredComplaintList)?
+        goToFilteredComplaintsFlow,
+    required TResult orElse(),
+  }) {
+    if (goToFilteredComplaintsFlow != null) {
+      return goToFilteredComplaintsFlow(filteredComplaintList);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GoToUploadDataBaseScreen value)
+        goToUploadDataBaseScreen,
+    required TResult Function(GoToHome value) goToHome,
+    required TResult Function(GoToChartsScreen value) goToChartsScreen,
+    required TResult Function(GoBackToUploadData value) goBackToUploadData,
+    required TResult Function(GoToChartsListScreenFlow value)
+        goToChartsListScreenFlow,
+    required TResult Function(GoBackToHomeFlow value) goBackToHomeFlow,
+    required TResult Function(GoToFilteredComplaintsFlow value)
+        goToFilteredComplaintsFlow,
+  }) {
+    return goToFilteredComplaintsFlow(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GoToUploadDataBaseScreen value)? goToUploadDataBaseScreen,
+    TResult? Function(GoToHome value)? goToHome,
+    TResult? Function(GoToChartsScreen value)? goToChartsScreen,
+    TResult? Function(GoBackToUploadData value)? goBackToUploadData,
+    TResult? Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
+    TResult? Function(GoBackToHomeFlow value)? goBackToHomeFlow,
+    TResult? Function(GoToFilteredComplaintsFlow value)?
+        goToFilteredComplaintsFlow,
+  }) {
+    return goToFilteredComplaintsFlow?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GoToUploadDataBaseScreen value)? goToUploadDataBaseScreen,
+    TResult Function(GoToHome value)? goToHome,
+    TResult Function(GoToChartsScreen value)? goToChartsScreen,
+    TResult Function(GoBackToUploadData value)? goBackToUploadData,
+    TResult Function(GoToChartsListScreenFlow value)? goToChartsListScreenFlow,
+    TResult Function(GoBackToHomeFlow value)? goBackToHomeFlow,
+    TResult Function(GoToFilteredComplaintsFlow value)?
+        goToFilteredComplaintsFlow,
+    required TResult orElse(),
+  }) {
+    if (goToFilteredComplaintsFlow != null) {
+      return goToFilteredComplaintsFlow(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GoToFilteredComplaintsFlow implements DecisionBoardEvent {
+  const factory GoToFilteredComplaintsFlow(
+          {required final List<ComplaintModel> filteredComplaintList}) =
+      _$GoToFilteredComplaintsFlow;
+
+  List<ComplaintModel> get filteredComplaintList;
+  @JsonKey(ignore: true)
+  _$$GoToFilteredComplaintsFlowCopyWith<_$GoToFilteredComplaintsFlow>
+      get copyWith => throw _privateConstructorUsedError;
 }

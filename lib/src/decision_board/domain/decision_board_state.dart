@@ -6,11 +6,13 @@ class DecisionBoardState with _$DecisionBoardState {
     required DecisionBoardFlow flow,
     required ChartSelected chartSelected,
     required List<ComplaintModel> complaintList,
+    required List<ComplaintModel> filteredComplaintList,
   }) = _DecisionBoardState;
 
   factory DecisionBoardState.initial() => const DecisionBoardState(
         flow: SplashScreenFlow(),
         complaintList: [],
+        filteredComplaintList: [],
         chartSelected: None(),
       );
 }
@@ -23,6 +25,8 @@ class DecisionBoardFlow with _$DecisionBoardFlow {
   const factory DecisionBoardFlow.chartScreenFlow() = ChartScreenFlow;
   const factory DecisionBoardFlow.homeFlow() = HomeFlow;
   const factory DecisionBoardFlow.listChartsScreenFlow() = ListChartsScreenFlow;
+  const factory DecisionBoardFlow.filteredComplaintsFlow() =
+      FilteredComplaintsFlow;
 }
 
 @freezed

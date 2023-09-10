@@ -14,4 +14,7 @@ class DecisionBoardEvent with _$DecisionBoardEvent {
   const factory DecisionBoardEvent.goToChartsListScreenFlow() =
       GoToChartsListScreenFlow;
   const factory DecisionBoardEvent.goBackToHomeFlow() = GoBackToHomeFlow;
+  const factory DecisionBoardEvent.goToFilteredComplaintsFlow({
+    required List<ComplaintModel> filteredComplaintList,
+  }) = GoToFilteredComplaintsFlow;
 }

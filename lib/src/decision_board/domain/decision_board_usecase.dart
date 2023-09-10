@@ -26,6 +26,7 @@ class DecisionBoardUseCase
       goBackToUploadData: _goBackToUploadData,
       goToChartsListScreenFlow: _goToChartsListScreenFlow,
       goBackToHomeFlow: _goBackToHomeFlow,
+      goToFilteredComplaintsFlow: _goToFilteredComplaintsFlow,
     );
   }
 
@@ -107,6 +108,14 @@ class DecisionBoardUseCase
   Stream<DecisionBoardState> _goBackToHomeFlow(GoBackToHomeFlow value) async* {
     yield state.copyWith(
       flow: const HomeFlow(),
+    );
+  }
+
+  Stream<DecisionBoardState> _goToFilteredComplaintsFlow(
+      GoToFilteredComplaintsFlow value) async* {
+    yield state.copyWith(
+      flow: const FilteredComplaintsFlow(),
+      filteredComplaintList: value.filteredComplaintList,
     );
   }
 }

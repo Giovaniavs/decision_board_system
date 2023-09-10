@@ -1,5 +1,6 @@
 import 'package:decision_board_system/src/decision_board/domain/decision_board_usecase.dart';
 import 'package:decision_board_system/src/decision_board/presentation/dummies/charts_screen.dart';
+import 'package:decision_board_system/src/decision_board/presentation/dummies/filtered_complaints_screen.dart';
 import 'package:decision_board_system/src/decision_board/presentation/dummies/home_screen.dart';
 import 'package:decision_board_system/src/decision_board/presentation/dummies/list_charts_screen.dart';
 import 'package:decision_board_system/src/decision_board/presentation/dummies/splash_screen.dart';
@@ -53,6 +54,11 @@ class _DecisionBoardSmartViewState extends State<DecisionBoardSmartView> {
           decisionBoardUseCase: widget._decisionBoardUseCase,
         ),
       ),
+      MaterialPage(
+        child: FilteredComplaintsScreen(
+          decisionBoardUseCase: widget._decisionBoardUseCase,
+        ),
+      ),
     ];
     super.initState();
   }
@@ -100,6 +106,15 @@ class _DecisionBoardSmartViewState extends State<DecisionBoardSmartView> {
           modulePages[2],
           modulePages[3],
           modulePages[4],
+        ];
+        return _currentPageStack;
+      },
+      filteredComplaintsFlow: (_) {
+        _currentPageStack = [
+          modulePages[2],
+          modulePages[3],
+          modulePages[4],
+          modulePages[5],
         ];
         return _currentPageStack;
       },
