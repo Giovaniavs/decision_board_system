@@ -108,11 +108,11 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
   double nov = 0;
   double dec = 0;
 
-  bool showFilterByYears = false;
-  bool showFilterByMonths = false;
-  bool showFilterByDays = false;
-  bool showFilterByStates = false;
-  bool showFilterByKeyWord = false;
+  bool showFilterByYears = true;
+  bool showFilterByMonths = true;
+  bool showFilterByDays = true;
+  bool showFilterByStates = true;
+  bool showFilterByKeyWord = true;
 
   @override
   void initState() {
