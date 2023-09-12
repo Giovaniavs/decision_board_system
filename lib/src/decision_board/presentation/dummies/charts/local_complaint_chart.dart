@@ -107,19 +107,6 @@ class LocalComplaintChartState extends State<LocalComplaintChart> {
     GraphColors.contentColorBlue,
   ];
 
-  double jan = 0;
-  double feb = 0;
-  double mar = 0;
-  double apr = 0;
-  double may = 0;
-  double jun = 0;
-  double jul = 0;
-  double aug = 0;
-  double sep = 0;
-  double oct = 0;
-  double nov = 0;
-  double dec = 0;
-
   bool showFilterByYears = true;
   bool showFilterByMonths = true;
   bool showFilterByDays = true;
