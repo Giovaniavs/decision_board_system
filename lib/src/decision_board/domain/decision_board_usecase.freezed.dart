@@ -1106,7 +1106,6 @@ mixin _$ChartSelected {
     required TResult Function() answeredByTrimesterChartFlow,
     required TResult Function() localComplaintChartFlow,
     required TResult Function() statusChartFlow,
-    required TResult Function() timeBasedChartFlow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1115,7 +1114,6 @@ mixin _$ChartSelected {
     TResult? Function()? answeredByTrimesterChartFlow,
     TResult? Function()? localComplaintChartFlow,
     TResult? Function()? statusChartFlow,
-    TResult? Function()? timeBasedChartFlow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1124,7 +1122,6 @@ mixin _$ChartSelected {
     TResult Function()? answeredByTrimesterChartFlow,
     TResult Function()? localComplaintChartFlow,
     TResult Function()? statusChartFlow,
-    TResult Function()? timeBasedChartFlow,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1136,7 +1133,6 @@ mixin _$ChartSelected {
     required TResult Function(LocalComplaintChartFlow value)
         localComplaintChartFlow,
     required TResult Function(StatusChartFlow value) statusChartFlow,
-    required TResult Function(TimeBasedChartFlow value) timeBasedChartFlow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1146,7 +1142,6 @@ mixin _$ChartSelected {
         answeredByTrimesterChartFlow,
     TResult? Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
     TResult? Function(StatusChartFlow value)? statusChartFlow,
-    TResult? Function(TimeBasedChartFlow value)? timeBasedChartFlow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1156,7 +1151,6 @@ mixin _$ChartSelected {
         answeredByTrimesterChartFlow,
     TResult Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
     TResult Function(StatusChartFlow value)? statusChartFlow,
-    TResult Function(TimeBasedChartFlow value)? timeBasedChartFlow,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1220,7 +1214,6 @@ class _$None implements None {
     required TResult Function() answeredByTrimesterChartFlow,
     required TResult Function() localComplaintChartFlow,
     required TResult Function() statusChartFlow,
-    required TResult Function() timeBasedChartFlow,
   }) {
     return none();
   }
@@ -1232,7 +1225,6 @@ class _$None implements None {
     TResult? Function()? answeredByTrimesterChartFlow,
     TResult? Function()? localComplaintChartFlow,
     TResult? Function()? statusChartFlow,
-    TResult? Function()? timeBasedChartFlow,
   }) {
     return none?.call();
   }
@@ -1244,7 +1236,6 @@ class _$None implements None {
     TResult Function()? answeredByTrimesterChartFlow,
     TResult Function()? localComplaintChartFlow,
     TResult Function()? statusChartFlow,
-    TResult Function()? timeBasedChartFlow,
     required TResult orElse(),
   }) {
     if (none != null) {
@@ -1262,7 +1253,6 @@ class _$None implements None {
     required TResult Function(LocalComplaintChartFlow value)
         localComplaintChartFlow,
     required TResult Function(StatusChartFlow value) statusChartFlow,
-    required TResult Function(TimeBasedChartFlow value) timeBasedChartFlow,
   }) {
     return none(this);
   }
@@ -1275,7 +1265,6 @@ class _$None implements None {
         answeredByTrimesterChartFlow,
     TResult? Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
     TResult? Function(StatusChartFlow value)? statusChartFlow,
-    TResult? Function(TimeBasedChartFlow value)? timeBasedChartFlow,
   }) {
     return none?.call(this);
   }
@@ -1288,7 +1277,6 @@ class _$None implements None {
         answeredByTrimesterChartFlow,
     TResult Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
     TResult Function(StatusChartFlow value)? statusChartFlow,
-    TResult Function(TimeBasedChartFlow value)? timeBasedChartFlow,
     required TResult orElse(),
   }) {
     if (none != null) {
@@ -1347,7 +1335,6 @@ class _$AnsweredByTrimesterChartFlow implements AnsweredByTrimesterChartFlow {
     required TResult Function() answeredByTrimesterChartFlow,
     required TResult Function() localComplaintChartFlow,
     required TResult Function() statusChartFlow,
-    required TResult Function() timeBasedChartFlow,
   }) {
     return answeredByTrimesterChartFlow();
   }
@@ -1359,7 +1346,6 @@ class _$AnsweredByTrimesterChartFlow implements AnsweredByTrimesterChartFlow {
     TResult? Function()? answeredByTrimesterChartFlow,
     TResult? Function()? localComplaintChartFlow,
     TResult? Function()? statusChartFlow,
-    TResult? Function()? timeBasedChartFlow,
   }) {
     return answeredByTrimesterChartFlow?.call();
   }
@@ -1371,7 +1357,6 @@ class _$AnsweredByTrimesterChartFlow implements AnsweredByTrimesterChartFlow {
     TResult Function()? answeredByTrimesterChartFlow,
     TResult Function()? localComplaintChartFlow,
     TResult Function()? statusChartFlow,
-    TResult Function()? timeBasedChartFlow,
     required TResult orElse(),
   }) {
     if (answeredByTrimesterChartFlow != null) {
@@ -1389,7 +1374,6 @@ class _$AnsweredByTrimesterChartFlow implements AnsweredByTrimesterChartFlow {
     required TResult Function(LocalComplaintChartFlow value)
         localComplaintChartFlow,
     required TResult Function(StatusChartFlow value) statusChartFlow,
-    required TResult Function(TimeBasedChartFlow value) timeBasedChartFlow,
   }) {
     return answeredByTrimesterChartFlow(this);
   }
@@ -1402,7 +1386,6 @@ class _$AnsweredByTrimesterChartFlow implements AnsweredByTrimesterChartFlow {
         answeredByTrimesterChartFlow,
     TResult? Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
     TResult? Function(StatusChartFlow value)? statusChartFlow,
-    TResult? Function(TimeBasedChartFlow value)? timeBasedChartFlow,
   }) {
     return answeredByTrimesterChartFlow?.call(this);
   }
@@ -1415,7 +1398,6 @@ class _$AnsweredByTrimesterChartFlow implements AnsweredByTrimesterChartFlow {
         answeredByTrimesterChartFlow,
     TResult Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
     TResult Function(StatusChartFlow value)? statusChartFlow,
-    TResult Function(TimeBasedChartFlow value)? timeBasedChartFlow,
     required TResult orElse(),
   }) {
     if (answeredByTrimesterChartFlow != null) {
@@ -1472,7 +1454,6 @@ class _$LocalComplaintChartFlow implements LocalComplaintChartFlow {
     required TResult Function() answeredByTrimesterChartFlow,
     required TResult Function() localComplaintChartFlow,
     required TResult Function() statusChartFlow,
-    required TResult Function() timeBasedChartFlow,
   }) {
     return localComplaintChartFlow();
   }
@@ -1484,7 +1465,6 @@ class _$LocalComplaintChartFlow implements LocalComplaintChartFlow {
     TResult? Function()? answeredByTrimesterChartFlow,
     TResult? Function()? localComplaintChartFlow,
     TResult? Function()? statusChartFlow,
-    TResult? Function()? timeBasedChartFlow,
   }) {
     return localComplaintChartFlow?.call();
   }
@@ -1496,7 +1476,6 @@ class _$LocalComplaintChartFlow implements LocalComplaintChartFlow {
     TResult Function()? answeredByTrimesterChartFlow,
     TResult Function()? localComplaintChartFlow,
     TResult Function()? statusChartFlow,
-    TResult Function()? timeBasedChartFlow,
     required TResult orElse(),
   }) {
     if (localComplaintChartFlow != null) {
@@ -1514,7 +1493,6 @@ class _$LocalComplaintChartFlow implements LocalComplaintChartFlow {
     required TResult Function(LocalComplaintChartFlow value)
         localComplaintChartFlow,
     required TResult Function(StatusChartFlow value) statusChartFlow,
-    required TResult Function(TimeBasedChartFlow value) timeBasedChartFlow,
   }) {
     return localComplaintChartFlow(this);
   }
@@ -1527,7 +1505,6 @@ class _$LocalComplaintChartFlow implements LocalComplaintChartFlow {
         answeredByTrimesterChartFlow,
     TResult? Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
     TResult? Function(StatusChartFlow value)? statusChartFlow,
-    TResult? Function(TimeBasedChartFlow value)? timeBasedChartFlow,
   }) {
     return localComplaintChartFlow?.call(this);
   }
@@ -1540,7 +1517,6 @@ class _$LocalComplaintChartFlow implements LocalComplaintChartFlow {
         answeredByTrimesterChartFlow,
     TResult Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
     TResult Function(StatusChartFlow value)? statusChartFlow,
-    TResult Function(TimeBasedChartFlow value)? timeBasedChartFlow,
     required TResult orElse(),
   }) {
     if (localComplaintChartFlow != null) {
@@ -1596,7 +1572,6 @@ class _$StatusChartFlow implements StatusChartFlow {
     required TResult Function() answeredByTrimesterChartFlow,
     required TResult Function() localComplaintChartFlow,
     required TResult Function() statusChartFlow,
-    required TResult Function() timeBasedChartFlow,
   }) {
     return statusChartFlow();
   }
@@ -1608,7 +1583,6 @@ class _$StatusChartFlow implements StatusChartFlow {
     TResult? Function()? answeredByTrimesterChartFlow,
     TResult? Function()? localComplaintChartFlow,
     TResult? Function()? statusChartFlow,
-    TResult? Function()? timeBasedChartFlow,
   }) {
     return statusChartFlow?.call();
   }
@@ -1620,7 +1594,6 @@ class _$StatusChartFlow implements StatusChartFlow {
     TResult Function()? answeredByTrimesterChartFlow,
     TResult Function()? localComplaintChartFlow,
     TResult Function()? statusChartFlow,
-    TResult Function()? timeBasedChartFlow,
     required TResult orElse(),
   }) {
     if (statusChartFlow != null) {
@@ -1638,7 +1611,6 @@ class _$StatusChartFlow implements StatusChartFlow {
     required TResult Function(LocalComplaintChartFlow value)
         localComplaintChartFlow,
     required TResult Function(StatusChartFlow value) statusChartFlow,
-    required TResult Function(TimeBasedChartFlow value) timeBasedChartFlow,
   }) {
     return statusChartFlow(this);
   }
@@ -1651,7 +1623,6 @@ class _$StatusChartFlow implements StatusChartFlow {
         answeredByTrimesterChartFlow,
     TResult? Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
     TResult? Function(StatusChartFlow value)? statusChartFlow,
-    TResult? Function(TimeBasedChartFlow value)? timeBasedChartFlow,
   }) {
     return statusChartFlow?.call(this);
   }
@@ -1664,7 +1635,6 @@ class _$StatusChartFlow implements StatusChartFlow {
         answeredByTrimesterChartFlow,
     TResult Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
     TResult Function(StatusChartFlow value)? statusChartFlow,
-    TResult Function(TimeBasedChartFlow value)? timeBasedChartFlow,
     required TResult orElse(),
   }) {
     if (statusChartFlow != null) {
@@ -1676,130 +1646,6 @@ class _$StatusChartFlow implements StatusChartFlow {
 
 abstract class StatusChartFlow implements ChartSelected {
   const factory StatusChartFlow() = _$StatusChartFlow;
-}
-
-/// @nodoc
-abstract class _$$TimeBasedChartFlowCopyWith<$Res> {
-  factory _$$TimeBasedChartFlowCopyWith(_$TimeBasedChartFlow value,
-          $Res Function(_$TimeBasedChartFlow) then) =
-      __$$TimeBasedChartFlowCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$TimeBasedChartFlowCopyWithImpl<$Res>
-    extends _$ChartSelectedCopyWithImpl<$Res, _$TimeBasedChartFlow>
-    implements _$$TimeBasedChartFlowCopyWith<$Res> {
-  __$$TimeBasedChartFlowCopyWithImpl(
-      _$TimeBasedChartFlow _value, $Res Function(_$TimeBasedChartFlow) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$TimeBasedChartFlow implements TimeBasedChartFlow {
-  const _$TimeBasedChartFlow();
-
-  @override
-  String toString() {
-    return 'ChartSelected.timeBasedChartFlow()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$TimeBasedChartFlow);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() none,
-    required TResult Function() answeredByTrimesterChartFlow,
-    required TResult Function() localComplaintChartFlow,
-    required TResult Function() statusChartFlow,
-    required TResult Function() timeBasedChartFlow,
-  }) {
-    return timeBasedChartFlow();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? none,
-    TResult? Function()? answeredByTrimesterChartFlow,
-    TResult? Function()? localComplaintChartFlow,
-    TResult? Function()? statusChartFlow,
-    TResult? Function()? timeBasedChartFlow,
-  }) {
-    return timeBasedChartFlow?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? none,
-    TResult Function()? answeredByTrimesterChartFlow,
-    TResult Function()? localComplaintChartFlow,
-    TResult Function()? statusChartFlow,
-    TResult Function()? timeBasedChartFlow,
-    required TResult orElse(),
-  }) {
-    if (timeBasedChartFlow != null) {
-      return timeBasedChartFlow();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(None value) none,
-    required TResult Function(AnsweredByTrimesterChartFlow value)
-        answeredByTrimesterChartFlow,
-    required TResult Function(LocalComplaintChartFlow value)
-        localComplaintChartFlow,
-    required TResult Function(StatusChartFlow value) statusChartFlow,
-    required TResult Function(TimeBasedChartFlow value) timeBasedChartFlow,
-  }) {
-    return timeBasedChartFlow(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(None value)? none,
-    TResult? Function(AnsweredByTrimesterChartFlow value)?
-        answeredByTrimesterChartFlow,
-    TResult? Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
-    TResult? Function(StatusChartFlow value)? statusChartFlow,
-    TResult? Function(TimeBasedChartFlow value)? timeBasedChartFlow,
-  }) {
-    return timeBasedChartFlow?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(None value)? none,
-    TResult Function(AnsweredByTrimesterChartFlow value)?
-        answeredByTrimesterChartFlow,
-    TResult Function(LocalComplaintChartFlow value)? localComplaintChartFlow,
-    TResult Function(StatusChartFlow value)? statusChartFlow,
-    TResult Function(TimeBasedChartFlow value)? timeBasedChartFlow,
-    required TResult orElse(),
-  }) {
-    if (timeBasedChartFlow != null) {
-      return timeBasedChartFlow(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class TimeBasedChartFlow implements ChartSelected {
-  const factory TimeBasedChartFlow() = _$TimeBasedChartFlow;
 }
 
 /// @nodoc

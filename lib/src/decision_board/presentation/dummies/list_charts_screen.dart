@@ -101,20 +101,6 @@ class ListChartsScreen extends StatelessWidget {
                     },
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: SpacingTokens.deka),
-                  child: PurpleLongButton(
-                    buttonText: 'Reclamações por Ano',
-                    isLoading: false,
-                    onPressed: () {
-                      _decisionBoardUseCase.add(
-                        const GoToChartsScreen(
-                          chartSelected: ChartSelected.timeBasedChartFlow(),
-                        ),
-                      );
-                    },
-                  ),
-                ),
               ],
             ),
           ),

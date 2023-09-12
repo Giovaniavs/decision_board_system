@@ -37,5 +37,4 @@ class ChartSelected with _$ChartSelected {
   const factory ChartSelected.localComplaintChartFlow() =
       LocalComplaintChartFlow;
   const factory ChartSelected.statusChartFlow() = StatusChartFlow;
-  const factory ChartSelected.timeBasedChartFlow() = TimeBasedChartFlow;
 }
