@@ -124,31 +124,34 @@ class StatusChartState extends State<StatusChart> {
         padding: const EdgeInsets.only(bottom: SpacingTokens.tera),
         child: Column(
           children: [
-            AspectRatio(
-              aspectRatio: 1,
-              child: PieChart(
-                PieChartData(
-                  pieTouchData: PieTouchData(
-                    touchCallback: (FlTouchEvent event, pieTouchResponse) {
-                      setState(() {
-                        if (!event.isInterestedForInteractions ||
-                            pieTouchResponse == null ||
-                            pieTouchResponse.touchedSection == null) {
-                          touchedIndex = -1;
-                          return;
-                        }
-                        touchedIndex = pieTouchResponse
-                            .touchedSection!.touchedSectionIndex;
-                      });
-                    },
+            ConstrainedBox(
+              constraints: const BoxConstraints(maxHeight: 500),
+              child: AspectRatio(
+                aspectRatio: 1,
+                child: PieChart(
+                  PieChartData(
+                    pieTouchData: PieTouchData(
+                      touchCallback: (FlTouchEvent event, pieTouchResponse) {
+                        setState(() {
+                          if (!event.isInterestedForInteractions ||
+                              pieTouchResponse == null ||
+                              pieTouchResponse.touchedSection == null) {
+                            touchedIndex = -1;
+                            return;
+                          }
+                          touchedIndex = pieTouchResponse
+                              .touchedSection!.touchedSectionIndex;
+                        });
+                      },
+                    ),
+                    startDegreeOffset: 180,
+                    borderData: FlBorderData(
+                      show: false,
+                    ),
+                    sectionsSpace: 1,
+                    centerSpaceRadius: 0,
+                    sections: showingSections(),
                   ),
-                  startDegreeOffset: 180,
-                  borderData: FlBorderData(
-                    show: false,
-                  ),
-                  sectionsSpace: 1,
-                  centerSpaceRadius: 0,
-                  sections: showingSections(),
                 ),
               ),
             ),

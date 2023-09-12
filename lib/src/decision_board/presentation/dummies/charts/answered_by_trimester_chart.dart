@@ -140,17 +140,20 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
           padding: const EdgeInsets.only(bottom: SpacingTokens.tera),
           child: Column(
             children: [
-              AspectRatio(
-                aspectRatio: 1.70,
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    right: 18,
-                    left: 12,
-                    top: 24,
-                    bottom: 12,
-                  ),
-                  child: LineChart(
-                    mainData(),
+              ConstrainedBox(
+                constraints: const BoxConstraints(maxHeight: 500),
+                child: AspectRatio(
+                  aspectRatio: 1.70,
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                      right: 18,
+                      left: 12,
+                      top: 24,
+                      bottom: 12,
+                    ),
+                    child: LineChart(
+                      mainData(),
+                    ),
                   ),
                 ),
               ),
