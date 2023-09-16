@@ -6,21 +6,21 @@ import 'package:decision_board_system/src/shared/widgets/purple_long_button.dart
 import 'package:decision_board_system/src/shared/widgets/red_long_button.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
-class AnsweredByTrimesterChart extends StatefulWidget {
+class AnsweredByMonthChart extends StatefulWidget {
   final DecisionBoardUseCase _decisionBoardUseCase;
 
-  const AnsweredByTrimesterChart({
+  const AnsweredByMonthChart({
     super.key,
     required DecisionBoardUseCase decisionBoardUseCase,
   }) : _decisionBoardUseCase = decisionBoardUseCase;
 
   @override
-  State<AnsweredByTrimesterChart> createState() =>
-      _AnsweredByTrimesterChartState();
+  State<AnsweredByMonthChart> createState() => _AnsweredByMonthChartState();
 }
 
-class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
+class _AnsweredByMonthChartState extends State<AnsweredByMonthChart> {
   final fieldTextController = TextEditingController();
 
   String currentYear = DateTime.now().year.toString();
@@ -38,19 +38,6 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
   bool pastThreeYearsValue = false;
   bool pastFourYearsValue = false;
   bool pastFiveYearsValue = false;
-
-  bool januaryValue = false;
-  bool ferbuaryValue = false;
-  bool marchValue = false;
-  bool aprilValue = false;
-  bool mayValue = false;
-  bool juneValue = false;
-  bool julyValue = false;
-  bool augustValue = false;
-  bool septemberValue = false;
-  bool octoberValue = false;
-  bool novemberValue = false;
-  bool decemberValue = false;
 
   bool dayOneValue = false;
   bool dayTwoValue = false;
@@ -91,6 +78,14 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
   bool solved = false;
   bool inReply = false;
 
+  bool mondayValue = false;
+  bool tuesdayValue = false;
+  bool wednesdayValue = false;
+  bool thursdayValue = false;
+  bool fridayValue = false;
+  bool saturdayValue = false;
+  bool sundayValue = false;
+
   List<Color> gradientColors = [
     GraphColors.contentColorCyan,
     GraphColors.contentColorBlue,
@@ -110,9 +105,9 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
   double dec = 0;
 
   bool showFilterByYears = true;
-  bool showFilterByMonths = true;
   bool showFilterByDays = true;
   bool showFilterByStates = true;
+  bool showFilterByWeekday = true;
   bool showFilterByKeyWord = true;
 
   @override
@@ -299,245 +294,6 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
                                   ),
                                 ),
                                 Text(pastFiveYears),
-                              ],
-                            ),
-                          ],
-                        )
-                      : Container(),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: SpacingTokens.deka,
-                      horizontal: SpacingTokens.hecto,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text(
-                          'Filtrar por meses:',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            top: 2,
-                            left: SpacingTokens.deka,
-                          ),
-                          child: InkWell(
-                            onTap: () {
-                              setState(() {
-                                showFilterByMonths = !showFilterByMonths;
-                              });
-                            },
-                            child: Text(
-                              showFilterByMonths
-                                  ? 'Mostrar menos ▼'
-                                  : 'Mostrar mais ▶︎',
-                              style: const TextStyle(
-                                color: BaseColors.purpleButton,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  showFilterByMonths
-                      ? Wrap(
-                          alignment: WrapAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Checkbox(
-                                  value: januaryValue,
-                                  onChanged: (value) => setState(
-                                    () {
-                                      januaryValue = value!;
-                                      currentFilteredComplaintList =
-                                          applyMonthFilter(value, '01');
-                                    },
-                                  ),
-                                ),
-                                const Text('Janeiro'),
-                              ],
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Checkbox(
-                                  value: ferbuaryValue,
-                                  onChanged: (value) => setState(
-                                    () {
-                                      ferbuaryValue = value!;
-                                      currentFilteredComplaintList =
-                                          applyMonthFilter(value, '02');
-                                    },
-                                  ),
-                                ),
-                                const Text('Fervereiro'),
-                              ],
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Checkbox(
-                                  value: marchValue,
-                                  onChanged: (value) => setState(
-                                    () {
-                                      marchValue = value!;
-                                      currentFilteredComplaintList =
-                                          applyMonthFilter(value, '03');
-                                    },
-                                  ),
-                                ),
-                                const Text('Março'),
-                              ],
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Checkbox(
-                                  value: aprilValue,
-                                  onChanged: (value) => setState(
-                                    () {
-                                      aprilValue = value!;
-                                      currentFilteredComplaintList =
-                                          applyMonthFilter(value, '04');
-                                    },
-                                  ),
-                                ),
-                                const Text('Abril'),
-                              ],
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Checkbox(
-                                  value: mayValue,
-                                  onChanged: (value) => setState(
-                                    () {
-                                      mayValue = value!;
-                                      currentFilteredComplaintList =
-                                          applyMonthFilter(value, '05');
-                                    },
-                                  ),
-                                ),
-                                const Text('Maio'),
-                              ],
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Checkbox(
-                                  value: juneValue,
-                                  onChanged: (value) => setState(
-                                    () {
-                                      juneValue = value!;
-                                      currentFilteredComplaintList =
-                                          applyMonthFilter(value, '06');
-                                    },
-                                  ),
-                                ),
-                                const Text('Junho'),
-                              ],
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Checkbox(
-                                  value: julyValue,
-                                  onChanged: (value) => setState(
-                                    () {
-                                      julyValue = value!;
-                                      currentFilteredComplaintList =
-                                          applyMonthFilter(value, '07');
-                                    },
-                                  ),
-                                ),
-                                const Text('Julho'),
-                              ],
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Checkbox(
-                                  value: augustValue,
-                                  onChanged: (value) => setState(
-                                    () {
-                                      augustValue = value!;
-                                      currentFilteredComplaintList =
-                                          applyMonthFilter(value, '08');
-                                    },
-                                  ),
-                                ),
-                                const Text('Julho'),
-                              ],
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Checkbox(
-                                  value: septemberValue,
-                                  onChanged: (value) => setState(
-                                    () {
-                                      septemberValue = value!;
-                                      currentFilteredComplaintList =
-                                          applyMonthFilter(value, '09');
-                                    },
-                                  ),
-                                ),
-                                const Text('Setembro'),
-                              ],
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Checkbox(
-                                  value: octoberValue,
-                                  onChanged: (value) => setState(
-                                    () {
-                                      octoberValue = value!;
-                                      currentFilteredComplaintList =
-                                          applyMonthFilter(value, '10');
-                                    },
-                                  ),
-                                ),
-                                const Text('Outubro'),
-                              ],
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Checkbox(
-                                  value: novemberValue,
-                                  onChanged: (value) => setState(
-                                    () {
-                                      novemberValue = value!;
-                                      currentFilteredComplaintList =
-                                          applyMonthFilter(value, '11');
-                                    },
-                                  ),
-                                ),
-                                const Text('Novembro'),
-                              ],
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Checkbox(
-                                  value: decemberValue,
-                                  onChanged: (value) => setState(
-                                    () {
-                                      decemberValue = value!;
-                                      currentFilteredComplaintList =
-                                          applyMonthFilter(value, '12');
-                                    },
-                                  ),
-                                ),
-                                const Text('Dezembro'),
                               ],
                             ),
                           ],
@@ -1113,6 +869,165 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         const Text(
+                          'Filtrar por dia da semana:',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            top: 2,
+                            left: SpacingTokens.deka,
+                          ),
+                          child: InkWell(
+                            onTap: () {
+                              setState(() {
+                                showFilterByWeekday = !showFilterByWeekday;
+                              });
+                            },
+                            child: Text(
+                              showFilterByStates
+                                  ? 'Mostrar menos ▼'
+                                  : 'Mostrar mais ▶︎',
+                              style: const TextStyle(
+                                color: BaseColors.purpleButton,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  showFilterByWeekday
+                      ? Wrap(
+                          alignment: WrapAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: mondayValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      mondayValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyDayweekFilter(value, 1);
+                                    },
+                                  ),
+                                ),
+                                const Text('Segunda-feira'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: tuesdayValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      tuesdayValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyDayweekFilter(value, 2);
+                                    },
+                                  ),
+                                ),
+                                const Text('Terça-feira'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: wednesdayValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      wednesdayValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyDayweekFilter(value, 3);
+                                    },
+                                  ),
+                                ),
+                                const Text('Quarta-feira'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: thursdayValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      thursdayValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyDayweekFilter(value, 4);
+                                    },
+                                  ),
+                                ),
+                                const Text('Quinta-feira'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: fridayValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      fridayValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyDayweekFilter(value, 5);
+                                    },
+                                  ),
+                                ),
+                                const Text('Sexta-feira'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: saturdayValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      saturdayValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyDayweekFilter(value, 6);
+                                    },
+                                  ),
+                                ),
+                                const Text('Sábado'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Checkbox(
+                                  value: sundayValue,
+                                  onChanged: (value) => setState(
+                                    () {
+                                      sundayValue = value!;
+                                      currentFilteredComplaintList =
+                                          applyDayweekFilter(value, 7);
+                                    },
+                                  ),
+                                ),
+                                const Text('Domingo'),
+                              ],
+                            ),
+                          ],
+                        )
+                      : Container(),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: SpacingTokens.deka,
+                      horizontal: SpacingTokens.hecto,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
                           'Filtrar por status:',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -1397,14 +1312,41 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
     );
     Widget text;
     switch (value.toInt()) {
+      case 0:
+        text = const Text(kIsWeb ? 'Janeiro' : 'J', style: style);
+        break;
+      case 1:
+        text = const Text(kIsWeb ? 'Fevereiro' : 'F', style: style);
+        break;
       case 2:
-        text = const Text('1° Tri', style: style);
+        text = const Text(kIsWeb ? 'Março' : 'M', style: style);
+        break;
+      case 3:
+        text = const Text(kIsWeb ? 'Abril' : 'A', style: style);
+        break;
+      case 4:
+        text = const Text(kIsWeb ? 'Maio' : 'M', style: style);
         break;
       case 5:
-        text = const Text('2° Tri', style: style);
+        text = const Text(kIsWeb ? 'Junho' : 'J', style: style);
+        break;
+      case 6:
+        text = const Text(kIsWeb ? 'Julho' : 'J', style: style);
+        break;
+      case 7:
+        text = const Text(kIsWeb ? 'Agosto' : 'A', style: style);
         break;
       case 8:
-        text = const Text('3° Tri', style: style);
+        text = const Text(kIsWeb ? 'Setembro' : 'S', style: style);
+        break;
+      case 9:
+        text = const Text(kIsWeb ? 'Outubro' : 'O', style: style);
+        break;
+      case 10:
+        text = const Text(kIsWeb ? 'Novembro' : 'N', style: style);
+        break;
+      case 11:
+        text = const Text(kIsWeb ? 'Dezembro' : 'D', style: style);
         break;
       default:
         text = const Text('', style: style);
@@ -1584,18 +1526,6 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
       pastThreeYearsValue,
       pastFourYearsValue,
       pastFiveYearsValue,
-      januaryValue,
-      ferbuaryValue,
-      marchValue,
-      aprilValue,
-      mayValue,
-      juneValue,
-      julyValue,
-      augustValue,
-      septemberValue,
-      octoberValue,
-      novemberValue,
-      decemberValue,
       dayOneValue,
       dayTwoValue,
       dayThreeValue,
@@ -1631,6 +1561,13 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
       answered,
       solved,
       inReply,
+      mondayValue,
+      tuesdayValue,
+      wednesdayValue,
+      thursdayValue,
+      fridayValue,
+      saturdayValue,
+      sundayValue,
       keyWordsList.isEmpty ? false : true,
     ];
 
@@ -1662,49 +1599,6 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
     }
 
     return selectedYears;
-  }
-
-  List<String> wichMonthsAreSelected() {
-    List<String> selectedMonths = [];
-
-    if (januaryValue) {
-      selectedMonths.add("01");
-    }
-    if (ferbuaryValue) {
-      selectedMonths.add("02");
-    }
-    if (marchValue) {
-      selectedMonths.add("03");
-    }
-    if (aprilValue) {
-      selectedMonths.add("04");
-    }
-    if (mayValue) {
-      selectedMonths.add("05");
-    }
-    if (juneValue) {
-      selectedMonths.add("06");
-    }
-    if (julyValue) {
-      selectedMonths.add("07");
-    }
-    if (augustValue) {
-      selectedMonths.add("08");
-    }
-    if (septemberValue) {
-      selectedMonths.add("09");
-    }
-    if (octoberValue) {
-      selectedMonths.add("10");
-    }
-    if (novemberValue) {
-      selectedMonths.add("11");
-    }
-    if (decemberValue) {
-      selectedMonths.add("12");
-    }
-
-    return selectedMonths;
   }
 
   List<String> wichDaysAreSelected() {
@@ -1827,6 +1721,35 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
     return selectedStates;
   }
 
+  List<int> wichWeekdaysAreSelected() {
+    List<int> selectedWeekdays = [];
+
+    if (mondayValue) {
+      selectedWeekdays.add(1);
+    }
+
+    if (tuesdayValue) {
+      selectedWeekdays.add(2);
+    }
+    if (wednesdayValue) {
+      selectedWeekdays.add(3);
+    }
+    if (thursdayValue) {
+      selectedWeekdays.add(4);
+    }
+    if (fridayValue) {
+      selectedWeekdays.add(5);
+    }
+    if (saturdayValue) {
+      selectedWeekdays.add(6);
+    }
+    if (sundayValue) {
+      selectedWeekdays.add(7);
+    }
+
+    return selectedWeekdays;
+  }
+
   List<ComplaintModel> addSelectedItemsFilter() {
     List<ComplaintModel> filteredComplaintList = [];
 
@@ -1845,21 +1768,15 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
   bool passesFilters(ComplaintModel element) {
     return passesYearFilter(element) &&
         passesDayFilter(element) &&
-        passesMonthFilter(element) &&
         passesStatusFilter(element) &&
-        passesKeyWordFilter(element);
+        passesKeyWordFilter(element) &&
+        passesWeekdayFilter(element);
   }
 
   bool passesYearFilter(ComplaintModel element) {
     List<String> selectedYears = wichYearsAreSelected();
     return selectedYears.isEmpty ||
         selectedYears.contains(element.dateTime.substring(0, 4));
-  }
-
-  bool passesMonthFilter(ComplaintModel element) {
-    List<String> selectedMonths = wichMonthsAreSelected();
-    return selectedMonths.isEmpty ||
-        selectedMonths.contains(element.dateTime.substring(5, 7));
   }
 
   bool passesDayFilter(ComplaintModel element) {
@@ -1885,6 +1802,13 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
       }
     }
     return keyWordsList.isEmpty || contains;
+  }
+
+  bool passesWeekdayFilter(ComplaintModel element) {
+    List<int> selectedStates = wichWeekdaysAreSelected();
+    int weekday = DateTime.parse(element.dateTime).weekday;
+
+    return selectedStates.isEmpty || selectedStates.contains(weekday);
   }
 
   List<ComplaintModel> applyYearFilter(bool value, String year) {
@@ -2004,6 +1928,32 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
     }
   }
 
+  List<ComplaintModel> applyDayweekFilter(bool value, int weekdayCode) {
+    if (value) {
+      if (isAnySelected() == 1) {
+        List<ComplaintModel> filteredComplaintList = [];
+
+        for (ComplaintModel element
+            in widget._decisionBoardUseCase.state.complaintList) {
+          String dateTime = element.dateTime;
+
+          int weekday = DateTime.parse(dateTime).weekday;
+
+          if (weekday == weekdayCode) {
+            filteredComplaintList.add(element);
+          }
+        }
+
+        applyAllMonthsValues(filteredComplaintList);
+        return filteredComplaintList;
+      } else {
+        return addSelectedItemsFilter();
+      }
+    } else {
+      return addSelectedItemsFilter();
+    }
+  }
+
   void resetFilter() {
     currentFilteredComplaintList = [];
 
@@ -2013,19 +1963,6 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
     pastThreeYearsValue = false;
     pastFourYearsValue = false;
     pastFiveYearsValue = false;
-
-    januaryValue = false;
-    ferbuaryValue = false;
-    marchValue = false;
-    aprilValue = false;
-    mayValue = false;
-    juneValue = false;
-    julyValue = false;
-    augustValue = false;
-    septemberValue = false;
-    octoberValue = false;
-    novemberValue = false;
-    decemberValue = false;
 
     dayOneValue = false;
     dayTwoValue = false;
@@ -2066,6 +2003,14 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
     solved = false;
     inReply = false;
 
+    mondayValue = false;
+    tuesdayValue = false;
+    wednesdayValue = false;
+    thursdayValue = false;
+    fridayValue = false;
+    saturdayValue = false;
+    sundayValue = false;
+
     jan = 0;
     feb = 0;
     mar = 0;
@@ -2080,9 +2025,9 @@ class _AnsweredByTrimesterChartState extends State<AnsweredByTrimesterChart> {
     dec = 0;
 
     showFilterByYears = true;
-    showFilterByMonths = true;
     showFilterByDays = true;
     showFilterByStates = true;
     showFilterByKeyWord = true;
+    showFilterByWeekday = true;
   }
 }

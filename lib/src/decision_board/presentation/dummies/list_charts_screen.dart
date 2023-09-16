@@ -60,13 +60,13 @@ class ListChartsScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: SpacingTokens.deka),
                   child: PurpleLongButton(
-                    buttonText: 'Reclamações por trimestre',
+                    buttonText: 'Reclamações por Meses',
                     isLoading: false,
                     onPressed: () {
                       _decisionBoardUseCase.add(
                         const GoToChartsScreen(
                           chartSelected:
-                              ChartSelected.answeredByTrimesterChartFlow(),
+                              ChartSelected.answeredByMonthChartFlow(),
                         ),
                       );
                     },

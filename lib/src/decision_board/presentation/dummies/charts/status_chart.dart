@@ -94,11 +94,20 @@ class StatusChartState extends State<StatusChart> {
 
   List<String> keyWordsList = [];
 
+  bool mondayValue = false;
+  bool tuesdayValue = false;
+  bool wednesdayValue = false;
+  bool thursdayValue = false;
+  bool fridayValue = false;
+  bool saturdayValue = false;
+  bool sundayValue = false;
+
   bool showFilterByYears = true;
   bool showFilterByMonths = true;
   bool showFilterByDays = true;
   bool showFilterByStates = true;
   bool showFilterByKeyWord = true;
+  bool showFilterByWeekday = true;
 
   @override
   void initState() {
@@ -1156,6 +1165,165 @@ class StatusChartState extends State<StatusChart> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Text(
+                        'Filtrar por dia da semana:',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          top: 2,
+                          left: SpacingTokens.deka,
+                        ),
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {
+                              showFilterByWeekday = !showFilterByWeekday;
+                            });
+                          },
+                          child: Text(
+                            showFilterByStates
+                                ? 'Mostrar menos ▼'
+                                : 'Mostrar mais ▶︎',
+                            style: const TextStyle(
+                              color: BaseColors.purpleButton,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                showFilterByWeekday
+                    ? Wrap(
+                        alignment: WrapAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Checkbox(
+                                value: mondayValue,
+                                onChanged: (value) => setState(
+                                  () {
+                                    mondayValue = value!;
+                                    currentFilteredComplaintList =
+                                        applyDayweekFilter(value, 1);
+                                  },
+                                ),
+                              ),
+                              const Text('Segunda-feira'),
+                            ],
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Checkbox(
+                                value: tuesdayValue,
+                                onChanged: (value) => setState(
+                                  () {
+                                    tuesdayValue = value!;
+                                    currentFilteredComplaintList =
+                                        applyDayweekFilter(value, 2);
+                                  },
+                                ),
+                              ),
+                              const Text('Terça-feira'),
+                            ],
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Checkbox(
+                                value: wednesdayValue,
+                                onChanged: (value) => setState(
+                                  () {
+                                    wednesdayValue = value!;
+                                    currentFilteredComplaintList =
+                                        applyDayweekFilter(value, 3);
+                                  },
+                                ),
+                              ),
+                              const Text('Quarta-feira'),
+                            ],
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Checkbox(
+                                value: thursdayValue,
+                                onChanged: (value) => setState(
+                                  () {
+                                    thursdayValue = value!;
+                                    currentFilteredComplaintList =
+                                        applyDayweekFilter(value, 4);
+                                  },
+                                ),
+                              ),
+                              const Text('Quinta-feira'),
+                            ],
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Checkbox(
+                                value: fridayValue,
+                                onChanged: (value) => setState(
+                                  () {
+                                    fridayValue = value!;
+                                    currentFilteredComplaintList =
+                                        applyDayweekFilter(value, 5);
+                                  },
+                                ),
+                              ),
+                              const Text('Sexta-feira'),
+                            ],
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Checkbox(
+                                value: saturdayValue,
+                                onChanged: (value) => setState(
+                                  () {
+                                    saturdayValue = value!;
+                                    currentFilteredComplaintList =
+                                        applyDayweekFilter(value, 6);
+                                  },
+                                ),
+                              ),
+                              const Text('Sábado'),
+                            ],
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Checkbox(
+                                value: sundayValue,
+                                onChanged: (value) => setState(
+                                  () {
+                                    sundayValue = value!;
+                                    currentFilteredComplaintList =
+                                        applyDayweekFilter(value, 7);
+                                  },
+                                ),
+                              ),
+                              const Text('Domingo'),
+                            ],
+                          ),
+                        ],
+                      )
+                    : Container(),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: SpacingTokens.deka,
+                    horizontal: SpacingTokens.hecto,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
                         'Filtrar por palavras chave:',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -1629,6 +1797,35 @@ class StatusChartState extends State<StatusChart> {
     return selectedDays;
   }
 
+  List<int> wichWeekdaysAreSelected() {
+    List<int> selectedWeekdays = [];
+
+    if (mondayValue) {
+      selectedWeekdays.add(1);
+    }
+
+    if (tuesdayValue) {
+      selectedWeekdays.add(2);
+    }
+    if (wednesdayValue) {
+      selectedWeekdays.add(3);
+    }
+    if (thursdayValue) {
+      selectedWeekdays.add(4);
+    }
+    if (fridayValue) {
+      selectedWeekdays.add(5);
+    }
+    if (saturdayValue) {
+      selectedWeekdays.add(6);
+    }
+    if (sundayValue) {
+      selectedWeekdays.add(7);
+    }
+
+    return selectedWeekdays;
+  }
+
   List<ComplaintModel> addSelectedItemsFilter() {
     List<ComplaintModel> filteredComplaintList = [];
 
@@ -1647,7 +1844,8 @@ class StatusChartState extends State<StatusChart> {
     return passesYearFilter(element) &&
         passesDayFilter(element) &&
         passesMonthFilter(element) &&
-        passesKeyWordFilter(element);
+        passesKeyWordFilter(element) &&
+        passesWeekdayFilter(element);
   }
 
   bool passesYearFilter(ComplaintModel element) {
@@ -1680,6 +1878,13 @@ class StatusChartState extends State<StatusChart> {
       }
     }
     return keyWordsList.isEmpty || contains;
+  }
+
+  bool passesWeekdayFilter(ComplaintModel element) {
+    List<int> selectedStates = wichWeekdaysAreSelected();
+    int weekday = DateTime.parse(element.dateTime).weekday;
+
+    return selectedStates.isEmpty || selectedStates.contains(weekday);
   }
 
   List<ComplaintModel> applyYearFilter(bool value, String year) {
@@ -1799,6 +2004,32 @@ class StatusChartState extends State<StatusChart> {
     }
   }
 
+  List<ComplaintModel> applyDayweekFilter(bool value, int weekdayCode) {
+    if (value) {
+      if (isAnySelected() == 1) {
+        List<ComplaintModel> filteredComplaintList = [];
+
+        for (ComplaintModel element
+            in widget._decisionBoardUseCase.state.complaintList) {
+          String dateTime = element.dateTime;
+
+          int weekday = DateTime.parse(dateTime).weekday;
+
+          if (weekday == weekdayCode) {
+            filteredComplaintList.add(element);
+          }
+        }
+
+        setGraphVariables(filteredComplaintList);
+        return filteredComplaintList;
+      } else {
+        return addSelectedItemsFilter();
+      }
+    } else {
+      return addSelectedItemsFilter();
+    }
+  }
+
   void resetFilter() {
     currentFilteredComplaintList = [];
 
@@ -1856,11 +2087,20 @@ class StatusChartState extends State<StatusChart> {
 
     keyWordsList = [];
 
+    mondayValue = false;
+    tuesdayValue = false;
+    wednesdayValue = false;
+    thursdayValue = false;
+    fridayValue = false;
+    saturdayValue = false;
+    sundayValue = false;
+
     showFilterByYears = true;
     showFilterByMonths = true;
     showFilterByDays = true;
     showFilterByStates = true;
     showFilterByKeyWord = true;
+    showFilterByWeekday = true;
   }
 
   void setGraphVariables(List<ComplaintModel> complaintList) {
