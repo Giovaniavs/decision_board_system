@@ -84,6 +84,28 @@ make run-debug-web
 
 The make generate_code must be running because it'll be responsible to generate the **.freezed** and **.g** files inside the project.
 
+## Showcase
+
+Here you can see the application running in development mode on IOS, Android and Web versions.
+
+### IOS
+
+<p align="center">
+  <img src="./gifs/sample1.gif" width="35%" />
+</p>
+
+### Android
+
+<p align="center">
+  <img src="./assets/gifs/app_running_android.gif" width="35%" />
+</p>
+
+### Web
+
+<p align="center">
+  <img src="./assets/gifs/app_running_ios.gif" width="65%" />
+</p>
+
 <p align="right">
- Developed by Giovani Albuquerque | September 2023.
+ Developed by Giovani Albuquerque
 </p>
