@@ -1187,12 +1187,14 @@ class _AnsweredByMonthChartState extends State<AnsweredByMonthChart> {
                                 setState(() {
                                   keyWordsList.add(keyWord);
 
-                                  applyKeyWordFilter(true, keyWord);
+                                  currentFilteredComplaintList =
+                                      applyKeyWordFilter(true, keyWord);
                                 });
                               } else {
                                 final snackBar = SnackBar(
                                   content: const Text(
-                                      'Essa palavra já foi adicionada!'),
+                                    'Essa palavra já foi adicionada!',
+                                  ),
                                   action: SnackBarAction(
                                     label: 'OK',
                                     onPressed: () {},
@@ -1228,7 +1230,8 @@ class _AnsweredByMonthChartState extends State<AnsweredByMonthChart> {
                                       GestureDetector(
                                         onTap: () {
                                           setState(() {
-                                            applyKeyWordFilter(
+                                            currentFilteredComplaintList =
+                                                applyKeyWordFilter(
                                               false,
                                               keyWordsList[index],
                                             );
@@ -1756,9 +1759,8 @@ class _AnsweredByMonthChartState extends State<AnsweredByMonthChart> {
       }
     }
 
-    currentFilteredComplaintList = filteredComplaintList;
-    applyAllMonthsValues(currentFilteredComplaintList);
-    return currentFilteredComplaintList;
+    applyAllMonthsValues(filteredComplaintList);
+    return filteredComplaintList;
   }
 
   bool passesFilters(ComplaintModel element) {
@@ -1864,7 +1866,7 @@ class _AnsweredByMonthChartState extends State<AnsweredByMonthChart> {
         }
 
         applyAllMonthsValues(filteredComplaintList);
-        return currentFilteredComplaintList;
+        return filteredComplaintList;
       } else {
         return addSelectedItemsFilter();
       }

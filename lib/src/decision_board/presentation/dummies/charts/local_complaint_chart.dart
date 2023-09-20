@@ -1488,7 +1488,8 @@ class LocalComplaintChartState extends State<LocalComplaintChart> {
                               setState(() {
                                 keyWordsList.add(keyWord);
 
-                                applyKeyWordFilter(true, keyWord);
+                                currentFilteredComplaintList =
+                                    applyKeyWordFilter(true, keyWord);
                               });
                             } else {
                               final snackBar = SnackBar(
@@ -1529,7 +1530,8 @@ class LocalComplaintChartState extends State<LocalComplaintChart> {
                                     GestureDetector(
                                       onTap: () {
                                         setState(() {
-                                          applyKeyWordFilter(
+                                          currentFilteredComplaintList =
+                                              applyKeyWordFilter(
                                             false,
                                             keyWordsList[index],
                                           );
