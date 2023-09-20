@@ -4,12 +4,10 @@
 
 # MeChart Decision Board System
 
-MeChart decision board system built to solve problems of data querying on Reclame Aqui web system.
-As a final project to get graduated at Universidade Federal de Pernambuco - Centro de Informática, 
-this projects was built with Flutter and based on Clean Architecture. The main goal of the project is
-to expand and improve the decision making proccess through the study and analisis of the decision boards built
-inside the system. This application was made to work together with a web scraping script wrote in python, which is
-responsible for generating a .csv database from Reclame Aqui web system.
+MeChart decision board system built to solve problems of data querying on the Reclame Aqui web system.
+As a final project to graduate at Universidade Federal de Pernambuco - Centro de Informática, this project was built with Flutter and based on Clean Architecture.
+The main goal of the project is to expand and improve the decision-making process through the study and analysis of the decision boards built inside the system.
+This application was made to work together with a web scraping script written in Python, which is responsible for generating a .csv database from the Reclame Aqui web system.
 
 ## Table of Contents
 
@@ -72,13 +70,13 @@ In order to run the project open two terminals and run each command in one separ
 make generate_code
 ```
 
-either for mobile version
+For mobile version purposes, run:
 
 ```bash
 make run-debug
 ```
 
-or for web version
+For web version purposes, run:
 
 ```bash
 make run-debug-web
