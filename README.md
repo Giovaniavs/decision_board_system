@@ -103,7 +103,7 @@ Here you can see the application running in development mode on IOS, Android and
 ### Web
 
 <p align="center">
-  <img src="./assets/gifs/app_running_web.gif" width="65%" />
+  <img src="./assets/gifs/app_running_web.gif" width="85%" />
 </p>
 
 <p align="right">
