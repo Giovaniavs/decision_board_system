@@ -15,7 +15,7 @@ This application was made to work together with a web scraping script written in
   <li><a href="#links">Mockup</a></li>
   <li><a href="#getting-started">Getting Started</a></li>
   <li><a href="#running-the-project">Running the Project</a></li>
-  <li><a href="#specifying-an-environment">Showcase</a></li>
+  <li><a href="#showcase">Showcase</a></li>
 </ul>
 
 ---
