@@ -23,6 +23,7 @@ This application was made to work together with a web scraping script written in
 ## Links
 
 - [Hi-fi web and mobile figma mockup](https://www.figma.com/file/5HSJui8jR0Xwbyo2rjskDT/Decision-Board-hi-fi-prototype?type=design&node-id=0%3A1&mode=design&t=CniUEHvnHlzOurVo-1)
+- [Deployed web version](https://giovaniavs.github.io/decision_board_system)
 
 ## Getting Started
 
