@@ -91,7 +91,7 @@ Here you can see the application running in development mode on IOS, Android and
 ### IOS
 
 <p align="center">
-  <img src="./gifs/sample1.gif" width="35%" />
+  <img src="./assets/gifs/app_running_ios.gif" width="35%" />
 </p>
 
 ### Android
@@ -103,7 +103,7 @@ Here you can see the application running in development mode on IOS, Android and
 ### Web
 
 <p align="center">
-  <img src="./assets/gifs/app_running_ios.gif" width="65%" />
+  <img src="./assets/gifs/app_running_web.mov" width="65%" />
 </p>
 
 <p align="right">
