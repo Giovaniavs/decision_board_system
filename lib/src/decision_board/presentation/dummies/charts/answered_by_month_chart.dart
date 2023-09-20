@@ -136,7 +136,7 @@ class _AnsweredByMonthChartState extends State<AnsweredByMonthChart> {
           child: Column(
             children: [
               ConstrainedBox(
-                constraints: const BoxConstraints(maxHeight: 500),
+                constraints: const BoxConstraints(maxHeight: 600),
                 child: AspectRatio(
                   aspectRatio: 1.70,
                   child: Padding(
@@ -197,7 +197,6 @@ class _AnsweredByMonthChartState extends State<AnsweredByMonthChart> {
                   ),
                   showFilterByYears
                       ? Wrap(
-                          alignment: WrapAlignment.spaceBetween,
                           children: [
                             Row(
                               mainAxisSize: MainAxisSize.min,
@@ -341,7 +340,6 @@ class _AnsweredByMonthChartState extends State<AnsweredByMonthChart> {
                   ),
                   showFilterByDays
                       ? Wrap(
-                          alignment: WrapAlignment.spaceBetween,
                           children: [
                             Row(
                               mainAxisSize: MainAxisSize.min,
@@ -902,7 +900,6 @@ class _AnsweredByMonthChartState extends State<AnsweredByMonthChart> {
                   ),
                   showFilterByWeekday
                       ? Wrap(
-                          alignment: WrapAlignment.spaceBetween,
                           children: [
                             Row(
                               mainAxisSize: MainAxisSize.min,
@@ -1061,7 +1058,6 @@ class _AnsweredByMonthChartState extends State<AnsweredByMonthChart> {
                   ),
                   showFilterByStates
                       ? Wrap(
-                          alignment: WrapAlignment.spaceBetween,
                           children: [
                             Row(
                               mainAxisSize: MainAxisSize.min,

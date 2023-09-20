@@ -263,7 +263,6 @@ class LocalComplaintChartState extends State<LocalComplaintChart> {
                 ),
                 showFilterByYears
                     ? Wrap(
-                        alignment: WrapAlignment.spaceBetween,
                         children: [
                           Row(
                             mainAxisSize: MainAxisSize.min,
@@ -406,7 +405,6 @@ class LocalComplaintChartState extends State<LocalComplaintChart> {
                 ),
                 showFilterByMonths
                     ? Wrap(
-                        alignment: WrapAlignment.spaceBetween,
                         children: [
                           Row(
                             mainAxisSize: MainAxisSize.min,
@@ -645,7 +643,6 @@ class LocalComplaintChartState extends State<LocalComplaintChart> {
                 ),
                 showFilterByDays
                     ? Wrap(
-                        alignment: WrapAlignment.spaceBetween,
                         children: [
                           Row(
                             mainAxisSize: MainAxisSize.min,
@@ -1206,7 +1203,6 @@ class LocalComplaintChartState extends State<LocalComplaintChart> {
                 ),
                 showFilterByWeekday
                     ? Wrap(
-                        alignment: WrapAlignment.spaceBetween,
                         children: [
                           Row(
                             mainAxisSize: MainAxisSize.min,
@@ -1365,7 +1361,6 @@ class LocalComplaintChartState extends State<LocalComplaintChart> {
                 ),
                 showFilterByStates
                     ? Wrap(
-                        alignment: WrapAlignment.spaceBetween,
                         children: [
                           Row(
                             mainAxisSize: MainAxisSize.min,

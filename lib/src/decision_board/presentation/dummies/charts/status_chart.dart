@@ -255,7 +255,6 @@ class StatusChartState extends State<StatusChart> {
                 ),
                 showFilterByYears
                     ? Wrap(
-                        alignment: WrapAlignment.spaceBetween,
                         children: [
                           Row(
                             mainAxisSize: MainAxisSize.min,
@@ -398,7 +397,6 @@ class StatusChartState extends State<StatusChart> {
                 ),
                 showFilterByMonths
                     ? Wrap(
-                        alignment: WrapAlignment.spaceBetween,
                         children: [
                           Row(
                             mainAxisSize: MainAxisSize.min,
@@ -637,7 +635,6 @@ class StatusChartState extends State<StatusChart> {
                 ),
                 showFilterByDays
                     ? Wrap(
-                        alignment: WrapAlignment.spaceBetween,
                         children: [
                           Row(
                             mainAxisSize: MainAxisSize.min,
@@ -1198,7 +1195,6 @@ class StatusChartState extends State<StatusChart> {
                 ),
                 showFilterByWeekday
                     ? Wrap(
-                        alignment: WrapAlignment.spaceBetween,
                         children: [
                           Row(
                             mainAxisSize: MainAxisSize.min,

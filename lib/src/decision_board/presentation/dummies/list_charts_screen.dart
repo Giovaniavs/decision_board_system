@@ -30,6 +30,7 @@ class ListChartsScreen extends StatelessWidget {
           "Gráficos",
           style: TextStyle(color: Colors.black),
         ),
+        centerTitle: true,
         backgroundColor: BaseColors.primary,
         leading: Builder(
           builder: (BuildContext builderContext) {

@@ -29,6 +29,7 @@ class HomeScreen extends StatelessWidget {
           "Reclamações",
           style: TextStyle(color: Colors.black),
         ),
+        centerTitle: true,
         backgroundColor: BaseColors.primary,
         leading: Builder(
           builder: (BuildContext builderContext) {

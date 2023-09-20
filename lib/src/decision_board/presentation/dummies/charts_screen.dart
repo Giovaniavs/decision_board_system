@@ -61,6 +61,7 @@ class _ChartsScreenState extends State<ChartsScreen> {
             color: Colors.black,
           ),
         ),
+        centerTitle: true,
         backgroundColor: BaseColors.primary,
         leading: Builder(
           builder: (BuildContext builderContext) {
