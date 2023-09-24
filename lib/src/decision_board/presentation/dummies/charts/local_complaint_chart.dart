@@ -25,10 +25,10 @@ class LocalComplaintChartState extends State<LocalComplaintChart> {
   late MapEntry<String, int> secondMostStateWithComplaints;
   late MapEntry<String, int> thirdMostStateWithComplaints;
   late MapEntry<String, int> fourthMostStateWithComplaints;
-  late String firstMostComplaintStatePorcentage;
-  late String secondMostComplaintStatePorcentage;
-  late String thirdMostComplaintStatePorcentage;
-  late String fourthMostComplaintStatePorcentage;
+  late int firstMostComplaintStatePorcentage;
+  late int secondMostComplaintStatePorcentage;
+  late int thirdMostComplaintStatePorcentage;
+  late int fourthMostComplaintStatePorcentage;
   Map<String, int> statesMap = {};
   int touchedIndex = -1;
 
@@ -1615,8 +1615,9 @@ class LocalComplaintChartState extends State<LocalComplaintChart> {
           case 0:
             return PieChartSectionData(
               color: GraphColors.contentColorBlue,
-              value: 40,
-              title: firstMostComplaintStatePorcentage,
+              value:
+                  firstMostComplaintStatePorcentage.toDouble().ceilToDouble(),
+              title: '$firstMostComplaintStatePorcentage%',
               radius: radius,
               titleStyle: TextStyle(
                 fontSize: fontSize,
@@ -1628,8 +1629,9 @@ class LocalComplaintChartState extends State<LocalComplaintChart> {
           case 1:
             return PieChartSectionData(
               color: GraphColors.contentColorYellow,
-              value: 30,
-              title: secondMostComplaintStatePorcentage,
+              value:
+                  secondMostComplaintStatePorcentage.toDouble().ceilToDouble(),
+              title: '$secondMostComplaintStatePorcentage%',
               radius: radius,
               titleStyle: TextStyle(
                 fontSize: fontSize,
@@ -1641,8 +1643,9 @@ class LocalComplaintChartState extends State<LocalComplaintChart> {
           case 2:
             return PieChartSectionData(
               color: GraphColors.contentColorPurple,
-              value: 15,
-              title: thirdMostComplaintStatePorcentage,
+              value:
+                  thirdMostComplaintStatePorcentage.toDouble().ceilToDouble(),
+              title: '$thirdMostComplaintStatePorcentage%',
               radius: radius,
               titleStyle: TextStyle(
                 fontSize: fontSize,
@@ -1654,8 +1657,9 @@ class LocalComplaintChartState extends State<LocalComplaintChart> {
           case 3:
             return PieChartSectionData(
               color: GraphColors.contentColorGreen,
-              value: 15,
-              title: fourthMostComplaintStatePorcentage,
+              value:
+                  fourthMostComplaintStatePorcentage.toDouble().ceilToDouble(),
+              title: '$fourthMostComplaintStatePorcentage%',
               radius: radius,
               titleStyle: TextStyle(
                 fontSize: fontSize,
@@ -2251,13 +2255,13 @@ class LocalComplaintChartState extends State<LocalComplaintChart> {
 
       fourthMostStateWithComplaints = const MapEntry('', 0);
 
-      firstMostComplaintStatePorcentage = '0';
+      firstMostComplaintStatePorcentage = 0;
 
-      secondMostComplaintStatePorcentage = '0';
+      secondMostComplaintStatePorcentage = 0;
 
-      thirdMostComplaintStatePorcentage = '0';
+      thirdMostComplaintStatePorcentage = 0;
 
-      fourthMostComplaintStatePorcentage = '0';
+      fourthMostComplaintStatePorcentage = 0;
     } else {
       statesMap = {};
 
@@ -2316,16 +2320,20 @@ class LocalComplaintChartState extends State<LocalComplaintChart> {
       }
 
       firstMostComplaintStatePorcentage =
-          "${(firstMostStateWithComplaints.value / complaintList.length * 100).toInt()}%";
+          (firstMostStateWithComplaints.value / complaintList.length * 100)
+              .toInt();
 
       secondMostComplaintStatePorcentage =
-          "${(secondMostStateWithComplaints.value / complaintList.length * 100).toInt()}%";
+          (secondMostStateWithComplaints.value / complaintList.length * 100)
+              .toInt();
 
       thirdMostComplaintStatePorcentage =
-          "${(thirdMostStateWithComplaints.value / complaintList.length * 100).toInt()}%";
+          (thirdMostStateWithComplaints.value / complaintList.length * 100)
+              .toInt();
 
       fourthMostComplaintStatePorcentage =
-          "${(fourthMostStateWithComplaints.value / complaintList.length * 100).toInt()}%";
+          (fourthMostStateWithComplaints.value / complaintList.length * 100)
+              .toInt();
     }
   }
 }
