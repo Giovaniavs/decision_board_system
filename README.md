@@ -24,7 +24,7 @@ This application was made to work together with a web scraping script written in
 
 - [Hi-fi web and mobile figma mockup](https://www.figma.com/file/5HSJui8jR0Xwbyo2rjskDT/Decision-Board-hi-fi-prototype?type=design&node-id=0%3A1&mode=design&t=CniUEHvnHlzOurVo-1)
 - [Deployed web version](https://giovaniavs.github.io/decision_board_system)
-- [Oficial Thesis Published in UFPE repository](https://repositorio.ufpe.br/handle/123456789/52489)
+- [Thesis Published in UFPE repository](https://repositorio.ufpe.br/handle/123456789/52489)
 
 ## Getting Started
 
